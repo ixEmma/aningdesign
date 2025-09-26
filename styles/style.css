@@ -540,3 +540,31 @@ nav a:active {
     color:#0587ab;
 }
 
+/* Next section my works */
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.work-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 0.8s ease-out;
+}
+
+.work-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* When in view */
+.work-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
