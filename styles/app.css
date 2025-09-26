@@ -12,7 +12,7 @@
 .works-track {
   display: flex;
   width: 100;
-  animation: scroll 20s linear infinite;
+  animation: scroll 5s linear infinite;
 }
 
 .work-card {
@@ -21,7 +21,7 @@
 }
 
 .work-card img {
-  height: 600px; /* adjust size */
+  height: 300px; /* adjust size */
   width: auto;
   border-radius: 12px;
   object-fit: cover;
@@ -36,3 +36,5 @@
     transform: translateX(-50%);
   }
 }
+
+

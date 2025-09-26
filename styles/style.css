@@ -260,17 +260,17 @@ h2 {
     linear-gradient(180deg, #0d0d0d, #1a1a1a);
   position: relative;
   overflow: hidden;
-  min-height: 60vh;
-  align-content: center;
+  min-height: 30vh;
+  /* align-content: ; */ /* Removed invalid property value */
 }
 
 .hero-content {
-  height: 100%vh;
+  height: auto;
   max-width: 100%;
-  margin: auto;
+  margin:3px 0;
 }
 .hero h1 {
-  font-size: 105px;
+  font-size: 80px;
   margin: 0.5rem 0 1rem;
   font-weight: 900; /* bold */
   letter-spacing: 2px;
@@ -278,22 +278,11 @@ h2 {
   padding: 0 20px;
   }
 
-  @media (min-width: 1200px) {
-    .hero h1 {
-      font-size: 120px;
-    }
-    .hero-p {
-      font-size: 38px;
-      padding: 32px 0 0 0;
-      max-width: 800px;
-       margin-top: 0.5rem;
 
-    }
-}
 
 @media (min-width: 1200px) {
   .hero h1 {
-    font-size: 118px; 
+    font-size: 80px; 
     font-weight: 900;
     -webkit-text-stroke: 1px #fff; 
     letter-spacing: 5px;
@@ -316,8 +305,8 @@ h2 {
 .cta-button {
   position: relative;
   display: inline-block;
-  padding: 15px 40px;
-  font-size: 45px;
+  padding: 10px 20px;
+  font-size: 20px;
   letter-spacing: 1.2;
   font-family: "Switzer", sans-serif, Helvetica, sans-serif;
   font-weight: 600;
@@ -330,20 +319,6 @@ h2 {
   cursor: pointer;
   transition: all 0.4s ease-in-out;
   box-shadow: 0 0 10px rgba(0, 255, 100, 0.5); /* subtle glow */
-}
-
-@media (max-width: 768px) {
-  .cta-button {
-    font-size: 30px;
-    padding: 15px 30px;
-  }
-}
-
-@media (max-width: 480px) {
-  .cta-button {
-    font-size: 24px;
-    padding: 12px 20px;
-  }
 }
 
 /* Top green line */
@@ -387,26 +362,23 @@ h2 {
   right: 0;
 }
 /* navigation */
-.header-container{
-border-bottom: #008000;
-height: auto;
-padding-bottom: 20px;
-}
+
 
 nav a{
   color: white;
   text-decoration: none;
-  margin: 0 28px;
+  margin: 0 20px;
   font-weight: 600;
-  font-size: 1.40rem;
+  font-size: 15px;
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
 }
 @media (max-width: 1024x) {
   nav a {
-   display: none;
-}}
-
+    
+    font-size: 16px;
+  }
+}
 nav a:hover,
 nav a:active {
   background-color: #749981;
@@ -416,7 +388,7 @@ nav a:active {
 .cta-button-nav {
   background: linear-gradient(90deg, #00fb64, #00c9ff);
   color: #151515;
-  padding: 20px 40px;
+  padding: 10px 20px;
   border-radius: 5px;
 }
 .cta-button-nav:hover {
@@ -459,20 +431,18 @@ nav a:active {
 /* available for projects */
 .available-for-projects {
   color: #9af7a3;
-  font-size: 33px;
+  font-size: 20px;
   font-weight: 600;
-}
 
 @media (max-width: 1024px) {
-  .available-for-projects {
-    font-size: 16px;
-  }
+      font-size: 16px;
+  
 }
 
-@media (max-width: 480px) {
-  .available-for-projects {
-    font-size: 14px;
-  }
+    @media (max-width: 480px) {
+      font-size: 14px;
+    }
+  
 }
 .circle-icon {
   width: 20px;
@@ -504,7 +474,7 @@ nav a:active {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px 0;
+  margin:20 0;
   gap: 10px;
 }
 /* header */
@@ -542,8 +512,8 @@ nav a:active {
 /* Default (Desktop) */
 .cta-button-nav {
   display: inline-block;
-  padding: 20px 40px;
-  font-size: 30px;
+  padding: 10px 20px;
+  font-size: 15px;
   font-weight: 600;
  white-space: nowrap;
   border-radius: 6px;
@@ -567,14 +537,14 @@ nav a:active {
 
 /* hero */
 .hero-p {
-  font: size 45px;
-  font-weight: 500;
-  border-right: 3px solid #333;
+  font: size 35px !important;
+  font-weight: 600;
+  border-right: 3px solid none;
   white-space: nowrap;
   overflow: hidden;
-  padding: 28px 0 0 0;
+  padding: 20px 0 0 0;
   max-width: 700px;
-  margin: 50px auto;
+  margin: 35px auto ;
 }
 /* Cursor effect */
 .hero-p::after {
@@ -591,8 +561,8 @@ nav a:active {
 #hey{
     color:#0587ab;
     font-weight: 400;
-    font-size: 40px;
-    
+    font-size: 25px;
+    margin-top: 10 0;
 }
 
 /* Next section my works */
