@@ -1,128 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aning Design</title>
-    <link rel="stylesheet" href="styles/style.css" />
-  </head>
 
-  <body>
-    <!-- Preloader overlay: shows while the page and assets load -->
-    <div id="preloader" aria-hidden="true">
-      <div class="spinner" role="status" aria-label="Loading"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aning Design</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+
+<body>
+  <!-- Preloader overlay: shows while the page and assets load -->
+  <div id="preloader" aria-hidden="true">
+    <div class="spinner" role="status" aria-label="Loading"></div>
+  </div>
+  <header>
+
+    <div class="header-container">
+      <div class="logo">
+        <img src="./images/logo.png" alt="logo" style="max-width: 95px" />
+      </div>
+
+      <div class="available-for-projects-container">
+    <div class="circle-icon"></div>
+    <h4 class="available-for-projects">Available for new Projects</h4>
+      </div>
+      
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">About Me</a>
+        <a href="#">Contact</a>
+      </nav>
+
+      <div class="cta">
+        <a href="#" class="cta-button-nav">Get started</a>
+      </div>
+  
+  </header>
+  <!-- hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Aning Dzn</h1>
+      <p>Your one-stop solution for Web Design and Development</p>
+      <a href="#" class="cta-button">Book now</a>
     </div>
-    <header>
-      <div class="header-container">
-        <div class="logo">
-          <img src="./images/logo.png" alt="logo" style="max-width: 95px" />
-        </div>
+  </section>
 
-        <nav>
-          <a href="#">Home</a>
-          <a href="#">Services</a>
-          <a href="#">About Me</a>
-          <a href="#">Contact</a>
-        </nav>
-
-        <div class="cta">
-          <a href="#" class="cta-button-nav">Get started</a>
-        </div>
-      </div>
-    </header>
-    <!-- hero -->
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Welcome to Aning Dzn</h1>
-        <p>Your one-stop solution for Web Design and Development</p>
-        <a href="#" class="cta-button">Book now</a>
-      </div>
-    </section>
-
-    <!-- about me -->
-    <div class="flex-Container">
-      <div class="aboutUs">
-        <img
-          src="./images/papi.jpg"
-          alt="Mr Aning"
-          fetchpriority="high"
-          decoding="async"
-        />
-      </div>
-
-      <div class="aboutUs">
-        <h2>MEET ANING</h2>
-        <p>
-          <strong
-            >Hi, I’m Emmanuel Aning and I'm passionate Freelance Graphic
-            Designer and Web Designer. I specialize in creating visually
-            striking designs and functional websites that not only look great
-            but also deliver results.
-          </strong>
-        </p>
-        <p>
-          Over the years, I have worked on a wide range of creative projects
-          including website design, brand identity systems, product packaging,
-          social media campaigns, event promotions, marketing materials, and
-          digital/print advertising.
-        </p>
-        <button>Read more</button>
-      </div>
-    </div>
-    <!-- services -->
-    <div class="flexContainer">
-      <div class="mydivname">
-        <h2>This is my title</h2>
-        <p>This is a paragraph</p>
-      </div>
-
-      <div class="mydivname">
-        <h2>This is my title</h2>
-        <p>This is a paragraph</p>
-      </div>
-
-      <div class="mydivname">
-        <h2>This is my title</h2>
-        <p>This is a paragraph</p>
-      </div>
-    </div>
-    <!-- contact   -->
-    <div class="contact-container">
-      <div class="contact-info">
-        <h2>Contact Me</h2>
-        <p>
-          Whether you have a project in mind or just want to say hello, I would
-          love to hear from you. Feel free to reach out to me via email or
-          through the contact form on my website.
-        </p>
-        <p>Phone: +233 55 706 6767</p>
-        <p>Email: <a href="mailto: aningemma1@gmail.com">Hello Aning Dzn</a></p>
-        <a href="#" class="cta-button">Get in touch</a>
-      </div>
-
-      <!-- contact form -->
-      <div class="contact-form">
-        <h2>Send us a Message</h2>
-        <form action="submit_form.php" method="post">
-          <label for="name">Name</label> <br />
-          <!-- Changed from an invalid label to a proper input field -->
-          <input type="text" id="name" name="name" required /> <br /><br />
-          <label for="email">Email</label> <br />
-          <input type="email" id="email" name="email" required /> <br /><br />
-          <label for="message">Message</label> <br />
-          <textarea id="message" name="message" rows="7" required></textarea>
-          <br /><br />
-          <button type="submit" class="cta-button">Submit</button>
-        </form>
-      </div>
+  <!-- about me -->
+  <div class="flex-Container">
+    <div class="aboutUs">
+      <img src="./images/papi.jpg" alt="Mr Aning" fetchpriority="high" decoding="async" />
     </div>
 
-    <!-- footer -->
-    <footer class="footer-name">
-      <p>&copy; <span id="year"></span>AningDzn. All rights reserved</p>
-    </footer>
-     <script src="https://unpkg.com/scrollreveal"></script>
+    <div class="aboutUs">
+      <h2>MEET ANING</h2>
+      <p>
+        <strong>Hi, I’m Emmanuel Aning and I'm passionate Freelance Graphic
+          Designer and Web Designer. I specialize in creating visually
+          striking designs and functional websites that not only look great
+          but also deliver results.
+        </strong>
+      </p>
+      <p>
+        Over the years, I have worked on a wide range of creative projects
+        including website design, brand identity systems, product packaging,
+        social media campaigns, event promotions, marketing materials, and
+        digital/print advertising.
+      </p>
+      <button>Read more</button>
+    </div>
+  </div>
+  <!-- services -->
+  <div class="flexContainer">
+    <div class="mydivname">
+      <h2>This is my title</h2>
+      <p>This is a paragraph</p>
+    </div>
+
+    <div class="mydivname">
+      <h2>This is my title</h2>
+      <p>This is a paragraph</p>
+    </div>
+
+    <div class="mydivname">
+      <h2>This is my title</h2>
+      <p>This is a paragraph</p>
+    </div>
+  </div>
+  <!-- contact   -->
+  <div class="contact-container">
+    <div class="contact-info">
+      <h2>Contact Me</h2>
+      <p>
+        Whether you have a project in mind or just want to say hello, I would
+        love to hear from you. Feel free to reach out to me via email or
+        through the contact form on my website.
+      </p>
+      <p>Phone: +233 55 706 6767</p>
+      <p>Email: <a href="mailto: aningemma1@gmail.com">Hello Aning Dzn</a></p>
+      <a href="#" class="cta-button">Get in touch</a>
+    </div>
+
+    <!-- contact form -->
+    <div class="contact-form">
+      <h2>Send us a Message</h2>
+      <form action="submit_form.php" method="post">
+        <label for="name">Name</label> <br />
+        <!-- Changed from an invalid label to a proper input field -->
+        <input type="text" id="name" name="name" required /> <br /><br />
+        <label for="email">Email</label> <br />
+        <input type="email" id="email" name="email" required /> <br /><br />
+        <label for="message">Message</label> <br />
+        <textarea id="message" name="message" rows="7" required></textarea>
+        <br /><br />
+        <button type="submit" class="cta-button">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="footer-name">
+    <p>&copy; <span id="year"></span>AningDzn. All rights reserved</p>
+  </footer>
+  <script src="https://unpkg.com/scrollreveal"></script>
   <!-- Your custom script -->
   <script src="app.js"></script>
-  </body>
+</body>
+
 </html>

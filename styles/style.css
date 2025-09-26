@@ -300,3 +300,43 @@ nav a:hover {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
+/* available for projects */
+.available-for-projects {
+  color: #9af7a3;
+  font-size: 20px;
+  font-weight: 500;
+}
+.circle-icon {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #9af7a3;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 5px green;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.6;
+    box-shadow: 0 0 15px green;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 5px green;
+  }
+}
+
+.available-for-projects-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 10px;
+}
