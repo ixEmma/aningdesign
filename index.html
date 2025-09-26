@@ -14,7 +14,7 @@
     <div class="spinner" role="status" aria-label="Loading"></div>
   </div>
   <header>
-
+<!-- header container -->
     <div class="header-container">
       <div class="logo">
         <img src="./images/logo.png" alt="logo" style="max-width: 95px" />
@@ -24,24 +24,52 @@
     <div class="circle-icon"></div>
     <h4 class="available-for-projects">Available for new Projects</h4>
       </div>
-      
+        <!-- Hamburger Button -->
+  <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
       <nav>
-        <a href="#">Home</a>
-        <a href="#">Services</a>
-        <a href="#">About Me</a>
-        <a href="#">Contact</a>
+        <a href="#">HOME</a>
+        <a href="#">SERVICES</a>
+        <a href="#">ABOUT ME</a>
+        <a href="#">CONTACT</a>
       </nav>
 
       <div class="cta">
-        <a href="#" class="cta-button-nav">Get started</a>
+        <a href="#" class="cta-button-nav">Projects</a>
       </div>
   
   </header>
+  
+  <!-- Mobile sidebar and backdrop -->
+  <aside id="mobile-sidebar" class="sidebar" aria-hidden="true" aria-labelledby="sidebar-close">
+    <div class="sidebar-header">
+      <span class="sidebar-title">MENU</span>
+      <button id="sidebar-close" class="sidebar-close" aria-label="Close menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#">HOME</a>
+      <a href="#">SERVICES</a>
+      <a href="#">ABOUT ME</a>
+      <a href="#">CONTACT</a>
+    </nav>
+  </aside>
+  <div id="sidebar-backdrop" class="sidebar-backdrop" aria-hidden="true"></div>
   <!-- hero -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Welcome to Aning Dzn</h1>
-      <p>Your one-stop solution for Web Design and Development</p>
+     
+      <h1> <span class="hey">Hey, I'm</span> EMMANUEL ANING</h1>
+      <div>
+        <p class="hero-p" id="typewriter"></p>
+      </div>
+      
+
       <a href="#" class="cta-button">Book now</a>
     </div>
   </section>
@@ -51,6 +79,9 @@
     <div class="aboutUs">
       <img src="./images/papi.jpg" alt="Mr Aning" fetchpriority="high" decoding="async" />
     </div>
+
+    <!-- portfolio -->
+
 
     <div class="aboutUs">
       <h2>MEET ANING</h2>
