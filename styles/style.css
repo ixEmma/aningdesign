@@ -250,7 +250,7 @@ h2 {
 }
 /* hero section */
 .hero {
-  padding: 100px 20px;
+  padding: 140px 40px 120px 40px;
   text-align: center;
   background: radial-gradient(
       circle at center,
@@ -260,19 +260,47 @@ h2 {
     linear-gradient(180deg, #0d0d0d, #1a1a1a);
   position: relative;
   overflow: hidden;
-
+  min-height: 60vh;
+  align-content: center;
 }
 
 .hero-content {
+  height: 100%vh;
   max-width: 100%;
   margin: auto;
 }
 .hero h1 {
-  font-size: 70px;
-  margin-bottom: 20px;
+  font-size: 105px;
+  margin: 0.5rem 0 1rem;
   font-weight: 900; /* bold */
+  letter-spacing: 2px;
+  line-height: 1.2;
+  padding: 0 20px;
+  }
+
+  @media (min-width: 1200px) {
+    .hero h1 {
+      font-size: 120px;
+    }
+    .hero-p {
+      font-size: 38px;
+      padding: 32px 0 0 0;
+      max-width: 800px;
+       margin-top: 0.5rem;
+
+    }
 }
 
+@media (min-width: 1200px) {
+  .hero h1 {
+    font-size: 118px; 
+    font-weight: 900;
+    -webkit-text-stroke: 1px #fff; 
+    letter-spacing: 5px;
+    word-spacing: 1rem;/* Optional: white outline for supported browsers */
+    /* Larger font on big screens */
+  }
+}
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 40px; /* Smaller font on tablets */
@@ -283,23 +311,14 @@ h2 {
     font-size: 35px; /* Even smaller on mobile */
   }
 }
-/* .cta-button {
-  display: inline-block;
-  padding: 15px 30px;
-  font-size: 18px;
-  color: #000000;
-  background:linear-gradient(90deg, #00fb64, #00c9ff);
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-} */
+
 
 .cta-button {
   position: relative;
   display: inline-block;
   padding: 15px 40px;
-  font-size: 18px;
+  font-size: 45px;
+  letter-spacing: 1.2;
   font-family: "Switzer", sans-serif, Helvetica, sans-serif;
   font-weight: 600;
   color: #000;
@@ -311,6 +330,20 @@ h2 {
   cursor: pointer;
   transition: all 0.4s ease-in-out;
   box-shadow: 0 0 10px rgba(0, 255, 100, 0.5); /* subtle glow */
+}
+
+@media (max-width: 768px) {
+  .cta-button {
+    font-size: 30px;
+    padding: 15px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-button {
+    font-size: 24px;
+    padding: 12px 20px;
+  }
 }
 
 /* Top green line */
@@ -354,14 +387,26 @@ h2 {
   right: 0;
 }
 /* navigation */
+.header-container{
+border-bottom: #008000;
+height: auto;
+padding-bottom: 20px;
+}
+
 nav a{
   color: white;
   text-decoration: none;
-  margin: 0 15px;
-  font-weight: 500;
+  margin: 0 28px;
+  font-weight: 600;
+  font-size: 1.40rem;
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
 }
+@media (max-width: 1024x) {
+  nav a {
+   display: none;
+}}
+
 nav a:hover,
 nav a:active {
   background-color: #749981;
@@ -371,7 +416,7 @@ nav a:active {
 .cta-button-nav {
   background: linear-gradient(90deg, #00fb64, #00c9ff);
   color: #151515;
-  padding: 8px 15px;
+  padding: 20px 40px;
   border-radius: 5px;
 }
 .cta-button-nav:hover {
@@ -414,19 +459,24 @@ nav a:active {
 /* available for projects */
 .available-for-projects {
   color: #9af7a3;
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 33px;
+  font-weight: 600;
+}
 
-  
+@media (max-width: 1024px) {
+  .available-for-projects {
+    font-size: 16px;
+  }
+}
 
-    @media (max-width: 480px) {
-      font-size: 14px;
-    }
-  
+@media (max-width: 480px) {
+  .available-for-projects {
+    font-size: 14px;
+  }
 }
 .circle-icon {
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background-color: #9af7a3;
   animation: pulse 1.5s infinite;
@@ -492,8 +542,8 @@ nav a:active {
 /* Default (Desktop) */
 .cta-button-nav {
   display: inline-block;
-  padding: 12px 28px;
-  font-size: 1rem;
+  padding: 20px 40px;
+  font-size: 30px;
   font-weight: 600;
  white-space: nowrap;
   border-radius: 6px;
@@ -517,12 +567,14 @@ nav a:active {
 
 /* hero */
 .hero-p {
-  font-size: 20px;
+  font: size 45px;
   font-weight: 500;
   border-right: 3px solid #333;
   white-space: nowrap;
   overflow: hidden;
- 
+  padding: 28px 0 0 0;
+  max-width: 700px;
+  margin: 50px auto;
 }
 /* Cursor effect */
 .hero-p::after {
@@ -536,35 +588,12 @@ nav a:active {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
 }
-.hey{
+#hey{
     color:#0587ab;
+    font-weight: 400;
+    font-size: 40px;
+    
 }
 
 /* Next section my works */
 
-.works-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.work-card {
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-  transform: translateY(30px);
-  opacity: 0;
-  transition: all 0.8s ease-out;
-}
-
-.work-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* When in view */
-.work-card.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}

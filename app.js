@@ -170,3 +170,6 @@ function type() {
 }
 
 type();
+
+// Smooth scrolling for anchor links
+// (CSS code removed; place it in a separate .css file)
