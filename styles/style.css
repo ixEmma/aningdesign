@@ -1,0 +1,302 @@
+@font-face {
+  font-family: "Switzer";
+  /* Using existing Regular weight files from fonts folder */
+  src: url("../fonts/Switzer-Regular.woff2") format("woff2"),
+    url("../fonts/Switzer-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  font-family: "Switzer", sans-serif;
+  font-weight: 400; /* regular */
+  background-color: #101010;
+  color: #fff;
+}
+
+h1 {
+  font-family: "Switzer", sans-serif;
+  font-weight: 700; /* bold */
+}
+
+.mydivname {
+  background-color: rgb(177, 246, 222);
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.mydivname:hover {
+  transform: translateY(-7px);
+
+}
+h2 {
+  color: rgb(0, 0, 0);
+}
+.p {
+  font-size: 22px;
+  font-weight: 400; /* regular */
+}
+/* services */
+.flexContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
+  /* glow */
+  background: #111;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 0 30px rgba(0, 255, 100, 0.2); /* green glow */
+  margin-bottom: 50px;
+}
+
+.mydivname {
+  flex: 0 0 30%;
+  box-sizing: border-box;
+  margin: 1%;
+}
+/* Tablets: 2 per row */
+@media (max-width: 768px) {
+  .mydivname {
+    flex: 0 0 60%;
+  }
+}
+/* Mobiles: 1 per row */
+@media (max-width: 480px) {
+  .mydivname {
+    flex: 0 0 100%;
+  }
+}
+
+/* about me */
+.flex-Container {
+  display: flex;
+  align-items: center; /* Vertically align image and text */
+  justify-content: center; /* Center content horizontally */
+  flex-wrap: wrap; /* Wrap on smaller screens */
+  gap: 2rem; /* Space between image and text */
+  padding: 2rem;
+}
+
+.aboutUs {
+  flex: 1 1 45%; /* Each takes up about half width */
+  box-sizing: border-box;
+  padding-top: 50px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 50px;
+}
+
+.aboutUs img {
+  max-width: 100%; /* Make image responsive */
+  height: auto; /* Keep aspect ratio */
+  border-radius: 10px; /* Optional: rounded corners */
+  display: block;
+}
+
+/* Responsive - stack on small screens */
+@media (max-width: 768px) {
+  .flex-Container {
+    flex-direction: column; /* Stack vertically */
+    text-align: center;
+  }
+
+  .aboutUs {
+    flex: 1 1 100%;
+  }
+
+  .aboutUs img {
+    max-width: 80%; /* Don’t let image overflow on mobile */
+    height: auto;
+    margin: 0 auto;
+  }
+}
+/* meet Aning */
+.aboutUs h2 {
+  color: rgb(255, 255, 255);
+  font-size: 70px;
+  font-weight: 900; /* heavy */
+  white-space: nowrap; /* Prevent line breaks */
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .aboutUs h2 {
+    font-size: 40px; /* Smaller font on tablets */
+  }
+}
+@media (max-width: 480px) {
+  .aboutUs h2 {
+    font-size: 28px; /* Even smaller on mobile */
+  }
+}
+
+/* header */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* footer */
+.footer-name {
+  text-align: center;
+  color: #c9c9c9;
+}
+/* hero section */
+.hero {
+  padding: 100px 20px;
+  text-align: center;
+  background: radial-gradient(
+      circle at center,
+      rgba(11, 250, 107, 0.13),
+      transparent 70%
+    ),
+    linear-gradient(180deg, #0d0d0d, #1a1a1a);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 100%;
+  margin: auto;
+}
+.hero h1 {
+  font-size: 70px;
+  margin-bottom: 20px;
+  font-weight: 900; /* bold */
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 40px; /* Smaller font on tablets */
+  }
+}
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 28px; /* Even smaller on mobile */
+  }
+}
+/* .cta-button {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 18px;
+  color: #000000;
+  background:linear-gradient(90deg, #00fb64, #00c9ff);
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+} */
+
+.cta-button {
+  position: relative;
+  display: inline-block;
+  padding: 15px 40px;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  color: #000;
+  background: linear-gradient(90deg, #00fb64, #00c9ff);
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 255, 100, 0.5); /* subtle glow */
+}
+
+/* Top green line */
+.cta-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 3px;
+  background: #0f0;
+  transition: all 0.4s ease-in-out;
+}
+
+/* Bottom green line */
+.cta-button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 3px;
+  background: #0f0;
+  transition: all 0.4s ease-in-out;
+}
+
+/* Hover state: ghost button */
+.cta-button:hover {
+  background: transparent;
+  color: #9af7a3; /* text changes to green */
+  border: 2px solid rgb(190, 255, 190);
+}
+
+/* Hover animation */
+.cta-button:hover::before {
+  left: 0;
+}
+
+.cta-button:hover::after {
+  right: 0;
+}
+/* navigation */
+nav a{
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+nav a:hover {
+  background-color: #749981;
+  color: #151515;
+  padding: 5px 10px;
+}
+.cta-button-nav {
+  background: linear-gradient(90deg, #00fb64, #00c9ff);
+  color: #151515;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+.cta-button-nav:hover {
+  background: transparent;
+  color: #9af7a3; /* text changes to green */
+  border: 2px solid rgb(190, 255, 190);
+}
+
+/* preloader */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #0f0f0f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.spinner {
+  width: 56px;
+  height: 56px;
+  border: 4px solid rgba(154, 247, 163, 0.2);
+  border-top-color: #9af7a3;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  box-shadow: 0 0 25px rgba(0, 255, 100, 0.35);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
