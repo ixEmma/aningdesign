@@ -132,9 +132,10 @@ hamburger.addEventListener('click', () => {
 
 // Typewriter effect
 const phrases = [
-  "WEB DESIGNER & DEVELOPER",
+  "WEBSITE DESIGNER",
   "GRAPHIC DESIGNER",
   "UI/UX DESIGNER",
+  "FRONTEND DEVELOPER",
   "FREELANCER"
 
 ];
