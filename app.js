@@ -170,6 +170,7 @@ if (typewriter) {
   let scrollTimeout = null;
   let scrollSync = false;
   let scrollUpdateTimeout = null;
+  let itemsCloned = false;
 
   // Only run on mobile devices
   function isMobile() {
@@ -181,6 +182,35 @@ if (typewriter) {
     return skillItems[0].offsetWidth;
   }
 
+  function cloneItemsForSeamlessScroll() {
+    if (itemsCloned || !isMobile()) return;
+    
+    const allItems = skillsGrid.querySelectorAll('.skill-item');
+    if (allItems.length < 2) return;
+    
+    // Clone first item and append to end
+    const firstClone = allItems[0].cloneNode(true);
+    firstClone.classList.add('skill-clone');
+    skillsGrid.appendChild(firstClone);
+    
+    // Clone last item and prepend to beginning
+    const lastClone = allItems[allItems.length - 1].cloneNode(true);
+    lastClone.classList.add('skill-clone');
+    skillsGrid.insertBefore(lastClone, allItems[0]);
+    
+    itemsCloned = true;
+    
+    // Start at the first real item (after the cloned last item)
+    setTimeout(function() {
+      const itemWidth = getItemWidth();
+      if (itemWidth > 0) {
+        scrollSync = true;
+        skillsGrid.scrollLeft = itemWidth;
+        scrollSync = false;
+      }
+    }, 50);
+  }
+
   function updateCarousel(immediate) {
     if (!isMobile() || isScrolling) return;
 
@@ -190,7 +220,9 @@ if (typewriter) {
     isScrolling = true;
     scrollSync = true;
 
-    // Update active state
+    const realItemsCount = skillItems.length;
+    
+    // Update active state on real items only
     skillItems.forEach((item, index) => {
       item.classList.remove('active');
       if (index === currentIndex) {
@@ -198,8 +230,9 @@ if (typewriter) {
       }
     });
 
-    // Scroll to position
-    const scrollPosition = currentIndex * itemWidth;
+    // Calculate scroll position: +1 because of cloned last item at start
+    // Position = (currentIndex + 1) * itemWidth
+    let scrollPosition = (currentIndex + 1) * itemWidth;
     
     if (immediate) {
       skillsGrid.scrollLeft = scrollPosition;
@@ -214,8 +247,40 @@ if (typewriter) {
       // Reset scrolling flag after animation completes
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(function() {
-        // Ensure we're at the correct position
-        skillsGrid.scrollLeft = currentIndex * itemWidth;
+        // Check if we've scrolled to cloned items and jump back to real ones seamlessly
+        const scrollLeft = skillsGrid.scrollLeft;
+        const lastRealItemPos = realItemsCount * itemWidth;
+        const clonedFirstPos = (realItemsCount + 1) * itemWidth;
+        const firstRealItemPos = itemWidth;
+        const clonedLastPos = 0;
+        
+        // If we're at the cloned first item (at the end), instantly jump to real first item
+        if (scrollLeft >= clonedFirstPos - 10) {
+          scrollSync = true;
+          skillsGrid.scrollLeft = firstRealItemPos;
+          currentIndex = 0;
+          scrollSync = false;
+          skillItems.forEach((item, index) => {
+            item.classList.remove('active');
+            if (index === 0) {
+              item.classList.add('active');
+            }
+          });
+        }
+        // If we're at the cloned last item (at the beginning), instantly jump to real last item
+        else if (scrollLeft <= clonedLastPos + 10) {
+          scrollSync = true;
+          skillsGrid.scrollLeft = lastRealItemPos;
+          currentIndex = realItemsCount - 1;
+          scrollSync = false;
+          skillItems.forEach((item, index) => {
+            item.classList.remove('active');
+            if (index === realItemsCount - 1) {
+              item.classList.add('active');
+            }
+          });
+        }
+        
         isScrolling = false;
         scrollSync = false;
       }, 600);
@@ -266,7 +331,7 @@ if (typewriter) {
 
   // Prevent scroll during programmatic scrolling
   skillsGrid.addEventListener('scroll', function() {
-    if (scrollSync || isScrolling) return;
+    if (scrollSync || isScrolling || !itemsCloned) return;
     
     // Debounce scroll updates to prevent glitches
     clearTimeout(scrollUpdateTimeout);
@@ -274,16 +339,37 @@ if (typewriter) {
       const itemWidth = getItemWidth();
       if (itemWidth > 0) {
         const scrollLeft = skillsGrid.scrollLeft;
-        const newIndex = Math.round(scrollLeft / itemWidth);
-        if (newIndex !== currentIndex && newIndex >= 0 && newIndex < skillItems.length) {
-          currentIndex = newIndex;
-          skillItems.forEach((item, index) => {
-            item.classList.remove('active');
-            if (index === currentIndex) {
-              item.classList.add('active');
-            }
-          });
+        const realItemsCount = skillItems.length;
+        const lastItemPosition = (realItemsCount + 1) * itemWidth;
+        const firstItemPosition = itemWidth;
+        
+        // Handle seamless looping - if at cloned items, jump to real ones
+        if (scrollLeft >= lastItemPosition - 5) {
+          scrollSync = true;
+          skillsGrid.scrollLeft = firstItemPosition;
+          currentIndex = 0;
+          scrollSync = false;
+        } else if (scrollLeft < firstItemPosition - 5) {
+          scrollSync = true;
+          skillsGrid.scrollLeft = realItemsCount * itemWidth;
+          currentIndex = realItemsCount - 1;
+          scrollSync = false;
+        } else {
+          // Calculate which real item we're on (account for cloned item at start)
+          const adjustedScroll = scrollLeft - firstItemPosition;
+          const newIndex = Math.round(adjustedScroll / itemWidth);
+          if (newIndex !== currentIndex && newIndex >= 0 && newIndex < realItemsCount) {
+            currentIndex = newIndex;
+          }
         }
+        
+        // Update active state
+        skillItems.forEach((item, index) => {
+          item.classList.remove('active');
+          if (index === currentIndex) {
+            item.classList.add('active');
+          }
+        });
       }
     }, 50);
   }, { passive: true });
@@ -338,7 +424,7 @@ if (typewriter) {
       if (!isScrolling) {
         startAutoScroll();
       }
-    }, 2000);
+    }, 1500);
   }, { passive: true });
 
   function handleSwipe(duration) {
@@ -358,6 +444,9 @@ if (typewriter) {
   // Initialize on load and resize
   function initCarousel() {
     if (isMobile()) {
+      // Clone items for seamless scrolling
+      cloneItemsForSeamlessScroll();
+      
       // Wait for layout to settle
       setTimeout(function() {
         scrollSync = true;
@@ -369,17 +458,27 @@ if (typewriter) {
             item.classList.add('active');
           }
         });
-        // Scroll to start immediately
-        skillsGrid.scrollLeft = 0;
+        // Scroll to first real item (after cloned last item)
+        const itemWidth = getItemWidth();
+        if (itemWidth > 0) {
+          skillsGrid.scrollLeft = itemWidth;
+        }
         isScrolling = false;
         scrollSync = false;
         startAutoScroll();
-      }, 100);
+      }, 150);
     } else {
       stopAutoScroll();
       skillItems.forEach(item => item.classList.remove('active'));
       isScrolling = false;
       scrollSync = false;
+      
+      // Remove cloned items if they exist
+      if (itemsCloned) {
+        const clones = skillsGrid.querySelectorAll('.skill-clone');
+        clones.forEach(clone => clone.remove());
+        itemsCloned = false;
+      }
     }
   }
 
