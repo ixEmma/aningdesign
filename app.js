@@ -185,17 +185,41 @@ if (typewriter) {
   function cloneItemsForSeamlessScroll() {
     if (itemsCloned || !isMobile()) return;
     
-    const allItems = skillsGrid.querySelectorAll('.skill-item');
+    const allItems = skillsGrid.querySelectorAll('.skill-item:not(.skill-clone)');
     if (allItems.length < 2) return;
     
     // Clone first item and append to end
     const firstClone = allItems[0].cloneNode(true);
     firstClone.classList.add('skill-clone');
+    
+    // Ensure cloned images use correct paths (fix any absolute paths)
+    const firstCloneImg = firstClone.querySelector('img');
+    if (firstCloneImg && firstCloneImg.src) {
+      let imgSrc = firstCloneImg.getAttribute('src');
+      if (imgSrc && imgSrc.startsWith('/images/')) {
+        imgSrc = imgSrc.replace('/images/', 'images/');
+        firstCloneImg.setAttribute('src', imgSrc);
+      }
+      firstCloneImg.setAttribute('loading', 'lazy');
+    }
+    
     skillsGrid.appendChild(firstClone);
     
     // Clone last item and prepend to beginning
     const lastClone = allItems[allItems.length - 1].cloneNode(true);
     lastClone.classList.add('skill-clone');
+    
+    // Ensure cloned images use correct paths (fix any absolute paths)
+    const lastCloneImg = lastClone.querySelector('img');
+    if (lastCloneImg && lastCloneImg.src) {
+      let imgSrc = lastCloneImg.getAttribute('src');
+      if (imgSrc && imgSrc.startsWith('/images/')) {
+        imgSrc = imgSrc.replace('/images/', 'images/');
+        lastCloneImg.setAttribute('src', imgSrc);
+      }
+      lastCloneImg.setAttribute('loading', 'lazy');
+    }
+    
     skillsGrid.insertBefore(lastClone, allItems[0]);
     
     itemsCloned = true;
