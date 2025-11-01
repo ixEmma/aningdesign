@@ -20,23 +20,16 @@
 
   <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/app.css" />
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Aning Design | Emmanuel Aning - Freelance Graphic & Web Designer">
-<meta name="twitter:description" content="Creative freelance designer delivering brand identity, packaging, and modern websites. Available for projects.">
-<meta name="twitter:image" content="https://yourdomain.com/images/logo.png"> <!-- Replace with your logo or preview image -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aning Design | Emmanuel Aning - Freelance Graphic & Web Designer">
+  <meta name="twitter:description" content="Creative freelance designer delivering brand identity, packaging, and modern websites. Available for projects.">
+  <meta name="twitter:image" content="https://yourdomain.com/images/logo.png"> <!-- Replace with your logo or preview image -->
 
   <!-- Structured Data with JSON-LD -->
-
-  <!-- Author (personal branding) -->
-<meta name="author" content="Emmanuel Aning">
-  <!-- Organization (business branding) -->
-
-
-<script type="application/ld+json">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -75,8 +68,8 @@
     "Vercel"
   ]
 }
-</script>
-
+  </script>
+</head>
 
 <body>
   <!-- Preloader overlay: shows while the page and assets load -->
@@ -107,7 +100,19 @@
         <a href="#contact">CONTACT</a>
       </nav>
 
-      <div >
+      <div class="header-social-icons">
+        <a href="https://x.com/Aningdesigns" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" class="social-icon-header">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="https://linkedin.com/in/emmanuel-aning-133189310" target="_blank" aria-label="LinkedIn" class="social-icon-header">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/ixEmma" target="_blank" aria-label="GitHub" class="social-icon-header">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+
+      <div>
         <a href="#" class="cta-button-nav">Projects</a>
       </div>
   
@@ -143,9 +148,9 @@
       <a href="https://wa.me/233557066467?text=Hi Emmanuel, I'm interested in working with you on a project." class="cta-button">Contact</a>
     </div>
     <div class="social-media">
- <a href="https://linkedin.com/in/emmanuel-aning-133189310" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/ixEmma" target="_blank"><i class="fab fa-github"></i></a>
-
+      <a href="https://x.com/Aningdesigns" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://linkedin.com/in/emmanuel-aning-133189310" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/ixEmma" target="_blank"><i class="fab fa-github"></i></a>
   </div>
   </section>
 
@@ -179,40 +184,34 @@
 
 <!-- My skills -->
  <div class="my-skills">
-    <h1 class="my-skeel">MY SKILLS</h1>
-<div class="skills-grid">
-      <div class="skill-item"> <img src="/images/photoshop.svg" alt="Photoshop Logo">
-        <span>Adobe Photoshop</span></div>
-      <div class="skill-item"><img src="/images/adobe-animate.svg" alt="Adobe Illustratorlogo">Adobe Illustrator</div>
-      <div class="skill-item"><img src="/images/after-effects.svg" alt="Adobe after effects">Adobe <br>After-effects</div>
-      <div class="skill-item"><img src="/images/premiere-pro-cc.svg" alt="premier pro logo">Adobe Premier Pro</div>
-      <div class="skill-item"><img src="/images/adobe-indesign.svg " alt="adobe-indesign-cc-icon">Adobe Indesign</div>
-      <div class="skill-item"><img src="/images/figma.svg" alt="figmalogo">Figma</div>
-      <div class="skill-item"><img src="/images/html-1.svg" alt="html logo">HTML</div>
-      <div class="skill-item"><img src="/images/css-3.svg" alt="css logo">CSS</div>
+    <h1>MY SKILLS</h1>
+    <div class="skills-carousel-wrapper">
+      <button class="skill-nav-btn skill-nav-prev" aria-label="Previous skill">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="skills-grid">
+        <div class="skill-item"> <img src="/images/photoshop.svg" alt="Photoshop Logo">
+          <span>Adobe Photoshop</span></div>
+        <div class="skill-item"><img src="/images/adobe-animate.svg" alt="Adobe Illustratorlogo">Adobe Illustrator</div>
+        <div class="skill-item"><img src="/images/after-effects.svg" alt="Adobe after effects">Adobe <br>After-effects</div>
+        <div class="skill-item"><img src="/images/premiere-pro-cc.svg" alt="premier pro logo">Adobe Premier Pro</div>
+        <div class="skill-item"><img src="/images/adobe-indesign.svg " alt="adobe-indesign-cc-icon">Adobe Indesign</div>
+        <div class="skill-item"><img src="/images/figma.svg" alt="figmalogo">Figma</div>
+        <div class="skill-item"><img src="/images/html-1.svg" alt="html logo">HTML</div>
+        <div class="skill-item"><img src="/images/css-3.svg" alt="css logo">CSS</div>
         <div class="skill-item"><img src="/images/git-icon.svg" alt="git logo">Git</div>
         <div class="skill-item"><img src="/images/wordpress-icon.svg" alt="wordpress-icon">Wordpress</div>
         <div class="skill-item"><img src="/images/framer.svg" alt="framer logo">Framer</div>
         <div class="skill-item"><img src="/images/Webflow.webp" alt="Webflow logo">Webflow</div>
-            <div class="skill-item"><img src="/images/canva.svg" alt="canva logo">Canva</div>
+        <div class="skill-item"><img src="/images/canva.svg" alt="canva logo">Canva</div>
         <div class="skill-item"><img src="/images/affinity.svg" alt="Affinity logo">Affinity</div>
-      
+      </div>
+      <button class="skill-nav-btn skill-nav-next" aria-label="Next skill">
+        <i class="fas fa-chevron-right"></i>
+      </button>
     </div>
-<div>
   <hr class="rule">
-
-   <!-- <div class="contact-buttons">
-        <a href="https://wa.me/233557066467?text=Hi Emmanuel, I'm interested in working with you on a project." target="_blank" class="contact-btn whatsapp-btn">
-          <i class="fab fa-whatsapp"></i><span class="whatsapp-text"> WhatsApp</span>
-        </a>
-        <a href="mailto:aningemma1@gmail.com?subject=Project Inquiry&body=Hi Emmanuel, I'm interested in working with you on a project." class="contact-btn email-btn">
-          <i class="fas fa-envelope"></i><span class="email-text"> Gmail</span>
-        </a>
-      </div> -->
-
 </div>
-
- </div>
 
   <!-- about me -->
   <div class="flex-Container" id="about">
@@ -236,12 +235,7 @@
         social media campaigns, event promotions, marketing materials, and
         digital/print advertising.
       </p>
-      <!-- <button>Read more</button> -->
     </div>
-
- 
-
-
   </div>
   <!-- services -->
   <div class="services-section" id="services">
@@ -321,26 +315,30 @@
       </div>
     </div>
 
-    <!-- contact form -->
-    <!-- <div class="contact-form">
-      <h2>Send us a Message</h2>
-      <form action="submit_form.php" method="post">
-        <label for="name">Name</label> <br />
-        Changed from an invalid label to a proper input field -->
-        <!-- <input type="text" id="name" name="name" required /> <br /><br />
-        <label for="email">Email</label> <br />
-        <input type="email" id="email" name="email" required /> <br /><br />
-        <label for="message">Message</label> <br />
-        <textarea id="message" name="message" rows="7" required></textarea>
-        <br /><br />
-        <button type="submit" class="cta-button">Submit</button>
-      </form>
-    </div>
-  </div> -->
+  </div>
 
   <!-- footer -->
   <footer class="footer-name">
-    <p>&copy; <span id="year"></span>AningDesigns. All rights reserved</p>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About Me</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://x.com/Aningdesigns" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="https://linkedin.com/in/emmanuel-aning-133189310" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/ixEmma" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <p class="footer-copyright">&copy; <span id="year"></span>AningDesigns. All rights reserved</p>
+    </div>
   </footer>
 
   <!-- Scroll to top button -->
@@ -348,8 +346,6 @@
     <i class="fas fa-arrow-up"></i>
   </button>
 
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <!-- Your custom script -->
   <script src="app.js"></script>
 </body>
 

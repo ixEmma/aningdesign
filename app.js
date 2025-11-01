@@ -90,46 +90,6 @@ window.addEventListener('load', function () {
   }
 })();
 
-// ScrollReveal
-ScrollReveal().reveal('.reveal-bottom', {
-  duration: 1000,
-  distance: '50px',
-  origin: 'bottom',
-  reset: true
-});
-
-// From left
-ScrollReveal().reveal('.reveal-left', {
-  duration: 1200,
-  distance: '80px',
-  origin: 'left',
-  reset: true
-});
-
-// From right
-ScrollReveal().reveal('.reveal-right', {
-  duration: 1200,
-  distance: '80px',
-  origin: 'right',
-  reset: true
-});
-
-// Just fade in
-ScrollReveal().reveal('.reveal-fade', {
-  duration: 1500,
-  opacity: 0,
-  reset: true
-});
-
-// Select hamburger & nav
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-
-// Toggle menu on click
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-});
-
 // Typewriter effect
 const phrases = [
   "WEBSITE DESIGNER",
@@ -149,7 +109,10 @@ let charIndex = 0;
 let isDeleting = false;
 const typewriter = document.getElementById("typewriter");
 
-function type() {
+if (!typewriter) {
+  console.warn('Typewriter element not found');
+} else {
+  function type() {
   const current = phrases[phraseIndex];
 
   if (!isDeleting) {
@@ -167,13 +130,11 @@ function type() {
     }
   }
 
-  setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
+    setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
+  }
+
+  type();
 }
-
-type();
-
-// Smooth scrolling for anchor links
-// (CSS code removed; place it in a separate .css file)
 
 // Scroll to top button functionality
 (function() {
@@ -201,4 +162,153 @@ type();
   
   // Listen for scroll events
   window.addEventListener('scroll', toggleScrollButton);
+})();
+
+// Skills carousel functionality (mobile only)
+(function() {
+  const skillsGrid = document.querySelector('.skills-grid');
+  const prevBtn = document.querySelector('.skill-nav-prev');
+  const nextBtn = document.querySelector('.skill-nav-next');
+  const skillItems = document.querySelectorAll('.skill-item');
+  
+  if (!skillsGrid || !prevBtn || !nextBtn || skillItems.length === 0) return;
+
+  let currentIndex = 0;
+  let autoScrollInterval = null;
+  let isUserInteracting = false;
+
+  // Only run on mobile devices
+  function isMobile() {
+    return window.innerWidth <= 768;
+  }
+
+  function updateCarousel() {
+    if (!isMobile()) return;
+
+    skillItems.forEach((item, index) => {
+      item.classList.remove('active');
+      if (index === currentIndex) {
+        item.classList.add('active');
+      }
+    });
+
+    skillsGrid.scrollTo({
+      left: currentIndex * skillsGrid.offsetWidth,
+      behavior: 'smooth'
+    });
+  }
+
+  function nextSkill() {
+    if (!isMobile()) return;
+    currentIndex = (currentIndex + 1) % skillItems.length;
+    updateCarousel();
+    resetAutoScroll();
+  }
+
+  function prevSkill() {
+    if (!isMobile()) return;
+    currentIndex = (currentIndex - 1 + skillItems.length) % skillItems.length;
+    updateCarousel();
+    resetAutoScroll();
+  }
+
+  function startAutoScroll() {
+    if (!isMobile() || isUserInteracting) return;
+    autoScrollInterval = setInterval(nextSkill, 3000); // 3 second delay
+  }
+
+  function stopAutoScroll() {
+    if (autoScrollInterval) {
+      clearInterval(autoScrollInterval);
+      autoScrollInterval = null;
+    }
+  }
+
+  function resetAutoScroll() {
+    stopAutoScroll();
+    setTimeout(startAutoScroll, 3000);
+  }
+
+  // Event listeners
+  nextBtn.addEventListener('click', function() {
+    isUserInteracting = true;
+    nextSkill();
+    setTimeout(() => {
+      isUserInteracting = false;
+      startAutoScroll();
+    }, 5000);
+  });
+
+  prevBtn.addEventListener('click', function() {
+    isUserInteracting = true;
+    prevSkill();
+    setTimeout(() => {
+      isUserInteracting = false;
+      startAutoScroll();
+    }, 5000);
+  });
+
+  // Touch/swipe support
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  skillsGrid.addEventListener('touchstart', function(e) {
+    if (!isMobile()) return;
+    touchStartX = e.changedTouches[0].screenX;
+    stopAutoScroll();
+    isUserInteracting = true;
+  });
+
+  skillsGrid.addEventListener('touchend', function(e) {
+    if (!isMobile()) return;
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+    setTimeout(() => {
+      isUserInteracting = false;
+      startAutoScroll();
+    }, 3000);
+  });
+
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        nextSkill();
+      } else {
+        prevSkill();
+      }
+    }
+  }
+
+  // Initialize on load and resize
+  function initCarousel() {
+    if (isMobile()) {
+      // Set first item as active
+      if (skillItems.length > 0) {
+        skillItems[0].classList.add('active');
+      }
+      startAutoScroll();
+    } else {
+      stopAutoScroll();
+      skillItems.forEach(item => item.classList.remove('active'));
+    }
+  }
+
+  // Initialize
+  if (isMobile()) {
+    initCarousel();
+  }
+
+  // Handle window resize
+  let resizeTimeout;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(function() {
+      stopAutoScroll();
+      currentIndex = 0;
+      initCarousel();
+    }, 250);
+  });
 })();
