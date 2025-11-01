@@ -1057,36 +1057,44 @@ nav a:active {
 
     .skills-grid {
       display: flex;
-      overflow-x: hidden;
+      overflow-x: auto;
+      overflow-y: hidden;
       scroll-behavior: smooth;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
       gap: 0;
       padding: 20px 0;
       margin: 0;
       max-width: 100%;
     }
 
+    .skills-grid::-webkit-scrollbar {
+      display: none;
+    }
+
     .skill-item {
       flex: 0 0 100%;
       scroll-snap-align: center;
+      scroll-snap-stop: always;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       padding: 40px 20px;
-      min-height: 200px;
+      min-height: 220px;
       background: rgba(34, 34, 34, 0.9);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 16px;
-      font-size: 0;
-      line-height: 0;
       overflow: hidden;
-      transition: all 0.3s ease;
+      transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
       box-sizing: border-box;
       margin: 0;
       opacity: 0.6;
-      transform: scale(0.9);
+      transform: scale(0.95);
+      will-change: transform, opacity;
+      gap: 16px;
     }
 
     .skill-item.active {
@@ -1096,23 +1104,32 @@ nav a:active {
       box-shadow: 0 8px 30px rgba(0, 201, 255, 0.2);
     }
 
-    .skill-item span,
-    .skill-item br {
-      display: none;
-    }
-
-    .skill-item > *:not(img) {
-      display: none;
-    }
-
     .skill-item img {
       width: 60px;
       height: 60px;
       padding: 0;
-      margin: 0 auto;
+      margin: 0;
       display: block;
       object-fit: contain;
       flex-shrink: 0;
+    }
+
+    .skill-item .skill-name {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: "Switzer", sans-serif;
+      color: #dcdcdc;
+      text-align: center;
+      line-height: 1.4;
+      margin-top: 8px;
+      letter-spacing: 0.3px;
+      transition: color 0.3s ease;
+    }
+
+    .skill-item.active .skill-name {
+      color: #ffffff;
+      font-weight: 600;
     }
   }
 
@@ -1129,13 +1146,19 @@ nav a:active {
 
     .skill-item {
       padding: 35px 15px;
-      min-height: 180px;
+      min-height: 200px;
       border-radius: 14px;
+      gap: 14px;
     }
 
     .skill-item img {
       width: 50px;
       height: 50px;
+    }
+
+    .skill-item .skill-name {
+      font-size: 13px;
+      margin-top: 6px;
     }
   }
 
