@@ -655,5 +655,10 @@ nav a:active {
     width: 32px;   /* size of the logos */
     height: 32px;
     object-fit: contain;
-    padding-right: 5px;
+    padding-right: 10px;
+  }
+
+  .my-skills h2{
+ 
+color: #fff;
   }
