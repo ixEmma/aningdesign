@@ -72,7 +72,7 @@ h2 {
 
   @media (max-width:480px){
     .logo img{
-      max-width: 30px;
+      max-width: 10px;
     }
   }
     
@@ -521,7 +521,7 @@ nav a:active {
 }
 
     @media (max-width: 480px) {
-      font-size: 14px;
+      font-size: 12px;
     }
   
 }
@@ -617,6 +617,9 @@ nav a:active {
   .skills-grid{
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
+   .my-skeel {
+    font-size: 36px;
+  }
 }
 
 /* hero */
@@ -639,7 +642,8 @@ nav a:active {
 @media (max-width: 480px) {
   .hero-p {
     font-size: 20px !important;
-  }}
+  }
+}
 #typewriter {
  font-size: 30px;
 }
@@ -746,6 +750,13 @@ nav a:active {
   .my-skills h2{
  
 color: #fff;
+  }
+
+  h1.my-skills-section{
+    font-size: 36px;
+  
+
+    
   }
 
   /* about me */
