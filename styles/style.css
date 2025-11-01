@@ -66,6 +66,19 @@ h2 {
   margin-bottom: 50px;
 }
 
+.logo img{
+    max-width: 70px;
+  }
+
+  @media (max-width:480px){
+    .logo img{
+      max-width: 40px;
+    }
+  }
+    
+     
+
+
 .mydivname {
   flex: 0 0 30%;
   box-sizing: border-box;
@@ -894,6 +907,7 @@ color: #fff;
   .contact-info p {
     font-size: 14px;
   }
+
 }
 
 /* Contact buttons styling */
@@ -916,6 +930,7 @@ color: #fff;
   border-radius: 8px;
   transition: all 0.3s ease;
   border: 2px solid transparent;
+  margin-left: 30px;
 }
 
 /* WhatsApp button styling */
@@ -953,6 +968,7 @@ color: #fff;
   .contact-buttons {
     flex-direction: column;
     gap: 15px;
+    margin: auto;
   }
   
   .contact-btn {
@@ -960,6 +976,7 @@ color: #fff;
     justify-content: center;
     padding: 12px 25px;
     font-size: 16px;
+    margin: auto;
   }
 }
 
@@ -967,11 +984,14 @@ color: #fff;
   .contact-btn {
     padding: 12px 20px;
     font-size: 15px;
+    max-width: 50%;
+    margin: auto;
   }
   
   .contact-btn i {
     font-size: 18px;
   }
+  
 }
 
 .whatsapp-text {
