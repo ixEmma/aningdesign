@@ -1,15 +1,6 @@
-// From bottom
-
-console.log("App.js is running");
-
-// Set current year in footer span with id "year"
-try {
-  var yearSpan = document.getElementById('year');
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear() + ' ';
-  }
-} catch (err) {
-  console.error('Failed to set footer year:', err);
+var yearSpan = document.getElementById('year');
+if (yearSpan) {
+  yearSpan.textContent = new Date().getFullYear() + ' ';
 }
 
 // Hide preloader once the page and assets are loaded
@@ -110,9 +101,7 @@ let charIndex = 0;
 let isDeleting = false;
 const typewriter = document.getElementById("typewriter");
 
-if (!typewriter) {
-  console.warn('Typewriter element not found');
-} else {
+if (typewriter) {
   function type() {
   const current = phrases[phraseIndex];
 
