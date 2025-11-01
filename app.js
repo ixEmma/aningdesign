@@ -187,17 +187,7 @@ if (!typewriter) {
 
   function getItemWidth() {
     if (!skillsGrid || skillItems.length === 0) return 0;
-    // On mobile, get width including scroll snap padding
     return skillItems[0].offsetWidth;
-  }
-  
-  // Filter to only use first set of items (not duplicates) for carousel navigation
-  function getCarouselItems() {
-    // On mobile, only use first half of items (original set, not duplicates)
-    if (isMobile() && skillItems.length > 14) {
-      return Array.from(skillItems).slice(0, skillItems.length / 2);
-    }
-    return Array.from(skillItems);
   }
 
   function updateCarousel(immediate) {
@@ -208,18 +198,13 @@ if (!typewriter) {
 
     isScrolling = true;
 
-    // Update active state with smoother transitions (only for carousel items, not duplicates)
-    const carouselItems = getCarouselItems();
+    // Update active state
     skillItems.forEach((item, index) => {
       item.classList.remove('active');
+      if (index === currentIndex) {
+        item.classList.add('active');
+      }
     });
-    
-    // Only activate the current index from the carousel items
-    if (carouselItems[currentIndex]) {
-      requestAnimationFrame(function() {
-        carouselItems[currentIndex].classList.add('active');
-      });
-    }
 
     // Scroll to position
     const scrollPosition = currentIndex * itemWidth;
@@ -228,38 +213,31 @@ if (!typewriter) {
       skillsGrid.scrollLeft = scrollPosition;
       isScrolling = false;
     } else {
-      // Use requestAnimationFrame for smoother scrolling
-      requestAnimationFrame(function() {
-        skillsGrid.scrollTo({
-          left: scrollPosition,
-          behavior: 'smooth'
-        });
+      skillsGrid.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth'
       });
 
-      // Reset scrolling flag after animation completes (increased timeout for smoother transition)
+      // Reset scrolling flag after animation completes
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(function() {
         isScrolling = false;
         // Ensure we're at the correct position
-        requestAnimationFrame(function() {
-          skillsGrid.scrollLeft = currentIndex * itemWidth;
-        });
-      }, 600);
+        skillsGrid.scrollLeft = currentIndex * itemWidth;
+      }, 500);
     }
   }
 
   function nextSkill() {
     if (!isMobile() || isScrolling) return;
-    const carouselItems = getCarouselItems();
-    currentIndex = (currentIndex + 1) % carouselItems.length;
+    currentIndex = (currentIndex + 1) % skillItems.length;
     updateCarousel(false);
     resetAutoScroll();
   }
 
   function prevSkill() {
     if (!isMobile() || isScrolling) return;
-    const carouselItems = getCarouselItems();
-    currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+    currentIndex = (currentIndex - 1 + skillItems.length) % skillItems.length;
     updateCarousel(false);
     resetAutoScroll();
   }
@@ -293,28 +271,23 @@ if (!typewriter) {
   // Prevent scroll during programmatic scrolling
   let scrollSync = false;
   skillsGrid.addEventListener('scroll', function() {
-    if (scrollSync || !isMobile()) return;
+    if (scrollSync) return;
     
     // Update currentIndex based on scroll position
     const itemWidth = getItemWidth();
     if (itemWidth > 0) {
-      const carouselItems = getCarouselItems();
       const newIndex = Math.round(skillsGrid.scrollLeft / itemWidth);
-      // Limit to carousel items (not duplicates)
-      const maxIndex = carouselItems.length - 1;
-      const clampedIndex = Math.max(0, Math.min(newIndex, maxIndex));
-      
-      if (clampedIndex !== currentIndex && clampedIndex >= 0 && clampedIndex < carouselItems.length) {
-        currentIndex = clampedIndex;
-        skillItems.forEach((item) => {
+      if (newIndex !== currentIndex && newIndex >= 0 && newIndex < skillItems.length) {
+        currentIndex = newIndex;
+        skillItems.forEach((item, index) => {
           item.classList.remove('active');
+          if (index === currentIndex) {
+            item.classList.add('active');
+          }
         });
-        if (carouselItems[currentIndex]) {
-          carouselItems[currentIndex].classList.add('active');
-        }
       }
     }
-  }, { passive: true });
+  });
 
   // Event listeners
   nextBtn.addEventListener('click', function(e) {
@@ -389,14 +362,13 @@ if (!typewriter) {
       // Wait for layout to settle
       setTimeout(function() {
         currentIndex = 0;
-        const carouselItems = getCarouselItems();
         // Set first item as active
-        skillItems.forEach((item) => {
+        skillItems.forEach((item, index) => {
           item.classList.remove('active');
+          if (index === 0) {
+            item.classList.add('active');
+          }
         });
-        if (carouselItems[0]) {
-          carouselItems[0].classList.add('active');
-        }
         // Scroll to start immediately
         skillsGrid.scrollLeft = 0;
         isScrolling = false;

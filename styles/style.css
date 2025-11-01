@@ -960,47 +960,12 @@ nav a:active {
     margin-right: auto;
 }
 
-/* Desktop: Infinite scrolling skills grid */
 .skills-grid{
-    display: flex;
-    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
     max-width: 1000px;
     margin: 0 auto;
-    position: relative;
-}
-
-.skills-grid-wrapper {
-    display: flex;
-    gap: 20px;
-    will-change: transform;
-}
-
-/* Desktop infinite scroll animation */
-@media (min-width: 769px) {
-    .skills-grid-wrapper {
-        animation: scroll-skills 40s linear infinite;
-        display: flex;
-        flex-wrap: nowrap;
-    }
-    
-    .skills-grid-wrapper:hover {
-        animation-play-state: paused;
-    }
-    
-    .skill-item {
-        flex: 0 0 auto;
-        min-width: 180px;
-        width: auto;
-    }
-}
-
-@keyframes scroll-skills {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
 }
 
 .skill-item {
@@ -1103,14 +1068,6 @@ nav a:active {
       padding: 20px 0;
       margin: 0;
       max-width: 100%;
-      scroll-padding: 0;
-    }
-    
-    .skills-grid-wrapper {
-      display: flex;
-      gap: 0;
-      animation: none !important;
-      width: auto;
     }
 
     .skills-grid::-webkit-scrollbar {
@@ -1131,7 +1088,7 @@ nav a:active {
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 16px;
       overflow: hidden;
-      transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
       box-sizing: border-box;
       margin: 0;
       opacity: 0.6;
