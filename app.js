@@ -168,6 +168,8 @@ if (typewriter) {
   let isUserInteracting = false;
   let isScrolling = false;
   let scrollTimeout = null;
+  let scrollSync = false;
+  let scrollUpdateTimeout = null;
 
   // Only run on mobile devices
   function isMobile() {
@@ -186,6 +188,7 @@ if (typewriter) {
     if (itemWidth === 0) return;
 
     isScrolling = true;
+    scrollSync = true;
 
     // Update active state
     skillItems.forEach((item, index) => {
@@ -201,6 +204,7 @@ if (typewriter) {
     if (immediate) {
       skillsGrid.scrollLeft = scrollPosition;
       isScrolling = false;
+      scrollSync = false;
     } else {
       skillsGrid.scrollTo({
         left: scrollPosition,
@@ -210,15 +214,17 @@ if (typewriter) {
       // Reset scrolling flag after animation completes
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(function() {
-        isScrolling = false;
         // Ensure we're at the correct position
         skillsGrid.scrollLeft = currentIndex * itemWidth;
-      }, 500);
+        isScrolling = false;
+        scrollSync = false;
+      }, 600);
     }
   }
 
   function nextSkill() {
     if (!isMobile() || isScrolling) return;
+    stopAutoScroll();
     currentIndex = (currentIndex + 1) % skillItems.length;
     updateCarousel(false);
     resetAutoScroll();
@@ -226,6 +232,7 @@ if (typewriter) {
 
   function prevSkill() {
     if (!isMobile() || isScrolling) return;
+    stopAutoScroll();
     currentIndex = (currentIndex - 1 + skillItems.length) % skillItems.length;
     updateCarousel(false);
     resetAutoScroll();
@@ -238,7 +245,7 @@ if (typewriter) {
       if (!isUserInteracting && !isScrolling) {
         nextSkill();
       }
-    }, 2000); // 2 second delay
+    }, 1500);
   }
 
   function stopAutoScroll() {
@@ -254,29 +261,32 @@ if (typewriter) {
       if (!isUserInteracting && !isScrolling) {
         startAutoScroll();
       }
-    }, 2000);
+    }, 1500);
   }
 
   // Prevent scroll during programmatic scrolling
-  let scrollSync = false;
   skillsGrid.addEventListener('scroll', function() {
-    if (scrollSync) return;
+    if (scrollSync || isScrolling) return;
     
-    // Update currentIndex based on scroll position
-    const itemWidth = getItemWidth();
-    if (itemWidth > 0) {
-      const newIndex = Math.round(skillsGrid.scrollLeft / itemWidth);
-      if (newIndex !== currentIndex && newIndex >= 0 && newIndex < skillItems.length) {
-        currentIndex = newIndex;
-        skillItems.forEach((item, index) => {
-          item.classList.remove('active');
-          if (index === currentIndex) {
-            item.classList.add('active');
-          }
-        });
+    // Debounce scroll updates to prevent glitches
+    clearTimeout(scrollUpdateTimeout);
+    scrollUpdateTimeout = setTimeout(function() {
+      const itemWidth = getItemWidth();
+      if (itemWidth > 0) {
+        const scrollLeft = skillsGrid.scrollLeft;
+        const newIndex = Math.round(scrollLeft / itemWidth);
+        if (newIndex !== currentIndex && newIndex >= 0 && newIndex < skillItems.length) {
+          currentIndex = newIndex;
+          skillItems.forEach((item, index) => {
+            item.classList.remove('active');
+            if (index === currentIndex) {
+              item.classList.add('active');
+            }
+          });
+        }
       }
-    }
-  });
+    }, 50);
+  }, { passive: true });
 
   // Event listeners
   nextBtn.addEventListener('click', function(e) {
@@ -350,6 +360,7 @@ if (typewriter) {
     if (isMobile()) {
       // Wait for layout to settle
       setTimeout(function() {
+        scrollSync = true;
         currentIndex = 0;
         // Set first item as active
         skillItems.forEach((item, index) => {
@@ -361,12 +372,14 @@ if (typewriter) {
         // Scroll to start immediately
         skillsGrid.scrollLeft = 0;
         isScrolling = false;
+        scrollSync = false;
         startAutoScroll();
       }, 100);
     } else {
       stopAutoScroll();
       skillItems.forEach(item => item.classList.remove('active'));
       isScrolling = false;
+      scrollSync = false;
     }
   }
 
@@ -387,9 +400,11 @@ if (typewriter) {
   let resizeTimeout;
   window.addEventListener('resize', function() {
     clearTimeout(resizeTimeout);
+    clearTimeout(scrollUpdateTimeout);
     resizeTimeout = setTimeout(function() {
       stopAutoScroll();
       isScrolling = false;
+      scrollSync = false;
       currentIndex = 0;
       initCarousel();
     }, 250);
