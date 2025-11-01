@@ -1357,6 +1357,9 @@ nav a:active {
   color: #000000;
   font-family: "Switzer", sans-serif;
 }
+.whatsapp-btn:hover .whatsapp-text {
+  color: #6ca872;
+}
 
 .services-section {
   text-align: center;
