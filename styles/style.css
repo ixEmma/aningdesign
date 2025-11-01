@@ -357,7 +357,9 @@ h2 {
   #Emma{
       letter-spacing: -1px;
   }
-
+.myself-description{
+  align-items: center;
+}
 
 @media (min-width: 1200px) {
   .hero h1 {
