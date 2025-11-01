@@ -174,3 +174,31 @@ type();
 
 // Smooth scrolling for anchor links
 // (CSS code removed; place it in a separate .css file)
+
+// Scroll to top button functionality
+(function() {
+  var scrollToTopBtn = document.getElementById('scrollToTop');
+  
+  if (!scrollToTopBtn) return;
+  
+  // Show/hide button on scroll
+  function toggleScrollButton() {
+    if (window.pageYOffset > 300) {
+      scrollToTopBtn.classList.add('visible');
+    } else {
+      scrollToTopBtn.classList.remove('visible');
+    }
+  }
+  
+  // Scroll to top on click
+  scrollToTopBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+  
+  // Listen for scroll events
+  window.addEventListener('scroll', toggleScrollButton);
+})();

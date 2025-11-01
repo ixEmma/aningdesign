@@ -101,10 +101,10 @@
     <span class="bar"></span>
   </button>
       <nav>
-        <a href="#">HOME</a>
-        <a href="#">SERVICES</a>
-        <a href="#">ABOUT ME</a>
-        <a href="#">CONTACT</a>
+        <a href="#home">HOME</a>
+        <a href="#services">SERVICES</a>
+        <a href="#about">ABOUT ME</a>
+        <a href="#contact">CONTACT</a>
       </nav>
 
       <div >
@@ -123,15 +123,15 @@
       </button>
     </div>
     <nav class="sidebar-nav">
-      <a href="#">HOME</a>
-      <a href="#">SERVICES</a>
-      <a href="#">ABOUT ME</a>
-      <a href="#">CONTACT</a>
+      <a href="#home">HOME</a>
+      <a href="#services">SERVICES</a>
+      <a href="#about">ABOUT ME</a>
+      <a href="#contact">CONTACT</a>
     </nav>
   </aside>
   <div id="sidebar-backdrop" class="sidebar-backdrop" aria-hidden="true"></div>
   <!-- hero -->
-  <section class="hero">
+  <section class="hero" id="home">
     <div class="hero-content">
         <span id="hey">Hi There👋, I'm </span>
   <h1 id="Emma"> EMMANUEL ANING</h1>
@@ -140,7 +140,7 @@
       </div>
       
 
-      <a href="#" class="cta-button">Contact</a>
+      <a href="#contact" class="cta-button">Contact</a>
     </div>
     <div class="social-media">
  <a href="https://linkedin.com/in/emmanuel-aning-133189310" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -204,7 +204,7 @@
  </div>
 
   <!-- about me -->
-  <div class="flex-Container">
+  <div class="flex-Container" id="about">
     <div class="aboutUs">
       <img src="./images/papi.jpg" alt="Mr Aning" fetchpriority="high" decoding="async" />
     </div>
@@ -212,7 +212,7 @@
 
     <div class="aboutUs">
       <h2>MEET ANING</h2>
-      <p>
+      <p class="myself-description">
         <strong>Hi, I’m Emmanuel Aning and I'm passionate Freelance Graphic
           Designer and Web Designer. I specialize in creating visually
           striking designs and functional websites that not only look great
@@ -220,52 +220,99 @@
         </strong>
       </p>
       <p>
-        Over the years, I have worked on a wide range of creative projects
+        Over 5 years, I have worked on a wide range of creative projects
         including website design, brand identity systems, product packaging,
         social media campaigns, event promotions, marketing materials, and
         digital/print advertising.
       </p>
-      <button>Read more</button>
+      <!-- <button>Read more</button> -->
     </div>
   </div>
   <!-- services -->
+  <div class="services-section" id="services">
+    <h2 class="services-title">Services</h2>
+    <p class="services-subtitle">Choose the perfect package for your project needs</p>
+  </div>
   <div class="flexContainer">
     <div class="mydivname">
-      <h2>This is my title</h2>
-      <p>This is a paragraph</p>
+      <div class="service-icon">🎨</div>
+      <h2>Graphic Design</h2>
+      <div class="price-range">
+        <p class="price-entry">Entry Level</p>
+        <p class="price-amount">$50 - $150</p>
+      </div>
+      <div class="price-range">
+        <p class="price-intermediate">Intermediate</p>
+        <p class="price-amount">$150 - $350</p>
+      </div>
+      <div class="price-range">
+        <p class="price-advanced">Advanced</p>
+        <p class="price-amount">$350+</p>
+      </div>
     </div>
 
     <div class="mydivname">
-      <h2>This is my title</h2>
-      <p>This is a paragraph</p>
+      <div class="service-icon">🌐</div>
+      <h2>Website Design</h2>
+      <div class="price-range">
+        <p class="price-entry">Entry Level</p>
+        <p class="price-amount">$100 - $250</p>
+      </div>
+      <div class="price-range">
+        <p class="price-intermediate">Intermediate</p>
+        <p class="price-amount">$250 - $500</p>
+      </div>
+      <div class="price-range">
+        <p class="price-advanced">Advanced</p>
+        <p class="price-amount">$600+</p>
+      </div>
     </div>
 
     <div class="mydivname">
-      <h2>This is my title</h2>
-      <p>This is a paragraph</p>
+      <div class="service-icon">💻</div>
+      <h2>Frontend Development</h2>
+      <div class="price-range">
+        <p class="price-entry">Entry Level</p>
+        <p class="price-amount">$150 - $300</p>
+      </div>
+      <div class="price-range">
+        <p class="price-intermediate">Intermediate</p>
+        <p class="price-amount">$300 - $600</p>
+      </div>
+      <div class="price-range">
+        <p class="price-advanced">Advanced</p>
+        <p class="price-amount">$700+</p>
+      </div>
     </div>
   </div>
   <!-- contact   -->
-  <div class="contact-container">
+  <div class="contact-container" id="contact">
     <div class="contact-info">
-      <h2>Contact Me</h2>
-      <p>
+      <h1>Contact Me</h1>
+      <p class="contact-me">
         Whether you have a project in mind or just want to say hello, I would
         love to hear from you. Feel free to reach out to me via email or
         through the contact form on my website.
       </p>
-      <p>Phone: +233 55 706 6767</p>
-      <p>Email: <a href="mailto: aningemma1@gmail.com">Hello Aning Dzn</a></p>
-      <a href="#" class="cta-button">Get in touch</a>
+      
+      <!-- Contact buttons -->
+      <div class="contact-buttons">
+        <a href="https://wa.me/233557066467?text=Hi Emmanuel, I'm interested in working with you on a project." target="_blank" class="contact-btn whatsapp-btn">
+          <i class="fab fa-whatsapp"></i><span class="whatsapp-text"> WhatsApp</span>
+        </a>
+        <a href="mailto:aningemma1@gmail.com?subject=Project Inquiry&body=Hi Emmanuel, I'm interested in working with you on a project." class="contact-btn email-btn">
+          <i class="fas fa-envelope"></i><span class="email-text"> Gmail</span>
+        </a>
+      </div>
     </div>
 
     <!-- contact form -->
-    <div class="contact-form">
+    <!-- <div class="contact-form">
       <h2>Send us a Message</h2>
       <form action="submit_form.php" method="post">
         <label for="name">Name</label> <br />
-        <!-- Changed from an invalid label to a proper input field -->
-        <input type="text" id="name" name="name" required /> <br /><br />
+        Changed from an invalid label to a proper input field -->
+        <!-- <input type="text" id="name" name="name" required /> <br /><br />
         <label for="email">Email</label> <br />
         <input type="email" id="email" name="email" required /> <br /><br />
         <label for="message">Message</label> <br />
@@ -274,12 +321,18 @@
         <button type="submit" class="cta-button">Submit</button>
       </form>
     </div>
-  </div>
+  </div> -->
 
   <!-- footer -->
   <footer class="footer-name">
     <p>&copy; <span id="year"></span>AningDzn. All rights reserved</p>
   </footer>
+
+  <!-- Scroll to top button -->
+  <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
   <script src="https://unpkg.com/scrollreveal"></script>
   <!-- Your custom script -->
   <script src="app.js"></script>
