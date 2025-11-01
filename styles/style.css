@@ -371,7 +371,7 @@ h2 {
 .cta-button {
   position: relative;
   display: inline-block;
-  padding: 10px 20px;
+  padding: 10px 40px;
   font-size: 20px;
   letter-spacing: 1.2;
   font-family: "Switzer", sans-serif, Helvetica, sans-serif;
@@ -379,7 +379,7 @@ h2 {
   color: #000;
   background: linear-gradient(90deg, #00fb64, #00c9ff);
   border: none;
-  border-radius: 5px;
+  border-radius: 12px;
   text-decoration: none;
   overflow: hidden;
   cursor: pointer;
@@ -447,7 +447,7 @@ nav a{
 }
 nav a:hover,
 nav a:active {
-  background-color: #749981;
+  background-color: #c6e6d1a2;
   color: #151515;
   padding: 5px 10px;
 }
@@ -455,7 +455,7 @@ nav a:active {
   background: linear-gradient(90deg, #00fb64, #00c9ff);
   color: #151515;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 .cta-button-nav:hover {
   background: transparent;
@@ -611,6 +611,7 @@ nav a:active {
   padding: 20px 0 0 0;
   max-width: 700px;
   margin: 15px auto ;
+  color: #dcdcdc;
 
 }
 @media (max-width: 768px) {
@@ -1189,4 +1190,20 @@ color: #fff;
     height: 40px;
     font-size: 16px;
   }
+}
+
+/* social media icons */
+.social-media a {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: color 0.3s, transform 0.3s;
+  margin: 10px;
+}
+
+hr.rule{
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, #00fb64, #00c9ff);
+  margin: 20px 0 0 0;
+  
 }
