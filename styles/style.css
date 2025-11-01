@@ -614,6 +614,9 @@ nav a:active {
   .cta-button-nav {
     display: none;
   }
+  .skills-grid{
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
 }
 
 /* hero */
