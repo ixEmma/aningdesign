@@ -316,7 +316,12 @@ h2 {
   padding: 16px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
-.sidebar-title { color: #ffffff; font-weight: 600; }
+.sidebar-title { 
+  color: #ffffff; 
+  font-weight: 600;
+  font-family: "Switzer", sans-serif;
+  font-size: 16px;
+}
 .sidebar-close {
   position: relative;
   width: 30px;
@@ -396,6 +401,7 @@ h2 {
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
+  font-family: "Switzer", sans-serif;
   transition: all 0.3s ease;
   position: relative;
 }
@@ -456,6 +462,8 @@ h2 {
 .footer-copyright {
   margin: 0;
   font-size: 14px;
+  font-weight: 400;
+  font-family: "Switzer", sans-serif;
   color: #a0a0a0;
   padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -554,7 +562,7 @@ h2 {
   }
 
   .footer-copyright {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 /* hero section */
@@ -685,13 +693,13 @@ nav a{
   margin: 0 20px;
   font-weight: 600;
   font-size: 15px;
+  font-family: "Switzer", sans-serif;
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
 }
-@media (max-width: 1024x) {
+@media (max-width: 1024px) {
   nav a {
-    
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 nav a:hover,
@@ -705,6 +713,9 @@ nav a:active {
   color: #151515;
   padding: 10px 20px;
   border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: "Switzer", sans-serif;
 }
 .cta-button-nav:hover {
   background: transparent;
@@ -746,18 +757,21 @@ nav a:active {
 /* available for projects */
 .available-for-projects {
   color: #9af7a3;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
-
-@media (max-width: 1024px) {
-      font-size: 16px;
-  
+  font-family: "Switzer", sans-serif;
 }
 
-    @media (max-width: 480px) {
-      font-size: 12px;
-    }
-  
+@media (max-width: 1024px) {
+  .available-for-projects {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .available-for-projects {
+    font-size: 14px;
+  }
 }
 .circle-icon {
   width: 20px;
@@ -854,7 +868,7 @@ nav a:active {
 
 /* hero */
 .hero-p {
-  font: size 35px !important;
+  font-size: 35px !important;
   font-weight: 600;
   border-right: 3px solid none;
   white-space: nowrap;
@@ -1142,6 +1156,7 @@ color: #fff;
     font-size: 18px;
     font-weight: 400;
     line-height: 1.8;
+    font-family: "Switzer", sans-serif;
     color: #dcdcdc;
     text-align: left;
     max-width: 700px;
@@ -1152,6 +1167,7 @@ color: #fff;
     color: #ffffff;
     font-weight: 600;
     font-size: 20px;
+    font-family: "Switzer", sans-serif;
     display: block;
     margin-bottom: 15px;
   }
@@ -1159,13 +1175,18 @@ color: #fff;
   .aboutUs p {
     font-size: 18px;
     line-height: 1.8;
+    font-weight: 400;
+    font-family: "Switzer", sans-serif;
     color: #a0a0a0;
     text-align: left;
     margin-bottom: 15px;
   }
 
       .contact-me {
-    font-size: 20px; }
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Switzer", sans-serif;
+  }
 
 /* Contact section styling */
 .contact-container {
@@ -1217,15 +1238,18 @@ color: #fff;
 
 .contact-info .contact-me {
   color: #dcdcdc;
-  font-size: 20px;
-  line-height: 1.6;
+  font-size: 18px;
+  line-height: 1.7;
   margin-bottom: 30px;
   font-weight: 400;
+  font-family: "Switzer", sans-serif;
 }
 
 .contact-info p {
   color: #c9c9c9;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Switzer", sans-serif;
   margin: 15px 0;
   display: flex;
   align-items: center;
@@ -1247,9 +1271,10 @@ color: #fff;
 
 /* Phone and Email styling */
 .contact-info > p {
-  font-size: 18px;
+  font-size: 16px;
   color: #dcdcdc;
   font-weight: 400;
+  font-family: "Switzer", sans-serif;
 }
 
 /* Responsive design for contact section */
@@ -1308,8 +1333,9 @@ color: #fff;
   align-items: center;
   gap: 10px;
   padding: 15px 30px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
+  font-family: "Switzer", sans-serif;
   text-decoration: none;
   border-radius: 12px;
   transition: all 0.3s ease;
@@ -1368,7 +1394,7 @@ color: #fff;
 @media (max-width: 480px) {
   .contact-btn {
     padding: 12px 20px;
-    font-size: 15px;
+    font-size: 14px;
     max-width: 50%;
     margin: auto;
   }
@@ -1380,9 +1406,10 @@ color: #fff;
 }
 
 .whatsapp-text {
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 500;
   color: #000000;
+  font-family: "Switzer", sans-serif;
 }
 
 /* Services section specific styling */
@@ -1394,9 +1421,11 @@ color: #fff;
 /* .services-title styling is now handled by unified h1 styles above */
 
 .services-subtitle {
-  font-size: 20px;
+  font-size: 18px;
   color: #dcdcdc;
   font-weight: 400;
+  font-family: "Switzer", sans-serif;
+  line-height: 1.6;
 }
 
 .service-icon {
@@ -1420,8 +1449,9 @@ color: #fff;
 
 .price-entry {
   color: #9af7a3;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
+  font-family: "Switzer", sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin: 0 0 5px 0;
@@ -1429,8 +1459,9 @@ color: #fff;
 
 .price-intermediate {
   color: #00c9ff;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
+  font-family: "Switzer", sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin: 0 0 5px 0;
@@ -1438,8 +1469,9 @@ color: #fff;
 
 .price-advanced {
   color: #b1f6de;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
+  font-family: "Switzer", sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin: 0 0 5px 0;
@@ -1447,8 +1479,9 @@ color: #fff;
 
 .price-amount {
   color: #ffffff;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
+  font-family: "Switzer", sans-serif;
   margin: 0;
 }
 
