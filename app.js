@@ -246,6 +246,7 @@ if (typewriter) {
 
       // Reset scrolling flag after animation completes
       clearTimeout(scrollTimeout);
+      // match typical smooth scroll duration to avoid overlap
       scrollTimeout = setTimeout(function() {
         // Check if we've scrolled to cloned items and jump back to real ones seamlessly
         const scrollLeft = skillsGrid.scrollLeft;
@@ -255,7 +256,7 @@ if (typewriter) {
         const clonedLastPos = 0;
         
         // If we're at the cloned first item (at the end), instantly jump to real first item
-        if (scrollLeft >= clonedFirstPos - 10) {
+        if (scrollLeft >= clonedFirstPos - 20) {
           scrollSync = true;
           skillsGrid.scrollLeft = firstRealItemPos;
           currentIndex = 0;
@@ -268,7 +269,7 @@ if (typewriter) {
           });
         }
         // If we're at the cloned last item (at the beginning), instantly jump to real last item
-        else if (scrollLeft <= clonedLastPos + 10) {
+        else if (scrollLeft <= clonedLastPos + 20) {
           scrollSync = true;
           skillsGrid.scrollLeft = lastRealItemPos;
           currentIndex = realItemsCount - 1;
@@ -283,7 +284,7 @@ if (typewriter) {
         
         isScrolling = false;
         scrollSync = false;
-      }, 600);
+      }, 450);
     }
   }
 
@@ -310,7 +311,7 @@ if (typewriter) {
       if (!isUserInteracting && !isScrolling) {
         nextSkill();
       }
-    }, 1500);
+    }, 3000);
   }
 
   function stopAutoScroll() {
@@ -326,7 +327,7 @@ if (typewriter) {
       if (!isUserInteracting && !isScrolling) {
         startAutoScroll();
       }
-    }, 1500);
+    }, 2500);
   }
 
   // Prevent scroll during programmatic scrolling
@@ -344,12 +345,12 @@ if (typewriter) {
         const firstItemPosition = itemWidth;
         
         // Handle seamless looping - if at cloned items, jump to real ones
-        if (scrollLeft >= lastItemPosition - 5) {
+        if (scrollLeft >= lastItemPosition - 15) {
           scrollSync = true;
           skillsGrid.scrollLeft = firstItemPosition;
           currentIndex = 0;
           scrollSync = false;
-        } else if (scrollLeft < firstItemPosition - 5) {
+        } else if (scrollLeft < firstItemPosition - 15) {
           scrollSync = true;
           skillsGrid.scrollLeft = realItemsCount * itemWidth;
           currentIndex = realItemsCount - 1;
@@ -371,7 +372,7 @@ if (typewriter) {
           }
         });
       }
-    }, 50);
+    }, 80);
   }, { passive: true });
 
   // Event listeners
