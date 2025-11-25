@@ -78,7 +78,16 @@ window.addEventListener('load', function () {
   }
   if (sidebarClose) {
     sidebarClose.addEventListener('click', closeSidebar);
-  
+  }
+
+  // Close sidebar when clicking on navigation links
+  var sidebarNav = document.querySelector('.sidebar-nav');
+  if (sidebarNav) {
+    sidebarNav.addEventListener('click', function(e) {
+      if (e.target.tagName.toLowerCase() === 'a') {
+        closeSidebar();
+      }
+    });
   }
 })();
 
