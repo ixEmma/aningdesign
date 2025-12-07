@@ -1,9 +1,6 @@
 /* Contact Section - Bento Grid */
 .contact-section {
   padding: 100px 40px;
-  background: radial-gradient(circle at center,
-      rgba(11, 250, 107, 0.03),
-      transparent 70%);
   position: relative;
   overflow: hidden;
 }
