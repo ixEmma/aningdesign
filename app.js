@@ -68,8 +68,15 @@ window.addEventListener('load', function () {
     if (sidebar && backdrop) {
       sidebar.classList.remove('is-open');
       backdrop.classList.remove('is-open');
+      sidebar.classList.add('closing');
+      backdrop.classList.add('closing');
       toggleButton.classList.remove('is-active');
       toggleButton.setAttribute('aria-expanded', 'false');
+
+      setTimeout(function () {
+        sidebar.classList.remove('closing');
+        backdrop.classList.remove('closing');
+      }, 420);
     }
   }
 

@@ -1,0 +1,155 @@
+/* About Section */
+.flex-Container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+  padding: 80px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: radial-gradient(circle at center,
+      rgba(11, 250, 107, 0.03),
+      transparent 70%);
+}
+
+.aboutUs {
+  flex: 1 1 45%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.aboutUs img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  display: block;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.aboutUs img:hover {
+  transform: translateY(-5px);
+}
+
+.aboutUs h1 {
+  font-family: "Switzer", sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+
+.aboutUs h2 {
+  color: rgb(255, 255, 255);
+  font-size: 64px;
+  font-weight: 900;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+  letter-spacing: -2px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.aboutUs h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #00fb64, #00c9ff);
+  border-radius: 2px;
+}
+
+.myself-description {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.8;
+  font-family: "Switzer", sans-serif;
+  color: #dcdcdc;
+  text-align: left;
+  max-width: 700px;
+  margin: 0 0 20px 0;
+  align-items: center;
+}
+
+.myself-description strong {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 20px;
+  font-family: "Switzer", sans-serif;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.aboutUs p {
+  font-size: 18px;
+  line-height: 1.8;
+  font-weight: 400;
+  font-family: "Switzer", sans-serif;
+  color: #a0a0a0;
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .aboutUs h1 {
+    font-size: 36px;
+  }
+  
+  .flex-Container {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    padding: 60px 20px;
+  }
+
+  .aboutUs {
+    flex: 1 1 100%;
+  }
+
+  .aboutUs img {
+    max-width: 80%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .aboutUs p,
+  .myself-description {
+    text-align: center;
+  }
+
+  .aboutUs h2 {
+    font-size: 36px;
+    white-space: nowrap;
+  }
+
+  .aboutUs h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutUs h1 {
+    font-size: 28px;
+  }
+  
+  .aboutUs h2 {
+    font-size: 28px;
+    white-space: nowrap;
+  }
+
+  .aboutUs h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 3px;
+  }
+}
+

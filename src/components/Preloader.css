@@ -1,0 +1,33 @@
+/* Preloader Styles */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #0f0f0f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.spinner {
+  width: 56px;
+  height: 56px;
+  border: 4px solid rgba(154, 247, 163, 0.2);
+  border-top-color: #9af7a3;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  box-shadow: 0 0 25px rgba(0, 255, 100, 0.08);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
