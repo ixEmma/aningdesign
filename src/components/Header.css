@@ -2,7 +2,7 @@
 header {
   position: relative;
   z-index: 1000;
-  background: linear-gradient(180deg, rgba(16, 16, 16, 0.95), rgba(16, 16, 16, 0.8));
+  background: linear-gradient(180deg, rgba(16, 16, 16, 0.3), rgba(16, 16, 16, 0.2));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -71,14 +71,14 @@ header {
 /* Available for Projects Badge */
 .available-for-projects {
   color: #9af7a3;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   font-family: "Switzer", sans-serif;
 }
 
 .circle-icon {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background-color: #9af7a3;
   animation: pulse 1.5s infinite;
@@ -284,7 +284,7 @@ header {
   }
   
   .available-for-projects {
-    font-size: 14px;
+    font-size: 12px;
   }
   
   .cta-button-nav {

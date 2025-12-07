@@ -9,10 +9,12 @@ import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import AnimatedBackground from './components/AnimatedBackground'
 
 function App() {
   return (
     <>
+      <AnimatedBackground />
       <Preloader />
       <Header />
       <Hero />

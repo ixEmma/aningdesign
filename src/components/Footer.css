@@ -1,7 +1,7 @@
 /* Footer Styles */
 .footer-name {
   position: relative;
-  background: linear-gradient(180deg, #1a1a1a, #0d0d0d);
+  background: linear-gradient(180deg, rgba(26, 26, 26, 0.7), rgba(13, 13, 13, 0.7));
   padding: 60px 20px 30px;
   text-align: center;
   color: #c9c9c9;
