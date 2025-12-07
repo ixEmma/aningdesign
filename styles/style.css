@@ -1654,10 +1654,10 @@ nav a:active {
 }
 
 .whatsapp-cta-btn {
-  background: linear-gradient(90deg, #00fb64, #00c9ff);
-  color: #000000;
-  border: 2px solid transparent;
-  box-shadow: 0 4px 15px rgba(0, 255, 100, 0.2);
+  background: rgba(17, 17, 17, 0.4);
+  color: #9af7a3;
+  border: 2px solid rgba(190, 255, 190, 0.5);
+  box-shadow: 0 6px 20px rgba(0, 255, 100, 0.3);
   font-weight: 700;
 }
 
@@ -2194,6 +2194,15 @@ hr.rule {
   animation: pulse-badge 2s ease-in-out infinite;
 }
 
+@media (max-width: 480px) {
+  .project-badge {
+    position: static;
+    margin: 0 auto 12px;
+    border: none;
+    width: fit-content;
+  }
+}
+
 @keyframes pulse-badge {
 
   0%,
@@ -2545,6 +2554,10 @@ hr.rule {
     top: 12px;
     right: 12px;
     padding: 5px 10px;
+  }
+
+  .bento-header {
+    padding-top: 40px;
   }
 
   .badge-dot {
