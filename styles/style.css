@@ -1451,9 +1451,19 @@ nav a:active {
   line-height: 1.6;
 }
 
+
 .service-icon {
-  font-size: 48px;
+  width: 48px;
+  height: 48px;
   margin-bottom: 15px;
+  color: #9af7a3;
+  filter: drop-shadow(0 0 15px rgba(154, 247, 163, 0.4));
+  transition: all 0.3s ease;
+}
+
+.mydivname:hover .service-icon {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 20px rgba(154, 247, 163, 0.6));
 }
 
 .price-range {
@@ -1540,7 +1550,8 @@ nav a:active {
   }
 
   .service-icon {
-    font-size: 40px;
+    width: 40px;
+    height: 40px;
   }
 
   .price-amount {
@@ -1562,7 +1573,8 @@ nav a:active {
   }
 
   .service-icon {
-    font-size: 36px;
+    width: 36px;
+    height: 36px;
   }
 
   .price-amount {
