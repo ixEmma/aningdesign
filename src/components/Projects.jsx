@@ -28,7 +28,7 @@ function Projects() {
 
         {/* Description Card */}
         <div className="bento-card bento-description">
-          <h3>Professional Web Design Portfolio</h3>
+          <h3>Aburi Sweetmother Guesthouse</h3>
           <p>
             Discover how I transform ideas into stunning, functional websites. This showcase
             highlights my approach to modern web design, combining aesthetics with user

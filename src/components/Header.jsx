@@ -66,50 +66,20 @@ function Header() {
 
           <nav className="main-nav">
             <NavLink href="#home">Home</NavLink>
-            <NavLink href="#services">Services</NavLink>
             <NavLink href="#about">About Us</NavLink>
+            <NavLink href="#services">Services</NavLink>      
             <NavLink href="#projects">Portfolio</NavLink>
             <NavLink href="#contact">Contact</NavLink>
           </nav>
 
-          <div className="header-social-icons">
-            <a
-              href="https://x.com/Aningdesigns"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="X (Twitter)"
-              className="social-icon-header"
-            >
-              <i className="fab fa-x-twitter"></i>
-            </a>
-            <a
-              href="https://linkedin.com/in/emmanuel-aning-133189310"
-              target="_blank"
-              aria-label="LinkedIn"
-              className="social-icon-header"
-            >
-              <i className="fab fa-linkedin"></i>
-            </a>
-            <a
-              href="https://www.behance.net/emmaaning"
-              target="_blank"
-              aria-label="behance"
-              className="social-icon-header"
-            >
-              <i className="fab fa-behance"></i>
-            </a>
-          </div>
-
-          <div>
-            <a
-              href="https://www.behance.net/emmaaning"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cta-button-nav"
-            >
-              Projects
-            </a>
-          </div>
+          <a
+            href="https://www.behance.net/emmaaning"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cta-button-nav"
+          >
+            Projects
+          </a>
         </div>
       </header>
 
@@ -133,11 +103,11 @@ function Header() {
           </button>
         </div>
         <nav className="sidebar-nav" onClick={handleNavClick}>
-          <a href="#home">HOME</a>
-          <a href="#services">SERVICES</a>
-          <a href="#about">ABOUT ME</a>
-          <a href="#projects">PROJECTS</a>
-          <a href="#contact">CONTACT</a>
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#about">About Us</a>
+          <a href="#projects">Portfolio</a>
+          <a href="#contact">Contact</a>
         </nav>
       </aside>
       <div
