@@ -8,9 +8,6 @@
   padding: 80px 40px;
   max-width: 1200px;
   margin: 0 auto;
-  background: radial-gradient(circle at center,
-      rgba(11, 250, 107, 0.03),
-      transparent 70%);
 }
 
 .aboutUs {
