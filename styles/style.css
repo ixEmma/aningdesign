@@ -1690,6 +1690,7 @@ hr.rule {
   flex-direction: column;
   justify-content: center;
   position: relative;
+  padding-top: 60px;
 }
 
 .bento-video {
