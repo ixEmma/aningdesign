@@ -1,3 +1,5 @@
+import './Services.css'
+
 function Services() {
   const services = [
     {

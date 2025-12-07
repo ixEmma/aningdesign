@@ -1,3 +1,5 @@
+import './Contact.css'
+
 function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault()

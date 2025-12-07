@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import NavLink from './NavLink'
+import './Header.css'
 
 function Header() {
   const [sidebarOpen, setSidebarOpen] = useState(false)

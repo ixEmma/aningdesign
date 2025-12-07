@@ -1,0 +1,137 @@
+/* Font Definitions */
+@font-face {
+  font-family: "Switzer";
+  src: url("/fonts/Switzer-Regular.woff2") format("woff2"),
+    url("/fonts/Switzer-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Switzer", sans-serif, Helvetica, sans-serif;
+  font-weight: 400;
+  background-color: #101010;
+  color: #fff;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  word-spacing: 0.5px;
+}
+
+* {
+  word-spacing: inherit;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, li, label, button, input, textarea {
+  word-spacing: 0.5px;
+}
+
+h1 {
+  font-family: "Switzer", sans-serif;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+h2 {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Section Title Styles */
+.my-skills h1,
+.aboutUs h1,
+.services-title,
+.contact-info h1 {
+  font-family: "Switzer", sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .my-skills h1,
+  .aboutUs h1,
+  .services-title,
+  .contact-info h1 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .my-skills h1,
+  .aboutUs h1,
+  .services-title,
+  .contact-info h1 {
+    font-size: 28px;
+  }
+}
+
+/* Bento Card Base */
+.bento-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(17, 17, 17, 0.95), rgba(30, 30, 30, 0.95));
+  border-radius: 20px;
+  border: 1px solid rgba(154, 247, 163, 0.1);
+  padding: 30px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.bento-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(154, 247, 163, 0.3);
+  box-shadow: 0 15px 50px rgba(0, 255, 100, 0.15);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(154, 247, 163, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(154, 247, 163, 0.5);
+}
+
+/* Utility Classes */
+.text-gradient {
+  background: linear-gradient(90deg, #00fb64, #00c9ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+

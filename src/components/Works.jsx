@@ -1,3 +1,5 @@
+import './Works.css'
+
 function Works() {
   return (
     <section className="works-section">

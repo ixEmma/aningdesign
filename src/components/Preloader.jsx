@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
+import './Preloader.css'
 
 function Preloader() {
   const [isHidden, setIsHidden] = useState(false)

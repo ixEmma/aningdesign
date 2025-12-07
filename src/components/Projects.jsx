@@ -1,12 +1,16 @@
+import './Projects.css'
+
 function Projects() {
   return (
     <section className="projects-section" id="projects">
       <div className="bento-container">
         {/* Header Card */}
         <div className="bento-card bento-header">
-          <div className="project-badge">
-            <span className="badge-dot"></span>
-            <span className="badge-text">Featured Work</span>
+          <div className="badge-wrapper">
+            <div className="project-badge">
+              <span className="badge-dot"></span>
+              <span className="badge-text">Featured Work</span>
+            </div>
           </div>
           <h1>WEBSITE PROJECTS</h1>
           <p className="projects-subtitle">Explore my latest web design and development work</p>

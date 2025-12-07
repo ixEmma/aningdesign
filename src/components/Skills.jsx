@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import './Skills.css'
 
 function Skills() {
   const skillsGridRef = useRef(null)

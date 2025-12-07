@@ -1,0 +1,207 @@
+/* Services Section */
+.services-section {
+  text-align: center;
+  margin: 60px 0 40px 0;
+}
+
+.services-title {
+  font-family: "Switzer", sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+
+.services-subtitle {
+  font-size: 18px;
+  color: #dcdcdc;
+  font-weight: 400;
+  font-family: "Switzer", sans-serif;
+  line-height: 1.6;
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
+  background: transparent;
+  border-radius: 8px;
+  padding: 50px 30px;
+  margin-bottom: 50px;
+}
+
+.mydivname {
+  background: linear-gradient(135deg, rgba(17, 17, 17, 0.9), rgba(30, 30, 30, 0.9));
+  padding: 40px 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(154, 247, 163, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+  flex: 0 0 30%;
+  box-sizing: border-box;
+  margin: 1%;
+}
+
+.mydivname:hover,
+.mydivname:active {
+  transform: translateY(-7px);
+  border-color: rgba(154, 247, 163, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 255, 100, 0.1);
+}
+
+.mydivname h2 {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 15px;
+  color: #9af7a3;
+  filter: drop-shadow(0 0 15px rgba(154, 247, 163, 0.4));
+  transition: all 0.3s ease;
+}
+
+.mydivname:hover .service-icon {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 20px rgba(154, 247, 163, 0.6));
+}
+
+.price-range {
+  margin: 15px 0;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  border-left: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.price-range:hover {
+  background: rgba(0, 0, 0, 0.5);
+  transform: translateX(5px);
+}
+
+.price-entry {
+  color: #9af7a3;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: "Switzer", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 5px 0;
+}
+
+.price-intermediate {
+  color: #00c9ff;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: "Switzer", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 5px 0;
+}
+
+.price-advanced {
+  color: #b1f6de;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: "Switzer", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 5px 0;
+}
+
+.price-amount {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
+  font-family: "Switzer", sans-serif;
+  margin: 0;
+}
+
+.mydivname:nth-child(1) .price-range:nth-child(2),
+.mydivname:nth-child(2) .price-range:nth-child(2),
+.mydivname:nth-child(3) .price-range:nth-child(2) {
+  border-left-color: #9af7a3;
+}
+
+.mydivname:nth-child(1) .price-range:nth-child(3),
+.mydivname:nth-child(2) .price-range:nth-child(3),
+.mydivname:nth-child(3) .price-range:nth-child(3) {
+  border-left-color: #00c9ff;
+}
+
+.mydivname:nth-child(1) .price-range:nth-child(4),
+.mydivname:nth-child(2) .price-range:nth-child(4),
+.mydivname:nth-child(3) .price-range:nth-child(4) {
+  border-left-color: #b1f6de;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services-title {
+    font-size: 36px;
+  }
+  
+  .services-subtitle {
+    font-size: 18px;
+  }
+
+  .mydivname {
+    flex: 0 0 60%;
+    padding: 30px 20px;
+  }
+
+  .mydivname h2 {
+    font-size: 24px;
+  }
+
+  .service-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .price-amount {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-title {
+    font-size: 28px;
+  }
+  
+  .services-subtitle {
+    font-size: 16px;
+  }
+
+  .mydivname {
+    flex: 0 0 100%;
+    padding: 25px 15px;
+  }
+
+  .mydivname h2 {
+    font-size: 20px;
+  }
+
+  .service-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .price-amount {
+    font-size: 16px;
+  }
+
+  .price-entry,
+  .price-intermediate,
+  .price-advanced {
+    font-size: 12px;
+  }
+}
+
