@@ -146,10 +146,12 @@
 @media (max-width: 768px) {
   .services-title {
     font-size: 36px;
+    font-weight: 900; /* Maintain bold weight on mobile */
   }
   
   .services-subtitle {
     font-size: 18px;
+    font-weight: 400; /* Maintain weight on mobile */
   }
 
   .mydivname {
@@ -159,6 +161,7 @@
 
   .mydivname h2 {
     font-size: 24px;
+    font-weight: 700; /* Maintain bold weight on mobile */
   }
 
   .service-icon {
@@ -168,16 +171,19 @@
 
   .price-amount {
     font-size: 18px;
+    font-weight: 700; /* Maintain bold weight on mobile */
   }
 }
 
 @media (max-width: 480px) {
   .services-title {
     font-size: 28px;
+    font-weight: 900; /* Maintain bold weight on mobile */
   }
   
   .services-subtitle {
     font-size: 16px;
+    font-weight: 400; /* Maintain weight on mobile */
   }
 
   .mydivname {
@@ -187,6 +193,7 @@
 
   .mydivname h2 {
     font-size: 20px;
+    font-weight: 700; /* Maintain bold weight on mobile */
   }
 
   .service-icon {
@@ -196,12 +203,14 @@
 
   .price-amount {
     font-size: 16px;
+    font-weight: 700; /* Maintain bold weight on mobile */
   }
 
   .price-entry,
   .price-intermediate,
   .price-advanced {
     font-size: 12px;
+    font-weight: 600; /* Maintain bold weight on mobile */
   }
 }
 

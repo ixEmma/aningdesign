@@ -65,6 +65,7 @@ h2 {
   .services-title,
   .contact-info h1 {
     font-size: 36px;
+    font-weight: 900; /* Maintain bold weight on mobile */
   }
 }
 
@@ -74,6 +75,7 @@ h2 {
   .services-title,
   .contact-info h1 {
     font-size: 28px;
+    font-weight: 900; /* Maintain bold weight on mobile */
   }
 }
 

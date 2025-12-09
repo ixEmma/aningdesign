@@ -1,4 +1,5 @@
 import './Contact.css'
+import CTA from './CTA'
 
 function Contact() {
   const handleSubmit = (e) => {
@@ -13,6 +14,9 @@ function Contact() {
 
   return (
     <section className="contact-section" id="contact">
+      {/* CTA Banner - Call to Action above contact form */}
+      <CTA />
+      
       <div className="contact-bento-container">
         {/* Contact Form Card */}
         <div className="bento-card contact-form-card">

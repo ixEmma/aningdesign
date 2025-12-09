@@ -85,6 +85,7 @@ hr.rule {
 @media (max-width: 768px) {
   .my-skills h1 {
     font-size: 36px;
+    font-weight: 900; /* Maintain bold weight on mobile */
   }
   
   .skills-carousel-wrapper {
@@ -213,6 +214,7 @@ hr.rule {
 @media (max-width: 480px) {
   .my-skills h1 {
     font-size: 28px;
+    font-weight: 900; /* Maintain bold weight on mobile */
   }
   
   .skills-carousel-wrapper {
