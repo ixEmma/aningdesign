@@ -95,6 +95,7 @@
 @media (max-width: 768px) {
   .aboutUs h1 {
     font-size: 36px;
+    font-weight: 900; /* Maintain bold weight on mobile */
   }
   
   .flex-Container {
@@ -121,6 +122,7 @@
 
   .aboutUs h2 {
     font-size: 36px;
+    font-weight: 900; /* Maintain bold weight on mobile */
     white-space: nowrap;
   }
 
@@ -135,10 +137,12 @@
 @media (max-width: 480px) {
   .aboutUs h1 {
     font-size: 28px;
+    font-weight: 900; /* Maintain bold weight on mobile */
   }
   
   .aboutUs h2 {
     font-size: 28px;
+    font-weight: 900; /* Maintain bold weight on mobile */
     white-space: nowrap;
   }
 

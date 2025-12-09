@@ -384,14 +384,17 @@
 
   .bento-header h1 {
     font-size: 36px;
+    font-weight: 900; /* Maintain bold weight on mobile */
   }
 
   .projects-subtitle {
     font-size: 16px;
+    font-weight: 400; /* Maintain weight on mobile */
   }
 
   .bento-description h3 {
     font-size: 24px;
+    font-weight: 700; /* Maintain bold weight on mobile */
   }
 
   .bento-description p {
@@ -404,6 +407,7 @@
 
   .stat-content h4 {
     font-size: 15px;
+    font-weight: 700; /* Maintain bold weight on mobile */
   }
 
   .stat-content p {
@@ -435,14 +439,17 @@
 
   .bento-header h1 {
     font-size: 28px;
+    font-weight: 900; /* Maintain bold weight on mobile */
   }
 
   .projects-subtitle {
     font-size: 14px;
+    font-weight: 400; /* Maintain weight on mobile */
   }
 
   .bento-description h3 {
     font-size: 20px;
+    font-weight: 700; /* Maintain bold weight on mobile */
   }
 
   .bento-description {
@@ -470,6 +477,7 @@
 
   .stat-content h4 {
     font-size: 14px;
+    font-weight: 700; /* Maintain bold weight on mobile */
   }
 
   .stat-content p {
