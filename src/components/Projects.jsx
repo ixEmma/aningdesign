@@ -34,13 +34,48 @@ function Projects() {
         <div className="bento-card bento-description">
           <h3>Aburi Sweetmother Guesthouse</h3>
           <p>
-            Discover how I transform ideas into stunning, functional websites. This showcase
+            <strong>Discover how I built this websites using Wordpress</strong>. This showcase
             highlights my approach to modern web design, combining aesthetics with user
             experience to create memorable digital experiences.
           </p>
           <div className="project-cta-wrapper">
             <a
               href="https://sweetmotheraburi.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-cta"
+            >
+              Visit Project
+              <i className="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        {/* Project 2 - Video Card */}
+        <div className="bento-card bento-video bento-video-2">
+          <div className="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/9l-c_AtN1ng?si=WvU5eOWBTJeAlehl"
+              title="Dr Oliver Rabie Website Showcase"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+
+        {/* Project 2 - Description Card */}
+        <div className="bento-card bento-description bento-description-2">
+          <h3>Dr Oliver Rabie</h3>
+          <p>
+            A <strong>private healthcare clinic website</strong> for Dr Oliver Rabie, a General Practitioner 
+            with over 10 years of clinical experience. The site features service bookings for health checks, 
+            GP appointments, health coaching, and weight loss consultations with a clean, professional design.
+          </p>
+          <div className="project-cta-wrapper">
+            <a
+              href="https://www.droliverrabie.co.uk/"
               target="_blank"
               rel="noopener noreferrer"
               className="project-cta"
