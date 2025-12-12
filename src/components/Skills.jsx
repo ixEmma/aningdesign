@@ -19,6 +19,7 @@ const skills = [
   { name: 'Affinity', icon: '/images/affinity.svg' },
   { name: 'Squarespace', icon: '/images/squarespace.svg' },
   { name: 'Firebase', icon: '/images/firebase-3.svg' },
+  { name: 'Vercel', icon: '/images/vercel.svg' },
   { name: 'Cursor AI', icon: '/images/icons8-cursor-ai-48.png' },
   { name: 'Gemini AI', icon: '/images/gemini-ai.svg' }
 ]
