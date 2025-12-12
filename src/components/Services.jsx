@@ -87,7 +87,7 @@ function Services() {
     <>
       <div className="services-section" id="services">
         <h1 className="services-title">SERVICES</h1>
-        <p className="services-subtitle">Choose the perfect package for your project needs</p>
+        <p className="services-subtitle">Choose the perfect package for your project needs, <br />Im available for short term projects & long term projects.</p>
       </div>
       <div className="flexContainer">
         {services.map((service, index) => (
