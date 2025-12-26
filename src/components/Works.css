@@ -9,12 +9,13 @@
 
 .works-track {
   display: flex;
-  width: max-content;
+  width: calc(300px * 8);
   animation: scroll 20s linear infinite;
 }
 
+
 .work-card {
-  flex-shrink: 0;
+  flex: 0 0 300px;
 }
 
 .work-card img {
