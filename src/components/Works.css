@@ -8,13 +8,12 @@
 }
 
 .works-track {
-  display: flex;
-  gap: 0;
+   display: flex;
   width: max-content;
   animation: scroll 25s linear infinite;
   will-change: transform;
-  transform: translate3d(0, 0, 0);
 }
+
 
 .work-card {
   flex: 0 0 300px;
@@ -37,9 +36,18 @@
     height: 200px;
   }
 
-  .works-track {
-    animation-duration: 30s;
-  }
+ .works-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 25s linear infinite;
+  will-change: transform;
+
+  /* Safari fixes */
+  transform: translate3d(0,0,0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  contain: paint;
+}
 }
 
 /* Perfect infinite loop */
@@ -47,7 +55,6 @@
   from {
     transform: translateX(0);
   }
-
   to {
     transform: translateX(-50%);
   }
