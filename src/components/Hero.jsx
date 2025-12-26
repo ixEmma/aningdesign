@@ -63,9 +63,9 @@ function Hero() {
         <span id="hey">Hi👋 I,m Emmanuel </span>
 
         <h1 className="hero-title">
-          Design and build <span className="hero-accent">fast websites</span>
+          I design and build <span className="hero-accent">fast websites</span>
           <br />
-           help businesses <span className="hero-script">get clients.</span>
+          that help businesses <span className="hero-script">get clients.</span>
         </h1>
 
         <p className="hero-p" id="typewriter">{displayText}</p>
