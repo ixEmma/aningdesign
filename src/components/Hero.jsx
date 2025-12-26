@@ -48,7 +48,7 @@ function Hero() {
     }
 
     timeoutRef.current = setTimeout(type, typingSpeed)
-    
+
     return () => {
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current)
@@ -59,18 +59,25 @@ function Hero() {
   return (
     <section className="hero" id="home">
       <div className="hero-content">
-        <span id="hey">Hi There👋, I'm </span>
-        <h1 id="Emma"> EMMANUEL ANING</h1>
-        <div>
-          <p className="hero-p" id="typewriter">{displayText}</p>
-        </div>
+
+        <span id="hey">Hi👋 I,m Emmanuel</span>
+
+        <h1 className="hero-title">
+          I design and build <span className="hero-accent">fast websites</span>
+          <br />
+          that help businesses <span className="hero-script">get clients</span>
+        </h1>
+
+        <p className="hero-p" id="typewriter">{displayText}</p>
+
         <a
-          href="https://wa.me/233557066467?text=Hi Emmanuel, I'm interested in working with you on a project."
+          href="https://wa.me/233557066467?text=Hi, I'm interested in working with you on a project."
           className="cta-button"
         >
           Contact
         </a>
       </div>
+
       <div className="social-media">
         <a href="https://x.com/Aningdesigns" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-x-twitter"></i>
@@ -87,4 +94,3 @@ function Hero() {
 }
 
 export default Hero
-
