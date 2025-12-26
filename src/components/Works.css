@@ -8,9 +8,10 @@
 }
 
 .works-track {
-  display: flex;
-  width: calc(300px * 8);
-  animation: scroll 20s linear infinite;
+   display: flex;
+  width: max-content;
+  animation: scroll 25s linear infinite;
+  will-change: transform;
 }
 
 
