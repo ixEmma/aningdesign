@@ -11,7 +11,7 @@
 
 .works-track {
   display: flex;
-  width: 100;
+  width: 100%;
   animation: scroll 5s linear infinite;
 }
 
