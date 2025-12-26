@@ -60,12 +60,12 @@ function Hero() {
     <section className="hero" id="home">
       <div className="hero-content">
 
-        <span id="hey">Hi👋 I,m Emmanuel</span>
+        <span id="hey">Hi👋 I,m Emmanuel </span>
 
         <h1 className="hero-title">
-          I design and build <span className="hero-accent">fast websites</span>
+          Design and build <span className="hero-accent">fast websites</span>
           <br />
-          that help businesses <span className="hero-script">get clients</span>
+           help businesses <span className="hero-script">get clients.</span>
         </h1>
 
         <p className="hero-p" id="typewriter">{displayText}</p>
