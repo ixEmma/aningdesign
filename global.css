@@ -1,0 +1,10 @@
+/* MetricBot iframe repositioning */
+.widget-container iframe {  /* Or target the iframe directly */
+  position: fixed !important;
+  bottom: 30px !important;
+  left: 30px !important;  /* Moves to left */
+  right: auto !important;
+  z-index: 1001 !important;
+  width: auto !important;  /* Adjust if needed */
+  height: auto !important;
+}
