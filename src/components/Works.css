@@ -9,10 +9,10 @@
 
 .works-track {
   display: flex;
+  gap: 0;
   width: max-content;
   animation: scroll 25s linear infinite;
   will-change: transform;
-  /* Hardware acceleration for smoother mobile animation */
   transform: translate3d(0, 0, 0);
 }
 

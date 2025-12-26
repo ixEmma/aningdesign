@@ -21,8 +21,8 @@ function App() {
       <Works />
       <Skills />
       <About />
+       <Projects />
       <Services />
-      <Projects />
       <Contact />
       <Footer />
       <ScrollToTop />
