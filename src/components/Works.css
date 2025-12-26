@@ -26,6 +26,21 @@
   object-fit: cover;
 }
 
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .work-card {
+    flex: 0 0 200px;
+  }
+
+  .work-card img {
+    height: 200px;
+  }
+
+  .works-track {
+    animation-duration: 30s;
+  }
+}
+
 /* Perfect infinite loop */
 @keyframes scroll {
   from {
