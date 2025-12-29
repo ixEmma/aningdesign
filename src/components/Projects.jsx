@@ -23,7 +23,6 @@ function Projects() {
               src="https://www.youtube.com/embed/H4yZFVvkZog?si=TmiHCeOpRX8PCWTC"
               title="Website Project Showcase"
               frameBorder="0"
-              loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
@@ -59,7 +58,7 @@ function Projects() {
               src="https://www.youtube.com/embed/9l-c_AtN1ng?si=WvU5eOWBTJeAlehl"
               title="Dr Oliver Rabie Website Showcase"
               frameBorder="0"
-              loading="lazy"
+        
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
