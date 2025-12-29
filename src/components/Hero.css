@@ -53,7 +53,7 @@
    =============================== */
 
 .hero-title {
-  margin: 20 0 20px 0; /* remove default h1 margin */
+  margin: 15px 0 20px 0; /* remove default h1 margin */
   font-size: 72px;
   font-weight: 900;
   line-height: 1.1;
