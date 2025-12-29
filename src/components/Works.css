@@ -10,10 +10,15 @@
 .works-track {
   display: flex;
   width: max-content;
+  /* Animation paused by default */
   animation: scroll 25s linear infinite;
-  will-change: transform;
+  animation-play-state: paused;
 }
 
+/* Only animate when visible */
+.works-track.is-visible {
+  animation-play-state: running;
+}
 
 .work-card {
   flex: 0 0 300px;
@@ -37,9 +42,9 @@
   }
 
   .works-track {
-    animation-play-state: running;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+    /* Ensure smooth animation on mobile */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 }
 
