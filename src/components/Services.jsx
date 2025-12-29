@@ -52,8 +52,8 @@ function Services() {
       title: 'Website Design',
       prices: [
         { level: 'Entry Level', amount: '$250 - $400', className: 'price-entry' },
-        { level: 'Intermediate', amount: '$500 - $750', className: 'price-intermediate' },
-        { level: 'Advanced', amount: '$850+', className: 'price-advanced' }
+        { level: 'Intermediate', amount: '$600 - $950', className: 'price-intermediate' },
+        { level: 'Advanced', amount: '$1100+', className: 'price-advanced' }
       ]
     },
     {
