@@ -8,7 +8,7 @@
 }
 
 .works-track {
-   display: flex;
+  display: flex;
   width: max-content;
   animation: scroll 25s linear infinite;
   will-change: transform;
@@ -36,18 +36,11 @@
     height: 200px;
   }
 
- .works-track {
-  display: flex;
-  width: max-content;
-  animation: scroll 25s linear infinite;
-  will-change: transform;
-
-  /* Safari fixes */
-  transform: translate3d(0,0,0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  contain: paint;
-}
+  .works-track {
+    animation-play-state: running;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
 }
 
 /* Perfect infinite loop */
@@ -55,6 +48,7 @@
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-50%);
   }
