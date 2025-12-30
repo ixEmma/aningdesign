@@ -16,7 +16,7 @@ function About() {
         <h1>MEET ANING</h1>
         <p className="myself-description">
           <strong>
-            Hi, I'm Emmanuel Aning and I'm passionate Freelance Graphic Designer
+            Hi, I'm Emmanuel Aning and I'm a creative Graphic Designer
             and Web Designer. I specialize in creating visually striking designs
             and functional websites that not only look great but also deliver
             results.
