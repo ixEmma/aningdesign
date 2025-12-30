@@ -25,8 +25,8 @@ function Services() {
       ),
       title: 'Graphic Design',
       prices: [
-        { level: 'Entry Level', amount: '$50 - $100', className: 'price-entry' },
-        { level: 'Intermediate', amount: '$150 - $300', className: 'price-intermediate' },
+        { level: 'Basic', amount: '$50 - $100', className: 'price-entry' },
+        { level: 'Standard', amount: '$150 - $300', className: 'price-intermediate' },
         { level: 'Advanced', amount: '$350+', className: 'price-advanced' }
       ]
     },
@@ -51,8 +51,8 @@ function Services() {
       ),
       title: 'Website Design',
       prices: [
-        { level: 'Entry Level', amount: '$250 - $400', className: 'price-entry' },
-        { level: 'Intermediate', amount: '$600 - $950', className: 'price-intermediate' },
+        { level: 'Basic', amount: '$250 - $400', className: 'price-entry' },
+        { level: 'Standard', amount: '$600 - $950', className: 'price-intermediate' },
         { level: 'Advanced', amount: '$1100+', className: 'price-advanced' }
       ]
     },
@@ -76,8 +76,8 @@ function Services() {
       ),
       title: 'Frontend Development',
       prices: [
-        { level: 'Entry Level', amount: '$350 - $550', className: 'price-entry' },
-        { level: 'Intermediate', amount: '$600 - $900', className: 'price-intermediate' },
+        { level: 'Basic', amount: '$350 - $550', className: 'price-entry' },
+        { level: 'Standard', amount: '$600 - $900', className: 'price-intermediate' },
         { level: 'Advanced', amount: '$1200+', className: 'price-advanced' }
       ]
     }
