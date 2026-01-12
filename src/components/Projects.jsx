@@ -40,7 +40,7 @@ function Projects() {
           </p>
           <div className="project-cta-wrapper">
             <a
-              href="https://sweetmotheraburi.com"
+              href="https://aburisweetmother.com"
               target="_blank"
               rel="noopener noreferrer"
               className="project-cta"
