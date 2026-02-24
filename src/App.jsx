@@ -6,6 +6,7 @@ import Skills from './components/Skills'
 import About from './components/About'
 import Services from './components/Services'
 import Projects from './components/Projects'
+import Feedback from './components/Feedback'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
@@ -22,6 +23,7 @@ function App() {
       <Skills />
       <About />
        <Projects />
+      <Feedback />
       <Services />
       <Contact />
       <Footer />
