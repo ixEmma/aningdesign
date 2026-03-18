@@ -1,6 +1,39 @@
+import { useEffect } from 'react'
 import './Projects.css'
 
 function Projects() {
+  useEffect(() => {
+    const head = document.head
+    const links = [
+      { rel: 'preconnect', href: 'https://www.youtube.com' },
+      { rel: 'preconnect', href: 'https://www.google.com' },
+      { rel: 'preconnect', href: 'https://i.ytimg.com' },
+      { rel: 'dns-prefetch', href: 'https://www.youtube.com' },
+      { rel: 'dns-prefetch', href: 'https://i.ytimg.com' }
+    ]
+
+    const appendedLinks = links
+      .filter(({ rel, href }) => !document.querySelector(`link[rel="${rel}"][href="${href}"]`))
+      .map(({ rel, href }) => {
+        const link = document.createElement('link')
+        link.rel = rel
+        link.href = href
+        if (rel === 'preconnect') {
+          link.crossOrigin = ''
+        }
+        head.appendChild(link)
+        return link
+      })
+
+    return () => {
+      appendedLinks.forEach((link) => {
+        if (link.parentNode) {
+          link.parentNode.removeChild(link)
+        }
+      })
+    }
+  }, [])
+
   return (
     <section className="projects-section" id="projects">
       <div className="bento-container">
@@ -20,9 +53,11 @@ function Projects() {
         <div className="bento-card bento-video">
           <div className="video-wrapper">
             <iframe
-              src="https://www.youtube.com/embed/H4yZFVvkZog?si=TmiHCeOpRX8PCWTC"
+              src="https://www.youtube.com/embed/H4yZFVvkZog?si=TmiHCeOpRX8PCWTC&rel=0&modestbranding=1&playsinline=1&vq=hd1080"
               title="Website Project Showcase"
+              className="project-video-frame"
               frameBorder="0"
+              loading="eager"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
@@ -55,10 +90,11 @@ function Projects() {
         <div className="bento-card bento-video bento-video-2">
           <div className="video-wrapper">
             <iframe
-              src="https://www.youtube.com/embed/9l-c_AtN1ng?si=WvU5eOWBTJeAlehl"
+              src="https://www.youtube.com/embed/9l-c_AtN1ng?si=WvU5eOWBTJeAlehl&rel=0&modestbranding=1&playsinline=1&vq=hd1080"
               title="Dr Oliver Rabie Website Showcase"
+              className="project-video-frame"
               frameBorder="0"
-        
+              loading="eager"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
@@ -170,4 +206,3 @@ function Projects() {
 }
 
 export default Projects
-
