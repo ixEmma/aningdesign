@@ -29,7 +29,7 @@
 .skills-track {
   display: flex;
   width: max-content;
-  animation: skills-scroll 30s linear infinite;
+  animation: skills-scroll 36s linear infinite;
   will-change: transform; /* GPU acceleration for smoother mobile animation */
 }
 
@@ -112,7 +112,7 @@ hr.rule {
   }
 
   .skills-track {
-    animation-duration: 25s;
+    animation-duration: 30s;
   }
 
   .skill-item {
@@ -148,7 +148,7 @@ hr.rule {
   }
 
   .skills-track {
-    animation-duration: 20s;
+    animation-duration: 24s;
   }
 
   .skill-item {
@@ -170,3 +170,4 @@ hr.rule {
     margin: 25px 0 0 0;
   }
 }
+
