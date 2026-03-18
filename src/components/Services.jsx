@@ -122,7 +122,7 @@ const Services = () => {
           background:
             radial-gradient(circle at 12% 18%, rgba(0, 251, 100, 0.08), transparent 45%),
             radial-gradient(circle at 88% 85%, rgba(0, 201, 255, 0.12), transparent 45%),
-            linear-gradient(180deg, var(--bg-1), var(--bg-2));
+            linear-gradient(180deg, rgba(26, 26, 26, 0.62), rgba(13, 13, 13, 0.52));
           color: var(--text-main);
         }
 
@@ -532,6 +532,8 @@ const Services = () => {
 }
 
 export default Services
+
+
 
 
 

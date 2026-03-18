@@ -154,3 +154,45 @@
   }
 }
 
+
+.about-read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+  border: 1px solid rgba(0, 201, 255, 0.45);
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-family: "Switzer", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #07111f;
+  background: linear-gradient(90deg, #00fb64, #00c9ff);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.about-read-more-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 201, 255, 0.25);
+  filter: brightness(1.03);
+}
+
+.about-read-more-btn:focus-visible {
+  outline: 2px solid rgba(154, 247, 163, 0.8);
+  outline-offset: 2px;
+}
+
+.about-read-more-btn svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .about-read-more-btn {
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-flex;
+  }
+}
