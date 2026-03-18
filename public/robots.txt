@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aningdesign.com/sitemap.xml
