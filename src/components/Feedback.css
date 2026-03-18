@@ -1,0 +1,218 @@
+.feedback-section {
+  padding: 20px 40px 40px;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+}
+
+.feedback-trigger-wrap {
+  max-width: 640px;
+  margin: 0 auto;
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.feedback-trigger {
+  border: 1px solid rgba(154, 247, 163, 0.5);
+  border-radius: 14px;
+  background: linear-gradient(90deg, #00fb64, #00c9ff);
+  color: #07111f;
+  font-family: "Switzer", sans-serif;
+  font-size: 33px;
+  font-weight: 700;
+  padding: 12px 34px;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(0, 201, 255, 0.28);
+  transition: all 0.3s ease;
+}
+
+.feedback-trigger:hover {
+  background: transparent;
+  color: #9af7a3;
+  border-color: rgb(190, 255, 190);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 255, 100, 0.3);
+}
+
+.feedback-card {
+  max-width: 640px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, rgba(17, 17, 17, 0.95), rgba(30, 30, 30, 0.95));
+  border: 1px solid rgba(154, 247, 163, 0.18);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.feedback-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.feedback-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(154, 247, 163, 0.28);
+  background: rgba(0, 0, 0, 0.35);
+  color: #9af7a3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.feedback-copy {
+  flex: 1;
+}
+
+.feedback-copy h2 {
+  margin: 2px 0 6px;
+  font-family: "Switzer", sans-serif;
+  font-size: 38px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.8px;
+}
+
+.feedback-copy p {
+  margin: 0;
+  font-size: 20px;
+  color: #b5bfd3;
+  font-family: "Switzer", sans-serif;
+}
+
+.feedback-close {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid rgba(154, 247, 163, 0.3);
+  background: rgba(0, 0, 0, 0.45);
+  color: #cad3e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.feedback-close:hover {
+  border-color: rgba(154, 247, 163, 0.5);
+  color: #9af7a3;
+}
+
+.feedback-label {
+  display: block;
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: "Switzer", sans-serif;
+}
+
+.feedback-input {
+  width: 100%;
+  border: 1px solid rgba(154, 247, 163, 0.24);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.35);
+  color: #f4f7ff;
+  font-family: "Switzer", sans-serif;
+  font-size: 34px;
+  resize: vertical;
+  min-height: 185px;
+  padding: 18px 16px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feedback-input::placeholder {
+  color: #a0a0a0;
+}
+
+.feedback-input:focus {
+  border-color: rgba(0, 201, 255, 0.65);
+  box-shadow: 0 0 0 3px rgba(0, 201, 255, 0.15);
+}
+
+.feedback-submit {
+  width: 100%;
+  margin-top: 18px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #00fb64, #00c9ff);
+  color: #07111f;
+  font-family: "Switzer", sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feedback-submit:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.feedback-submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px rgba(0, 201, 255, 0.26);
+}
+
+.feedback-status {
+  margin: 10px 0 0;
+  font-family: "Switzer", sans-serif;
+  font-size: 14px;
+}
+
+.feedback-status.success {
+  color: #9af7a3;
+}
+
+.feedback-status.error {
+  color: #ff8f8f;
+}
+
+@media (max-width: 768px) {
+  .feedback-section {
+    padding: 12px 20px 34px;
+  }
+
+  .feedback-trigger {
+    font-size: 24px;
+    padding: 10px 26px;
+  }
+
+  .feedback-card {
+    padding: 18px;
+  }
+
+  .feedback-copy h2 {
+    font-size: 26px;
+  }
+
+  .feedback-copy p {
+    font-size: 16px;
+  }
+
+  .feedback-label {
+    font-size: 18px;
+  }
+
+  .feedback-input {
+    font-size: 20px;
+    min-height: 130px;
+  }
+
+  .feedback-submit {
+    font-size: 22px;
+    padding: 14px 16px;
+  }
+}
