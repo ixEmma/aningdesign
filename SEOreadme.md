@@ -26,7 +26,7 @@ This prevents thin/utility pages from competing with core pages in Google.
 ### C. Crawl and discovery files
 
 - `robots.txt` allows crawling and points to sitemap:
-  - `Sitemap: https://villeann.com/sitemap.xml`
+  - `Sitemap: https://aningdesign.com/sitemap.xml`
 - `sitemap.xml` includes core URLs with:
   - `<loc>`
   - `<lastmod>`

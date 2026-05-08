@@ -1,0 +1,68 @@
+[2m5:00:42 AM[22m [31m[1m[vite][22m[39m [31mInternal server error: F:\Web design 101\Projects\my-website\src\components\Services.jsx: Unexpected token, expected "}" (122:22)
+
+[0m [90m 120 |[31m [32m[31m
+ [90m 121 |[31m [32m          padding: 72px 20px;[31m
+[31m[1m>[22m[31m[90m 122 |[31m [32m          background:`[31mr[32m`n            radial-gradient(circle at 12% 18%, rgba(0, 251, 100, 0.08), transparent 45%),`[31mr[32m`n            radial-gradient(circle at 88% 85%, rgba(0, 201, 255, 0.12), transparent 45%),`[31mr[32m`n            linear-gradient(180deg, rgba(26, 26, 26, 0.62), rgba(13, 13, 13, 0.52));[31m
+ [90m     |[31m                       [31m[1m^[22m[31m
+ [90m 123 |[31m [32m          color: var(--text-main);[31m
+ [90m 124 |[31m [32m        }[31m
+ [90m 125 |[31m [32m[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mF:/Web design 101/Projects/my-website/src/components/Services.jsx[39m:122:22
+[33m  120 |  
+  121 |            padding: 72px 20px;
+  122 |  ..., 100, 0.08), transparent 45%),`r`n            radial-gradient(circle at 88% 85%, rgba(0, 201, 255, 0.12), transpa...
+      |                                                                 ^
+  123 |            color: var(--text-main);
+  124 |          }[39m
+      at constructor (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:367:19)
+      at JSXParserMixin.raise (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:6624:19)
+      at JSXParserMixin.unexpected (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:6644:16)
+      at JSXParserMixin.expect (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:6924:12)
+      at JSXParserMixin.jsxParseExpressionContainer (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:4666:10)
+      at JSXParserMixin.jsxParseElementAt (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:4740:36)
+      at JSXParserMixin.jsxParseElementAt (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:4727:32)
+      at JSXParserMixin.jsxParseElement (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:4778:17)
+      at JSXParserMixin.parseExprAtom (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:4788:19)
+      at JSXParserMixin.parseExprSubscripts (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:11145:23)
+      at JSXParserMixin.parseUpdate (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:10963:61)
+      at JSXParserMixin.parseExprOps (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:10895:21)
+      at F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:10864:39
+      at JSXParserMixin.allowInAnd (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:12500:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:10864:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:12567:17)
+      at JSXParserMixin.parseParenAndDistinguishExpression (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:11747:28)
+      at JSXParserMixin.parseExprAtom (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:11395:23)
+      at JSXParserMixin.parseExprAtom (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:4793:20)
+      at JSXParserMixin.parseExprSubscripts (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:11145:23)
+      at JSXParserMixin.parseUpdate (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:10963:61)
+      at JSXParserMixin.parseExprOps (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:10895:21)
+      at JSXParserMixin.parseExpressionBase (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:10848:23)
+      at F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:10844:39
+      at JSXParserMixin.allowInAnd (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:12495:16)
+      at JSXParserMixin.parseExpression (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:10844:17)
+      at JSXParserMixin.parseReturnStatement (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:13218:28)
+      at JSXParserMixin.parseStatementContent (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:12874:21)
+      at JSXParserMixin.parseStatementLike (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:12843:17)
+      at JSXParserMixin.parseStatementListItem (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:12823:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:13392:61)
+      at JSXParserMixin.parseBlockBody (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:13385:10)
+      at JSXParserMixin.parseBlock (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:13373:10)
+      at JSXParserMixin.parseFunctionBody (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:12174:24)
+      at JSXParserMixin.parseArrowExpression (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:12149:10)
+      at JSXParserMixin.parseParenAndDistinguishExpression (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:11759:12)
+      at JSXParserMixin.parseExprAtom (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:11395:23)
+      at JSXParserMixin.parseExprAtom (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:4793:20)
+      at JSXParserMixin.parseExprSubscripts (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:11145:23)
+      at JSXParserMixin.parseUpdate (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (F:\Web design 101\Projects\my-website\node_modules\@babel\parser\lib\index.js:10963:61)
+^C^C

@@ -20,38 +20,46 @@ const Services = () => {
   const websitePlans = [
     {
       title: 'Starter Website',
-      price: '$300 - $450',
+      price: <><span>$300</span><span style={{margin:'0 8px'}}>→</span><span style={{textDecoration:'line-through',opacity:'0.6'}}>$450</span></>,
       features: [
         '1-5 Pages',
         'Mobile Responsive',
         'Basic SEO Setup',
-        'Fast Loading Optimization'
+        'Fast Loading Optimization',
+        'Free Hosting',
+        'Custom Design'
       ],
       cta: 'Get Started',
       popular: false
     },
     {
       title: 'Business Website',
-      price: '$600 - $1000',
+      price: <><span>$600</span><span style={{margin:'0 8px'}}>→</span><span style={{textDecoration:'line-through',opacity:'0.6'}}>$1000</span></>,
       features: [
         '5-10 Pages',
         'Custom UI Design (Elementor-style)',
         'Speed Optimization',
         'Contact Forms + Integrations',
-        'Basic Animations'
+        'Advanced SEO',
+        'Premium Cloud Hosting (Vercel / Cloudflare CDN)',
+        'All in Starter Websites',
+        'Site Maps & Schemas',
+        'CMS Integration',
+        'Blog Page'
       ],
       cta: 'Most Popular',
       popular: true
     },
     {
       title: 'Advanced / Custom Build',
-      price: '$1200+',
+      price: <><span>$1500</span><span style={{margin:'0 8px'}}>→</span><span style={{textDecoration:'line-through',opacity:'0.6'}}>$2400</span></>,
       features: [
         'Unlimited Pages',
         'Custom Features (Booking, Dashboard, etc.)',
-        'Advanced Animations',
+        'Interactions',
         'Performance + SEO Optimization',
-        'Ongoing Support'
+        'Ongoing Support',
+        'All in Business Website'
       ],
       cta: 'Request Quote',
       popular: false
@@ -61,7 +69,7 @@ const Services = () => {
   const graphicDesignPlans = [
     {
       title: 'Starter Design',
-      price: '$50 - $150',
+      price: <><span>$50</span><span style={{margin:'0 8px'}}>→</span><span style={{textDecoration:'line-through',opacity:'0.6'}}>$150</span></>,
       features: [
         'Social Media Post (1-2)',
         'Flyer or Simple Poster',
@@ -73,7 +81,7 @@ const Services = () => {
     },
     {
       title: 'Brand Essentials',
-      price: '$200 - $400',
+      price: <><span>$150</span><span style={{margin:'0 8px'}}>→</span><span style={{textDecoration:'line-through',opacity:'0.6'}}>$250</span></>,
       features: [
         'Logo or Brand Assets',
         'Social Media Kit (3-5 designs)',
@@ -86,7 +94,7 @@ const Services = () => {
     },
     {
       title: 'Premium Brand Package',
-      price: '$500+',
+      price: <><span>$250</span><span style={{margin:'0 8px'}}>→</span><span style={{textDecoration:'line-through',opacity:'0.6'}}>$400</span></>,
       features: [
         'Full Brand Identity',
         'Logo + Variations',

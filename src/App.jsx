@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import Works from './components/Works'
 import Skills from './components/Skills'
+import Blueprint from './components/Blueprint'
 import About from './components/About'
 import Services from './components/Services'
 import Projects from './components/Projects'
@@ -21,6 +22,7 @@ function App() {
       <Hero />
       <Works />
       <Skills />
+      <Blueprint />
       <About />
        <Projects />
       <Feedback />
