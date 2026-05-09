@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { useYoutubeUploads } from '../hooks/useYoutubeUploads'
+import { useYoutubeVideos } from '../hooks/useYoutubeUploads'
 import './YoutubeShowcase.css'
 
 const buildEmbedUrl = (videoId) => {
@@ -101,7 +101,7 @@ function MobileVideoCard({ video, playing, onPlay, index }) {
 }
 
 function YoutubeShowcase() {
-  const { videos, loading, error } = useYoutubeUploads()
+  const { videos, loading, error, debug } = useYoutubeVideos()
   const isMobile = useMediaQuery('(max-width: 768px)')
   const [featuredPlaying, setFeaturedPlaying] = useState(false)
   const [mobilePlayingVideoId, setMobilePlayingVideoId] = useState(null)
@@ -161,6 +161,15 @@ function YoutubeShowcase() {
             Behind the scenes redesigns, UI systems, development walkthroughs, creative
             process videos, and premium website breakdowns.
           </p>
+
+          <div className="youtube-debug-panel" aria-live="polite">
+            <span>Mode: {debug.mode}</span>
+            <span>API key: {debug.apiKeyPresent ? 'present' : 'missing'}</span>
+            <span>Channel: {debug.channelIdPresent ? 'present' : 'missing'}</span>
+            <span>Fetch: {debug.status}</span>
+            <span>Videos: {debug.videoCount}</span>
+            {debug.lastError && <span className="youtube-debug-error">Error: {debug.lastError}</span>}
+          </div>
         </div>
 
         {loading && (
