@@ -615,30 +615,3 @@
   }
 }
 
-.youtube-debug-panel {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, max-content));
-  gap: 12px;
-  margin-top: 28px;
-  padding: 18px 20px;
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(1, 7, 9, 0.72);
-  color: rgba(235, 246, 255, 0.78);
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-.youtube-debug-panel span {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
-}
-
-.youtube-debug-error {
-  background: rgba(255, 92, 92, 0.16);
-  color: #ffdede;
-}

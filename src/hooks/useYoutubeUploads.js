@@ -86,6 +86,7 @@ const normalizeVideo = (video) => {
     title: snippet.title || 'Untitled video',
     description: snippet.description || '',
     duration: formatDuration(details.duration),
+    rawDuration: details.duration || '',
     thumbnail: getThumbnail(snippet.thumbnails, video.id),
     videoUrl: `https://www.youtube.com/watch?v=${video.id}`,
     publishedAt: snippet.publishedAt || ''

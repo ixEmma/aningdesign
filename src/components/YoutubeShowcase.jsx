@@ -6,6 +6,9 @@ const buildEmbedUrl = (videoId) => {
   return `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&playsinline=1&autoplay=1`
 }
 
+const getThumbnailAltText = (video) =>
+  `Thumbnail for "${video.title}", a premium web design process and frontend development walkthrough by Aning Design.`
+
 function useMediaQuery(query) {
   const [matches, setMatches] = useState(false)
 
@@ -43,7 +46,7 @@ function VideoFrame({ video, playing, onPlay, featured = false }) {
           onClick={onPlay}
           aria-label={`Play ${video.title}`}
         >
-          <img src={video.thumbnail} alt="" loading={featured ? 'eager' : 'lazy'} />
+          <img src={video.thumbnail} alt={getThumbnailAltText(video)} loading={featured ? 'eager' : 'lazy'} />
           <span className="youtube-vignette" aria-hidden="true"></span>
           <span className="youtube-play" aria-hidden="true">
             <span></span>
@@ -75,7 +78,7 @@ function DesktopPreviewCard({ video, index }) {
       style={{ '--delay': `${160 + index * 90}ms` }}
     >
       <a href={video.videoUrl} target="_blank" rel="noopener noreferrer" className="youtube-preview-media" aria-label={`Open ${video.title} on YouTube`}>
-        <img src={video.thumbnail} alt="" loading="lazy" />
+        <img src={video.thumbnail} alt={getThumbnailAltText(video)} loading="lazy" />
         <span className="youtube-vignette" aria-hidden="true"></span>
         <span className="youtube-duration">{video.duration}</span>
       </a>
@@ -101,13 +104,53 @@ function MobileVideoCard({ video, playing, onPlay, index }) {
 }
 
 function YoutubeShowcase() {
-  const { videos, loading, error, debug } = useYoutubeVideos()
+  const { videos, loading, error } = useYoutubeVideos()
   const isMobile = useMediaQuery('(max-width: 768px)')
   const [featuredPlaying, setFeaturedPlaying] = useState(false)
   const [mobilePlayingVideoId, setMobilePlayingVideoId] = useState(null)
 
   const featuredVideo = videos[0]
   const sideVideos = useMemo(() => videos.slice(1, 4), [videos])
+
+  const videoSchema = useMemo(() => {
+    if (!videos.length) return null
+
+    return {
+      '@context': 'https://schema.org',
+      '@graph': videos.map((video) => ({
+        '@type': 'VideoObject',
+        name: video.title,
+        description:
+          video.description ||
+          'A premium web design and frontend development walkthrough by Aning Design.',
+        thumbnailUrl: video.thumbnail,
+        uploadDate: video.publishedAt,
+        duration: video.rawDuration || undefined,
+        embedUrl: buildEmbedUrl(video.id),
+        url: video.videoUrl,
+        publisher: {
+          '@type': 'Organization',
+          name: 'Aning Design',
+          url: 'https://aningdesign.com'
+        }
+      }))
+    }
+  }, [videos])
+
+  useEffect(() => {
+    if (!videoSchema) return undefined
+
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.textContent = JSON.stringify(videoSchema)
+    document.head.appendChild(script)
+
+    return () => {
+      if (script.parentNode) {
+        script.parentNode.removeChild(script)
+      }
+    }
+  }, [videoSchema])
 
   useEffect(() => {
     setFeaturedPlaying(false)
@@ -161,15 +204,11 @@ function YoutubeShowcase() {
             Behind the scenes redesigns, UI systems, development walkthroughs, creative
             process videos, and premium website breakdowns.
           </p>
-
-          <div className="youtube-debug-panel" aria-live="polite">
-            <span>Mode: {debug.mode}</span>
-            <span>API key: {debug.apiKeyPresent ? 'present' : 'missing'}</span>
-            <span>Channel: {debug.channelIdPresent ? 'present' : 'missing'}</span>
-            <span>Fetch: {debug.status}</span>
-            <span>Videos: {debug.videoCount}</span>
-            {debug.lastError && <span className="youtube-debug-error">Error: {debug.lastError}</span>}
-          </div>
+          <p className="youtube-showcase-copy">
+            These videos reinforce the portfolio with site-focused case study insights,
+            frontend system walkthroughs, and thoughtful optimization lessons that support
+            the brand’s premium web design narrative.
+          </p>
         </div>
 
         {loading && (
