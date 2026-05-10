@@ -29,7 +29,7 @@
   transform: translateY(-5px);
 }
 
-.aboutUs h1 {
+.aboutUs h2 {
   font-family: "Switzer", sans-serif;
   font-size: 48px;
   font-weight: 900;
@@ -93,7 +93,7 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .aboutUs h1 {
+  .aboutUs h2 {
     font-size: 36px;
     font-weight: 900; /* Maintain bold weight on mobile */
   }
@@ -135,7 +135,7 @@
 }
 
 @media (max-width: 480px) {
-  .aboutUs h1 {
+  .aboutUs h2 {
     font-size: 28px;
     font-weight: 900; /* Maintain bold weight on mobile */
   }

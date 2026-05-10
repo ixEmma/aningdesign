@@ -17,7 +17,7 @@ function About() {
       </div>
 
       <div className="aboutUs">
-        <h1>MEET ANING</h1>
+        <h2 className="section-title">MEET ANING</h2>
         <p className="myself-description">
           <strong>
             Hi, I'm Emmanuel Aning, a Graphic Designer and Web Developer based in Accra, Ghana. I specialize in designing and building high-performing digital experiences, combining strong visual design with clean, scalable code.

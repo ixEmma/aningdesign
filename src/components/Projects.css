@@ -125,7 +125,7 @@
 }
 
 /* Header Card Styles */
-.bento-header h1 {
+.bento-header h2 {
   font-family: "Switzer", sans-serif;
   font-size: 48px;
   font-weight: 900;
@@ -243,7 +243,7 @@
   filter: drop-shadow(0 0 20px rgba(154, 247, 163, 0.3));
 }
 
-.stat-content h4 {
+.stat-content h3 {
   font-family: "Switzer", sans-serif;
   font-size: 16px;
   font-weight: 700;
@@ -424,7 +424,7 @@
     padding: 25px;
   }
 
-  .bento-header h1 {
+  .bento-header h2 {
     font-size: 36px;
     font-weight: 900; /* Maintain bold weight on mobile */
   }
@@ -447,7 +447,7 @@
     min-height: 280px;
   }
 
-  .stat-content h4 {
+  .stat-content h3 {
     font-size: 15px;
     font-weight: 700; /* Maintain bold weight on mobile */
   }
@@ -479,7 +479,7 @@
     padding: 20px;
   }
 
-  .bento-header h1 {
+  .bento-header h2 {
     font-size: 28px;
     font-weight: 900; /* Maintain bold weight on mobile */
   }
@@ -517,7 +517,7 @@
     height: 24px;
   }
 
-  .stat-content h4 {
+  .stat-content h3 {
     font-size: 14px;
     font-weight: 700; /* Maintain bold weight on mobile */
   }

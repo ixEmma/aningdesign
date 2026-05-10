@@ -490,7 +490,7 @@ const Services = () => {
       `}</style>
 
       <div className="services-pricing-wrap">
-        <h1 className="services-main-title">Pricing Plans</h1>
+        <h2 className="services-main-title section-title">Pricing Plans</h2>
         {serviceSections.map((section) => (
           <section key={section.title} className="pricing-service-section">
             <h2 className="service-title">{section.title}</h2>

@@ -42,11 +42,11 @@ function Projects() {
           <div className="badge-wrapper">
             <div className="project-badge">
               <span className="badge-dot"></span>
-              <span className="badge-text">Featured Work</span>
+              <span className="badge-text section-label">Featured Work</span>
             </div>
           </div>
-          <h1>WEBSITE PROJECTS</h1>
-          <p className="projects-subtitle">Explore my latest web design and development work</p>
+          <h2 className="section-title">WEBSITE PROJECTS</h2>
+          <p className="projects-subtitle section-description">Explore my latest web design and development work</p>
         </div>
 
         {/* Video Card */}
@@ -148,7 +148,7 @@ function Projects() {
               <path d="M11 3H9" />
             </svg>
             <div className="stat-content">
-              <h4>Creative Design</h4>
+              <h3>Creative Design</h3>
               <p>Unique visual experiences</p>
             </div>
           </div>
@@ -169,7 +169,7 @@ function Projects() {
               <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
             </svg>
             <div className="stat-content">
-              <h4>Fast Performance</h4>
+              <h3>Fast Performance</h3>
               <p>Optimized for speed</p>
             </div>
           </div>
@@ -195,7 +195,7 @@ function Projects() {
               <path d="M6 16h1" />
             </svg>
             <div className="stat-content">
-              <h4>Fully Responsive</h4>
+              <h3>Fully Responsive</h3>
               <p>Works on all devices</p>
             </div>
           </div>

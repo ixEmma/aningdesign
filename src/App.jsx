@@ -13,6 +13,8 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import AnimatedBackground from './components/AnimatedBackground'
+import Testimonials from './components/Testimonials'
+
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
       <Blueprint />
       <About />
        <Projects />
+       <Testimonials />
       <YoutubeShowcase />
       <Feedback />
       <Services />
