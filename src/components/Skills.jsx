@@ -26,7 +26,7 @@ const skills = [
 
 function Skills() {
   return (
-    <div className="my-skills">
+    <div className="my-skills" id="skills">
       <h2 className="section-title">MY SKILLS</h2>
       
       {/* CSS-only infinite scroll carousel */}

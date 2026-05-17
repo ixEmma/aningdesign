@@ -1,0 +1,26 @@
+.blog-category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 30px;
+}
+
+.blog-category-filter button {
+  border: 1px solid rgba(154, 247, 163, 0.24);
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: rgba(0, 0, 0, 0.34);
+  color: rgba(244, 255, 249, 0.8);
+  font-family: "Switzer", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.blog-category-filter button:hover,
+.blog-category-filter button.is-active {
+  border-color: rgba(0, 251, 100, 0.62);
+  background: linear-gradient(90deg, rgba(0, 251, 100, 0.18), rgba(0, 201, 255, 0.16));
+  color: #ffffff;
+}

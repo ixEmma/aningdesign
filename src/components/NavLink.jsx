@@ -3,28 +3,29 @@ import './NavLink.css'
 
 function NavLink({ href, children, onClick }) {
   const [isActive, setIsActive] = useState(false)
+  const hash = href.includes('#') ? `#${href.split('#')[1]}` : ''
 
   useEffect(() => {
+    if (!hash) return undefined
+
     const handleScroll = () => {
-      const section = document.querySelector(href)
+      const section = document.querySelector(hash)
       if (section) {
         const rect = section.getBoundingClientRect()
-        const isInView = rect.top <= 150 && rect.bottom >= 150
-        setIsActive(isInView)
+        const isHomePath = window.location.pathname === '/'
+        setIsActive(isHomePath && rect.top <= 150 && rect.bottom >= 150)
       }
     }
 
-    // Check on mount
     handleScroll()
     
-    // Check initial hash
-    if (window.location.hash === href) {
+    if (window.location.pathname === '/' && window.location.hash === hash) {
       setIsActive(true)
     }
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [href])
+  }, [hash])
 
   const handleClick = (e) => {
     if (onClick) onClick(e)

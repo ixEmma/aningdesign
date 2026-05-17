@@ -66,11 +66,12 @@ function Header() {
           </button>
 
           <nav className="main-nav">
-            <NavLink href="#home">Home</NavLink>
-            <NavLink href="#about">About Us</NavLink>
-            <NavLink href="#services">Services</NavLink>
-            <a href="https://www.behance.net/emmaaning" target="_blank" rel="noopener noreferrer" className="nav-link">Design Portfolio</a>
-            <NavLink href="#contact">Contact</NavLink>
+            <NavLink href="/#home">Home</NavLink>
+            <NavLink href="/#skills">Skills</NavLink>
+            <NavLink href="/#services">Services</NavLink>
+            <NavLink href="/#projects">Projects</NavLink>
+            <a href="/blog" className="nav-link">Blog</a>
+            <NavLink href="/#contact">Contact</NavLink>
           </nav>
 
           <a
@@ -104,11 +105,12 @@ function Header() {
           </button>
         </div>
         <nav className="sidebar-nav" onClick={handleNavClick}>
-          <a href="#home">Home</a>
-          <a href="#services">Services</a>
-          <a href="#about">About Us</a>
-          <a href="https://www.behance.net/emmaaning" target="_blank" rel="noopener noreferrer">Design Portfolio</a>
-          <a href="#contact">Contact</a>
+          <a href="/#home">Home</a>
+          <a href="/#skills">Skills</a>
+          <a href="/#services">Services</a>
+          <a href="/#projects">Projects</a>
+          <a href="/blog">Blog</a>
+          <a href="/#contact">Contact</a>
         </nav>
       </aside>
       <div

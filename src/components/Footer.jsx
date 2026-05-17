@@ -7,11 +7,12 @@ function Footer() {
     <footer className="footer-name">
       <div className="footer-content">
         <div className="footer-links">
-          <a href="#home">Home</a>
-          <a href="#services">Services</a>
-          <a href="#about">About Me</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+          <a href="/#home">Home</a>
+          <a href="/#services">Services</a>
+          <a href="/#about">About Me</a>
+          <a href="/#projects">Projects</a>
+          <a href="/blog">Blog</a>
+          <a href="/#contact">Contact</a>
         </div>
         <div className="footer-social">
           <a href="https://x.com/Aningdesigns" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
