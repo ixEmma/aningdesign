@@ -16,6 +16,12 @@
 @media (max-width: 720px) {
   .blog-grid {
     grid-template-columns: 1fr;
-    row-gap: 50px;
+    row-gap: 72px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-grid {
+    row-gap: 82px;
   }
 }
