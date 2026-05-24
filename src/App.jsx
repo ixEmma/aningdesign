@@ -20,6 +20,7 @@ import LatestBlogTutorials from './components/blog/LatestBlogTutorials'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
 import { useSeo } from './utils/seo'
+import { getDomain } from './utils/domain'
 
 function HashScroller() {
   const location = useLocation()
@@ -45,7 +46,7 @@ function LandingPage() {
   useSeo({
     title: 'Emmanuel Aning | Top Creative Web Designer & Graphic Designer 2025',
     description: 'Emmanuel Aning is a Graphic Designer and Web Developer in Accra, Ghana, building high-performing websites, brand systems, and conversion-focused digital experiences.',
-    canonical: 'https://aningdesign.com',
+    canonical: getDomain(),
     type: 'website'
   })
 
@@ -67,6 +68,25 @@ function LandingPage() {
   )
 }
 
+function NotFound() {
+  useSeo({
+    title: '404 - Page Not Found | Emmanuel Aning',
+    description: 'The page you are looking for could not be found.',
+    canonical: getDomain() + '/404',
+    type: 'website'
+  })
+
+  return (
+    <div style={{ textAlign: 'center', padding: '60px 20px', minHeight: '60vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+      <h1 style={{ fontSize: '72px', fontWeight: 'bold', marginBottom: '20px' }}>404</h1>
+      <p style={{ fontSize: '20px', color: '#666', marginBottom: '30px' }}>Page not found</p>
+      <a href="/" style={{ display: 'inline-block', padding: '12px 24px', backgroundColor: '#007bff', color: 'white', textDecoration: 'none', borderRadius: '4px', fontSize: '16px' }}>
+        Back to Home
+      </a>
+    </div>
+  )
+}
+
 function App() {
   return (
     <>
@@ -78,6 +98,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
       <ScrollToTop />

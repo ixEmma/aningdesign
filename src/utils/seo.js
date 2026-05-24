@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { getDomain } from './domain'
 
 const setMeta = (selector, attributes) => {
   let tag = document.head.querySelector(selector)
@@ -26,7 +27,9 @@ const setLink = (selector, attributes) => {
   })
 }
 
-export const useSeo = ({ title, description, canonical, image = 'https://aningdesign.com/images/LOGO.png', type = 'article' }) => {
+export const useSeo = ({ title, description, canonical, image, type = 'article' }) => {
+  const defaultImage = image || `${getDomain()}/images/LOGO.png`
+  
   useEffect(() => {
     document.title = title
 
@@ -35,10 +38,10 @@ export const useSeo = ({ title, description, canonical, image = 'https://aningde
     setMeta('meta[property="og:title"]', { property: 'og:title', content: title })
     setMeta('meta[property="og:description"]', { property: 'og:description', content: description })
     setMeta('meta[property="og:url"]', { property: 'og:url', content: canonical })
-    setMeta('meta[property="og:image"]', { property: 'og:image', content: image })
+    setMeta('meta[property="og:image"]', { property: 'og:image', content: defaultImage })
     setMeta('meta[property="og:type"]', { property: 'og:type', content: type })
     setMeta('meta[name="twitter:title"]', { name: 'twitter:title', content: title })
     setMeta('meta[name="twitter:description"]', { name: 'twitter:description', content: description })
-    setMeta('meta[name="twitter:image"]', { name: 'twitter:image', content: image })
-  }, [title, description, canonical, image, type])
+    setMeta('meta[name="twitter:image"]', { name: 'twitter:image', content: defaultImage })
+  }, [title, description, canonical, defaultImage, type])
 }
