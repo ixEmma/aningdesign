@@ -6,7 +6,7 @@ const Services = () => {
       `Hi Emmanuel, I'm interested in your ${serviceTitle} service.`,
       '',
       `Selected plan: ${plan.title}`,
-      `Price range: ${plan.price}`,
+      `Price range: ${plan.originalPrice} -> ${plan.currentPrice}`,
       '',
       'This plan includes:',
       ...plan.features.map((feature) => `- ${feature}`),
@@ -17,10 +17,19 @@ const Services = () => {
     return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
   }
 
+  const renderPrice = (plan) => (
+    <>
+      <span className="old-price">{plan.originalPrice}</span>
+      <span className="price-arrow">&rarr;</span>
+      <span className="new-price">{plan.currentPrice}</span>
+    </>
+  )
+
   const websitePlans = [
     {
       title: 'Starter Website',
-      price: <><span>$300</span><span style={{margin:'0 8px'}}>→</span><span style={{textDecoration:'line-through',opacity:'0.6'}}>$450</span></>,
+      originalPrice: '$450',
+      currentPrice: '$300',
       features: [
         '1-5 Pages',
         'Mobile Responsive',
@@ -34,7 +43,8 @@ const Services = () => {
     },
     {
       title: 'Business Website',
-      price: <><span>$600</span><span style={{margin:'0 8px'}}>→</span><span style={{textDecoration:'line-through',opacity:'0.6'}}>$1000</span></>,
+      originalPrice: '$1000',
+      currentPrice: '$600',
       features: [
         '5-10 Pages',
         'Custom UI Design (Elementor-style)',
@@ -52,7 +62,8 @@ const Services = () => {
     },
     {
       title: 'Advanced / Custom Build',
-      price: <><span>$1500</span><span style={{margin:'0 8px'}}>→</span><span style={{textDecoration:'line-through',opacity:'0.6'}}>$2400</span></>,
+      originalPrice: '$2400',
+      currentPrice: '$1500',
       features: [
         'Unlimited Pages',
         'Custom Features (Booking, Dashboard, etc.)',
@@ -69,7 +80,8 @@ const Services = () => {
   const graphicDesignPlans = [
     {
       title: 'Starter Design',
-      price: <><span>$50</span><span style={{margin:'0 8px'}}>→</span><span style={{textDecoration:'line-through',opacity:'0.6'}}>$150</span></>,
+      originalPrice: '$150',
+      currentPrice: '$50',
       features: [
         'Social Media Post (1-2)',
         'Flyer or Simple Poster',
@@ -81,7 +93,8 @@ const Services = () => {
     },
     {
       title: 'Brand Essentials',
-      price: <><span>$150</span><span style={{margin:'0 8px'}}>→</span><span style={{textDecoration:'line-through',opacity:'0.6'}}>$250</span></>,
+      originalPrice: '$250',
+      currentPrice: '$150',
       features: [
         'Logo or Brand Assets',
         'Social Media Kit (3-5 designs)',
@@ -94,7 +107,8 @@ const Services = () => {
     },
     {
       title: 'Premium Brand Package',
-      price: <><span>$250</span><span style={{margin:'0 8px'}}>→</span><span style={{textDecoration:'line-through',opacity:'0.6'}}>$400</span></>,
+      originalPrice: '$400',
+      currentPrice: '$250',
       features: [
         'Full Brand Identity',
         'Logo + Variations',
@@ -253,6 +267,25 @@ const Services = () => {
           font-weight: 800;
           color: var(--brand-cyan);
           letter-spacing: -0.02em;
+        }
+
+        .old-price {
+          font-size: 0.82em;
+          font-weight: 700;
+          color: rgba(0, 201, 255, 0.58);
+          text-decoration: line-through;
+          text-decoration-thickness: 2px;
+        }
+
+        .price-arrow {
+          margin: 0 8px;
+          color: rgba(0, 201, 255, 0.8);
+          font-weight: 700;
+        }
+
+        .new-price {
+          color: var(--brand-cyan);
+          font-weight: 900;
         }
 
         .features-list {
@@ -500,7 +533,7 @@ const Services = () => {
                 <article key={plan.title} className={`pricing-card${plan.popular ? ' popular' : ''}`}>
                   {plan.popular && <span className="popular-badge">Most Popular</span>}
                   <h3 className="card-title">{plan.title}</h3>
-                  <p className="card-price">{plan.price}</p>
+                  <p className="card-price">{renderPrice(plan)}</p>
 
                   <ul className="features-list">
                     {plan.features.map((feature) => (
@@ -520,7 +553,7 @@ const Services = () => {
                     <h3 className="mobile-plan-title">{plan.title}</h3>
                     {plan.popular && <span className="mobile-popular-pill">Most Popular</span>}
                   </div>
-                  <p className="mobile-price">{plan.price}</p>
+                  <p className="mobile-price">{renderPrice(plan)}</p>
 
                   <ul className="mobile-features">
                     {plan.features.map((feature) => (
