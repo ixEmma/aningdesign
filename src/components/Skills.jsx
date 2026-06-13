@@ -10,6 +10,7 @@ const skills = [
   { name: 'Adobe InDesign', icon: '/images/adobe-indesign.svg' },
   { name: 'HTML', icon: '/images/html-1.svg' },
   { name: 'CSS', icon: '/images/css-3.svg' },
+  { name: 'Software Development', icon: '/images/html-1.svg' },
   { name: 'Git', icon: '/images/git-icon.svg' },
   { name: 'GitHub', icon: '/images/github-icon-1.svg' },
   { name: 'WordPress', icon: '/images/wordpress-icon.svg' },

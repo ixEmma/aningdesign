@@ -1,0 +1,42 @@
+# Aning Design
+
+> Aning Design is the portfolio, service website, and tutorial library of Emmanuel Aning, a web designer, software developer, graphic designer, and UI/UX designer based in Accra, Ghana and serving clients worldwide.
+
+## Core expertise
+
+- Web design and responsive website development
+- Software development and frontend development
+- WordPress, Elementor, React, JavaScript, HTML, and CSS
+- UI/UX design, graphic design, and brand identity
+- Technical SEO, website performance, and deployment workflows
+- AI-assisted web design and development workflows
+
+## Primary pages
+
+- [Homepage](https://aningdesign.com/): Portfolio, services, skills, projects, and contact details.
+- [Website Designer in Ghana](https://aningdesign.com/web-designer-ghana.html): Website design services for businesses in Ghana.
+- [Web Design in Accra](https://aningdesign.com/web-design-accra.html): Web design services for Accra-based businesses.
+- [International Web Design Services](https://aningdesign.com/international-web-design-services.html): Website services for international clients.
+- [Blog Tutorials](https://aningdesign.com/blog): Practical WordPress, React, SEO, deployment, and AI workflow guides.
+
+## Tutorial library
+
+- [Create a Blog Post in WordPress](https://aningdesign.com/blog/how-to-create-a-blog-post-in-wordpress)
+- [Claude Skills for a Real Web Design Workflow](https://aningdesign.com/blog/claude-skills-real-web-design-workflow)
+- [Claude AI, Elementor, WordPress, and MCP Workflow](https://aningdesign.com/blog/claude-ai-elementor-wordpress-mcp-workflow)
+- [Build and Deploy a React Photography Landing Page](https://aningdesign.com/blog/build-deploy-photography-landing-page-react-netlify)
+- [Fix a Bad WordPress Website Design](https://aningdesign.com/blog/fix-bad-website-design-wordpress-elementor)
+- [Design a Professional Medical Website](https://aningdesign.com/blog/design-professional-medical-website-wordpress-elementor)
+- [Install WordPress Locally with XAMPP](https://aningdesign.com/blog/how-to-install-wordpress-locally-using-xampp)
+- [Codex to WordPress Elementor Workflow](https://aningdesign.com/blog/codex-wordpress-elementor-workflow)
+- [Connect a Cloudflare Domain to Netlify](https://aningdesign.com/blog/connect-cloudflare-domain-to-netlify)
+
+## Identity
+
+- Creator: Emmanuel Aning
+- Business: Aning Design
+- Location: Accra, Ghana
+- Website: https://aningdesign.com/
+- LinkedIn: https://linkedin.com/in/emmanuel-aning-133189310
+- Behance: https://www.behance.net/emmaaning
+- X: https://x.com/Aningdesigns

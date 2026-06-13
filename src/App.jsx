@@ -44,9 +44,10 @@ function HashScroller() {
 
 function LandingPage() {
   useSeo({
-    title: 'Emmanuel Aning | Top Creative Web Designer & Graphic Designer 2025',
-    description: 'Emmanuel Aning is a Graphic Designer and Web Developer in Accra, Ghana, building high-performing websites, brand systems, and conversion-focused digital experiences.',
+    title: 'Emmanuel Aning | Web Designer & Software Developer in Ghana',
+    description: 'Emmanuel Aning is a web designer, software developer, and graphic designer in Accra, Ghana, building WordPress, React, UI/UX, and conversion-focused digital experiences for clients worldwide.',
     canonical: getDomain(),
+    keywords: 'web designer Ghana, software developer Ghana, WordPress developer Ghana, React developer Ghana, UI UX designer Ghana, graphic designer Accra, international web design services, Emmanuel Aning, Aning Design',
     type: 'website'
   })
 
@@ -107,4 +108,3 @@ function App() {
 }
 
 export default App
-

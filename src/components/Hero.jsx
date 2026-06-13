@@ -7,6 +7,7 @@ function Hero() {
     "GRAPHIC DESIGNER",
     "UI/UX DESIGNER",
     "FRONTEND DEVELOPER",
+    "SOFTWARE DEVELOPER",
     "FREELANCER"
   ]
 
@@ -60,10 +61,10 @@ function Hero() {
     <section className="hero" id="home">
       <div className="hero-content">
 
-        <span id="hey">Hi👋 I,m Emmanuel </span>
+        <span id="hey">Hi 👋, I'm Emmanuel</span>
 
         <h1 className="hero-title">
-          I build <span className="hero-accent">premuim websites</span>
+          I build <span className="hero-accent">premium websites</span>
           <br />
          <span className="hero-script">That convert.</span>
         </h1>

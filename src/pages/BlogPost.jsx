@@ -1,5 +1,6 @@
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import { useEffect } from 'react'
 import { Navigate, useParams } from 'react-router-dom'
 import BlogPostHeader from '../components/blog/BlogPostHeader'
 import BlogVideoEmbed from '../components/blog/BlogVideoEmbed'
@@ -19,8 +20,50 @@ function BlogPost() {
     title: `${post.title} | Aning Design Lab`,
     description: post.description,
     canonical: `https://aningdesign.com/blog/${post.slug}`,
+    image: post.thumbnail ? `https://aningdesign.com${post.thumbnail}` : undefined,
+    keywords: post.tags.join(', '),
     type: 'article'
   })
+
+  useEffect(() => {
+    const schemaId = 'blog-post-schema'
+    let script = document.getElementById(schemaId)
+
+    if (!script) {
+      script = document.createElement('script')
+      script.id = schemaId
+      script.type = 'application/ld+json'
+      document.head.appendChild(script)
+    }
+
+    script.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: post.title,
+      description: post.description,
+      datePublished: post.date,
+      dateModified: post.date,
+      mainEntityOfPage: `https://aningdesign.com/blog/${post.slug}`,
+      image: post.thumbnail ? `https://aningdesign.com${post.thumbnail}` : 'https://aningdesign.com/images/LOGO.png',
+      keywords: post.tags.join(', '),
+      author: {
+        '@type': 'Person',
+        '@id': 'https://aningdesign.com/#person',
+        name: 'Emmanuel Aning'
+      },
+      publisher: {
+        '@type': 'Organization',
+        '@id': 'https://aningdesign.com/#business',
+        name: 'Aning Design',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://aningdesign.com/images/LOGO.png'
+        }
+      }
+    })
+
+    return () => script.remove()
+  }, [post])
 
   return (
     <main className="blog-post-page">

@@ -18,8 +18,9 @@ function Blog() {
 
   useSeo({
     title: 'Blog Tutorials | Aning Design Lab',
-    description: 'Read practical WordPress, web design, SEO, and website-building tutorials from Aning Design Lab, connected to Emmanuel Aning’s YouTube guides.',
+    description: "Read practical WordPress, software development, web design, SEO, and website-building tutorials from Aning Design Lab, connected to Emmanuel Aning's YouTube guides.",
     canonical: 'https://aningdesign.com/blog',
+    keywords: 'web design tutorials, WordPress tutorials, React tutorials, SEO tutorials, AI web design workflow, software development tutorials, Aning Design Lab',
     type: 'website'
   })
 
