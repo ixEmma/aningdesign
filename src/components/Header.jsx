@@ -43,7 +43,7 @@ function Header() {
 
   return (
     <>
-      <header>
+      <header className="site-header">
         <div className="header-container">
           <div className="logo">
             <a href="/#home" className="logo-link" aria-label="Go to homepage">
