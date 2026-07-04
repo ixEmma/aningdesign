@@ -146,6 +146,77 @@
   overflow-wrap: break-word;
 }
 
+.blueprint-cta {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  margin-top: 2px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(154, 247, 163, 0.18);
+  min-width: 0;
+}
+
+.blueprint-cta p {
+  margin: 0;
+  max-width: 620px;
+  color: #ffffff;
+  font-family: "Switzer", sans-serif;
+  font-size: clamp(1.08rem, 2vw, 1.42rem);
+  font-weight: 800;
+  line-height: 1.35;
+  overflow-wrap: break-word;
+}
+
+.blueprint-cta-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-height: 48px;
+  padding: 13px 24px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #00fb64, #00c9ff);
+  box-shadow: 0 4px 15px rgba(0, 255, 100, 0.2);
+  color: #07111f;
+  font-family: "Switzer", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.blueprint-cta-button::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 -100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.22);
+  transition: left 0.35s ease;
+}
+
+.blueprint-cta-button:hover::before {
+  left: 100%;
+}
+
+.blueprint-cta-button:hover {
+  border-color: rgba(190, 255, 190, 0.75);
+  background: rgba(17, 17, 17, 0.42);
+  color: #9af7a3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 255, 100, 0.3);
+}
+
+.blueprint-cta-button:focus-visible {
+  outline: 2px solid rgba(154, 247, 163, 0.8);
+  outline-offset: 4px;
+}
+
 @media (max-width: 1100px) {
   .blueprint-wrap {
     grid-template-columns: minmax(260px, 0.82fr) minmax(0, 1.18fr);
@@ -194,6 +265,15 @@
     min-height: auto;
     padding: 22px;
   }
+
+  .blueprint-cta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .blueprint-cta-button {
+    min-width: 220px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -210,7 +290,8 @@
   }
 
   .blueprint-intro,
-  .blueprint-grid {
+  .blueprint-grid,
+  .blueprint-cta {
     width: 100%;
     max-width: calc(100vw - 20px);
   }
@@ -237,5 +318,15 @@
     width: 48px;
     height: 48px;
     border-radius: 12px;
+  }
+
+  .blueprint-cta {
+    gap: 18px;
+    padding-top: 24px;
+  }
+
+  .blueprint-cta-button {
+    width: min(100%, 280px);
+    min-width: 0;
   }
 }

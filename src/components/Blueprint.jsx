@@ -47,6 +47,12 @@ const blueprintFeatures = [
   }
 ]
 
+const blueprintWhatsappMessage = encodeURIComponent(
+  "Hi Emmanuel, I'm ready to turn my idea into a fast, conversion-focused website."
+)
+
+const blueprintWhatsappLink = `https://wa.me/233557066467?text=${blueprintWhatsappMessage}`
+
 function Blueprint() {
   return (
     <section className="blueprint-section" aria-labelledby="blueprint-title">
@@ -75,6 +81,18 @@ function Blueprint() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="blueprint-cta">
+          <p>Ready to turn your idea into a fast, conversion-focused website?</p>
+          <a
+            href={blueprintWhatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="blueprint-cta-button"
+          >
+            Start a Project
+          </a>
         </div>
       </div>
     </section>

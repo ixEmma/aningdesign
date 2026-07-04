@@ -16,8 +16,37 @@ header {
   margin: 0 auto;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  line-height: 0;
+  text-decoration: none;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.logo-link:hover {
+  transform: translateY(-1px);
+  filter: drop-shadow(0 0 10px rgba(154, 247, 163, 0.25));
+}
+
+.logo-link:focus-visible {
+  outline: 2px solid rgba(154, 247, 163, 0.8);
+  outline-offset: 4px;
+}
+
 .logo img {
+  width: 50px;
   max-width: 70px;
+  height: auto;
+  display: block;
 }
 
 /* Hamburger Button */

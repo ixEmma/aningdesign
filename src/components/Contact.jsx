@@ -1,15 +1,42 @@
+import { useState } from 'react'
 import './Contact.css'
 import CTA from './CTA'
 
 function Contact() {
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // Form submission logic can be added here
-    const form = e.target
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitState, setSubmitState] = useState({ type: '', text: '' })
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+
+    const form = event.currentTarget
     const formData = new FormData(form)
-    const data = Object.fromEntries(formData)
-    console.log('Form data:', data)
-    // You can add actual form submission logic here
+
+    setIsSubmitting(true)
+    setSubmitState({ type: '', text: '' })
+
+    try {
+      formData.append('_subject', 'New Website Contact Message')
+      formData.append('_captcha', 'false')
+      formData.append('_template', 'table')
+
+      const response = await fetch('https://formsubmit.co/ajax/aningemma1@gmail.com', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: formData
+      })
+
+      if (!response.ok) {
+        throw new Error('Submission failed')
+      }
+
+      setSubmitState({ type: 'success', text: 'Thanks. Your message was sent.' })
+      form.reset()
+    } catch (error) {
+      setSubmitState({ type: 'error', text: 'Could not send your message. Please try again.' })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -27,6 +54,14 @@ function Contact() {
           </p>
 
           <form className="contact-form" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="_honey"
+              className="contact-honeypot"
+              tabIndex={-1}
+              autoComplete="off"
+            />
+
             <div className="form-group">
               <label htmlFor="name">Name</label>
               <input type="text" id="name" name="name" placeholder="Your name" required />
@@ -54,8 +89,8 @@ function Contact() {
               ></textarea>
             </div>
 
-            <button type="submit" className="form-submit-btn">
-              Send Message
+            <button type="submit" className="form-submit-btn" disabled={isSubmitting}>
+              {isSubmitting ? 'Sending...' : 'Send Message'}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -71,6 +106,11 @@ function Contact() {
                 <path d="M22 2 11 13" />
               </svg>
             </button>
+            {submitState.text && (
+              <p className={`contact-form-status ${submitState.type}`} aria-live="polite">
+                {submitState.text}
+              </p>
+            )}
           </form>
         </div>
 

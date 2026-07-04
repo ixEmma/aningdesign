@@ -8,6 +8,14 @@ import { getPostBySlug } from '../utils/blogUtils'
 import { useSeo } from '../utils/seo'
 import './BlogPost.css'
 
+const getBlogImageUrl = (thumbnail) => {
+  if (!thumbnail) return 'https://aningdesign.com/images/LOGO.png'
+  if (/^https?:\/\//i.test(thumbnail)) return thumbnail
+  if (thumbnail.startsWith('/')) return `https://aningdesign.com${thumbnail}`
+
+  return `https://aningdesign.com/${thumbnail}`
+}
+
 function BlogPost() {
   const { slug } = useParams()
   const post = getPostBySlug(slug)
@@ -16,11 +24,13 @@ function BlogPost() {
     return <Navigate to="/blog" replace />
   }
 
+  const postImage = getBlogImageUrl(post.thumbnail)
+
   useSeo({
     title: `${post.title} | Aning Design Lab`,
     description: post.description,
     canonical: `https://aningdesign.com/blog/${post.slug}`,
-    image: post.thumbnail ? `https://aningdesign.com${post.thumbnail}` : undefined,
+    image: postImage,
     keywords: post.tags.join(', '),
     type: 'article'
   })
@@ -44,7 +54,7 @@ function BlogPost() {
       datePublished: post.date,
       dateModified: post.date,
       mainEntityOfPage: `https://aningdesign.com/blog/${post.slug}`,
-      image: post.thumbnail ? `https://aningdesign.com${post.thumbnail}` : 'https://aningdesign.com/images/LOGO.png',
+      image: postImage,
       keywords: post.tags.join(', '),
       author: {
         '@type': 'Person',
@@ -63,7 +73,7 @@ function BlogPost() {
     })
 
     return () => script.remove()
-  }, [post])
+  }, [post, postImage])
 
   return (
     <main className="blog-post-page">

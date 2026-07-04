@@ -46,7 +46,9 @@ function Header() {
       <header>
         <div className="header-container">
           <div className="logo">
-            <img src="/images/LOGO.png" alt="logo" style={{ maxWidth: '50px' }} />
+            <a href="/#home" className="logo-link" aria-label="Go to homepage">
+              <img src="/images/LOGO.png" alt="Aning Design logo" />
+            </a>
           </div>
 
           <div className="available-for-projects-container">
