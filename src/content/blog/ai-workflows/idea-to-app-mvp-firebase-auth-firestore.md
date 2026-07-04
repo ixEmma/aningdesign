@@ -63,7 +63,8 @@ This video is part of the full AI-built website workflow. The previous stage foc
 
 Useful links for the series:
 
-- Watch Part 1: [https://youtu.be/Zgsijnmwd-o](https://youtu.be/Zgsijnmwd-o)
+- Read Part 1: [Firebase Studio vs Codex vs Claude Code Building AssetraX](/blog/idea-to-app-mvp-assetrax-ai-coding-tools-comparison)
+- Watch Part 1 on YouTube: [https://youtu.be/Zgsijnmwd-o](https://youtu.be/Zgsijnmwd-o)
 - Watch Part 2: [https://youtu.be/4OYUpTQG08w](https://youtu.be/4OYUpTQG08w)
 - Read Part 2: [Deploy AI-Generated Code with Firebase Hosting and a Custom Domain](/blog/idea-to-app-mvp-firebase-hosting-custom-domain)
 - Click this link to monitor your finance: [https://assetrax.online/](https://assetrax.online/)
@@ -166,6 +167,7 @@ You can open the live finance monitoring MVP here: [https://assetrax.online/](ht
 
 ## Related Tutorials
 
+- [Idea to App MVP Part 1: Firebase Studio vs Codex vs Claude Code Building AssetraX](/blog/idea-to-app-mvp-assetrax-ai-coding-tools-comparison)
 - [Idea to App MVP Part 2: Deploy AI-Generated Code with Firebase Hosting and a Custom Domain](/blog/idea-to-app-mvp-firebase-hosting-custom-domain)
 - [How to Connect a Cloudflare Domain to Netlify Step by Step](/blog/connect-cloudflare-domain-to-netlify)
 - [How to Build and Deploy a Photography Landing Page with OpenAI Codex, React, GitHub and Netlify](/blog/build-deploy-photography-landing-page-react-netlify)

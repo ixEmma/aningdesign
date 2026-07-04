@@ -247,6 +247,7 @@ This sets up the next stage of the series: turning the hosted frontend into a re
 
 ## Related Tutorials
 
+- [Idea to App MVP Part 1: Firebase Studio vs Codex vs Claude Code Building AssetraX](/blog/idea-to-app-mvp-assetrax-ai-coding-tools-comparison)
 - [Idea to App MVP Part 3: Add Google Sign-In and Firestore to a Firebase Web App](/blog/idea-to-app-mvp-firebase-auth-firestore)
 - [How to Connect a Cloudflare Domain to Netlify Step by Step](/blog/connect-cloudflare-domain-to-netlify)
 - [How to Build and Deploy a Photography Landing Page with OpenAI Codex, React, GitHub and Netlify](/blog/build-deploy-photography-landing-page-react-netlify)
