@@ -91,9 +91,9 @@
   min-height: clamp(260px, 34vh, 320px);
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 18px;
+  gap: 20px;
   align-items: start;
-  padding: 24px;
+  padding: 30px 28px 32px;
   border: 1px solid rgba(154, 247, 163, 0.18);
   border-radius: 18px;
   background: linear-gradient(135deg, rgba(17, 17, 17, 0.95), rgba(30, 30, 30, 0.95));
@@ -138,11 +138,11 @@
 }
 
 .blueprint-card p {
-  margin: 10px 0 0;
+  margin: 12px 0 0;
   color: #dcdcdc;
   font-family: "Switzer", sans-serif;
   font-size: 0.94rem;
-  line-height: 1.58;
+  line-height: 1.66;
   overflow-wrap: break-word;
 }
 
@@ -223,7 +223,7 @@
 
   .blueprint-card {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 16px;
   }
 
   .blueprint-intro h2,
@@ -260,9 +260,9 @@
 
   .blueprint-card {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 16px;
     min-height: auto;
-    padding: 22px;
+    padding: 26px 24px 28px;
   }
 
   .blueprint-cta-button {
@@ -308,9 +308,9 @@
 
   .blueprint-card {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 16px;
     border-radius: 16px;
-    padding: 20px;
+    padding: 24px 22px 26px;
   }
 
   .blueprint-icon {

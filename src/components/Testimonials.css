@@ -46,7 +46,7 @@
   background: rgba(17, 17, 17, 0.9);
   border: 1px solid rgba(154, 247, 163, 0.1);
   border-radius: 12px;
-  padding: 28px;
+  padding: 32px 30px 34px;
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease-in-out;
@@ -79,7 +79,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .star-icon {
@@ -113,7 +113,7 @@
   font-weight: 400;
   color: #ffffff;
   line-height: 1.6;
-  margin: 0 0 20px 0;
+  margin: 0 0 24px 0;
   flex-grow: 1;
   font-family: "Switzer", sans-serif;
 }
@@ -126,7 +126,7 @@
 /* Author Info */
 .testimonial-author {
   border-top: 1px solid rgba(154, 247, 163, 0.1);
-  padding-top: 14px;
+  padding-top: 16px;
 }
 
 .author-name {
@@ -186,7 +186,7 @@
   }
 
   .testimonial-card {
-    padding: 22px;
+    padding: 26px 24px 28px;
   }
 
   .testimonials-title {
@@ -249,7 +249,7 @@
   }
 
   .testimonial-card {
-    padding: 18px;
+    padding: 22px 20px 24px;
   }
 
   .testimonial-quote {

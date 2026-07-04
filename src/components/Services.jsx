@@ -200,7 +200,7 @@ const Services = () => {
           background: var(--card-bg);
           border: 1px solid rgba(154, 247, 163, 0.22);
           border-radius: 18px;
-          padding: 24px;
+          padding: 30px 28px 32px;
           box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
           transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
           overflow: hidden;
@@ -240,8 +240,8 @@ const Services = () => {
 
         .popular-badge {
           position: absolute;
-          top: 14px;
-          right: 14px;
+          top: 18px;
+          right: 18px;
           padding: 6px 10px;
           border-radius: 999px;
           font-size: 0.72rem;
@@ -262,7 +262,7 @@ const Services = () => {
         }
 
         .card-price {
-          margin: 10px 0 0;
+          margin: 14px 0 0;
           font-size: clamp(1.55rem, 2vw, 1.85rem);
           font-weight: 800;
           color: var(--brand-cyan);
@@ -290,10 +290,10 @@ const Services = () => {
 
         .features-list {
           list-style: none;
-          margin: 20px 0 24px;
+          margin: 24px 0 28px;
           padding: 0;
           display: grid;
-          gap: 10px;
+          gap: 11px;
         }
 
         .feature-item {
@@ -301,7 +301,7 @@ const Services = () => {
           padding-left: 24px;
           color: var(--text-soft);
           font-size: 0.95rem;
-          line-height: 1.45;
+          line-height: 1.55;
         }
 
         .feature-item::before {
@@ -321,7 +321,8 @@ const Services = () => {
           width: 100%;
           border: 1px solid rgba(0, 201, 255, 0.45);
           border-radius: 12px;
-          padding: 12px 16px;
+          min-height: 46px;
+          padding: 13px 16px;
           background: rgba(0, 0, 0, 0.28);
           color: var(--text-main);
           font-size: 0.95rem;
@@ -361,13 +362,13 @@ const Services = () => {
           background: var(--card-bg);
           border: 1px solid rgba(154, 247, 163, 0.28);
           border-radius: 16px;
-          padding: 18px;
+          padding: 24px;
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.42), 0 0 16px rgba(0, 201, 255, 0.12);
         }
 
         .mobile-plan-block + .mobile-plan-block {
-          margin-top: 18px;
-          padding-top: 18px;
+          margin-top: 22px;
+          padding-top: 22px;
           border-top: 1px solid rgba(154, 247, 163, 0.22);
         }
 
@@ -376,7 +377,7 @@ const Services = () => {
           align-items: center;
           justify-content: space-between;
           gap: 10px;
-          margin-bottom: 2px;
+          margin-bottom: 6px;
         }
 
         .mobile-plan-title {
@@ -407,10 +408,10 @@ const Services = () => {
 
         .mobile-features {
           list-style: none;
-          margin: 12px 0 14px;
+          margin: 16px 0 18px;
           padding: 0;
           display: grid;
-          gap: 8px;
+          gap: 9px;
         }
 
         .mobile-feature {
@@ -418,7 +419,7 @@ const Services = () => {
           padding-left: 20px;
           font-size: 0.92rem;
           color: var(--text-soft);
-          line-height: 1.4;
+          line-height: 1.5;
         }
 
         .mobile-feature::before {
@@ -437,7 +438,8 @@ const Services = () => {
           width: 100%;
           border: 1px solid rgba(0, 201, 255, 0.45);
           border-radius: 10px;
-          padding: 10px 12px;
+          min-height: 44px;
+          padding: 11px 12px;
           background: rgba(0, 0, 0, 0.3);
           color: var(--text-main);
           font-size: 0.9rem;
@@ -508,7 +510,7 @@ const Services = () => {
           }
 
           .mobile-combined-card {
-            padding: 14px;
+            padding: 20px;
             border-radius: 14px;
           }
 
