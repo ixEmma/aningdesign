@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="seoTitle" fill="none">
+  <title id="seoTitle">SEO</title>
+  <circle cx="10.5" cy="10.5" r="5.7" stroke="#00C9FF" stroke-width="2"/>
+  <path d="m15 15 4.5 4.5" stroke="#00FB64" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M7.4 12.8h6.2M7.4 10.5h6.2M7.4 8.2h6.2" stroke="#FFFFFF" stroke-width="1.25" stroke-linecap="round"/>
+  <path d="M15.5 8.2h2.2v2.2" stroke="#00FB64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m17.7 8.2-3.8 3.8-1.7-1.7-2.2 2.2" stroke="#00FB64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

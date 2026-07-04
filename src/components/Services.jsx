@@ -28,8 +28,8 @@ const Services = () => {
   const websitePlans = [
     {
       title: 'Starter Website',
-      originalPrice: '$450',
-      currentPrice: '$300',
+      originalPrice: '$395',
+      currentPrice: '$199',
       features: [
         '1-5 Pages',
         'Mobile Responsive',
@@ -43,8 +43,8 @@ const Services = () => {
     },
     {
       title: 'Business Website',
-      originalPrice: '$1000',
-      currentPrice: '$600',
+      originalPrice: '$495',
+      currentPrice: '$399',
       features: [
         '5-10 Pages',
         'Custom UI Design (Elementor-style)',
@@ -62,8 +62,8 @@ const Services = () => {
     },
     {
       title: 'Advanced / Custom Build',
-      originalPrice: '$2400',
-      currentPrice: '$1500',
+      originalPrice: '$1999',
+      currentPrice: '$799',
       features: [
         'Unlimited Pages',
         'Custom Features (Booking, Dashboard, etc.)',
@@ -80,10 +80,10 @@ const Services = () => {
   const graphicDesignPlans = [
     {
       title: 'Starter Design',
-      originalPrice: '$150',
+      originalPrice: '$100',
       currentPrice: '$50',
       features: [
-        'Social Media Post (1-2)',
+        'Social Media Post (3-5 designs)',
         'Flyer or Simple Poster',
         'Basic Revisions (2x)',
         'Fast Delivery'
@@ -93,11 +93,11 @@ const Services = () => {
     },
     {
       title: 'Brand Essentials',
-      originalPrice: '$250',
-      currentPrice: '$150',
+      originalPrice: '$150',
+      currentPrice: '$100',
       features: [
         'Logo or Brand Assets',
-        'Social Media Kit (3-5 designs)',
+        'Social Media Kit (5-8 designs)',
         'Flyer / Poster Design',
         '3-5 Revisions',
         'High-Quality Export'

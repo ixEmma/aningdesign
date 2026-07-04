@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="codexTitle">
+  <title id="codexTitle">Codex</title>
+  <defs>
+    <linearGradient id="codexCloud" x1="20" y1="6" x2="43" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#AA98FF"/>
+      <stop offset="0.48" stop-color="#6579FF"/>
+      <stop offset="1" stop-color="#3347F4"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="13" fill="#FFFFFF"/>
+  <g fill="url(#codexCloud)">
+    <circle cx="21" cy="33" r="13"/>
+    <circle cx="34" cy="25" r="18"/>
+    <circle cx="46" cy="33" r="14"/>
+    <circle cx="31" cy="42" r="14"/>
+    <rect x="14" y="30" width="41" height="20" rx="10"/>
+  </g>
+  <path d="m22.5 21.5 9 10.5-9 10.5" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M37 42h14" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+</svg>

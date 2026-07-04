@@ -23,14 +23,22 @@
   overflow: hidden; /* Better mobile compatibility than clip */
   mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   padding: 10px 0; /* Space for hover transform */
 }
 
 .skills-track {
   display: flex;
   width: max-content;
-  animation: skills-scroll 36s linear infinite;
+  animation: skills-scroll 34s linear infinite;
   will-change: transform; /* GPU acceleration for smoother mobile animation */
+}
+
+.skills-track--reverse {
+  animation-name: skills-scroll-reverse;
+  animation-duration: 52s;
 }
 
 /* Pause animation on hover (desktop only) */
@@ -99,6 +107,15 @@ hr.rule {
   }
 }
 
+@keyframes skills-scroll-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
   .my-skills {
@@ -113,6 +130,10 @@ hr.rule {
 
   .skills-track {
     animation-duration: 30s;
+  }
+
+  .skills-track--reverse {
+    animation-duration: 46s;
   }
 
   .skill-item {
@@ -149,6 +170,10 @@ hr.rule {
 
   .skills-track {
     animation-duration: 24s;
+  }
+
+  .skills-track--reverse {
+    animation-duration: 38s;
   }
 
   .skill-item {
