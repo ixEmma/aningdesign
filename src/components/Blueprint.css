@@ -70,7 +70,7 @@
   background: linear-gradient(90deg, #00fb64, #00c9ff);
 }
 
-.blueprint-intro p {
+.blueprint-intro > p {
   max-width: 520px;
   margin: 24px 0 0;
   color: #dcdcdc;
@@ -147,23 +147,21 @@
 }
 
 .blueprint-cta {
-  grid-column: 1 / -1;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 22px;
-  margin-top: 2px;
-  padding-top: 28px;
-  border-top: 1px solid rgba(154, 247, 163, 0.18);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  max-width: 520px;
+  margin-top: 20px;
   min-width: 0;
 }
 
 .blueprint-cta p {
   margin: 0;
-  max-width: 620px;
+  max-width: 480px;
   color: #ffffff;
   font-family: "Switzer", sans-serif;
-  font-size: clamp(1.08rem, 2vw, 1.42rem);
+  font-size: clamp(1rem, 1.35vw, 1.18rem);
   font-weight: 800;
   line-height: 1.35;
   overflow-wrap: break-word;
@@ -229,7 +227,8 @@
   }
 
   .blueprint-intro h2,
-  .blueprint-intro p {
+  .blueprint-intro > p,
+  .blueprint-cta {
     max-width: 520px;
   }
 }
@@ -266,11 +265,6 @@
     padding: 22px;
   }
 
-  .blueprint-cta {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
   .blueprint-cta-button {
     min-width: 220px;
   }
@@ -290,10 +284,15 @@
   }
 
   .blueprint-intro,
-  .blueprint-grid,
+  .blueprint-grid {
+    width: 100%;
+    max-width: calc(100vw - 20px);
+  }
+
   .blueprint-cta {
     width: 100%;
     max-width: calc(100vw - 20px);
+    gap: 14px;
   }
 
   .blueprint-intro h2 {
@@ -302,7 +301,7 @@
     line-height: 1.14;
   }
 
-  .blueprint-intro p {
+  .blueprint-intro > p {
     font-size: 0.96rem;
     line-height: 1.65;
   }
@@ -321,8 +320,7 @@
   }
 
   .blueprint-cta {
-    gap: 18px;
-    padding-top: 24px;
+    margin-top: 18px;
   }
 
   .blueprint-cta-button {

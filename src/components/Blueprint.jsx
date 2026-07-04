@@ -67,6 +67,18 @@ function Blueprint() {
             AI-assisted workflows to create digital experiences that feel premium, load fast, and
             support real business goals.
           </p>
+
+          <div className="blueprint-cta">
+            <p>Ready to turn your idea into a fast, conversion-focused website?</p>
+            <a
+              href={blueprintWhatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="blueprint-cta-button"
+            >
+              Start a Project
+            </a>
+          </div>
         </div>
 
         <div className="blueprint-grid">
@@ -81,18 +93,6 @@ function Blueprint() {
               </div>
             </article>
           ))}
-        </div>
-
-        <div className="blueprint-cta">
-          <p>Ready to turn your idea into a fast, conversion-focused website?</p>
-          <a
-            href={blueprintWhatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="blueprint-cta-button"
-          >
-            Start a Project
-          </a>
         </div>
       </div>
     </section>
