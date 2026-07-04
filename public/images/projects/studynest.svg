@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="studynestTitle" fill="none">
+  <title id="studynestTitle">StudyNest</title>
+  <rect x="8" y="8" width="48" height="48" rx="8" fill="#0B1515"/>
+  <path d="M18 23c6-5 15-5 21 0v22c-6-5-15-5-21 0V23Z" fill="#00FB64"/>
+  <path d="M39 23c3-2 6-3 9-3v22c-3 0-6 1-9 3V23Z" fill="#00C9FF"/>
+  <path d="M24 28h9M24 34h9M24 40h7" stroke="#071010" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M32 18c4 0 7 2 8 5" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round"/>
+</svg>

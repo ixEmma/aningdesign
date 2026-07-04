@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="assetraxTitle" fill="none">
+  <title id="assetraxTitle">AssetRax</title>
+  <rect x="8" y="8" width="48" height="48" rx="8" fill="#0B1515"/>
+  <path d="M21 23h22v24H21V23Z" stroke="#FFFFFF" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M25 18h14l4 5H21l4-5Z" fill="#00C9FF"/>
+  <path d="M27 31h10M27 38h6" stroke="#00FB64" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="43" cy="43" r="5" stroke="#00FB64" stroke-width="3"/>
+  <path d="m47 47 3 3" stroke="#00FB64" stroke-width="3" stroke-linecap="round"/>
+</svg>

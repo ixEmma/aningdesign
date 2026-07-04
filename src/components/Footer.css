@@ -2,8 +2,7 @@
 .footer-name {
   position: relative;
   background: linear-gradient(180deg, rgba(26, 26, 26, 0.7), rgba(13, 13, 13, 0.7));
-  padding: 60px 20px 30px;
-  text-align: center;
+  padding: 64px 20px 78px;
   color: #c9c9c9;
   overflow: hidden;
 }
@@ -12,9 +11,9 @@
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
   background-image: url('/images/LOGO-footer.png');
   background-size: 300px;
   background-position: center;
@@ -27,26 +26,107 @@
 .footer-content {
   position: relative;
   z-index: 1;
-  max-width: 1200px;
+  width: min(100%, 1200px);
   margin: 0 auto;
 }
 
+.footer-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 1.35fr) minmax(130px, 0.75fr) minmax(150px, 0.75fr) minmax(230px, 0.9fr);
+  gap: 44px;
+  align-items: start;
+}
+
+.footer-brand {
+  display: grid;
+  justify-items: start;
+  gap: 16px;
+  max-width: 360px;
+}
+
+.footer-brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  color: #ffffff;
+  font-family: "Switzer", sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.footer-brand-mark img {
+  display: block;
+  width: 44px;
+  height: auto;
+}
+
+.footer-brand p {
+  max-width: 330px;
+  margin: 0;
+  color: rgba(220, 220, 220, 0.82);
+  font-family: "Switzer", sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.footer-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 30px;
+  padding: 7px 11px;
+  border: 1px solid rgba(154, 247, 163, 0.18);
+  border-radius: 999px;
+  color: #9af7a3;
+  background: rgba(154, 247, 163, 0.06);
+  font-family: "Switzer", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.footer-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #9af7a3;
+  box-shadow: 0 0 12px rgba(154, 247, 163, 0.5);
+}
+
+.footer-link-group {
+  display: grid;
+  justify-items: start;
+  gap: 15px;
+}
+
+.footer-link-group h2 {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Switzer", sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1;
+}
+
 .footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  margin-bottom: 30px;
+  display: grid;
+  gap: 11px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .footer-links a {
+  position: relative;
+  display: inline-flex;
   color: #dcdcdc;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   font-family: "Switzer", sans-serif;
-  transition: all 0.3s ease;
-  position: relative;
+  line-height: 1.35;
+  transition: color 0.3s ease;
 }
 
 .footer-links a::after {
@@ -68,85 +148,105 @@
   width: 100%;
 }
 
+.footer-connect {
+  min-width: 0;
+}
+
 .footer-social {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .footer-social a {
+  position: relative;
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 45px;
-  height: 45px;
-  background: rgba(34, 34, 34, 0.8);
+  width: 42px;
+  height: 42px;
   border: 2px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   color: #dcdcdc;
-  font-size: 20px;
+  background: rgba(34, 34, 34, 0.8);
+  font-size: 18px;
   text-decoration: none;
-  transition: all 0.3s ease;
   pointer-events: auto;
   cursor: pointer;
-  position: relative;
-  z-index: 10;
+  transition: all 0.3s ease;
 }
 
 .footer-social a:hover {
-  background: rgba(0, 201, 255, 0.15);
   border-color: rgba(0, 201, 255, 0.4);
   color: #00c9ff;
+  background: rgba(0, 201, 255, 0.15);
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 201, 255, 0.2);
 }
 
-.footer-copyright {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 400;
+.footer-feedback-link {
+  display: inline-flex;
+  justify-self: start;
+  align-items: center;
+  margin-top: 2px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #dcdcdc;
   font-family: "Switzer", sans-serif;
-  color: #a0a0a0;
-  padding-top: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.35;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer-feedback-link:hover,
+.footer-feedback-link:focus-visible {
+  color: #00c9ff;
+  outline: none;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 44px;
+  padding-top: 22px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.footer-copyright {
+  margin: 0;
+  color: #a0a0a0;
+  font-family: "Switzer", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .footer-name {
-    padding: 50px 20px 25px;
+    padding: 56px 20px 78px;
   }
 
   .footer-name::before {
-    background-size: 200px;
+    background-size: 220px;
     opacity: 0.06;
   }
 
-  .footer-links {
-    gap: 20px;
-    margin-bottom: 25px;
-  }
-
-  .footer-links a {
-    font-size: 14px;
-  }
-
-  .footer-social {
-    gap: 15px;
-    margin-bottom: 25px;
-  }
-
-  .footer-social a {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
+  .footer-layout {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: 38px 32px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 560px) {
   .footer-name {
-    padding: 40px 15px 20px;
+    padding: 46px 16px 82px;
   }
 
   .footer-name::before {
@@ -154,20 +254,43 @@
     opacity: 0.05;
   }
 
-  .footer-links {
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 20px;
+  .footer-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-brand,
+  .footer-link-group {
+    justify-items: start;
+  }
+
+  .footer-brand p {
+    max-width: none;
+    font-size: 14px;
+  }
+
+  .footer-links a {
+    font-size: 14px;
+  }
+
+  .footer-social {
+    gap: 10px;
   }
 
   .footer-social a {
-    width: 38px;
-    height: 38px;
-    font-size: 16px;
+    width: 40px;
+    height: 40px;
+    font-size: 17px;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    margin-top: 34px;
   }
 
   .footer-copyright {
+    max-width: 260px;
     font-size: 13px;
+    line-height: 1.5;
   }
 }
-

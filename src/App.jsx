@@ -20,6 +20,7 @@ import LatestBlogTutorials from './components/blog/LatestBlogTutorials'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
 import ThankYou from './pages/ThankYou'
+import StartupPage from './pages/StartupPage'
 import { useSeo } from './utils/seo'
 import { getDomain } from './utils/domain'
 
@@ -63,7 +64,6 @@ function LandingPage() {
       <Testimonials />
       <YoutubeShowcase />
       <LatestBlogTutorials />
-      <Feedback />
       <Services />
       <Contact />
     </>
@@ -100,9 +100,11 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/startups" element={<StartupPage />} />
         <Route path="/thank-you" element={<ThankYou />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Feedback />
       <Footer />
       <ScrollToTop />
     </>

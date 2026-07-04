@@ -75,7 +75,7 @@ function Hero() {
           href="https://wa.me/233557066467?text=Hi, I'm interested in working with you on a project."
           className="cta-button"
         >
-          Start Project
+          Start a Project →
         </a>
       </div>
 

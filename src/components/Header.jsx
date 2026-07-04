@@ -2,9 +2,21 @@ import { useState, useEffect, useRef } from 'react'
 import NavLink from './NavLink'
 import './Header.css'
 
+const projectLinks = [
+  { label: 'Website Design', href: '/#projects' },
+  {
+    label: 'Graphic Design',
+    href: 'https://www.behance.net/emmaaning',
+    target: '_blank',
+    rel: 'noopener noreferrer'
+  },
+  { label: 'Startups', href: '/startups' }
+]
+
 function Header() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [isClosing, setIsClosing] = useState(false)
+  const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false)
   const timeoutRef = useRef(null)
 
   // Cleanup timeout on unmount
@@ -31,10 +43,15 @@ function Header() {
   const closeSidebar = () => {
     if (isClosing) return // Prevent double-close
     setIsClosing(true)
+    setMobileProjectsOpen(false)
     timeoutRef.current = setTimeout(() => {
       setSidebarOpen(false)
       setIsClosing(false)
     }, 420)
+  }
+
+  const toggleMobileProjects = () => {
+    setMobileProjectsOpen((isOpen) => !isOpen)
   }
 
   const handleNavClick = () => {
@@ -71,18 +88,38 @@ function Header() {
             <NavLink href="/#home">Home</NavLink>
             <NavLink href="/#skills">Skills</NavLink>
             <NavLink href="/#services">Services</NavLink>
-            <NavLink href="/#projects">Projects</NavLink>
+            <div className="projects-menu">
+              <button
+                type="button"
+                className="nav-link projects-menu-trigger"
+                aria-haspopup="true"
+              >
+                Projects
+                <span className="projects-menu-chevron" aria-hidden="true"></span>
+              </button>
+              <div className="projects-menu-panel" aria-label="Project categories">
+                {projectLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target={link.target}
+                    rel={link.rel}
+                    className="projects-menu-link"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </div>
             <a href="/blog" className="nav-link">Blog</a>
             <NavLink href="/#contact">Contact</NavLink>
           </nav>
 
           <a
-            href="https://www.behance.net/emmaaning"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/startups"
             className="cta-button-nav"
           >
-            Projects
+            Startups
           </a>
         </div>
       </header>
@@ -106,13 +143,37 @@ function Header() {
             <span className="bar"></span>
           </button>
         </div>
-        <nav className="sidebar-nav" onClick={handleNavClick}>
-          <a href="/#home">Home</a>
-          <a href="/#skills">Skills</a>
-          <a href="/#services">Services</a>
-          <a href="/#projects">Projects</a>
-          <a href="/blog">Blog</a>
-          <a href="/#contact">Contact</a>
+        <nav className="sidebar-nav">
+          <a href="/#home" onClick={handleNavClick}>Home</a>
+          <a href="/#skills" onClick={handleNavClick}>Skills</a>
+          <a href="/#services" onClick={handleNavClick}>Services</a>
+          <div className={`sidebar-projects-group ${mobileProjectsOpen ? 'is-open' : ''}`}>
+            <button
+              type="button"
+              className="sidebar-projects-toggle"
+              onClick={toggleMobileProjects}
+              aria-expanded={mobileProjectsOpen}
+              aria-controls="sidebar-projects-menu"
+            >
+              Projects
+              <span className="sidebar-projects-chevron" aria-hidden="true"></span>
+            </button>
+            <div id="sidebar-projects-menu" className="sidebar-projects-menu">
+              {projectLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target={link.target}
+                  rel={link.rel}
+                  onClick={handleNavClick}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+          <a href="/blog" onClick={handleNavClick}>Blog</a>
+          <a href="/#contact" onClick={handleNavClick}>Contact</a>
         </nav>
       </aside>
       <div
