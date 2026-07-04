@@ -27,14 +27,22 @@ const setLink = (selector, attributes) => {
   })
 }
 
-export const useSeo = ({ title, description, canonical, image, keywords, type = 'article' }) => {
+export const useSeo = ({
+  title,
+  description,
+  canonical,
+  image,
+  keywords,
+  type = 'article',
+  robots = 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+}) => {
   const defaultImage = image || `${getDomain()}/images/LOGO.png`
   
   useEffect(() => {
     document.title = title
 
     setMeta('meta[name="description"]', { name: 'description', content: description })
-    setMeta('meta[name="robots"]', { name: 'robots', content: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' })
+    setMeta('meta[name="robots"]', { name: 'robots', content: robots })
     if (keywords) {
       setMeta('meta[name="keywords"]', { name: 'keywords', content: keywords })
     }
@@ -48,5 +56,5 @@ export const useSeo = ({ title, description, canonical, image, keywords, type = 
     setMeta('meta[name="twitter:title"]', { name: 'twitter:title', content: title })
     setMeta('meta[name="twitter:description"]', { name: 'twitter:description', content: description })
     setMeta('meta[name="twitter:image"]', { name: 'twitter:image', content: defaultImage })
-  }, [title, description, canonical, defaultImage, keywords, type])
+  }, [title, description, canonical, defaultImage, keywords, type, robots])
 }

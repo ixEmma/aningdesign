@@ -2,41 +2,16 @@ import { useState } from 'react'
 import './Contact.css'
 import CTA from './CTA'
 
+const FORM_SUBMIT_ENDPOINT = 'https://formsubmit.co/aningemma1@gmail.com'
+const THANK_YOU_URL = 'https://aningdesign.com/thank-you'
+
 function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitState, setSubmitState] = useState({ type: '', text: '' })
 
-  const handleSubmit = async (event) => {
-    event.preventDefault()
-
-    const form = event.currentTarget
-    const formData = new FormData(form)
-
+  const handleSubmit = () => {
     setIsSubmitting(true)
-    setSubmitState({ type: '', text: '' })
-
-    try {
-      formData.append('_subject', 'New Website Contact Message')
-      formData.append('_captcha', 'false')
-      formData.append('_template', 'table')
-
-      const response = await fetch('https://formsubmit.co/ajax/aningemma1@gmail.com', {
-        method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: formData
-      })
-
-      if (!response.ok) {
-        throw new Error('Submission failed')
-      }
-
-      setSubmitState({ type: 'success', text: 'Thanks. Your message was sent.' })
-      form.reset()
-    } catch (error) {
-      setSubmitState({ type: 'error', text: 'Could not send your message. Please try again.' })
-    } finally {
-      setIsSubmitting(false)
-    }
+    setSubmitState({ type: 'success', text: 'Sending your inquiry securely...' })
   }
 
   return (
@@ -53,7 +28,15 @@ function Contact() {
             hear from you. Fill out the form below and I'll get back to you soon.
           </p>
 
-          <form className="contact-form" onSubmit={handleSubmit}>
+          <form
+            className="contact-form"
+            action={FORM_SUBMIT_ENDPOINT}
+            method="POST"
+            onSubmit={handleSubmit}
+          >
+            <input type="hidden" name="_subject" value="New Aning Design Website Inquiry" />
+            <input type="hidden" name="_next" value={THANK_YOU_URL} />
+            <input type="hidden" name="_template" value="table" />
             <input
               type="text"
               name="_honey"
@@ -64,7 +47,14 @@ function Contact() {
 
             <div className="form-group">
               <label htmlFor="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name"
+                autoComplete="name"
+                required
+              />
             </div>
 
             <div className="form-group">
@@ -74,6 +64,7 @@ function Contact() {
                 id="email"
                 name="email"
                 placeholder="your.email@example.com"
+                autoComplete="email"
                 required
               />
             </div>
