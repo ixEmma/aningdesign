@@ -1,187 +1,185 @@
-import { useState, useEffect, useRef } from 'react'
+import {useCallback, useEffect, useRef, useState} from 'react'
+import {Menu, Search, X} from 'lucide-react'
 import NavLink from './NavLink'
+import HeaderIconButton from './HeaderIconButton'
+import MegaMenu from './MegaMenu'
+import SearchOverlay from './SearchOverlay'
+import {mainNavLinks, projectLinks} from '../data/navigationConfig'
+import {getBlogTopics} from '../services/blogService'
+import {getFeaturedStartups} from '../services/startupService'
 import './Header.css'
 
-const projectLinks = [
-  { label: 'Website Design', href: '/#projects' },
-  {
-    label: 'Graphic Design',
-    href: 'https://www.behance.net/emmaaning',
-    target: '_blank',
-    rel: 'noopener noreferrer'
-  },
-  { label: 'Startups', href: '/startups' }
-]
-
 function Header() {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
-  const [isClosing, setIsClosing] = useState(false)
-  const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false)
-  const timeoutRef = useRef(null)
+  const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false)
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const [featuredStartups, setFeaturedStartups] = useState([])
+  const [blogTopics, setBlogTopics] = useState([])
+  const headerShellRef = useRef(null)
 
-  // Cleanup timeout on unmount
   useEffect(() => {
+    let isMounted = true
+
+    getFeaturedStartups(5)
+      .then((startups) => {
+        if (isMounted) {
+          setFeaturedStartups(startups)
+        }
+      })
+      .catch(() => {
+        if (isMounted) {
+          setFeaturedStartups([])
+        }
+      })
+
+    setBlogTopics(getBlogTopics(8))
+
     return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current)
-      }
+      isMounted = false
     }
   }, [])
 
-  const toggleSidebar = () => {
-    if (sidebarOpen) {
-      setIsClosing(true)
-      timeoutRef.current = setTimeout(() => {
-        setSidebarOpen(false)
-        setIsClosing(false)
-      }, 420)
-    } else {
-      setSidebarOpen(true)
+  useEffect(() => {
+    document.body.classList.toggle('site-menu-open', isMegaMenuOpen)
+
+    return () => {
+      document.body.classList.remove('site-menu-open')
     }
+  }, [isMegaMenuOpen])
+
+  useEffect(() => {
+    document.body.classList.toggle('site-search-open', isSearchOpen)
+
+    return () => {
+      document.body.classList.remove('site-search-open')
+    }
+  }, [isSearchOpen])
+
+  const closeMegaMenu = useCallback(() => {
+    setIsMegaMenuOpen(false)
+  }, [])
+
+  const closeSearch = useCallback(() => {
+    setIsSearchOpen(false)
+  }, [])
+
+  const openSearch = useCallback(() => {
+    setIsMegaMenuOpen(false)
+    setIsSearchOpen(true)
+  }, [])
+
+  const toggleMegaMenu = () => {
+    setIsSearchOpen(false)
+    setIsMegaMenuOpen((isOpen) => !isOpen)
   }
 
-  const closeSidebar = () => {
-    if (isClosing) return // Prevent double-close
-    setIsClosing(true)
-    setMobileProjectsOpen(false)
-    timeoutRef.current = setTimeout(() => {
-      setSidebarOpen(false)
-      setIsClosing(false)
-    }, 420)
-  }
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setIsMegaMenuOpen(false)
+        setIsSearchOpen(false)
+      }
+    }
 
-  const toggleMobileProjects = () => {
-    setMobileProjectsOpen((isOpen) => !isOpen)
-  }
+    window.addEventListener('keydown', handleKeyDown)
 
-  const handleNavClick = () => {
-    closeSidebar()
-  }
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!isMegaMenuOpen) return undefined
+
+    const handlePointerDown = (event) => {
+      if (headerShellRef.current && !headerShellRef.current.contains(event.target)) {
+        closeMegaMenu()
+      }
+    }
+
+    document.addEventListener('mousedown', handlePointerDown)
+    document.addEventListener('touchstart', handlePointerDown)
+
+    return () => {
+      document.removeEventListener('mousedown', handlePointerDown)
+      document.removeEventListener('touchstart', handlePointerDown)
+    }
+  }, [closeMegaMenu, isMegaMenuOpen])
 
   return (
     <>
-      <header className="site-header">
-        <div className="header-container">
-          <div className="logo">
-            <a href="/#home" className="logo-link" aria-label="Go to homepage">
-              <img src="/images/LOGO.png" alt="Aning Design logo" />
-            </a>
-          </div>
-
-          <div className="available-for-projects-container">
-            <div className="circle-icon"></div>
-            <h4 className="available-for-projects">Available for new Projects</h4>
-          </div>
-
-          <button
-            className={`hamburger ${sidebarOpen ? 'is-active' : ''}`}
-            onClick={toggleSidebar}
-            aria-label="Toggle menu"
-            aria-expanded={sidebarOpen}
-          >
-            <span className="bar"></span>
-            <span className="bar"></span>
-            <span className="bar"></span>
-          </button>
-
-          <nav className="main-nav">
-            <NavLink href="/#home">Home</NavLink>
-            <NavLink href="/#skills">Skills</NavLink>
-            <NavLink href="/#services">Services</NavLink>
-            <div className="projects-menu">
-              <button
-                type="button"
-                className="nav-link projects-menu-trigger"
-                aria-haspopup="true"
-              >
-                Projects
-                <span className="projects-menu-chevron" aria-hidden="true"></span>
-              </button>
-              <div className="projects-menu-panel" aria-label="Project categories">
-                {projectLinks.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    target={link.target}
-                    rel={link.rel}
-                    className="projects-menu-link"
-                  >
-                    {link.label}
-                  </a>
-                ))}
-              </div>
+      <div className="header-shell" ref={headerShellRef}>
+        <header className="site-header">
+          <div className="header-container">
+            <div className="logo">
+              <a href="/#home" className="logo-link" aria-label="Go to homepage" onClick={closeMegaMenu}>
+                <img src="/images/LOGO.png" alt="Aning Design logo" />
+              </a>
             </div>
-            <a href="/blog" className="nav-link">Blog</a>
-            <NavLink href="/#contact">Contact</NavLink>
-          </nav>
 
-          <a
-            href="/startups"
-            className="cta-button-nav"
-          >
-            Startups
-          </a>
-        </div>
-      </header>
+            <div className="available-for-projects-container">
+              <div className="circle-icon"></div>
+              <h4 className="available-for-projects">Available for new Projects</h4>
+            </div>
 
-      {/* Mobile sidebar and backdrop */}
-      <aside
-        id="mobile-sidebar"
-        className={`sidebar ${sidebarOpen ? 'is-open' : ''} ${isClosing ? 'closing' : ''}`}
-        aria-hidden={!sidebarOpen}
-        aria-labelledby="sidebar-close"
-      >
-        <div className="sidebar-header">
-          <span className="sidebar-title">MENU</span>
-          <button
-            id="sidebar-close"
-            className="sidebar-close"
-            onClick={closeSidebar}
-            aria-label="Close menu"
-          >
-            <span className="bar"></span>
-            <span className="bar"></span>
-          </button>
-        </div>
-        <nav className="sidebar-nav">
-          <a href="/#home" onClick={handleNavClick}>Home</a>
-          <a href="/#skills" onClick={handleNavClick}>Skills</a>
-          <a href="/#services" onClick={handleNavClick}>Services</a>
-          <div className={`sidebar-projects-group ${mobileProjectsOpen ? 'is-open' : ''}`}>
-            <button
-              type="button"
-              className="sidebar-projects-toggle"
-              onClick={toggleMobileProjects}
-              aria-expanded={mobileProjectsOpen}
-              aria-controls="sidebar-projects-menu"
-            >
-              Projects
-              <span className="sidebar-projects-chevron" aria-hidden="true"></span>
-            </button>
-            <div id="sidebar-projects-menu" className="sidebar-projects-menu">
-              {projectLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target={link.target}
-                  rel={link.rel}
-                  onClick={handleNavClick}
-                >
-                  {link.label}
-                </a>
+            <nav className="main-nav" aria-label="Primary navigation">
+              {mainNavLinks.slice(0, 3).map((link) => (
+                <NavLink key={link.label} href={link.href}>{link.label}</NavLink>
               ))}
+              <div className="projects-menu">
+                <button
+                  type="button"
+                  className="nav-link projects-menu-trigger"
+                  aria-haspopup="true"
+                >
+                  Projects
+                  <span className="projects-menu-chevron" aria-hidden="true"></span>
+                </button>
+                <div className="projects-menu-panel" aria-label="Project categories">
+                  {projectLinks.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target={link.target}
+                      rel={link.rel}
+                      className="projects-menu-link"
+                      onClick={closeMegaMenu}
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+              {mainNavLinks.slice(4).map((link) => (
+                <NavLink key={link.label} href={link.href}>{link.label}</NavLink>
+              ))}
+            </nav>
+
+            <div className="header-actions" aria-label="Header actions">
+              <HeaderIconButton label="Search site" onClick={openSearch}>
+                <Search size={20} strokeWidth={2.2} aria-hidden="true" />
+              </HeaderIconButton>
+              <HeaderIconButton
+                label={isMegaMenuOpen ? 'Close menu' : 'Open menu'}
+                onClick={toggleMegaMenu}
+                isActive={isMegaMenuOpen}
+                controls="site-mega-menu"
+              >
+                {isMegaMenuOpen ? <X size={22} strokeWidth={2.2} aria-hidden="true" /> : <Menu size={22} strokeWidth={2.2} aria-hidden="true" />}
+              </HeaderIconButton>
             </div>
           </div>
-          <a href="/blog" onClick={handleNavClick}>Blog</a>
-          <a href="/#contact" onClick={handleNavClick}>Contact</a>
-        </nav>
-      </aside>
-      <div
-        id="sidebar-backdrop"
-        className={`sidebar-backdrop ${sidebarOpen ? 'is-open' : ''} ${isClosing ? 'closing' : ''}`}
-        onClick={closeSidebar}
-        aria-hidden={!sidebarOpen}
-      ></div>
+        </header>
+
+        <MegaMenu
+          isOpen={isMegaMenuOpen}
+          startups={featuredStartups}
+          blogTopics={blogTopics}
+          onClose={closeMegaMenu}
+          onSearch={openSearch}
+        />
+      </div>
+
+      <SearchOverlay isOpen={isSearchOpen} onClose={closeSearch} startups={featuredStartups} />
     </>
   )
 }
