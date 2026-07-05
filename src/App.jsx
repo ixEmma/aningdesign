@@ -104,9 +104,9 @@ function App() {
         <Route path="/thank-you" element={<ThankYou />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Feedback />
       <Footer />
       <ScrollToTop />
+      <Feedback />
     </>
   )
 }
