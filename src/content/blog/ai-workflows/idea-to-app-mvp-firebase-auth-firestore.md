@@ -44,6 +44,8 @@ The goal is to show the next practical step after deployment. A live website is 
 
 ## Tools Used
 
+![Tools used diagram for Firebase Authentication, Google Sign-in, Firestore, Firebase config, Firebase Console, React, GitHub, and Firebase Hosting](/images/tech-tools-app-setup-diagram.png)
+
 - Firebase Authentication
 - Google Sign-in provider
 - Firestore Database
