@@ -113,7 +113,7 @@ function Header() {
           <div className="header-container">
             <div className="logo">
               <a href="/#home" className="logo-link" aria-label="Go to homepage" onClick={closeMegaMenu}>
-                <img src="/images/LOGO.png" alt="Aning Design logo" width="750" height="750" decoding="async" />
+                <img src="/images/LOGO-96.png" alt="Aning Design logo" width="96" height="96" decoding="async" />
               </a>
             </div>
 

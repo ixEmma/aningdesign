@@ -93,7 +93,7 @@ function Footer() {
         <div className="footer-layout">
           <div className="footer-brand">
             <a href="/#home" className="footer-brand-mark" aria-label="Go to homepage">
-              <img src="/images/LOGO.png" alt="Aning Design Lab logo" width="750" height="750" loading="lazy" decoding="async" />
+              <img src="/images/LOGO-96.png" alt="Aning Design Lab logo" width="96" height="96" loading="lazy" decoding="async" />
               <span>Aning Design Lab</span>
             </a>
             <p>Building websites, web apps, tutorials, and digital products.</p>

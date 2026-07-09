@@ -42,20 +42,6 @@ function Works() {
     return () => observer.disconnect()
   }, [])
 
-  // Force animation restart when visibility changes
-  useEffect(() => {
-    const track = trackRef.current
-    if (!track) return
-
-    if (isVisible) {
-      // Force browser to restart animation
-      track.style.animation = 'none'
-      // Trigger reflow
-      void track.offsetWidth
-      track.style.animation = ''
-    }
-  }, [isVisible])
-
   return (
     <section className="works-section">
       <div className="works-slider">
