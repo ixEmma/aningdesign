@@ -7,6 +7,7 @@ import SearchOverlay from './SearchOverlay'
 import {mainNavLinks, projectLinks} from '../data/navigationConfig'
 import {getBlogTopics} from '../services/blogService'
 import {getFeaturedStartups} from '../services/startupService'
+import {getExternalLinkProps} from '../utils/links'
 import './Header.css'
 
 function Header() {
@@ -112,7 +113,7 @@ function Header() {
           <div className="header-container">
             <div className="logo">
               <a href="/#home" className="logo-link" aria-label="Go to homepage" onClick={closeMegaMenu}>
-                <img src="/images/LOGO.png" alt="Aning Design logo" />
+                <img src="/images/LOGO.png" alt="Aning Design logo" width="750" height="750" decoding="async" />
               </a>
             </div>
 
@@ -135,18 +136,22 @@ function Header() {
                   <span className="projects-menu-chevron" aria-hidden="true"></span>
                 </button>
                 <div className="projects-menu-panel" aria-label="Project categories">
-                  {projectLinks.map((link) => (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      target={link.target}
-                      rel={link.rel}
-                      className="projects-menu-link"
-                      onClick={closeMegaMenu}
-                    >
-                      {link.label}
-                    </a>
-                  ))}
+                  {projectLinks.map((link) => {
+                    const externalProps = getExternalLinkProps(link.href)
+
+                    return (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        target={link.target || externalProps.target}
+                        rel={link.rel || externalProps.rel}
+                        className="projects-menu-link"
+                        onClick={closeMegaMenu}
+                      >
+                        {link.label}
+                      </a>
+                    )
+                  })}
                 </div>
               </div>
               {mainNavLinks.slice(4).map((link) => (

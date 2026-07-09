@@ -1,11 +1,24 @@
 import { useState } from 'react'
+import { Mail, MessageCircle, Send } from 'lucide-react'
 import './Contact.css'
 import CTA from './CTA'
+import { getExternalLinkProps } from '../utils/links'
 
 const FORM_SUBMIT_ENDPOINT = 'https://formsubmit.co/aningemma1@gmail.com'
 const THANK_YOU_URL = 'https://aningdesign.com/thank-you'
+const CONTACT_EMAIL = 'aningemma1@gmail.com'
+const WHATSAPP_URL = 'https://wa.me/233557066467?text=Hi Emmanuel, I am interested in working with you on a project.'
 
-function Contact() {
+const contactSocialLinks = [
+  { label: 'X', href: 'https://x.com/Aningdesigns' },
+  { label: 'LinkedIn', href: 'https://linkedin.com/in/emmanuel-aning-133189310' },
+  { label: 'Behance', href: 'https://www.behance.net/emmaaning' },
+  { label: 'YouTube', href: 'https://www.youtube.com/channel/UCUBBcAJYllM2DVZ46Wkepxg' },
+  { label: 'GitHub', href: 'https://github.com/ixEmma' },
+  { label: 'Telegram', href: 'https://t.me/AningDzn' }
+]
+
+function Contact({ showIntroCta = true, pageMode = false }) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitState, setSubmitState] = useState({ type: '', text: '' })
 
@@ -15,17 +28,15 @@ function Contact() {
   }
 
   return (
-    <section className="contact-section" id="contact">
-      {/* CTA Banner - Call to Action above contact form */}
-      <CTA />
+    <section className={`contact-section${pageMode ? ' contact-section--page' : ''}`} id="contact">
+      {showIntroCta && <CTA />}
       
       <div className="contact-bento-container">
-        {/* Contact Form Card */}
         <div className="bento-card contact-form-card">
-          <h2>CONTACT ME</h2>
+          <p className="contact-card-kicker">Contact</p>
+          <h2>Send message</h2>
           <p className="contact-description">
-            Whether you have a project in mind or just want to say hello, I would love to
-            hear from you. Fill out the form below and I'll get back to you soon.
+            Share the project, the goal, and where you need help. I will review it and reply with the best next step.
           </p>
 
           <form
@@ -46,12 +57,12 @@ function Contact() {
             />
 
             <div className="form-group">
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">Full name</label>
               <input
                 type="text"
                 id="name"
                 name="name"
-                placeholder="Your name"
+                placeholder="Your full name"
                 autoComplete="name"
                 required
               />
@@ -70,6 +81,30 @@ function Contact() {
             </div>
 
             <div className="form-group">
+              <label htmlFor="company">Company or brand name</label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                placeholder="Your company, brand, or project"
+                autoComplete="organization"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="projectType">Project type</label>
+              <select id="projectType" name="projectType" defaultValue="" required>
+                <option value="" disabled>Select a project type</option>
+                <option value="Website design">Website design</option>
+                <option value="Website redesign">Website redesign</option>
+                <option value="Branding or graphic design">Branding or graphic design</option>
+                <option value="UI/UX design">UI/UX design</option>
+                <option value="Startup MVP or web app">Startup MVP or web app</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div className="form-group">
               <label htmlFor="message">Message</label>
               <textarea
                 id="message"
@@ -81,21 +116,8 @@ function Contact() {
             </div>
 
             <button type="submit" className="form-submit-btn" disabled={isSubmitting}>
-              {isSubmitting ? 'Sending...' : 'Send Message'}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="m22 2-7 20-4-9-9-4Z" />
-                <path d="M22 2 11 13" />
-              </svg>
+              {isSubmitting ? 'Sending...' : 'Send message'}
+              <Send size={18} strokeWidth={2.2} aria-hidden="true" />
             </button>
             {submitState.text && (
               <p className={`contact-form-status ${submitState.type}`} aria-live="polite">
@@ -105,41 +127,54 @@ function Contact() {
           </form>
         </div>
 
-        {/* WhatsApp Quick Contact Card */}
-        <div className="bento-card whatsapp-contact-card">
-          <div className="whatsapp-icon-large">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="80"
-              height="80"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-            </svg>
+        <aside className="bento-card contact-details-card" aria-labelledby="contact-options-title">
+          <div>
+            <p className="contact-card-kicker">Direct options</p>
+            <h3 id="contact-options-title">Choose the contact option that works best.</h3>
+            <p className="contact-details-copy">
+              Send the form for project details, use WhatsApp for quick questions, or connect through social links to view more work before reaching out.
+            </p>
           </div>
 
-          <h3>Quick Contact</h3>
-          <p className="whatsapp-description">
-            Send me a message on WhatsApp and I'll get back to you right away!
-          </p>
+          <a
+            href={WHATSAPP_URL}
+            {...getExternalLinkProps(WHATSAPP_URL)}
+            className="whatsapp-cta-btn"
+            aria-label="Chat with Aning Design on WhatsApp"
+          >
+            <MessageCircle size={18} strokeWidth={2.2} aria-hidden="true" />
+            Chat on WhatsApp
+          </a>
 
-          <div className="whatsapp-cta-wrapper">
-            <a
-              href="https://wa.me/233557066467?text=Hi Emmanuel, I'm interested in working with you on a project."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="whatsapp-cta-btn"
-            >
-              <i className="fab fa-whatsapp"></i>
-              Chat on WhatsApp
+          <div className="contact-method-card">
+            <span>Email</span>
+            <a href={`mailto:${CONTACT_EMAIL}`}>
+              <Mail size={16} strokeWidth={2.2} aria-hidden="true" />
+              {CONTACT_EMAIL}
             </a>
           </div>
-        </div>
+
+          <div className="contact-method-card">
+            <span>Response time</span>
+            <p>Most project inquiries receive a reply within 24 hours. <br />For quick questions, WhatsApp is the fastest option.</p>
+          </div>
+
+          <div className="contact-social-block">
+            <p>Connect</p>
+            <div className="contact-social-links">
+              {contactSocialLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  {...getExternalLinkProps(link.href)}
+                  aria-label={`Open ${link.label}`}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
   )

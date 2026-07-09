@@ -1,5 +1,6 @@
 import { ArrowUpRight, Github, Globe2, MapPin, Send, Youtube } from 'lucide-react'
 import { identityTags } from '../../data/startupProjects'
+import { getExternalLinkProps } from '../../utils/links'
 
 const youtubeUrl = 'https://www.youtube.com/channel/UCUBBcAJYllM2DVZ46Wkepxg'
 
@@ -14,7 +15,7 @@ function FounderPanel() {
   return (
     <aside className="startup-founder-panel" aria-labelledby="startup-founder-name">
       <div className="startup-founder-avatar">
-        <img src="/images/LOGO.png" alt="Aning Design Lab logo" />
+        <img src="/images/LOGO.png" alt="Aning Design Lab logo" width="750" height="750" loading="lazy" decoding="async" />
       </div>
 
       <p className="startup-founder-eyebrow">Founder profile</p>
@@ -47,8 +48,7 @@ function FounderPanel() {
         </a>
         <a
           href={youtubeUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+          {...getExternalLinkProps(youtubeUrl)}
           className="startup-profile-button startup-profile-button-secondary"
         >
           View tutorials
@@ -58,7 +58,7 @@ function FounderPanel() {
 
       <div className="startup-founder-links" aria-label="Founder links">
         {founderLinks.map(({ label, href, icon: Icon }) => (
-          <a key={label} href={href} target="_blank" rel="noopener noreferrer">
+          <a key={label} href={href} {...getExternalLinkProps(href)}>
             <Icon size={17} strokeWidth={2.1} aria-hidden="true" />
             {label}
           </a>

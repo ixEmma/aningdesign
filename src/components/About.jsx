@@ -9,9 +9,11 @@ function About() {
     <div className="flex-Container" id="about">
       <div className="aboutUs">
         <img
-          src="/images/papi.jpg"
+          src="/images/papi.webp"
           alt="Mr Aning"
-          fetchPriority="high"
+          width="512"
+          height="512"
+          loading="lazy"
           decoding="async"
         />
       </div>

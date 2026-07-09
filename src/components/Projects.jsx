@@ -1,39 +1,58 @@
-import { useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { ArrowRight } from 'lucide-react'
 import './Projects.css'
 
-function Projects() {
+function LazyProjectVideo({ src, title }) {
+  const [shouldLoad, setShouldLoad] = useState(false)
+  const wrapperRef = useRef(null)
+
   useEffect(() => {
-    const head = document.head
-    const links = [
-      { rel: 'preconnect', href: 'https://www.youtube.com' },
-      { rel: 'preconnect', href: 'https://www.google.com' },
-      { rel: 'preconnect', href: 'https://i.ytimg.com' },
-      { rel: 'dns-prefetch', href: 'https://www.youtube.com' },
-      { rel: 'dns-prefetch', href: 'https://i.ytimg.com' }
-    ]
+    const wrapper = wrapperRef.current
+    if (!wrapper || shouldLoad) return undefined
 
-    const appendedLinks = links
-      .filter(({ rel, href }) => !document.querySelector(`link[rel="${rel}"][href="${href}"]`))
-      .map(({ rel, href }) => {
-        const link = document.createElement('link')
-        link.rel = rel
-        link.href = href
-        if (rel === 'preconnect') {
-          link.crossOrigin = ''
-        }
-        head.appendChild(link)
-        return link
-      })
-
-    return () => {
-      appendedLinks.forEach((link) => {
-        if (link.parentNode) {
-          link.parentNode.removeChild(link)
-        }
-      })
+    if (!('IntersectionObserver' in window)) {
+      setShouldLoad(true)
+      return undefined
     }
-  }, [])
 
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoad(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '700px 0px' }
+    )
+
+    observer.observe(wrapper)
+
+    return () => observer.disconnect()
+  }, [shouldLoad])
+
+  return (
+    <div className="video-wrapper" ref={wrapperRef}>
+      {shouldLoad ? (
+        <iframe
+          src={src}
+          title={title}
+          className="project-video-frame"
+          frameBorder="0"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
+      ) : (
+        <div className="project-video-placeholder" aria-label={title} role="img">
+          <span aria-hidden="true"></span>
+        </div>
+      )}
+    </div>
+  )
+}
+
+function Projects() {
   return (
     <section className="projects-section" id="projects">
       <div className="bento-container">
@@ -51,18 +70,10 @@ function Projects() {
 
         {/* Video Card */}
         <div className="bento-card bento-video">
-          <div className="video-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/H4yZFVvkZog?si=TmiHCeOpRX8PCWTC&rel=0&modestbranding=1&playsinline=1&vq=hd1080"
-              title="Website Project Showcase"
-              className="project-video-frame"
-              frameBorder="0"
-              loading="eager"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
-          </div>
+          <LazyProjectVideo
+            src="https://www.youtube.com/embed/H4yZFVvkZog?si=TmiHCeOpRX8PCWTC&rel=0&modestbranding=1&playsinline=1&vq=hd1080"
+            title="Website Project Showcase"
+          />
         </div>
 
         {/* Description Card */}
@@ -81,25 +92,17 @@ function Projects() {
               className="project-cta"
             >
               Visit Project
-              <i className="fas fa-arrow-right"></i>
+              <ArrowRight size={18} strokeWidth={2.2} aria-hidden="true" />
             </a>
           </div>
         </div>
 
         {/* Project 2 - Video Card */}
         <div className="bento-card bento-video bento-video-2">
-          <div className="video-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/9l-c_AtN1ng?si=WvU5eOWBTJeAlehl&rel=0&modestbranding=1&playsinline=1&vq=hd1080"
-              title="Dr Oliver Rabie Website Showcase"
-              className="project-video-frame"
-              frameBorder="0"
-              loading="eager"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
-          </div>
+          <LazyProjectVideo
+            src="https://www.youtube.com/embed/9l-c_AtN1ng?si=WvU5eOWBTJeAlehl&rel=0&modestbranding=1&playsinline=1&vq=hd1080"
+            title="Dr Oliver Rabie Website Showcase"
+          />
         </div>
 
         {/* Project 2 - Description Card */}
@@ -118,7 +121,7 @@ function Projects() {
               className="project-cta"
             >
               Visit Project
-              <i className="fas fa-arrow-right"></i>
+              <ArrowRight size={18} strokeWidth={2.2} aria-hidden="true" />
             </a>
           </div>
         </div>

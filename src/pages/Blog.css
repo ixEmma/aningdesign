@@ -4,7 +4,7 @@
   background:
     radial-gradient(circle at 16% 12%, rgba(0, 251, 100, 0.1), transparent 32%),
     radial-gradient(circle at 84% 36%, rgba(0, 201, 255, 0.12), transparent 34%),
-    #050606;
+    rgba(5, 6, 6, 0.84);
   overflow-x: hidden;
 }
 

@@ -1,4 +1,5 @@
 import { ArrowUpRight } from 'lucide-react'
+import { getExternalLinkProps } from '../../utils/links'
 
 function ProjectCard({ project }) {
   return (
@@ -6,7 +7,7 @@ function ProjectCard({ project }) {
       <div className="startup-project-card-top">
         <div className="startup-project-title-group">
           <div className="startup-project-icon">
-            <img src={project.icon} alt={`${project.name} icon`} loading="lazy" />
+            <img src={project.icon} alt={`${project.name} icon`} width="512" height="512" loading="lazy" decoding="async" />
           </div>
           <div>
             <h3>{project.name}</h3>
@@ -24,7 +25,7 @@ function ProjectCard({ project }) {
         ))}
       </div>
 
-      <a href={project.url} target="_blank" rel="noopener noreferrer" className="startup-project-link">
+      <a href={project.url} {...getExternalLinkProps(project.url)} className="startup-project-link">
         View project
         <ArrowUpRight size={16} strokeWidth={2.2} aria-hidden="true" />
       </a>

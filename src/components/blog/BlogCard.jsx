@@ -11,7 +11,10 @@ function BlogCard({ post }) {
             src={post.thumbnail}
             alt={post.thumbnailAlt || post.title}
             className="blog-card__image"
+            width="1280"
+            height="720"
             loading="lazy"
+            decoding="async"
           />
         </div>
       )}

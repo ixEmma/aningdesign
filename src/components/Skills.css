@@ -196,3 +196,12 @@ hr.rule {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .skills-track {
+    animation-duration: 60s;
+  }
+
+  .skills-track--reverse {
+    animation-duration: 80s;
+  }
+}

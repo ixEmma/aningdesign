@@ -185,6 +185,13 @@
   box-shadow: 0 5px 15px rgba(0, 201, 255, 0.2);
 }
 
+.footer-social svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
 .footer-feedback-link {
   display: inline-flex;
   justify-self: start;

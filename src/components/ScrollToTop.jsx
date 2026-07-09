@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { ArrowUp } from 'lucide-react'
 import './ScrollToTop.css'
 
 function ScrollToTop() {
@@ -32,7 +33,7 @@ function ScrollToTop() {
       onClick={scrollToTop}
       aria-label="Scroll to top"
     >
-      <i className="fas fa-arrow-up"></i>
+      <ArrowUp size={20} strokeWidth={2.4} aria-hidden="true" />
     </button>
   )
 }

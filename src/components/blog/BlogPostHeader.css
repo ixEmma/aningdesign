@@ -1,6 +1,6 @@
 .blog-post-header {
-  max-width: 920px;
-  margin: 0 auto;
+  max-width: 760px;
+  margin: 0;
   padding: 128px 0 0;
 }
 
@@ -35,7 +35,7 @@
 
 .blog-post-header h1 {
   margin: 0;
-  max-width: 900px;
+  max-width: 760px;
   color: #ffffff;
   font-size: clamp(36px, 5.2vw, 64px);
   font-weight: 900;
@@ -44,7 +44,7 @@
 }
 
 .blog-post-header p {
-  max-width: 760px;
+  max-width: 720px;
   margin: 22px 0 0;
   color: rgba(236, 246, 243, 0.72);
   font-size: 19px;
@@ -70,6 +70,7 @@
 @media (max-width: 768px) {
   .blog-post-header {
     padding-top: 100px;
+    max-width: 100%;
   }
 
   .blog-post-header p {

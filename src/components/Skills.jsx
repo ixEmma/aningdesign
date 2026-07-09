@@ -39,7 +39,7 @@ const developmentSkills = [
 function SkillCard({ skill }) {
   return (
     <div className="skill-item">
-      <img src={skill.icon} alt={`${skill.name} Logo`} />
+      <img src={skill.icon} alt={`${skill.name} Logo`} width="32" height="32" loading="lazy" decoding="async" />
       <span className="skill-name">{skill.name}</span>
     </div>
   )

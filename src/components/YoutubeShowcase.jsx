@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useYoutubeVideos } from '../hooks/useYoutubeUploads'
+import { getExternalLinkProps } from '../utils/links'
 import './YoutubeShowcase.css'
 
 const buildEmbedUrl = (videoId) => {
@@ -46,7 +47,14 @@ function VideoFrame({ video, playing, onPlay, featured = false }) {
           onClick={onPlay}
           aria-label={`Play ${video.title}`}
         >
-          <img src={video.thumbnail} alt={getThumbnailAltText(video)} loading={featured ? 'eager' : 'lazy'} />
+          <img
+            src={video.thumbnail}
+            alt={getThumbnailAltText(video)}
+            width="1280"
+            height="720"
+            loading={featured ? 'eager' : 'lazy'}
+            decoding="async"
+          />
           <span className="youtube-vignette" aria-hidden="true"></span>
           <span className="youtube-play" aria-hidden="true">
             <span></span>
@@ -77,12 +85,12 @@ function DesktopPreviewCard({ video, index }) {
       className="youtube-small-card youtube-preview-card youtube-reveal"
       style={{ '--delay': `${160 + index * 90}ms` }}
     >
-      <a href={video.videoUrl} target="_blank" rel="noopener noreferrer" className="youtube-preview-media" aria-label={`Open ${video.title} on YouTube`}>
-        <img src={video.thumbnail} alt={getThumbnailAltText(video)} loading="lazy" />
+      <a href={video.videoUrl} {...getExternalLinkProps(video.videoUrl)} className="youtube-preview-media" aria-label={`Open ${video.title} on YouTube`}>
+        <img src={video.thumbnail} alt={getThumbnailAltText(video)} width="1280" height="720" loading="lazy" decoding="async" />
         <span className="youtube-vignette" aria-hidden="true"></span>
         <span className="youtube-duration">{video.duration}</span>
       </a>
-      <a href={video.videoUrl} target="_blank" rel="noopener noreferrer" className="youtube-small-copy youtube-preview-link">
+      <a href={video.videoUrl} {...getExternalLinkProps(video.videoUrl)} className="youtube-small-copy youtube-preview-link">
         <span className="youtube-selector-label">Watch on YouTube</span>
         <h3>{video.title}</h3>
         <p>{video.description}</p>

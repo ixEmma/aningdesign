@@ -153,6 +153,45 @@ youtubeEmbedUrl: "https://www.youtube.com/embed/bfHBX7sRPcQ"
 
 `youtubeEmbedUrl` is used to show the embedded video near the top of the post.
 
+## Blog Post Types and Optional Fields
+
+Use one Markdown blog system for both YouTube-support posts and SEO keyword-ranking posts.
+
+For YouTube posts, use:
+
+```md
+type: "youtube"
+youtubeUrl: "https://youtu.be/video-id"
+youtubeEmbedUrl: "https://www.youtube.com/embed/video-id"
+youtubeVideoId: "video-id"
+thumbnail: "/images/blog/example.jpg"
+thumbnailAlt: "Useful thumbnail description"
+relatedService: "/services/website-design"
+```
+
+For SEO posts, use:
+
+```md
+type: "seo"
+primaryKeyword: "small business website design services"
+keywordCluster:
+  - website design services
+  - custom website design
+servicePage: "/services/website-design"
+thumbnail: "https://images.pexels.com/photos/example.jpeg"
+thumbnailAlt: "Useful thumbnail description"
+tags:
+  - Web Design
+  - SEO
+```
+
+Pexels workflow:
+
+- Search with `/api/pexels-search?query=...`
+- Copy the selected image URL into `thumbnail`
+- Write a useful `thumbnailAlt`
+- Optionally save photographer credit in `imageCredit` and `imageCreditUrl`
+
 ## 10. How to Group Blog Posts by Category
 
 Set the `category` field in frontmatter:

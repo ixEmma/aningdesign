@@ -17,9 +17,11 @@ import {
   socialLinks,
   whatWeDoLinks
 } from '../data/navigationConfig'
+import { getExternalLinkProps, isExternalLink } from '../utils/links'
 import './MegaMenu.css'
 
 function SmartLink({item,className = '',children,onNavigate}) {
+  const externalProps = getExternalLinkProps(item.href)
   const handleClick = () => {
     onNavigate?.()
   }
@@ -27,8 +29,8 @@ function SmartLink({item,className = '',children,onNavigate}) {
   return (
     <a
       href={item.href}
-      target={item.target}
-      rel={item.rel}
+      target={item.target || externalProps.target}
+      rel={item.rel || externalProps.rel}
       className={className}
       onClick={handleClick}
     >
@@ -42,9 +44,15 @@ const whatWeDoIconMap = {
   'UI/UX Design': LayoutDashboard,
   Branding: Palette,
   'Graphic Design': PenTool,
-  'React + Firebase Apps': Code2,
+  'Startup MVPs & Web Apps': Code2,
   'SEO Setup': SearchCheck,
   'Website Maintenance': Wrench
+}
+
+const getSocialIcon = (label) => {
+  if (label.includes('YouTube')) return 'YT'
+  if (label.includes('Twitter') || label === 'X') return 'X'
+  return label.slice(0, 2)
 }
 
 function MegaMenu({isOpen,startups,blogTopics,onClose,onSearch}) {
@@ -79,9 +87,9 @@ function MegaMenu({isOpen,startups,blogTopics,onClose,onSearch}) {
 
           <div className="mega-menu-startup-list">
             {(featuredStartups.length > 0 ? featuredStartups : mobileStartups).map((startup) => (
-              <SmartLink key={startup.name} item={{title: startup.name,href: startup.href,target: startup.href.startsWith('http') ? '_blank' : undefined,rel: startup.href.startsWith('http') ? 'noopener noreferrer' : undefined}} className="mega-menu-startup-item" onNavigate={onClose}>
+              <SmartLink key={startup.name} item={{title: startup.name,href: startup.href}} className="mega-menu-startup-item" onNavigate={onClose}>
                 <span className="mega-menu-startup-icon">
-                  {startup.icon ? <img src={startup.icon} alt="" loading="lazy" /> : <BriefcaseBusiness size={18} strokeWidth={2.2} aria-hidden="true" />}
+                  {startup.icon ? <img src={startup.icon} alt="" width="512" height="512" loading="lazy" decoding="async" /> : <BriefcaseBusiness size={18} strokeWidth={2.2} aria-hidden="true" />}
                 </span>
                 <span>
                   <strong>{startup.name}</strong>
@@ -120,7 +128,7 @@ function MegaMenu({isOpen,startups,blogTopics,onClose,onSearch}) {
                   <strong>{item.title}</strong>
                   <small>{item.description}</small>
                 </span>
-                {item.target && <ArrowUpRight size={15} strokeWidth={2.2} aria-hidden="true" />}
+                {(item.target || isExternalLink(item.href)) && <ArrowUpRight size={15} strokeWidth={2.2} aria-hidden="true" />}
               </SmartLink>
             ))}
           </div>
@@ -145,8 +153,8 @@ function MegaMenu({isOpen,startups,blogTopics,onClose,onSearch}) {
 
           <div className="mega-menu-socials" aria-label="Social links">
             {socialLinks.map((link) => (
-              <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label} onClick={onClose}>
-                <i className={link.icon}></i>
+              <a key={link.label} href={link.href} {...getExternalLinkProps(link.href)} aria-label={link.label} onClick={onClose}>
+                <span aria-hidden="true">{getSocialIcon(link.label)}</span>
               </a>
             ))}
           </div>
