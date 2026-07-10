@@ -7,7 +7,6 @@ import Works from './components/Works'
 import Skills from './components/Skills'
 import Blueprint from './components/Blueprint'
 import About from './components/About'
-import Services from './components/Services'
 import Projects from './components/Projects'
 import Feedback from './components/Feedback'
 import Contact from './components/Contact'
@@ -27,6 +26,7 @@ const StartupPage = lazy(() => import('./pages/StartupPage'))
 const ServicesPage = lazy(() => import('./pages/ServicesPage'))
 const ServiceDetailPage = lazy(() => import('./pages/ServiceDetailPage'))
 const ContactPage = lazy(() => import('./pages/ContactPage'))
+const PricingPage = lazy(() => import('./pages/PricingPage'))
 
 function HashScroller() {
   const location = useLocation()
@@ -119,7 +119,6 @@ function LandingPage() {
       <DeferredHomepageSection minHeight={520}>
         <LatestBlogTutorials />
       </DeferredHomepageSection>
-      <Services />
       <Contact />
     </main>
   )
@@ -156,6 +155,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/:slug" element={<ServiceDetailPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/startups" element={<StartupPage />} />

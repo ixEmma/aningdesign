@@ -3,6 +3,7 @@ export const mainNavLinks = [
   {label: 'Skills',href: '/#skills'},
   {label: 'Services',href: '/services'},
   {label: 'Projects',href: '/#projects'},
+  {label: 'Pricing',href: '/pricing'},
   {label: 'Blog',href: '/blog'},
   {label: 'Contact',href: '/contact'}
 ]
@@ -30,6 +31,7 @@ export const whatWeDoLinks = [
 
 export const resourceLinks = [
   {title: 'Blog',href: '/blog',description: 'Tutorials and website-building notes.'},
+  {title: 'Pricing',href: '/pricing',description: 'View website, design, and project pricing options.'},
   {title: 'Books',href: 'https://payhip.com/b/5p0EN',description: 'Design resources and digital products.',target: '_blank',rel: 'noopener noreferrer'},
   {title: 'Tutorials',href: '/blog',description: 'Practical lessons for web design and AI workflows.'},
   {title: 'Case Studies',href: '/#projects',description: 'Selected website projects and builds.'},
@@ -43,6 +45,7 @@ export const quickLinks = [
   {title: 'Contact',href: '/contact'},
   {title: 'Startups',href: '/startups'},
   {title: 'Services',href: '/services'},
+  {title: 'Pricing',href: '/pricing'},
   {title: 'Blog',href: '/blog'}
 ]
 
@@ -60,6 +63,7 @@ export const fallbackBlogTopics = [
 export const mobileActionLinks = [
   {title: 'Startups',href: '/startups'},
   {title: 'Services',href: '/services'},
+  {title: 'Pricing',href: '/pricing'},
   {title: 'Blog',href: '/blog'},
   {title: 'Books',href: 'https://payhip.com/b/5p0EN',target: '_blank',rel: 'noopener noreferrer'},
   {title: 'Contact',href: '/contact'}

@@ -67,6 +67,12 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://aningdesign.com/pricing</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://aningdesign.com/startups</loc>
     <lastmod>2026-07-09</lastmod>
     <changefreq>weekly</changefreq>
