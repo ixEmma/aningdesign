@@ -1,6 +1,5 @@
 export const mainNavLinks = [
   {label: 'Home',href: '/#home'},
-  {label: 'Skills',href: '/#skills'},
   {label: 'Services',href: '/services'},
   {label: 'Projects',href: '/#projects'},
   {label: 'Pricing',href: '/pricing'},
@@ -19,15 +18,33 @@ export const projectLinks = [
   {label: 'Startups',href: '/startups'}
 ]
 
-export const whatWeDoLinks = [
-  {title: 'Website Design',href: '/services/website-design',description: 'Conversion-focused websites for brands, creators, and local businesses.'},
-  {title: 'UI/UX Design',href: '/services/ui-ux-design',description: 'Clean interface systems with responsive user flows.'},
-  {title: 'Branding',href: '/services/branding',description: 'Visual direction, identity assets, and creative polish.'},
-  {title: 'Graphic Design',href: '/services/graphic-design',description: 'Campaign visuals, social graphics, posters, and brand assets.'},
-  {title: 'Startup MVPs & Web Apps',href: '/services/startup-websites',description: 'Landing pages, SaaS MVPs, dashboards, and Firebase-powered product prototypes.'},
-  {title: 'SEO Setup',href: '/blog',description: 'Technical foundations for discoverable websites.'},
-  {title: 'Website Maintenance',href: '/contact',description: 'Updates, fixes, performance tuning, and ongoing support.'}
+export const serviceMegaMenuGroups = [
+  {
+    title: 'Core Services',
+    links: [
+      {title: 'Website Design',href: '/services/website-design',description: 'Clean business websites built for clarity and leads.'},
+      {title: 'WordPress Websites',href: '/services/website-design',description: 'Flexible WordPress sites for service businesses.'},
+      {title: 'React Web Apps',href: '/services/startup-websites',description: 'Fast custom interfaces and web app experiences.'},
+      {title: 'Startup MVPs',href: '/services/startup-websites',description: 'Launch-focused MVPs for founders and product ideas.'}
+    ]
+  },
+  {
+    title: 'Brand & Content',
+    links: [
+      {title: 'Graphic Design',href: '/services/graphic-design',description: 'Campaign, launch, and brand visuals.'},
+      {title: 'Branding',href: '/services/branding',description: 'Visual identity systems for stronger recognition.'},
+      {title: 'Social Media Design',href: '/services/social-media-design',description: 'Scroll-ready graphics for consistent content.'},
+      {title: 'UI/UX Design',href: '/services/ui-ux-design',description: 'Clearer screens, flows, and digital experiences.'}
+    ]
+  }
 ]
+
+export const whatWeDoLinks = serviceMegaMenuGroups.flatMap((group) => group.links)
+
+export const serviceLinks = whatWeDoLinks.map((service) => ({
+  label: service.title,
+  href: service.href
+}))
 
 export const resourceLinks = [
   {title: 'Blog',href: '/blog',description: 'Tutorials and website-building notes.'},
@@ -61,11 +78,11 @@ export const fallbackBlogTopics = [
 ]
 
 export const mobileActionLinks = [
-  {title: 'Startups',href: '/startups'},
+  {title: 'Home',href: '/#home'},
   {title: 'Services',href: '/services'},
+  {title: 'Projects',href: '/#projects'},
   {title: 'Pricing',href: '/pricing'},
   {title: 'Blog',href: '/blog'},
-  {title: 'Books',href: 'https://payhip.com/b/5p0EN',target: '_blank',rel: 'noopener noreferrer'},
   {title: 'Contact',href: '/contact'}
 ]
 

@@ -4,11 +4,40 @@ import NavLink from './NavLink'
 import HeaderIconButton from './HeaderIconButton'
 import MegaMenu from './MegaMenu'
 import SearchOverlay from './SearchOverlay'
-import {mainNavLinks, projectLinks} from '../data/navigationConfig'
+import {mainNavLinks, projectLinks, serviceLinks} from '../data/navigationConfig'
 import {getBlogTopics} from '../services/blogService'
 import {getFeaturedStartups} from '../services/startupService'
 import {getExternalLinkProps} from '../utils/links'
 import './Header.css'
+
+function NavDropdown({link,links,panelLabel,onNavigate}) {
+  return (
+    <div className="nav-dropdown">
+      <a href={link.href} className="nav-link nav-dropdown-trigger" aria-haspopup="true">
+        {link.label}
+        <span className="nav-dropdown-chevron" aria-hidden="true"></span>
+      </a>
+      <div className="nav-dropdown-panel" aria-label={panelLabel}>
+        {links.map((item) => {
+          const externalProps = getExternalLinkProps(item.href)
+
+          return (
+            <a
+              key={`${item.label}-${item.href}`}
+              href={item.href}
+              target={item.target || externalProps.target}
+              rel={item.rel || externalProps.rel}
+              className="nav-dropdown-link"
+              onClick={onNavigate}
+            >
+              {item.label}
+            </a>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
 
 function Header() {
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false)
@@ -123,40 +152,33 @@ function Header() {
             </div>
 
             <nav className="main-nav" aria-label="Primary navigation">
-              {mainNavLinks.slice(0, 3).map((link) => (
-                <NavLink key={link.label} href={link.href}>{link.label}</NavLink>
-              ))}
-              <div className="projects-menu">
-                <button
-                  type="button"
-                  className="nav-link projects-menu-trigger"
-                  aria-haspopup="true"
-                >
-                  Projects
-                  <span className="projects-menu-chevron" aria-hidden="true"></span>
-                </button>
-                <div className="projects-menu-panel" aria-label="Project categories">
-                  {projectLinks.map((link) => {
-                    const externalProps = getExternalLinkProps(link.href)
+              {mainNavLinks.map((link) => {
+                if (link.label === 'Services') {
+                  return (
+                    <NavDropdown
+                      key={link.label}
+                      link={link}
+                      links={serviceLinks}
+                      panelLabel="Service links"
+                      onNavigate={closeMegaMenu}
+                    />
+                  )
+                }
 
-                    return (
-                      <a
-                        key={link.label}
-                        href={link.href}
-                        target={link.target || externalProps.target}
-                        rel={link.rel || externalProps.rel}
-                        className="projects-menu-link"
-                        onClick={closeMegaMenu}
-                      >
-                        {link.label}
-                      </a>
-                    )
-                  })}
-                </div>
-              </div>
-              {mainNavLinks.slice(4).map((link) => (
-                <NavLink key={link.label} href={link.href}>{link.label}</NavLink>
-              ))}
+                if (link.label === 'Projects') {
+                  return (
+                    <NavDropdown
+                      key={link.label}
+                      link={link}
+                      links={projectLinks}
+                      panelLabel="Project categories"
+                      onNavigate={closeMegaMenu}
+                    />
+                  )
+                }
+
+                return <NavLink key={link.label} href={link.href}>{link.label}</NavLink>
+              })}
             </nav>
 
             <div className="header-actions" aria-label="Header actions">

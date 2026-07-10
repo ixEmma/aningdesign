@@ -6,16 +6,14 @@ import {
   Monitor,
   Palette,
   PenTool,
-  Search,
-  SearchCheck,
-  Wrench
+  Search
 } from 'lucide-react'
 import {
   mobileActionLinks,
   quickLinks,
   resourceLinks,
-  socialLinks,
-  whatWeDoLinks
+  serviceMegaMenuGroups,
+  socialLinks
 } from '../data/navigationConfig'
 import { getExternalLinkProps, isExternalLink } from '../utils/links'
 import './MegaMenu.css'
@@ -39,14 +37,15 @@ function SmartLink({item,className = '',children,onNavigate}) {
   )
 }
 
-const whatWeDoIconMap = {
+const serviceIconMap = {
   'Website Design': Monitor,
-  'UI/UX Design': LayoutDashboard,
-  Branding: Palette,
+  'WordPress Websites': Monitor,
+  'React Web Apps': Code2,
+  'Startup MVPs': Code2,
   'Graphic Design': PenTool,
-  'Startup MVPs & Web Apps': Code2,
-  'SEO Setup': SearchCheck,
-  'Website Maintenance': Wrench
+  Branding: Palette,
+  'Social Media Design': Palette,
+  'UI/UX Design': LayoutDashboard
 }
 
 const getSocialIcon = (label) => {
@@ -100,22 +99,46 @@ function MegaMenu({isOpen,startups,blogTopics,onClose,onSearch}) {
           </div>
         </section>
 
-        <section className="mega-menu-section">
-          <p className="mega-menu-kicker">What We Do</p>
-          <div className="mega-menu-link-grid">
-            {whatWeDoLinks.map((item) => {
-              const Icon = whatWeDoIconMap[item.title] || Monitor
+        <section className="mega-menu-section mega-menu-services-section">
+          <div className="mega-menu-heading-row">
+            <p className="mega-menu-kicker">Services</p>
+            <SmartLink item={{title: 'View all services',href: '/services'}} className="mega-menu-small-link" onNavigate={onClose}>
+              View all
+              <ArrowUpRight size={14} strokeWidth={2.2} aria-hidden="true" />
+            </SmartLink>
+          </div>
 
-              return (
-                <SmartLink key={item.title} item={item} className="mega-menu-rich-link" onNavigate={onClose}>
-                  <Icon size={18} strokeWidth={2.1} aria-hidden="true" />
-                  <span>
-                    <strong>{item.title}</strong>
-                    <small>{item.description}</small>
-                  </span>
-                </SmartLink>
-              )
-            })}
+          <div className="mega-menu-services-grid">
+            {serviceMegaMenuGroups.map((group) => (
+              <div className="mega-menu-service-group" key={group.title}>
+                <h3>{group.title}</h3>
+                <div className="mega-menu-service-list">
+                  {group.links.map((item) => {
+                    const Icon = serviceIconMap[item.title] || Monitor
+
+                    return (
+                      <SmartLink key={item.title} item={item} className="mega-menu-rich-link" onNavigate={onClose}>
+                        <Icon size={18} strokeWidth={2.1} aria-hidden="true" />
+                        <span>
+                          <strong>{item.title}</strong>
+                          <small>{item.description}</small>
+                        </span>
+                      </SmartLink>
+                    )
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mega-menu-service-cta">
+            <span>
+              <strong>Not sure what you need?</strong>
+              <small>Tell me what you are building.</small>
+            </span>
+            <SmartLink item={{title: 'Start a project',href: '/contact'}} className="mega-menu-cta-link" onNavigate={onClose}>
+              Start a project
+            </SmartLink>
           </div>
         </section>
 
