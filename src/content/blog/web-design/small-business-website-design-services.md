@@ -66,6 +66,8 @@ Many business website problems start before design begins. If the page structure
 
 Structure controls the user journey. Design should make that journey easier to follow.
 
+![Business owner and website strategist planning homepage and service page structure](/images/blog/business-website-structure-planning.webp)
+
 ### Homepage
 
 The homepage should introduce the business, summarize the main offer, and guide visitors to the most useful next step.
@@ -134,6 +136,8 @@ Before launch, check that:
 - Page speed holds up on mobile connections
 
 Many small business visitors will first see the site on a phone. If the mobile layout is hard to read, the design is not doing its job.
+
+![Web designer reviewing a small business website across desktop, tablet, and mobile](/images/blog/small-business-responsive-review.webp)
 
 ## Basic SEO Setup Before Launch
 
@@ -211,6 +215,8 @@ Use this checklist before publishing:
 - Images are compressed and described with alt text
 - The contact path works from every key page
 - There is a plan for updates after launch
+
+![Business owner and web professional completing a website launch checklist](/images/blog/website-launch-checklist-review.webp)
 
 If several of these are missing, the site probably needs more planning before it goes live.
 

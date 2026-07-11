@@ -74,6 +74,8 @@ Common mistakes include:
 
 A template should be treated as a starting system, not as the final strategy.
 
+![Business owner and designer reviewing whether a website template fits the business content](/images/blog/template-fit-review.webp)
+
 ## When custom website design is the better choice
 
 Custom website design is useful when the website needs to support a more specific business goal.
@@ -92,6 +94,8 @@ It is usually the stronger option when:
 Custom does not have to mean complicated. A focused five-page website can still use custom planning when the content, hierarchy, and calls to action are created for that business.
 
 The value is not simply that the website looks different. The value is that it is organized around what visitors need to understand and do next.
+
+![Custom website planning session using wireframes and a mapped content hierarchy](/images/blog/custom-website-planning.webp)
 
 > **Planning a business website?** AningDesign can help define the page structure, content flow, responsive design, and inquiry paths before the build begins. Review the [website design service](/services/website-design) or [start a project](/contact).
 
@@ -166,6 +170,8 @@ Will the business add services, articles, landing pages, or client resources? Wi
 A good template can handle growth when its underlying system is clean. A poor template can become difficult to maintain after several plugins and one-off layout changes are added.
 
 A custom component system can provide more control, but it also needs clear documentation and an appropriate maintenance plan.
+
+![Designer testing a responsive website across laptop, tablet, and mobile screens](/images/blog/responsive-website-testing.webp)
 
 ## A practical decision checklist
 
