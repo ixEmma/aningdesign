@@ -15,7 +15,13 @@ export const projectLinks = [
     target: '_blank',
     rel: 'noopener noreferrer'
   },
-  {label: 'Startups',href: '/startups'}
+  {label: 'Startups',href: '/startups'},
+  {
+    label: 'Books',
+    href: 'https://payhip.com/b/5p0EN',
+    target: '_blank',
+    rel: 'noopener noreferrer'
+  }
 ]
 
 export const serviceMegaMenuGroups = [
@@ -23,8 +29,8 @@ export const serviceMegaMenuGroups = [
     title: 'Core Services',
     links: [
       {title: 'Website Design',href: '/services/website-design',description: 'Clean business websites built for clarity and leads.'},
-      {title: 'WordPress Websites',href: '/services/website-design',description: 'Flexible WordPress sites for service businesses.'},
-      {title: 'React Web Apps',href: '/services/startup-websites',description: 'Fast custom interfaces and web app experiences.'},
+      {title: 'WordPress Websites',href: '/services/wordpress-websites',description: 'Flexible WordPress sites for service businesses.'},
+      {title: 'React Web Apps',href: '/services/react-web-apps',description: 'Fast custom interfaces and web app experiences.'},
       {title: 'Startup MVPs',href: '/services/startup-websites',description: 'Launch-focused MVPs for founders and product ideas.'}
     ]
   },

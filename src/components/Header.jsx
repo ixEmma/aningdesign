@@ -4,36 +4,116 @@ import NavLink from './NavLink'
 import HeaderIconButton from './HeaderIconButton'
 import MegaMenu from './MegaMenu'
 import SearchOverlay from './SearchOverlay'
-import {mainNavLinks, projectLinks, serviceLinks} from '../data/navigationConfig'
+import {mainNavLinks, projectLinks, serviceMegaMenuGroups} from '../data/navigationConfig'
 import {getBlogTopics} from '../services/blogService'
 import {getFeaturedStartups} from '../services/startupService'
 import {getExternalLinkProps} from '../utils/links'
 import './Header.css'
 
-function NavDropdown({link,links,panelLabel,onNavigate}) {
+const serviceDropdownGroups = serviceMegaMenuGroups.map((group, index) => ({
+  title: index === 0 ? 'Web & Product' : 'Brand & Visual',
+  links: group.links.map((item) => ({
+    label: item.title,
+    href: item.href,
+    target: item.target,
+    rel: item.rel
+  }))
+}))
+
+function DropdownLink({item,onNavigate}) {
+  const externalProps = getExternalLinkProps(item.href)
+
   return (
-    <div className="nav-dropdown">
+    <a
+      href={item.href}
+      target={item.target || externalProps.target}
+      rel={item.rel || externalProps.rel}
+      className="nav-dropdown-link"
+      onClick={onNavigate}
+    >
+      {item.label}
+    </a>
+  )
+}
+
+function NavDropdown({link,links = [],groups = [],panelLabel,onNavigate,variant}) {
+  const [isDismissed, setIsDismissed] = useState(false)
+  const dropdownRef = useRef(null)
+  const isServiceMenu = variant === 'services'
+  const hasGroups = groups.length > 0
+
+  useEffect(() => {
+    if (!isServiceMenu) return undefined
+
+    const handlePointerDown = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDismissed(true)
+      }
+    }
+
+    const handleKeyDown = (event) => {
+      if (event.key !== 'Escape' || !dropdownRef.current?.contains(document.activeElement)) return
+
+      event.preventDefault()
+      setIsDismissed(true)
+      dropdownRef.current.querySelector('.nav-dropdown-trigger')?.focus()
+    }
+
+    document.addEventListener('mousedown', handlePointerDown)
+    document.addEventListener('touchstart', handlePointerDown)
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      document.removeEventListener('mousedown', handlePointerDown)
+      document.removeEventListener('touchstart', handlePointerDown)
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [isServiceMenu])
+
+  const handleBlur = (event) => {
+    if (isServiceMenu && !event.currentTarget.contains(event.relatedTarget)) {
+      setIsDismissed(false)
+    }
+  }
+
+  const handleNavigate = () => {
+    if (isServiceMenu) {
+      setIsDismissed(true)
+    }
+
+    onNavigate?.()
+  }
+
+  return (
+    <div
+      className={`nav-dropdown${variant ? ` nav-dropdown--${variant}` : ''}${isDismissed ? ' is-dismissed' : ''}`}
+      ref={dropdownRef}
+      onBlur={handleBlur}
+      onMouseEnter={() => setIsDismissed(false)}
+    >
       <a href={link.href} className="nav-link nav-dropdown-trigger" aria-haspopup="true">
         {link.label}
         <span className="nav-dropdown-chevron" aria-hidden="true"></span>
       </a>
       <div className="nav-dropdown-panel" aria-label={panelLabel}>
-        {links.map((item) => {
-          const externalProps = getExternalLinkProps(item.href)
-
-          return (
-            <a
-              key={`${item.label}-${item.href}`}
-              href={item.href}
-              target={item.target || externalProps.target}
-              rel={item.rel || externalProps.rel}
-              className="nav-dropdown-link"
-              onClick={onNavigate}
-            >
-              {item.label}
-            </a>
-          )
-        })}
+        {hasGroups ? (
+          <div className="nav-dropdown-grid">
+            {groups.map((group) => (
+              <div className="nav-dropdown-group" key={group.title}>
+                <p className="nav-dropdown-heading">{group.title}</p>
+                <div className="nav-dropdown-group-list">
+                  {group.links.map((item) => (
+                    <DropdownLink key={`${group.title}-${item.label}-${item.href}`} item={item} onNavigate={handleNavigate} />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          links.map((item) => (
+            <DropdownLink key={`${item.label}-${item.href}`} item={item} onNavigate={handleNavigate} />
+          ))
+        )}
       </div>
     </div>
   )
@@ -142,7 +222,7 @@ function Header() {
           <div className="header-container">
             <div className="logo">
               <a href="/#home" className="logo-link" aria-label="Go to homepage" onClick={closeMegaMenu}>
-                <img src="/images/LOGO-96.png" alt="Aning Design logo" width="96" height="96" decoding="async" />
+                <img src="/images/LOGO-96.png" alt="AningDesign logo" width="96" height="96" decoding="async" />
               </a>
             </div>
 
@@ -158,9 +238,10 @@ function Header() {
                     <NavDropdown
                       key={link.label}
                       link={link}
-                      links={serviceLinks}
+                      groups={serviceDropdownGroups}
                       panelLabel="Service links"
                       onNavigate={closeMegaMenu}
+                      variant="services"
                     />
                   )
                 }
@@ -173,6 +254,7 @@ function Header() {
                       links={projectLinks}
                       panelLabel="Project categories"
                       onNavigate={closeMegaMenu}
+                      variant="projects"
                     />
                   )
                 }

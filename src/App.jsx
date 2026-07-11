@@ -50,8 +50,8 @@ function HashScroller() {
 
 function RouteFallback() {
   return (
-    <div className="sr-only" role="status" aria-live="polite">
-      Loading page
+    <div className="route-loading-shell" role="status" aria-live="polite">
+      <span className="sr-only">Loading page</span>
     </div>
   )
 }
@@ -100,7 +100,7 @@ function LandingPage() {
     title: 'Emmanuel Aning | Web Designer & Software Developer in Ghana',
     description: 'Emmanuel Aning is a web designer, software developer, and graphic designer in Accra, Ghana, building WordPress, React, UI/UX, and conversion-focused digital experiences for clients worldwide.',
     canonical: getDomain(),
-    keywords: 'web designer Ghana, software developer Ghana, WordPress developer Ghana, React developer Ghana, UI UX designer Ghana, graphic designer Accra, international web design services, Emmanuel Aning, Aning Design',
+    keywords: 'web designer Ghana, software developer Ghana, WordPress developer Ghana, React developer Ghana, UI UX designer Ghana, graphic designer Accra, international web design services, Emmanuel Aning, AningDesign',
     type: 'website'
   })
 
@@ -150,20 +150,22 @@ function App() {
       <Preloader />
       <HashScroller />
       <Header />
-      <Suspense fallback={<RouteFallback />}>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/services/:slug" element={<ServiceDetailPage />} />
-          <Route path="/pricing" element={<PricingPage />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
-          <Route path="/startups" element={<StartupPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/thank-you" element={<ThankYou />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Suspense>
+      <div className="route-content-shell">
+        <Suspense fallback={<RouteFallback />}>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/services/:slug" element={<ServiceDetailPage />} />
+            <Route path="/pricing" element={<PricingPage />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/startups" element={<StartupPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
+      </div>
       <Footer />
       <ScrollToTop />
       <Feedback />

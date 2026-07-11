@@ -115,7 +115,7 @@ function SearchOverlay({isOpen,onClose,startups}) {
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search Aning Design Lab..."
+            placeholder="Search AningDesign..."
             autoComplete="off"
           />
         </label>

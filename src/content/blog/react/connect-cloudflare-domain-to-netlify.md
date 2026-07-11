@@ -232,4 +232,4 @@ Connecting a Cloudflare domain to Netlify becomes much easier when you understan
 
 If you want more practical website setup, DNS, deployment, WordPress, React, and web design tutorials, watch the full video on Aning Design Lab and explore more guides on [aningdesign.com](https://aningdesign.com/).
 
-You can also contact Aning Design through [https://aningdesign.com/](https://aningdesign.com/), join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or support the work at [https://selar.com/showlove/aningdesignlab](https://selar.com/showlove/aningdesignlab).
+You can also contact AningDesign through [https://aningdesign.com/](https://aningdesign.com/), join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or support the work at [https://selar.com/showlove/aningdesignlab](https://selar.com/showlove/aningdesignlab).

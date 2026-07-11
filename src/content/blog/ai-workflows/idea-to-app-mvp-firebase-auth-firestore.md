@@ -182,4 +182,4 @@ This part of the series shows how to connect those Firebase backend services wit
 
 If this video helped you, you can support Aning Design Lab here: [Support Aning Design Lab](https://selar.com/showlove/aningdesignlab).
 
-You can also visit Aning Design at [https://aningdesign.com/](https://aningdesign.com/), join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or join the WhatsApp community at [https://chat.whatsapp.com/HzRPHeQ7osYLTMUNrF0Qds](https://chat.whatsapp.com/HzRPHeQ7osYLTMUNrF0Qds).
+You can also visit AningDesign at [https://aningdesign.com/](https://aningdesign.com/), join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or join the WhatsApp community at [https://chat.whatsapp.com/HzRPHeQ7osYLTMUNrF0Qds](https://chat.whatsapp.com/HzRPHeQ7osYLTMUNrF0Qds).

@@ -1,11 +1,16 @@
 import {
   ArrowUpRight,
+  BookOpen,
   BriefcaseBusiness,
   Code2,
+  FileText,
+  Gift,
+  Image,
   LayoutDashboard,
   Monitor,
   Palette,
   PenTool,
+  Rocket,
   Search
 } from 'lucide-react'
 import {
@@ -15,7 +20,7 @@ import {
   serviceMegaMenuGroups,
   socialLinks
 } from '../data/navigationConfig'
-import { getExternalLinkProps, isExternalLink } from '../utils/links'
+import { getExternalLinkProps } from '../utils/links'
 import './MegaMenu.css'
 
 function SmartLink({item,className = '',children,onNavigate}) {
@@ -41,17 +46,36 @@ const serviceIconMap = {
   'Website Design': Monitor,
   'WordPress Websites': Monitor,
   'React Web Apps': Code2,
-  'Startup MVPs': Code2,
+  'Startup MVPs': Rocket,
   'Graphic Design': PenTool,
   Branding: Palette,
-  'Social Media Design': Palette,
+  'Social Media Design': Image,
   'UI/UX Design': LayoutDashboard
 }
 
-const getSocialIcon = (label) => {
-  if (label.includes('YouTube')) return 'YT'
-  if (label.includes('Twitter') || label === 'X') return 'X'
-  return label.slice(0, 2)
+const resourceIconMap = {
+  Blog: FileText,
+  Pricing: BriefcaseBusiness,
+  Books: BookOpen,
+  Tutorials: Monitor,
+  'Case Studies': LayoutDashboard,
+  'Free Resources': Gift
+}
+
+function XLogoIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M14.72 10.46 22.04 2h-1.73l-6.36 7.35L8.88 2H3.03l7.68 11.12L3.03 22h1.73l6.72-7.77L16.85 22h5.85l-7.98-11.54Zm-2.38 2.75-.78-1.11L5.37 3.3h2.68l5 7.1.78 1.11 6.49 9.23h-2.68l-5.3-7.53Z" />
+    </svg>
+  )
+}
+
+function YoutubeLogoIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M23.5 6.2a3.01 3.01 0 0 0-2.12-2.13C19.51 3.56 12 3.56 12 3.56s-7.51 0-9.38.51A3.01 3.01 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.01 3.01 0 0 0 2.12 2.13c1.87.51 9.38.51 9.38.51s7.51 0 9.38-.51a3.01 3.01 0 0 0 2.12-2.13C24 15.92 24 12 24 12s0-3.92-.5-5.8ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z" />
+    </svg>
+  )
 }
 
 function MegaMenu({isOpen,startups,blogTopics,onClose,onSearch}) {
@@ -136,8 +160,8 @@ function MegaMenu({isOpen,startups,blogTopics,onClose,onSearch}) {
               <strong>Not sure what you need?</strong>
               <small>Tell me what you are building.</small>
             </span>
-            <SmartLink item={{title: 'Start a project',href: '/contact'}} className="mega-menu-cta-link" onNavigate={onClose}>
-              Start a project
+            <SmartLink item={{title: 'Contact Us',href: '/contact'}} className="mega-menu-cta-link" onNavigate={onClose}>
+              Contact Us
             </SmartLink>
           </div>
         </section>
@@ -145,15 +169,20 @@ function MegaMenu({isOpen,startups,blogTopics,onClose,onSearch}) {
         <section className="mega-menu-section">
           <p className="mega-menu-kicker">Resources</p>
           <div className="mega-menu-simple-list">
-            {resourceLinks.map((item) => (
-              <SmartLink key={item.title} item={item} className="mega-menu-simple-link" onNavigate={onClose}>
-                <span>
-                  <strong>{item.title}</strong>
-                  <small>{item.description}</small>
-                </span>
-                {(item.target || isExternalLink(item.href)) && <ArrowUpRight size={15} strokeWidth={2.2} aria-hidden="true" />}
-              </SmartLink>
-            ))}
+            {resourceLinks.map((item) => {
+              const Icon = resourceIconMap[item.title] || FileText
+
+              return (
+                <SmartLink key={item.title} item={item} className="mega-menu-simple-link" onNavigate={onClose}>
+                  <Icon size={16} strokeWidth={2} aria-hidden="true" />
+                  <span>
+                    <strong>{item.title}</strong>
+                    <small>{item.description}</small>
+                  </span>
+                  <ArrowUpRight size={14} strokeWidth={2} aria-hidden="true" />
+                </SmartLink>
+              )
+            })}
           </div>
         </section>
 
@@ -175,11 +204,15 @@ function MegaMenu({isOpen,startups,blogTopics,onClose,onSearch}) {
           </div>
 
           <div className="mega-menu-socials" aria-label="Social links">
-            {socialLinks.map((link) => (
+            {socialLinks.map((link) => {
+              const Icon = link.label.includes('YouTube') ? YoutubeLogoIcon : XLogoIcon
+
+              return (
               <a key={link.label} href={link.href} {...getExternalLinkProps(link.href)} aria-label={link.label} onClick={onClose}>
-                <span aria-hidden="true">{getSocialIcon(link.label)}</span>
+                <Icon />
               </a>
-            ))}
+              )
+            })}
           </div>
         </section>
       </div>

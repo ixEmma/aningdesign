@@ -242,4 +242,4 @@ Wix Studio is a strong tool for beginners who want to build professional landing
 
 If this video helped you, you can support Aning Design Lab here: [Support Aning Design Lab](https://selar.com/showlove/aningdesignlab).
 
-You can also contact Aning Design through [https://aningdesign.com/](https://aningdesign.com/), join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or watch more practical web design tutorials on the Aning Design Lab YouTube channel.
+You can also contact AningDesign through [https://aningdesign.com/](https://aningdesign.com/), join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or watch more practical web design tutorials on the Aning Design Lab YouTube channel.

@@ -197,6 +197,67 @@
   pointer-events: none;
 }
 
+.nav-dropdown--services::after,
+.nav-dropdown--projects::after {
+  height: 12px;
+}
+
+.nav-dropdown--services .nav-dropdown-panel,
+.nav-dropdown--projects .nav-dropdown-panel {
+  box-sizing: border-box;
+  top: calc(100% + 8px);
+  z-index: 30;
+  width: min(440px, calc(100vw - 32px));
+  padding: 14px;
+  border-color: rgba(154, 247, 163, 0.22);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgb(8, 12, 12), rgb(17, 22, 22));
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.42), 0 0 22px rgba(0, 251, 100, 0.08);
+}
+
+.nav-dropdown--services .nav-dropdown-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.nav-dropdown--projects .nav-dropdown-panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 14px;
+}
+
+.nav-dropdown-group {
+  min-width: 0;
+}
+
+.nav-dropdown-heading {
+  margin: 0 0 8px;
+  color: rgba(154, 247, 163, 0.76);
+  font-family: "Switzer", sans-serif;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.nav-dropdown-group-list {
+  display: grid;
+  gap: 6px;
+}
+
+.nav-dropdown--services .nav-dropdown-link,
+.nav-dropdown--projects .nav-dropdown-link {
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 42px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
 .nav-dropdown:hover .nav-dropdown-panel,
 .nav-dropdown:focus-within .nav-dropdown-panel {
   opacity: 1;
@@ -209,6 +270,18 @@
 .nav-dropdown:hover .nav-dropdown-chevron,
 .nav-dropdown:focus-within .nav-dropdown-chevron {
   transform: rotate(225deg) translate(-2px, -1px);
+}
+
+.nav-dropdown.is-dismissed .nav-dropdown-panel {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -6px);
+  transition-delay: 0s;
+  pointer-events: none;
+}
+
+.nav-dropdown.is-dismissed .nav-dropdown-chevron {
+  transform: rotate(45deg) translateY(-2px);
 }
 
 .nav-dropdown-link {
@@ -237,6 +310,34 @@
 @media (max-width: 1024px) {
   .available-for-projects {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-dropdown--services .nav-dropdown-panel,
+  .nav-dropdown--projects .nav-dropdown-panel {
+    width: min(300px, calc(100vw - 24px));
+    padding: 12px;
+  }
+
+  .nav-dropdown--services .nav-dropdown-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .nav-dropdown--projects .nav-dropdown-panel {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .nav-dropdown-heading {
+    margin-bottom: 7px;
+  }
+
+  .nav-dropdown--services .nav-dropdown-link,
+  .nav-dropdown--projects .nav-dropdown-link {
+    min-height: 38px;
+    padding: 8px 10px;
   }
 }
 

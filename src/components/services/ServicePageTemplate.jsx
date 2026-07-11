@@ -137,6 +137,37 @@ function ServiceUseCases({ service }) {
   )
 }
 
+function ServiceContentSections({ service }) {
+  if (!service.contentSections?.length) return null
+
+  return service.contentSections.map((section, index) => (
+    <ServiceSection
+      key={section.title}
+      id={section.id || `service-content-${index + 1}`}
+      kicker={section.kicker || 'Details'}
+      title={section.title}
+    >
+      {section.body && (
+        Array.isArray(section.body)
+          ? section.body.map((paragraph) => (
+            <p className="service-lead" key={paragraph}>{paragraph}</p>
+          ))
+          : <p className="service-lead">{section.body}</p>
+      )}
+      {section.items?.length > 0 && (
+        <ul className="service-check-grid">
+          {section.items.map((item) => (
+            <li key={typeof item === 'string' ? item : item.title}>
+              <CheckCircle2 size={18} strokeWidth={2.2} aria-hidden="true" />
+              <ServiceIncludedItem item={item} />
+            </li>
+          ))}
+        </ul>
+      )}
+    </ServiceSection>
+  ))
+}
+
 function ServiceOverview({ overview }) {
   if (Array.isArray(overview)) {
     return overview.map((paragraph) => (
@@ -150,17 +181,23 @@ function ServiceOverview({ overview }) {
 }
 
 function ServicePageTemplate({ service }) {
+  const isServicesIndex = service.showDirectory === true
+  const hasOverview = Boolean(
+    service.overviewTitle
+    && (Array.isArray(service.overview) ? service.overview.length : service.overview)
+  )
+  const hasIncluded = service.included?.length > 0
   const finalCta = service.finalCta || {
     label: 'Ready when you are',
     heading: 'Turn this service into a clear project plan.',
-    primaryLabel: 'Contact Aning Design',
+    primaryLabel: 'Contact AningDesign',
     primaryHref: '/contact',
     secondaryLabel: 'See website projects',
     secondaryHref: '/#projects'
   }
 
   return (
-    <main className="service-page">
+    <main className={isServicesIndex ? 'service-page service-page--index' : 'service-page'}>
       <section className="service-page-hero" aria-labelledby="service-page-title">
         <div className="service-page-shell">
           <p className="service-page-kicker">{service.kicker}</p>
@@ -188,27 +225,31 @@ function ServicePageTemplate({ service }) {
       </section>
 
       <div className="service-page-shell service-page-content">
-        <ServiceSection id="service-overview" kicker="Overview" title={service.overviewTitle}>
-          <ServiceOverview overview={service.overview} />
-          <RelatedServiceLinks service={service} />
-        </ServiceSection>
+        {hasOverview && (
+          <ServiceSection id="service-overview" kicker="Overview" title={service.overviewTitle}>
+            <ServiceOverview overview={service.overview} />
+            <RelatedServiceLinks service={service} />
+          </ServiceSection>
+        )}
 
         {service.showDirectory && <ServiceDirectory service={service} />}
 
-        <ServiceSection id="service-included" kicker="Included" title="What is included">
-          <ul className="service-check-grid">
-            {service.included.map((item) => (
-              <li key={typeof item === 'string' ? item : item.title}>
-                <CheckCircle2 size={18} strokeWidth={2.2} aria-hidden="true" />
-                <ServiceIncludedItem item={item} />
-              </li>
-            ))}
-          </ul>
-        </ServiceSection>
+        {hasIncluded && (
+          <ServiceSection id="service-included" kicker="Included" title={service.includedTitle || 'What is included'}>
+            <ul className="service-check-grid">
+              {service.included.map((item) => (
+                <li key={typeof item === 'string' ? item : item.title}>
+                  <CheckCircle2 size={18} strokeWidth={2.2} aria-hidden="true" />
+                  <ServiceIncludedItem item={item} />
+                </li>
+              ))}
+            </ul>
+          </ServiceSection>
+        )}
 
         <ServiceCtaBlock cta={service.midPageCta} id="service-mid-cta-title" className="service-mid-cta" />
 
-        <ServiceSection id="service-audience" kicker="Best for" title="Who this service is for">
+        <ServiceSection id="service-audience" kicker="Best for" title={service.audienceTitle || 'Who this service is for'}>
           <div className="service-audience-grid">
             {service.audience.map((item) => (
               <article key={item}>
@@ -219,6 +260,8 @@ function ServicePageTemplate({ service }) {
         </ServiceSection>
 
         <ServiceUseCases service={service} />
+
+        <ServiceContentSections service={service} />
 
         <ServiceSection id="service-process" kicker="Process" title={service.processTitle || 'How the work moves'}>
           <div className="service-process-list">

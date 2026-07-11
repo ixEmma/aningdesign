@@ -5,17 +5,17 @@ const workImages = [
   {
     src: '/images/work1.jpg',
     webp: '/images/work1.webp',
-    alt: 'Web design portfolio preview for Aning Design project one'
+    alt: 'Web design portfolio preview for AningDesign project one'
   },
   {
     src: '/images/work2.jpg',
     webp: '/images/work2.webp',
-    alt: 'Web design portfolio preview for Aning Design project two'
+    alt: 'Web design portfolio preview for AningDesign project two'
   },
   {
     src: '/images/work3.jpg',
     webp: '/images/work3.webp',
-    alt: 'Web design portfolio preview for Aning Design project three'
+    alt: 'Web design portfolio preview for AningDesign project three'
   }
 ]
 

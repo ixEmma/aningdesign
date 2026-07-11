@@ -8,7 +8,7 @@ const buildEmbedUrl = (videoId) => {
 }
 
 const getThumbnailAltText = (video) =>
-  `Thumbnail for "${video.title}", a premium web design process and frontend development walkthrough by Aning Design.`
+  `Thumbnail for "${video.title}", a premium web design process and frontend development walkthrough by Aning Design Lab.`
 
 function useMediaQuery(query) {
   const [matches, setMatches] = useState(false)
@@ -130,7 +130,7 @@ function YoutubeShowcase() {
         name: video.title,
         description:
           video.description ||
-          'A premium web design and frontend development walkthrough by Aning Design.',
+          'A premium web design and frontend development walkthrough by Aning Design Lab.',
         thumbnailUrl: video.thumbnail,
         uploadDate: video.publishedAt,
         duration: video.rawDuration || undefined,
@@ -138,8 +138,8 @@ function YoutubeShowcase() {
         url: video.videoUrl,
         publisher: {
           '@type': 'Organization',
-          name: 'Aning Design',
-          url: 'https://aningdesign.com'
+          name: 'Aning Design Lab',
+          url: 'https://www.youtube.com/channel/UCUBBcAJYllM2DVZ46Wkepxg'
         }
       }))
     }

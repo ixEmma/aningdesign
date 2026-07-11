@@ -162,4 +162,4 @@ These tutorials connect well if you want to keep improving your WordPress workfl
 
 Learning how to design like a professional with WordPress and Elementor is about more than choosing a nice template. It is about making the website clear, trustworthy, responsive, and easy to use.
 
-Watch the full video on YouTube, subscribe for more WordPress and Elementor tutorials, join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or contact Aning Design through [https://aningdesign.com/](https://aningdesign.com/).
+Watch the full video on YouTube, subscribe for more WordPress and Elementor tutorials, join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or contact AningDesign through [https://aningdesign.com/](https://aningdesign.com/).

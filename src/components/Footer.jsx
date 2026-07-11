@@ -52,15 +52,31 @@ function TelegramLogoIcon() {
 const footerMainLinks = [
   { label: 'Home', href: '/#home' },
   { label: 'Services', href: '/services' },
-  { label: 'About Me', href: '/#about' },
+  { label: 'Pricing', href: '/pricing' },
   { label: 'Blog', href: '/blog' },
+  { label: 'About', href: '/#about' },
   { label: 'Contact', href: '/contact' }
 ]
 
 const footerProjectLinks = [
-  { label: 'Website Design', href: '/services/website-design' },
-  { label: 'Graphic Design', href: '/services/graphic-design' },
-  { label: 'Startups', href: '/startups' }
+  { label: 'Website Projects', href: '/#projects' },
+  {
+    label: 'Graphic Design Portfolio',
+    href: 'https://www.behance.net/emmaaning',
+    target: '_blank',
+    rel: 'noopener noreferrer'
+  },
+  { label: 'Startup Projects', href: '/startups' }
+]
+
+const footerResourceLinks = [
+  {
+    label: 'Books',
+    href: 'https://payhip.com/b/5p0EN',
+    target: '_blank',
+    rel: 'noopener noreferrer'
+  },
+  { label: 'Tutorials', href: '/blog' }
 ]
 
 const footerSocialLinks = [
@@ -92,9 +108,9 @@ function Footer() {
       <div className="footer-content">
         <div className="footer-layout">
           <div className="footer-brand">
-            <a href="/#home" className="footer-brand-mark" aria-label="Go to homepage">
-              <img src="/images/LOGO-96.png" alt="Aning Design Lab logo" width="96" height="96" loading="lazy" decoding="async" />
-              <span>Aning Design Lab</span>
+            <a href="/#home" className="footer-brand-mark" aria-label="AningDesign — Home">
+              <img src="/images/LOGO-96.png" alt="" width="96" height="96" loading="lazy" decoding="async" />
+              <span>AningDesign</span>
             </a>
             <p>Building websites, web apps, tutorials, and digital products.</p>
             <span className="footer-status">
@@ -127,6 +143,19 @@ function Footer() {
             </ul>
           </nav>
 
+          <nav className="footer-link-group" aria-label="Resource links">
+            <h2>Resources</h2>
+            <ul className="footer-links">
+              {footerResourceLinks.map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} {...getLinkAttributes(link)}>
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
           <div className="footer-link-group footer-connect">
             <h2>Connect</h2>
             <div className="footer-social">
@@ -143,7 +172,7 @@ function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p className="footer-copyright">&copy; {currentYear} AningDesigns. All rights reserved.</p>
+          <p className="footer-copyright">&copy; {currentYear} AningDesign. All rights reserved.</p>
         </div>
       </div>
     </footer>

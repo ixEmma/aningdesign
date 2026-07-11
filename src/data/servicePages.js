@@ -4,171 +4,341 @@ export const servicePages = [
     title: 'Website Design',
     shortTitle: 'Website Design',
     path: '/services/website-design',
-    kicker: 'Website Design Service',
-    h1: 'Small business website design services built for clarity, speed, and leads.',
+    kicker: 'Website design services',
+    h1: 'Small business website design.',
     intro:
-      'Work with a website designer who creates custom website design for small businesses, creators, and local brands. This service covers business website design, responsive layouts, SEO-ready structure, WordPress website design support, and launch-ready pages that help visitors understand your offer and take action.',
+      'Small business website design services for clear business websites, custom website design, responsive pages, and SEO-ready structure. Use this when your site needs to explain the offer and move visitors to calls, forms, bookings, or inquiries.',
+    cardDescription:
+      'Clear business websites with responsive structure, service pages, SEO-ready sections, and contact paths.',
     heroPrimaryLabel: 'Start a website project',
     heroSecondaryLabel: 'View all services',
-    seoTitle: 'Small Business Website Design Services | Aning Design Lab',
+    seoTitle: 'Small Business Website Design Services | AningDesign',
     seoDescription:
       'Custom website design services for small businesses, creators, and brands that need a clear, responsive, SEO-ready website built for trust, speed, and leads.',
     keywords:
       'small business website design services, website design services, web design services, wordpress website designer, custom website design, business website design, small business website designers, website design companies for small business, seo and website design, website and graphic design, affordable website design services, marketing website design',
-    overviewTitle: 'A small business website built to explain, guide, and convert',
+    overviewTitle: 'Website design services for small businesses',
     overview: [
-      'Small business website design services should do more than make a site look polished. Your website needs to explain what you offer, show why people can trust you, and guide visitors toward a clear next step. This service combines custom website design, practical web design services, responsive structure, and SEO-ready content sections so your site can support real business goals.',
-      'Whether you need a new business website design, a custom redesign, or support from a WordPress website designer, the focus stays the same: clear pages, fast loading, useful calls to action, and a site structure that helps people contact you with confidence. It is a practical option for small businesses comparing small business website designers or website design companies for small business.'
+      'Small business website design services cover page structure, responsive web design, content hierarchy, and conversion paths.',
+      'Custom website design is planned around your offer, audience, brand direction, and the action visitors should take.',
+      'Business website design can include service pages, contact paths, SEO and website design basics, and marketing website design for a specific offer.'
     ],
+    includedTitle: 'What I build',
     included: [
-      {
-        title: 'Website structure and page flow planning',
-        description: 'A clear layout plan for your homepage, service pages, about page, contact page, and main conversion paths.'
-      },
-      {
-        title: 'Custom website design',
-        description: 'A clean visual direction built around your brand, audience, service offer, content, and business goals.'
-      },
-      {
-        title: 'Responsive web design',
-        description: 'Pages designed for desktop, tablet, and mobile so the site works properly across devices.'
-      },
-      {
-        title: 'Business website design',
-        description: 'Professional page sections that explain your services, build trust, and guide visitors toward calls, forms, bookings, or inquiries.'
-      },
-      {
-        title: 'SEO and website design basics',
-        description: 'SEO-friendly headings, page structure, metadata support, internal linking, and content sections that search engines can understand.'
-      },
-      {
-        title: 'WordPress or custom frontend support',
-        description: 'Website design and implementation support depending on whether the project needs WordPress, React, or another practical setup.'
-      }
+      'Homepage and service page structure',
+      'Custom website design',
+      'Business website design',
+      'Responsive web design',
+      'WordPress website design planning',
+      'SEO-ready content sections',
+      'Marketing website design',
+      'Contact, booking, or inquiry paths'
     ],
     midPageCta: {
-      heading: 'Have the pages and goals in mind?',
-      text: "Share your offer, current website, or page list. I'll help turn it into a clear small business website plan with the right structure, content sections, and conversion path.",
+      heading: 'Need a clearer business website?',
+      text: 'Share the offer, page list, current website, and main action visitors should take.',
       primaryLabel: 'Start a website project',
       primaryHref: '/contact'
     },
     audience: [
       'Small businesses that need a professional website',
-      'Brands that need clearer service pages and better structure',
-      'Creators or consultants who need a polished online presence',
-      'Existing websites that need a cleaner redesign',
-      'Businesses comparing small business website designers or website design companies for small business',
-      'Teams that need a website designer who understands visuals, content, SEO, and user flow'
+      'Service brands that need clearer pages',
+      'Creators or consultants who need a public site',
+      'Existing websites that need a redesign',
+      'Businesses comparing small business website designers',
+      'Teams comparing website design companies for small business'
     ],
-    useCasesTitle: 'Common website design use cases',
+    useCasesTitle: 'Website design services for small businesses',
     useCases: [
       {
         title: 'Business service websites',
-        description: 'Business website design for consultants, agencies, local brands, healthcare-related businesses, hospitality businesses, and service providers that need clear pages and contact paths.'
+        description: 'Business website design for service providers that need clear pages, trust signals, and contact paths.'
       },
       {
-        title: 'Website redesigns',
-        description: 'Updates for outdated sites that need better structure, cleaner visuals, mobile improvement, stronger copy, and clearer calls to action.'
+        title: 'Custom website design',
+        description: 'Page design planned around the offer, brand direction, audience, content, and conversion path.'
       },
       {
         title: 'Marketing website design',
-        description: 'Focused pages for a service, product, campaign, event, or offer that needs a direct conversion path and clear lead-generation structure.'
+        description: 'Focused pages for a service, product, campaign, event, or offer with one clear next step.'
       },
       {
         title: 'WordPress website design',
-        description: 'Professional WordPress website design support for small businesses that need editable pages, blog structure, and flexible content management.'
-      },
-      {
-        title: 'Portfolio or personal brand websites',
-        description: 'Clean websites for creators, designers, photographers, consultants, and professionals who need to present their work clearly.'
-      },
-      {
-        title: 'SEO-ready service pages',
-        description: 'Page layouts and content sections designed to support search visibility for services, offers, business categories, and buyer-intent queries.'
+        description: 'WordPress website designer support for editable pages, blog structure, and practical content management.'
       }
     ],
-    processTitle: 'How the website design process works',
+    contentSections: [
+      {
+        id: 'service-wordpress-custom-seo',
+        kicker: 'Website setup',
+        title: 'WordPress, custom website design, and SEO-ready pages',
+        body: [
+          'SEO and website design are handled through page hierarchy, headings, metadata support, internal links, and readable service content.',
+          'Affordable website design services can still use custom structure when the scope is limited by page count, content, and launch needs.'
+        ],
+        items: [
+          'WordPress website designer support',
+          'Custom website design direction',
+          'SEO-ready service pages',
+          'Website and graphic design alignment',
+          'Affordable website design services by scope',
+          'Small business website structure'
+        ]
+      }
+    ],
+    processTitle: 'Website design process',
     process: [
       {
-        title: 'Discovery',
-        description: 'We define your business, audience, offer, pages, goals, and the action visitors should take.'
+        title: 'Share the website goal',
+        description: 'Define the offer, audience, pages, and main visitor action.'
       },
       {
-        title: 'Website structure',
-        description: 'The page outline, navigation, content hierarchy, and CTA flow are mapped before the visual design begins.'
+        title: 'Map the page structure',
+        description: 'Plan the navigation, page order, section flow, and CTA path.'
       },
       {
-        title: 'Custom design direction',
-        description: 'The website design system is created around your brand, typography, spacing, visuals, and page sections.'
+        title: 'Design the key pages',
+        description: 'Create the visual direction, layout, typography, spacing, and content sections.'
       },
       {
-        title: 'Build and implementation',
-        description: 'The website is built with responsive layouts, clean styling, performance awareness, and practical SEO structure.'
+        title: 'Build and check responsive pages',
+        description: 'Prepare desktop, tablet, and mobile layouts with practical SEO structure.'
       },
       {
         title: 'Review and launch',
-        description: 'The final pages are checked for links, forms, mobile behavior, SEO basics, and content clarity before launch.'
+        description: 'Check links, forms, mobile behavior, SEO basics, and content clarity.'
       }
     ],
     examplesTitle: 'Related website design examples',
     examples: [
       {
         title: 'Aburi Sweetmother Guesthouse',
-        description: 'A hospitality website built with a clear page structure, service presentation, and direct contact path.',
+        description: 'Hospitality business website design with clear service pages and a direct contact path.',
         href: 'https://aburisweetmother.com'
       },
       {
         title: 'Dr Oliver Rabie',
-        description: 'A private healthcare website with professional service information, clean layout, and trust-focused content flow.',
+        description: 'Private healthcare website design with service information and trust-focused page flow.',
         href: 'https://www.droliverrabie.co.uk/'
       }
     ],
-    relatedServices: ['ui-ux-design', 'branding', 'startup-websites'],
+    relatedServices: ['wordpress-websites', 'ui-ux-design', 'branding'],
     faqs: [
       {
         question: 'Do you offer small business website design services?',
         answer:
-          'Yes. The website is planned around your business goals, service offer, brand direction, content, and page structure instead of using a generic layout without strategy.'
+          'Yes. The website is planned around the offer, page structure, content, brand direction, and visitor action.'
       },
       {
         question: 'Can you redesign an existing website?',
         answer:
-          'Yes. If your current website looks outdated, feels confusing, or does not guide visitors properly, it can be redesigned with better structure, visuals, mobile layout, and calls to action.'
+          'Yes. A redesign can improve structure, visuals, mobile layout, copy clarity, and calls to action.'
       },
       {
         question: 'How do SEO and website design work together?',
         answer:
-          'SEO and website design work together through clear headings, page hierarchy, metadata support, internal links, fast responsive pages, and content sections that help visitors and search engines understand the offer.'
+          'SEO and website design work through headings, page hierarchy, metadata support, internal links, responsive pages, and readable service content.'
       },
       {
         question: 'Can you work as a WordPress website designer?',
         answer:
-          'Yes. If the project needs WordPress, the website can be planned and designed for a WordPress setup. The exact build method depends on the project goals and how the site needs to be managed.'
+          'Yes. WordPress website designer support is available when the site needs editable pages, blog structure, or content management.'
       },
       {
         question: 'Are affordable website design services still custom?',
         answer:
-          'Yes, when the scope is planned clearly. Affordable website design services can still use custom website design direction, focused page structure, responsive layouts, and practical SEO foundations.'
+          'Yes. Affordable website design services can still use custom website design direction when the scope is clear.'
       },
       {
         question: 'Can you combine website and graphic design?',
         answer:
-          'Yes. If the project needs website and graphic design support, the visual direction can connect with brand assets, campaign graphics, social media visuals, or launch materials.'
+          'Yes. Website and graphic design can connect the site with brand assets, campaign graphics, social media visuals, or launch materials.'
       },
       {
         question: 'What types of small business websites do you design?',
         answer:
-          'I design websites for service businesses, consultants, creators, local brands, healthcare-related brands, hospitality businesses, startups, and small businesses that need a clear professional online presence.'
+          'I design websites for service businesses, consultants, creators, local brands, healthcare-related brands, hospitality businesses, startups, and small businesses.'
       }
     ],
     finalCta: {
-      label: 'Ready when you are',
-      heading: 'Turn your small business website idea into a clear project plan.',
-      text: "Send the pages, goals, and examples you have in mind. I'll help shape the structure, content direction, SEO basics, and website design approach before the build starts.",
-      primaryLabel: 'Contact Aning Design',
+      label: 'Website design services',
+      heading: 'Need a clearer small business website?',
+      text: 'Send the pages, goals, current site, and examples. I will help shape the website design approach before build work starts.',
+      primaryLabel: 'Contact AningDesign',
       primaryHref: '/contact',
       secondaryLabel: 'See website projects',
       secondaryHref: '/#projects'
+    }
+  },
+  {
+    slug: 'wordpress-websites',
+    title: 'WordPress Websites',
+    shortTitle: 'WordPress Websites',
+    path: '/services/wordpress-websites',
+    kicker: 'WordPress website design',
+    h1: 'WordPress websites built for clear business growth.',
+    intro:
+      'WordPress website design and development for service businesses that need responsive pages, practical content management, reliable forms, and an SEO-ready structure.',
+    cardDescription:
+      'Responsive WordPress websites with editable pages, service content, forms, integrations, and launch-ready structure.',
+    heroPrimaryLabel: 'Start a WordPress project',
+    heroSecondaryLabel: 'View all services',
+    seoTitle: 'WordPress Website Design & Development | AningDesign',
+    seoDescription:
+      'WordPress website design and development for service businesses that need responsive pages, editable content, forms, speed, and SEO-ready implementation.',
+    keywords:
+      'WordPress website design, WordPress website development, business WordPress websites, service business websites, responsive WordPress design, WordPress website designer',
+    overviewTitle: 'Professional WordPress websites that stay practical to manage',
+    overview: [
+      'A WordPress website should explain the business clearly, work across devices, and make routine content updates manageable.',
+      'Projects can use Elementor or a custom WordPress implementation based on the content, performance needs, and maintenance workflow.',
+      'Page hierarchy, metadata support, internal links, forms, and responsive checks create a stronger base for launch and ongoing SEO work.'
+    ],
+    includedTitle: 'What is included',
+    included: [
+      'Homepage and service-page structure',
+      'Responsive Elementor or custom WordPress build',
+      'Landing pages and blog structure',
+      'Contact forms and practical integrations',
+      'Editable content areas',
+      'Performance-aware implementation',
+      'SEO-ready headings and metadata support',
+      'Launch and maintenance handoff'
+    ],
+    midPageCta: {
+      heading: 'Need an editable business website?',
+      text: 'Share the business, required pages, content, and current WordPress setup. I will help define the right build scope.',
+      primaryLabel: 'Discuss your website',
+      primaryHref: '/contact'
+    },
+    audience: [
+      'Service businesses that need an editable website',
+      'Consultants and healthcare providers',
+      'Training institutions and small businesses',
+      'Growing brands adding service or landing pages',
+      'Agencies that need WordPress implementation support'
+    ],
+    useCasesTitle: 'Common WordPress website needs',
+    useCases: [
+      { title: 'Service business websites', description: 'Clear service pages, trust content, inquiry paths, and manageable updates.' },
+      { title: 'Elementor website builds', description: 'Responsive WordPress pages that remain practical for teams to edit.' },
+      { title: 'Landing pages', description: 'Focused pages for campaigns, offers, consultations, or lead generation.' },
+      { title: 'Blog and content structures', description: 'Organized publishing foundations with categories, article templates, and internal links.' }
+    ],
+    processTitle: 'WordPress website process',
+    process: [
+      { title: 'Define the website scope', description: 'Confirm the audience, pages, content, integrations, and main visitor action.' },
+      { title: 'Plan the page structure', description: 'Map navigation, service pages, blog needs, forms, and content hierarchy.' },
+      { title: 'Design the key pages', description: 'Set the responsive visual direction, typography, components, and CTA patterns.' },
+      { title: 'Build in WordPress', description: 'Implement the approved pages, editable areas, forms, and integrations in scope.' },
+      { title: 'Test and prepare launch', description: 'Check responsive behavior, links, forms, performance basics, metadata, and handoff.' }
+    ],
+    examplesTitle: 'Relevant website work',
+    examples: [
+      { title: 'Dr Oliver Rabie', description: 'Healthcare website with structured service information and trust-focused content.', href: 'https://www.droliverrabie.co.uk/' },
+      { title: 'Aburi Sweetmother Guesthouse', description: 'Hospitality website with clear accommodation information and contact paths.', href: 'https://aburisweetmother.com' }
+    ],
+    relatedServices: ['react-web-apps', 'website-design', 'ui-ux-design'],
+    faqs: [
+      { question: 'Can you build with Elementor?', answer: 'Yes. Elementor can be used when it fits the editing workflow, design requirements, and performance scope.' },
+      { question: 'Will I be able to update the website?', answer: 'Yes. Editable content areas and a practical handoff can be included so routine updates remain manageable.' },
+      { question: 'Can the website include forms and integrations?', answer: 'Yes. Contact forms and suitable third-party integrations can be included when they are defined in the project scope.' },
+      { question: 'Is SEO included?', answer: 'The implementation can include SEO-ready headings, metadata support, internal links, responsive pages, and performance basics. Ongoing SEO is a separate scope.' }
+    ],
+    finalCta: {
+      label: 'WordPress website design',
+      heading: 'Ready to plan your WordPress website?',
+      text: 'Send the page list, content status, current site, and required integrations. I will help define the next step.',
+      primaryLabel: 'Start a WordPress project',
+      primaryHref: '/contact',
+      secondaryLabel: 'View website design',
+      secondaryHref: '/services/website-design'
+    }
+  },
+  {
+    slug: 'react-web-apps',
+    title: 'React Web Apps',
+    shortTitle: 'React Web Apps',
+    path: '/services/react-web-apps',
+    kicker: 'React web app development',
+    h1: 'React web apps for real product workflows.',
+    intro:
+      'React web app development for dashboards, portals, SaaS frontends, Firebase-connected applications, and responsive product interfaces built around a clear user workflow.',
+    cardDescription:
+      'Custom React applications, dashboards, portals, Firebase-connected products, and responsive SaaS interfaces.',
+    heroPrimaryLabel: 'Build a React web app',
+    heroSecondaryLabel: 'View all services',
+    seoTitle: 'React Web App Development | AningDesign',
+    seoDescription:
+      'Custom React web app development for dashboards, SaaS frontends, portals, Firebase applications, authentication flows, and startup product workflows.',
+    keywords:
+      'React web app development, custom React applications, React dashboard development, Firebase React applications, SaaS frontend development, startup web application development',
+    overviewTitle: 'Custom React applications built around the user task',
+    overview: [
+      'React is suited to products that need interactive screens, reusable interface components, forms, account flows, and data-driven states.',
+      'A focused build can connect authentication, Firebase data, dashboards, portals, and product workflows without turning the first version into an oversized platform.',
+      'Responsive UI, clear loading and error states, and production deployment are planned as part of the application experience.'
+    ],
+    includedTitle: 'Core capabilities',
+    included: [
+      'Custom React interfaces',
+      'Dashboard and portal UI',
+      'SaaS frontend development',
+      'Firebase authentication and data flows',
+      'Responsive application layouts',
+      'Forms, validation, and product states',
+      'Reusable component structure',
+      'Production deployment support'
+    ],
+    midPageCta: {
+      heading: 'Have a product workflow to build?',
+      text: 'Share the users, screens, data needs, and first essential workflow. I will help define a focused React build.',
+      primaryLabel: 'Discuss your product',
+      primaryHref: '/contact'
+    },
+    audience: [
+      'Startups and founders building digital products',
+      'Product teams that need frontend implementation',
+      'Businesses replacing manual workflows',
+      'Creators building portals or digital tools',
+      'Agencies that need React implementation support'
+    ],
+    useCasesTitle: 'React application use cases',
+    useCases: [
+      { title: 'Dashboards', description: 'Responsive views for data, tasks, account activity, and administrative workflows.' },
+      { title: 'Client and user portals', description: 'Authenticated spaces for users to manage information and complete defined tasks.' },
+      { title: 'SaaS frontends', description: 'Reusable product screens, navigation, forms, and application states for a focused SaaS workflow.' },
+      { title: 'Firebase React applications', description: 'React interfaces connected to authentication and practical cloud data workflows.' }
+    ],
+    processTitle: 'React development process',
+    process: [
+      { title: 'Define the core workflow', description: 'Clarify the users, product goal, essential screens, data, and release scope.' },
+      { title: 'Map screens and states', description: 'Plan navigation, user flows, loading states, errors, forms, and permissions.' },
+      { title: 'Design the responsive interface', description: 'Create the component direction and layouts for desktop, tablet, and mobile use.' },
+      { title: 'Build and connect', description: 'Develop the React interface and connect Firebase or other agreed services in scope.' },
+      { title: 'Test and deploy', description: 'Check workflows, validation, accessibility, responsive behavior, errors, and production deployment.' }
+    ],
+    examplesTitle: 'Relevant product work',
+    examples: [
+      { title: 'Lensora Events', description: 'Event media web application with Firebase-connected sharing workflows.', href: 'https://lensoraevents.com/' },
+      { title: 'AssetRax', description: 'Dashboard interface and product workflows for finance and asset tracking.', href: 'https://assetrax.online/' },
+      { title: 'StudyNest', description: 'Student productivity product prototype with focused application workflows.', href: 'https://studynestt.com/' }
+    ],
+    relatedServices: ['startup-websites', 'ui-ux-design', 'website-design'],
+    faqs: [
+      { question: 'Can a React app include Firebase?', answer: 'Yes. Authentication and suitable Firebase data workflows can be included when they match the project scope.' },
+      { question: 'Can you build a dashboard or portal?', answer: 'Yes. Dashboards and authenticated portals are common React application use cases.' },
+      { question: 'Is this the same as an MVP?', answer: 'A React application can be part of an MVP. The React service focuses on implementation, while the MVP service also emphasizes validation and first-version scope.' },
+      { question: 'Can you work from existing designs?', answer: 'Yes. Existing UI designs can be reviewed and implemented, or UI/UX design can be included before development.' }
+    ],
+    finalCta: {
+      label: 'React web app development',
+      heading: 'Ready to build the core product workflow?',
+      text: 'Send the product goal, existing screens, required features, and current technical setup. I will help define the build scope.',
+      primaryLabel: 'Build a React web app',
+      primaryHref: '/contact',
+      secondaryLabel: 'View Startup MVPs',
+      secondaryHref: '/services/startup-websites'
     }
   },
   {
@@ -176,124 +346,174 @@ export const servicePages = [
     title: 'Graphic Design',
     shortTitle: 'Graphic Design',
     path: '/services/graphic-design',
-    kicker: 'Graphic design service',
-    h1: 'Graphic design for campaigns, launches, and everyday brand communication.',
+    kicker: 'Graphic design services',
+    h1: 'Graphic design for brands.',
     intro:
-      'Design support for social graphics, posters, flyers, digital assets, and campaign visuals that need to look professional and stay consistent with your brand.',
-    seoTitle: 'Graphic Design Services | Aning Design',
+      'Graphic design services for campaigns, launches, and consistent brand visuals. Social media graphics, flyers, posters, brand assets, and campaign visuals are planned around the message and final channel.',
+    cardDescription:
+      'Campaign graphics, flyers, posters, launch visuals, social assets, and brand communication materials.',
+    seoTitle: 'Graphic Design Services | AningDesign',
     seoDescription:
-      'Graphic design services for social media graphics, flyers, posters, campaign visuals, brand assets, and launch materials with polished visual direction.',
+      'Graphic design services in Ghana for social media graphics, flyers, posters, campaign visuals, brand assets, launch graphics, and marketing communication.',
     keywords:
-      'graphic design services, social media graphics, flyer design, poster design, campaign design, brand assets',
-    overviewTitle: 'Visual assets that make your message easier to notice',
-    overview:
-      'Strong graphic design helps your brand show up clearly across social platforms, events, promotions, and digital campaigns. This service focuses on practical, polished assets that communicate quickly and fit your existing brand direction.',
+      'graphic design services, graphic design services in Ghana, graphic design and branding services, social media graphic design services, online graphic design services, freelance graphic design services, professional graphic design services, social media graphics, flyers, posters, brand assets, campaign visuals',
+    overviewTitle: 'Professional graphic design services for business communication.',
+    overview: [
+      'AningDesign provides graphic design services in Ghana for businesses, startups, personal brands, and organizations that need clean, consistent visual communication.',
+      'Use these online graphic design services when you need campaign assets, launch graphics, or day-to-day marketing visuals with clear hierarchy and brand consistency.',
+      'Freelance graphic design services can cover one asset or a full set. The scope is based on formats, content, deadline, and final file needs.'
+    ],
+    includedTitle: 'What I design',
     included: [
-      'Social media graphics and campaign posts',
-      'Flyers, posters, and promotional designs',
-      'Digital product or launch visuals',
-      'Export-ready files for web and social use',
-      'Design direction for consistent visual tone',
-      'Revision rounds based on the selected scope'
+      'Social media graphics',
+      'Flyers and posters',
+      'Campaign visuals',
+      'Launch graphics',
+      'Brand assets',
+      'Business cards and stationery',
+      'Presentation graphics',
+      'Digital ads'
     ],
     midPageCta: {
-      heading: 'Need a focused design set?',
-      text: 'Send the formats, message, and deadline so the graphic design scope can be shaped around the assets you actually need.',
-      primaryLabel: 'Plan design assets',
+      heading: 'Need clean graphics for your next campaign?',
+      text: 'Share the campaign goal, content, formats, and deadline. I will scope the graphic design services around the assets you need first.',
+      primaryLabel: 'Start a project',
       primaryHref: '/contact'
     },
     audience: [
-      'Businesses running promotions or announcements',
-      'Creators who need recurring social content',
-      'Events that need flyers or launch graphics',
-      'Brands that want a cleaner visual presence'
+      'Businesses launching campaigns or offers',
+      'Startups preparing product or service launches',
+      'Personal brands that need consistent visuals',
+      'Organizations that need clear marketing communication'
     ],
+    useCasesTitle: 'Graphic design and branding services',
     useCases: [
       {
-        title: 'Campaign and launch assets',
-        description: 'Graphics for product announcements, events, promotions, content drops, and digital launches that need a consistent visual set.'
+        title: 'Brand consistency',
+        description: 'Visual assets follow the same logo use, color direction, typography, and layout rules so the brand looks consistent.'
       },
       {
-        title: 'Social and web graphics',
-        description: 'Post designs, banners, thumbnails, and visual assets prepared for the channels where your audience will see them.'
+        title: 'Visual identity support',
+        description: 'Brand assets, stationery, presentations, and campaign graphics can extend an existing visual identity.'
       },
       {
-        title: 'Brand-supporting materials',
-        description: 'Flyers, posters, simple decks, and digital collateral that keep everyday communication aligned with the brand direction.'
+        title: 'Marketing communication',
+        description: 'Each design is built around one message, one audience, and the action the viewer should understand.'
       }
     ],
+    contentSections: [
+      {
+        id: 'service-social-media-graphic-design',
+        kicker: 'Social media',
+        title: 'Social media graphic design services',
+        body: [
+          'Social media graphic design services cover Instagram posts, carousels, promotional graphics, ads, launch visuals, and content graphics.',
+          'Assets are sized for the platform and structured so the message is easy to scan.'
+        ],
+        items: [
+          'Instagram posts',
+          'Carousel slides',
+          'Promotional graphics',
+          'Ad creatives',
+          'Content visuals',
+          'Launch announcement graphics'
+        ]
+      }
+    ],
+    processTitle: 'Design process',
     process: [
       {
-        title: 'Brief',
-        description: 'We clarify the message, platform, format, audience, and final assets needed.'
+        title: 'Share your goal',
+        description: 'Define the campaign, launch, promotion, or business communication need.'
       },
       {
-        title: 'Direction',
-        description: 'The visual style, references, hierarchy, and content priorities are set before production.'
+        title: 'Send content and brand details',
+        description: 'Provide copy, logos, colors, references, sizes, and deadline.'
       },
       {
-        title: 'Design',
-        description: 'The assets are designed with readable typography, balanced layout, and brand consistency.'
+        title: 'First design direction',
+        description: 'Review the first layout direction before the full set is finalized.'
       },
       {
-        title: 'Export',
-        description: 'Final files are prepared for the intended channels so they are ready to publish.'
+        title: 'Refinement',
+        description: 'Adjust hierarchy, content, spacing, or visual details based on feedback.'
+      },
+      {
+        title: 'Final ready-to-use files',
+        description: 'Receive exported files prepared for social, web, print, or campaign use.'
       }
     ],
     examples: [
       {
         title: 'Behance design portfolio',
-        description: 'A public collection of visual design, brand, and campaign work.',
+        description: 'Graphic design, branding services, campaign visuals, and brand assets.',
         href: 'https://www.behance.net/emmaaning'
       }
     ],
     relatedServices: ['branding', 'social-media-design', 'website-design'],
     faqs: [
       {
-        question: 'Can you design graphics for multiple platforms?',
+        question: 'Do you offer professional graphic design services for businesses?',
         answer:
-          'Yes. Assets can be prepared for Instagram, Facebook, LinkedIn, web banners, presentations, and print-friendly formats when needed.'
+          'Yes. The service covers business communication assets such as social posts, flyers, posters, presentations, and campaign visuals.'
       },
       {
-        question: 'Do I need brand guidelines first?',
+        question: 'Can you handle social media graphic design services?',
         answer:
-          'Brand guidelines help, but they are not required. If you do not have them, the visual direction can be defined before design production.'
+          'Yes. Work can include Instagram posts, carousels, promotional graphics, ads, and content visuals.'
       },
       {
-        question: 'Can you create a set of graphics instead of one design?',
+        question: 'Can graphic design and branding services be combined?',
         answer:
-          'Yes. Campaign sets and recurring social media kits can be planned so posts feel consistent across a launch or content series.'
+          'Yes. Brand assets and campaign visuals can be designed around the same visual identity for consistency.'
       }
-    ]
+    ],
+    finalCta: {
+      label: 'Graphic design services',
+      heading: 'Need clean graphics for your next campaign?',
+      text: 'Send the goal, content, formats, and deadline. I will confirm the right asset list before design starts.',
+      primaryLabel: 'Start a project',
+      primaryHref: '/contact',
+      secondaryLabel: 'View social media design',
+      secondaryHref: '/services/social-media-design'
+    }
   },
   {
     slug: 'branding',
     title: 'Branding',
     shortTitle: 'Branding',
     path: '/services/branding',
-    kicker: 'Brand identity service',
-    h1: 'Branding that gives your business a clear visual direction.',
+    kicker: 'Branding services',
+    h1: 'Visual identity branding services.',
     intro:
-      'A practical brand identity service for businesses that need a sharper logo system, colors, typography, and visual rules before building websites or marketing assets.',
-    seoTitle: 'Branding Services | Aning Design',
+      'Branding services for businesses that need logo design direction, visual identity assets, color, typography, and brand guidelines. Use this before building a website, campaign, or marketing system.',
+    cardDescription:
+      'Visual identity direction, logo refinement, color, typography, brand assets, and simple guidelines.',
+    seoTitle: 'Branding Services | AningDesign',
     seoDescription:
       'Branding services for businesses that need logo direction, color systems, typography, visual identity assets, and brand guidelines for consistent marketing.',
     keywords:
       'branding services, brand identity design, logo design, visual identity, brand guidelines, business branding',
-    overviewTitle: 'A brand system that makes design decisions easier',
-    overview:
-      'Branding creates the visual foundation for your website, graphics, social content, and marketing materials. This service turns scattered ideas into a focused identity system that can be used consistently across your digital presence.',
+    overviewTitle: 'Brand identity design',
+    overview: [
+      'Brand identity design defines the visual identity your website, graphics, social content, and marketing materials use.',
+      'Logo design is only one part. Branding services can also cover color, typography, layout direction, reusable assets, and brand guidelines.',
+      'Business branding is scoped around the places where the brand needs to appear first.'
+    ],
+    includedTitle: 'What branding includes',
     included: [
-      'Brand direction and visual positioning',
-      'Logo concept or logo refinement',
-      'Color palette and typography direction',
-      'Reusable visual elements or brand assets',
-      'Simple usage guidance for consistency',
-      'Export-ready files for digital use'
+      'Brand direction',
+      'Logo design or logo refinement',
+      'Color palette',
+      'Typography direction',
+      'Visual identity assets',
+      'Brand guidelines',
+      'Business branding basics',
+      'Export-ready logo files'
     ],
     midPageCta: {
-      heading: 'Need the visual direction clarified?',
-      text: 'Share the current brand materials, audience, and next use case so the branding work can focus on the right decisions first.',
+      heading: 'Need a clearer brand direction?',
+      text: 'Share the current brand materials, audience, and next use case. I will scope the branding work around the decisions you need first.',
       primaryLabel: 'Discuss branding',
       primaryHref: '/contact'
     },
@@ -301,44 +521,55 @@ export const servicePages = [
       'New businesses preparing to launch',
       'Brands that look inconsistent across channels',
       'Founders who need identity before a website',
-      'Creators turning a personal brand into a system'
+      'Creators turning a personal brand into a system',
+      'Teams that need brand guidelines before marketing work'
     ],
+    useCasesTitle: 'Logo design and brand guidelines',
     useCases: [
       {
-        title: 'New business identity',
-        description: 'A practical starting system for businesses that need logo direction, colors, type, and visual rules before launch.'
+        title: 'New business branding',
+        description: 'Business branding for a new offer, service, studio, startup, or personal brand.'
       },
       {
-        title: 'Brand refresh',
-        description: 'A cleaner identity direction for brands with outdated, scattered, or inconsistent visuals across website and marketing channels.'
+        title: 'Logo design and refinement',
+        description: 'Logo design direction or cleanup when the current mark needs stronger structure and clearer use.'
       },
       {
-        title: 'Pre-website foundation',
-        description: 'Brand decisions that make website design, social media design, and graphic design easier to keep consistent.'
+        title: 'Visual identity system',
+        description: 'Color, type, layout, and brand assets for consistent website, graphic design, and social media design.'
+      },
+      {
+        title: 'Brand guidelines',
+        description: 'Simple usage rules for logo placement, colors, typography, spacing, and visual consistency.'
       }
     ],
+    processTitle: 'Branding process',
     process: [
       {
-        title: 'Brand audit',
-        description: 'We review the current visuals, audience, competitors, and the feeling the brand needs to create.'
+        title: 'Share the brand goal',
+        description: 'Define the business, audience, offer, current materials, and where the brand will appear.'
       },
       {
-        title: 'Identity direction',
-        description: 'The logo, palette, typography, and visual references are aligned around a clear direction.'
+        title: 'Set the identity direction',
+        description: 'Choose the logo direction, color, type, layout references, and visual tone.'
       },
       {
-        title: 'Asset design',
-        description: 'Core identity assets are created or refined so the brand can be used across web and marketing.'
+        title: 'Design the brand assets',
+        description: 'Create or refine the logo, visual identity assets, and supporting brand elements.'
       },
       {
-        title: 'Guidance',
-        description: 'Final assets include practical notes that help keep future designs consistent.'
+        title: 'Prepare brand guidelines',
+        description: 'Document the rules needed to keep future website, graphic, and social designs consistent.'
+      },
+      {
+        title: 'Deliver final files',
+        description: 'Provide export-ready assets for web, social, print, or marketing use.'
       }
     ],
     examples: [
       {
         title: 'Behance brand and identity work',
-        description: 'Selected brand visuals and graphic design examples.',
+        description: 'Branding services, logo design, visual identity assets, and graphic design examples.',
         href: 'https://www.behance.net/emmaaning'
       }
     ],
@@ -347,48 +578,65 @@ export const servicePages = [
       {
         question: 'Is branding only logo design?',
         answer:
-          'No. A logo is one part of branding. The service can also include color, type, layout direction, and reusable visual assets.'
+          'No. Logo design is one part. Branding can also include color, typography, visual identity assets, and brand guidelines.'
       },
       {
         question: 'Can you refresh an existing brand?',
         answer:
-          'Yes. A refresh can keep the recognizable parts of your identity while improving consistency and polish.'
+          'Yes. A refresh can keep the recognizable parts while improving consistency, structure, and everyday use.'
       },
       {
         question: 'Should branding happen before website design?',
         answer:
-          'Usually yes. A clear brand direction makes the website design faster, more consistent, and easier to scale.'
+          'Usually yes. Brand identity design makes website design, graphic design, and marketing materials easier to keep consistent.'
       }
-    ]
+    ],
+    finalCta: {
+      label: 'Branding services',
+      heading: 'Need brand assets that stay consistent?',
+      text: 'Send the current visuals, business goal, and next use case. I will help define the right branding scope.',
+      primaryLabel: 'Discuss branding',
+      primaryHref: '/contact',
+      secondaryLabel: 'View graphic design',
+      secondaryHref: '/services/graphic-design'
+    }
   },
   {
     slug: 'social-media-design',
     title: 'Social Media Design',
     shortTitle: 'Social Media',
     path: '/services/social-media-design',
-    kicker: 'Social media design service',
-    h1: 'Social media design systems for consistent posts, promos, and launches.',
+    kicker: 'Social media design services',
+    h1: 'Social media design for campaigns.',
     intro:
-      'A focused design service for brands that need social posts, carousels, promotional graphics, and reusable visual systems for online communication.',
-    seoTitle: 'Social Media Design Services | Aning Design',
+      'Social media design services for Instagram post design, carousel design, promotional graphics, and content design. Use this when your brand needs consistent social media graphics for campaigns, launches, and regular posts.',
+    cardDescription:
+      'Post designs, carousels, campaign graphics, launch visuals, and reusable social content patterns.',
+    seoTitle: 'Social Media Design Services | AningDesign',
     seoDescription:
       'Social media design services for branded post templates, campaign graphics, launch visuals, carousels, and consistent content systems.',
     keywords:
       'social media design services, Instagram post design, social media graphics, content design, carousel design, campaign graphics',
-    overviewTitle: 'A cleaner way to show up online',
-    overview:
-      'Social media moves quickly, but your visuals should still feel intentional. This service creates post designs and reusable patterns that make your message easier to scan while keeping your brand recognizable.',
+    overviewTitle: 'Social media graphics and campaign graphics',
+    overview: [
+      'Social media graphics should make the message easy to scan before the viewer scrolls away.',
+      'Campaign graphics can cover announcements, offers, launches, events, reminders, and promotional content.',
+      'Content design keeps repeated posts clear while still matching the brand direction.'
+    ],
+    includedTitle: 'What I design',
     included: [
-      'Single posts, carousel layouts, and story graphics',
+      'Instagram post design',
+      'Carousel design',
+      'Story graphics',
+      'Campaign graphics',
+      'Launch visuals',
+      'Promotional graphics',
       'Reusable content templates',
-      'Campaign or launch visual sets',
-      'Platform-ready export sizes',
-      'Typography and layout consistency',
-      'Design direction that fits your brand'
+      'Platform-ready export sizes'
     ],
     midPageCta: {
-      heading: 'Have content ready for design?',
-      text: 'Send the content pillars, sample posts, or launch details so the social media design system can match the way you publish.',
+      heading: 'Need social visuals for a campaign?',
+      text: 'Send the content, platform, sizes, and launch date. I will shape the social media design scope around the assets you need.',
       primaryLabel: 'Plan social designs',
       primaryHref: '/contact'
     },
@@ -396,44 +644,55 @@ export const servicePages = [
       'Brands posting regularly on social platforms',
       'Creators launching offers or digital products',
       'Businesses promoting events or campaigns',
-      'Teams that need consistent visual templates'
+      'Teams that need consistent visual templates',
+      'Brands that need content design for recurring posts'
     ],
+    useCasesTitle: 'Instagram post design and carousel design',
     useCases: [
       {
-        title: 'Reusable post templates',
-        description: 'Layouts for recurring content types so posts feel consistent without redesigning the visual system each time.'
+        title: 'Instagram post design',
+        description: 'Static post layouts for offers, announcements, quotes, testimonials, reminders, and branded updates.'
       },
       {
-        title: 'Campaign post sets',
-        description: 'Coordinated social graphics for launches, promotions, announcements, events, or seasonal marketing pushes.'
+        title: 'Carousel design',
+        description: 'Multi-slide layouts for education, storytelling, product details, launch explainers, or step-by-step posts.'
       },
       {
-        title: 'Carousel and story graphics',
-        description: 'Readable, platform-ready visuals for education, storytelling, offers, testimonials, and quick updates.'
+        title: 'Campaign graphics',
+        description: 'Coordinated social graphics for launches, promotions, announcements, events, or seasonal marketing.'
+      },
+      {
+        title: 'Reusable content design',
+        description: 'Templates for recurring post types so the brand stays consistent across repeated content.'
       }
     ],
+    processTitle: 'Social media design process',
     process: [
       {
-        title: 'Content review',
-        description: 'We define the message, post formats, content pillars, and platform requirements.'
+        title: 'Share the content goal',
+        description: 'Define the message, audience, platform, post formats, and deadline.'
       },
       {
-        title: 'Template direction',
-        description: 'The recurring layout patterns, typography, and visual rhythm are planned.'
+        title: 'Send brand details',
+        description: 'Provide logo, colors, references, content pillars, and sample posts.'
       },
       {
-        title: 'Design set',
-        description: 'The posts or templates are designed as a cohesive set that can support repeated use.'
+        title: 'Set the visual direction',
+        description: 'Choose the layout style, typography, hierarchy, and reusable pattern.'
       },
       {
-        title: 'Delivery',
-        description: 'Final assets are exported in the correct sizes and formats for publishing.'
+        title: 'Design and refine',
+        description: 'Review the post set, adjust content order, and refine the visuals.'
+      },
+      {
+        title: 'Deliver platform-ready files',
+        description: 'Receive final social media graphics in the correct sizes for publishing.'
       }
     ],
     examples: [
       {
         title: 'Behance social and campaign visuals',
-        description: 'Design examples for digital campaigns, promotions, and brand assets.',
+        description: 'Social media graphics, campaign graphics, carousel design, and brand assets.',
         href: 'https://www.behance.net/emmaaning'
       }
     ],
@@ -442,48 +701,65 @@ export const servicePages = [
       {
         question: 'Can you design reusable post templates?',
         answer:
-          'Yes. Templates can be created around recurring content types so future posts stay consistent.'
+          'Yes. Reusable templates can be created for recurring content design and regular social media graphics.'
       },
       {
         question: 'Can you design a launch campaign set?',
         answer:
-          'Yes. A launch set can include teaser graphics, announcement posts, offer visuals, and follow-up content.'
+          'Yes. Campaign graphics can include teasers, announcement posts, offer visuals, reminders, and follow-up content.'
       },
       {
-        question: 'Do you write captions too?',
+        question: 'Can you design Instagram posts and carousels?',
         answer:
-          'The main service is visual design, but short post copy and headline direction can be included when needed.'
+          'Yes. Instagram post design and carousel design can be planned as single assets or as a full visual set.'
       }
-    ]
+    ],
+    finalCta: {
+      label: 'Social media design services',
+      heading: 'Need consistent social media graphics?',
+      text: 'Send the campaign, content, platform, and posting needs. I will confirm the right design set.',
+      primaryLabel: 'Plan social designs',
+      primaryHref: '/contact',
+      secondaryLabel: 'View graphic design',
+      secondaryHref: '/services/graphic-design'
+    }
   },
   {
     slug: 'ui-ux-design',
     title: 'UI/UX Design',
     shortTitle: 'UI/UX Design',
     path: '/services/ui-ux-design',
-    kicker: 'Product design service',
-    h1: 'UI/UX design for clear, usable websites and web apps.',
+    kicker: 'UI/UX design services',
+    h1: 'UI/UX design for product flows.',
     intro:
-      'Interface and user experience design for websites, dashboards, product MVPs, and digital tools that need better structure, easier navigation, and cleaner screens.',
-    seoTitle: 'UI/UX Design Services | Aning Design',
+      'UI UX design services for websites, dashboards, product MVPs, and web app design. Use this when users need clearer screens, easier navigation, and better task flow.',
+    cardDescription:
+      'User flows, wireframes, interface design, dashboard screens, and cleaner product journeys.',
+    seoTitle: 'UI/UX Design Services | AningDesign',
     seoDescription:
       'UI/UX design services for websites, dashboards, product MVPs, landing pages, and web apps that need clear flows and responsive interface systems.',
     keywords:
       'UI UX design services, product design, web app design, dashboard UI design, interface design, user experience design',
-    overviewTitle: 'Interfaces shaped around real user tasks',
-    overview:
-      'Good UI/UX design makes a product easier to understand and easier to use. This service focuses on page flow, screen hierarchy, responsive behavior, and interaction clarity so users can move through the experience with confidence.',
+    overviewTitle: 'Interface design for websites and web apps',
+    overview: [
+      'Interface design makes screens easier to understand, scan, and use.',
+      'User experience design focuses on the order of tasks, navigation, forms, content hierarchy, and next actions.',
+      'Product design can support a website, dashboard, SaaS concept, startup MVP, or internal web app.'
+    ],
+    includedTitle: 'What I design',
     included: [
-      'User flow and page structure planning',
-      'Wireframes or layout direction',
-      'Responsive interface design',
-      'Dashboard, form, and product screen patterns',
-      'Design system notes for consistency',
-      'Developer-friendly handoff guidance'
+      'User flow planning',
+      'Wireframes',
+      'Interface design',
+      'Web app design',
+      'Dashboard UI design',
+      'Form and screen patterns',
+      'Responsive product screens',
+      'Developer handoff notes'
     ],
     midPageCta: {
-      heading: 'Have a flow that needs clarity?',
-      text: 'Share the screens, user task, or product idea so the UI/UX design work can focus on the most important interaction first.',
+      heading: 'Have a screen flow that feels unclear?',
+      text: 'Share the screens, user task, product idea, or current flow. I will focus the UI/UX design work on the highest-friction areas first.',
       primaryLabel: 'Review the flow',
       primaryHref: '/contact'
     },
@@ -491,49 +767,60 @@ export const servicePages = [
       'Founders designing a product MVP',
       'Teams improving a dashboard or web app',
       'Websites with confusing user journeys',
-      'Businesses that need cleaner conversion flows'
+      'Businesses that need cleaner conversion flows',
+      'Teams that need interface design before development'
     ],
+    useCasesTitle: 'Dashboard UI design and user experience design',
     useCases: [
       {
         title: 'Product MVP screens',
-        description: 'Interface direction for early web apps, startup tools, SaaS concepts, and product flows that need to be easier to understand.'
+        description: 'Product design for early web apps, startup tools, SaaS concepts, and core product flows.'
       },
       {
-        title: 'Dashboard and form UX',
-        description: 'Screen structure for data-heavy interfaces, forms, admin areas, and workflows where users need clear next steps.'
+        title: 'Dashboard UI design',
+        description: 'Dashboard UI design for data-heavy screens, admin areas, portals, and task-based workflows.'
       },
       {
-        title: 'Website conversion paths',
-        description: 'User journey improvements for landing pages, service pages, and content flows that need clearer actions.'
+        title: 'Web app design',
+        description: 'Web app design for forms, settings, onboarding, account areas, and reusable screen patterns.'
+      },
+      {
+        title: 'Website user experience design',
+        description: 'User journey improvements for landing pages, service pages, and conversion paths.'
       }
     ],
+    processTitle: 'UI/UX design process',
     process: [
       {
-        title: 'Flow audit',
-        description: 'We identify the core user tasks, friction points, and screens needed for the experience.'
+        title: 'Define the user task',
+        description: 'Clarify who uses the screen, what they need to do, and what blocks them.'
       },
       {
-        title: 'Wireframe',
-        description: 'The content hierarchy and screen structure are mapped before visual design.'
+        title: 'Map the flow',
+        description: 'Plan the page order, screen states, navigation, forms, and next actions.'
       },
       {
-        title: 'Interface design',
-        description: 'Layouts, components, states, and responsive behavior are designed for clarity.'
+        title: 'Design the interface',
+        description: 'Create layouts, components, states, hierarchy, and responsive behavior.'
       },
       {
-        title: 'Handoff',
-        description: 'The final direction includes guidance that makes implementation more predictable.'
+        title: 'Review and refine',
+        description: 'Adjust screen order, labels, spacing, hierarchy, and interaction details.'
+      },
+      {
+        title: 'Prepare handoff notes',
+        description: 'Document key patterns and guidance for development.'
       }
     ],
     examples: [
       {
         title: 'StudyNest',
-        description: 'Student productivity app with learning, task, and academic workflow screens.',
+        description: 'Product design and web app design for student learning and task workflows.',
         href: 'https://studynestt.com/'
       },
       {
         title: 'AssetRax',
-        description: 'Finance and asset tracking MVP with dashboard-style product flows.',
+        description: 'Dashboard UI design and product flows for finance and asset tracking.',
         href: 'https://assetrax.online/'
       }
     ],
@@ -542,54 +829,67 @@ export const servicePages = [
       {
         question: 'Can UI/UX design happen before development?',
         answer:
-          'Yes. Planning screens and flows before development reduces confusion and helps the build move faster.'
+          'Yes. UI UX design services can define screens, flows, and interface patterns before development starts.'
       },
       {
         question: 'Can you improve an existing app interface?',
         answer:
-          'Yes. Existing screens can be audited and redesigned around clearer hierarchy, navigation, and task completion.'
+          'Yes. Existing screens can be reviewed and redesigned around hierarchy, navigation, task completion, and clearer interface design.'
       },
       {
         question: 'Do you design responsive product screens?',
         answer:
-          'Yes. Responsive behavior is considered so the interface works across desktop, tablet, and mobile contexts.'
+          'Yes. Web app design and dashboard UI design can include desktop, tablet, and mobile behavior.'
       }
-    ]
+    ],
+    finalCta: {
+      label: 'UI/UX design services',
+      heading: 'Need clearer screens or flows?',
+      text: 'Send the product idea, current screens, or user task. I will help define the UI/UX design scope.',
+      primaryLabel: 'Review the flow',
+      primaryHref: '/contact',
+      secondaryLabel: 'View MVP services',
+      secondaryHref: '/services/startup-websites'
+    }
   },
   {
     slug: 'startup-websites',
     title: 'Startup MVPs & Web Apps',
     shortTitle: 'Startup MVPs & Web Apps',
     path: '/services/startup-websites',
-    kicker: 'Startup MVP and web app service',
-    h1: 'Startup MVPs, web apps, and product prototypes for early-stage launches.',
+    kicker: 'Startup MVP development',
+    h1: 'Startup MVP development for focused launches.',
     intro:
-      'Build more than a startup website. This service helps founders and creators turn product ideas into launch-ready landing pages, SaaS MVPs, web apps, dashboards, and early-stage digital products.',
+      'Startup MVP development for landing pages, SaaS MVP development, web app development, dashboards, and product prototypes. Use this when the project needs more than a static website.',
     cardDescription:
-      'Startup-focused design and development for landing pages, SaaS MVPs, web apps, dashboards, and product prototypes built to test, launch, and grow.',
+      'Startup-focused design and development for landing pages, SaaS MVPs, web apps, dashboards, and product prototypes.',
     seoTitle: 'Startup MVPs & Web Apps | SaaS MVP Development',
     seoDescription:
       'Design and development for startup landing pages, SaaS MVPs, web apps, dashboards, and Firebase-powered product prototypes.',
     keywords:
       'startup MVP development, SaaS MVP development, web app development, startup landing page, Firebase web app, dashboard design, product prototype',
-    overviewTitle: 'From launch page to functional product prototype',
-    overview:
-      'Early-stage products often need more than a static website. This service covers the planning, interface design, frontend development, and practical app foundations needed to test an idea, collect users, show a dashboard, or prepare a SaaS MVP for launch.',
+    overviewTitle: 'SaaS MVP development and startup landing pages',
+    overview: [
+      'Startup MVP development starts with the first useful version of the product, not every possible feature.',
+      'A startup landing page can validate the offer, collect signups, explain the product, or support demo requests.',
+      'SaaS MVP development and web app development can include screens, authentication, simple data, dashboards, and launch support.'
+    ],
+    includedTitle: 'What I build',
     included: [
       'Startup landing page',
       'MVP product planning',
-      'SaaS or web app interface',
+      'SaaS MVP interface',
+      'Web app development',
       'Authentication flow',
-      'Dashboard or user portal',
-      'Firebase backend setup where needed',
+      'Dashboard design',
+      'Firebase web app setup',
       'Basic database structure',
-      'Payment or checkout flow planning',
-      'Responsive frontend development',
-      'Launch and deployment support'
+      'Product prototype',
+      'Launch support'
     ],
     midPageCta: {
       heading: 'Have an MVP idea to shape?',
-      text: 'Share the product stage, audience, and core feature set so the build can focus on the right website, app, dashboard, or prototype path.',
+      text: 'Share the product stage, audience, and core feature set. I will scope the first useful version before build work starts.',
       primaryLabel: 'Plan the MVP',
       primaryHref: '/contact'
     },
@@ -598,54 +898,65 @@ export const servicePages = [
       'Creators launching a digital product',
       'Businesses that need a client portal or dashboard',
       'Startups that need an MVP before full product investment',
-      'Teams that need a functional product prototype, not just a static website'
+      'Teams that need a functional product prototype',
+      'Founders comparing startup landing page and web app development paths'
     ],
+    useCasesTitle: 'Firebase web app and dashboard design',
     useCases: [
       {
         title: 'Startup landing pages',
-        description: 'Focused launch pages for early product ideas that need positioning, signup paths, demo requests, or waitlist validation.'
+        description: 'Launch pages for product positioning, signup paths, demo requests, or waitlist validation.'
       },
       {
-        title: 'SaaS MVPs and web apps',
-        description: 'Early app builds with product screens, authentication flows, Firebase setup, and simple data structures where the MVP needs them.'
+        title: 'SaaS MVP development',
+        description: 'Early SaaS builds with product screens, account flows, simple data, and core feature paths.'
       },
       {
-        title: 'Dashboards and portals',
-        description: 'Practical dashboards, admin panels, client portals, and payment-ready flows for products that need more than a public page.'
+        title: 'Firebase web app',
+        description: 'Firebase web app setup for authentication, database needs, and practical product foundations.'
+      },
+      {
+        title: 'Dashboard design',
+        description: 'Dashboard design for admin panels, client portals, user areas, and product management screens.'
       }
     ],
+    processTitle: 'MVP process',
     process: [
       {
-        title: 'Product scope',
-        description: 'We clarify the user problem, core feature set, launch goal, and what belongs in the first useful MVP.'
+        title: 'Define the MVP goal',
+        description: 'Clarify the user problem, launch goal, audience, and first useful feature set.'
       },
       {
-        title: 'Flow and structure',
-        description: 'The landing page, app screens, auth flow, dashboard, database needs, and CTA path are mapped before build work starts.'
+        title: 'Map the product flow',
+        description: 'Plan the landing page, app screens, auth flow, dashboard, database needs, and CTA path.'
       },
       {
-        title: 'Design and development',
-        description: 'The MVP is designed and built with responsive frontend screens, practical interactions, and Firebase-backed features where needed.'
+        title: 'Design the prototype',
+        description: 'Create the product screens, dashboard UI, user journey, and responsive layout direction.'
       },
       {
-        title: 'Launch support',
-        description: 'The final pass checks user flows, links, forms, authentication paths, mobile behavior, deployment, and handoff needs.'
+        title: 'Build the first version',
+        description: 'Develop the frontend, Firebase-backed features, forms, auth, or dashboard pieces in scope.'
+      },
+      {
+        title: 'Check and launch',
+        description: 'Test user flows, links, forms, authentication paths, mobile behavior, and deployment needs.'
       }
     ],
     examples: [
       {
         title: 'StudyNest',
-        description: 'Education-focused productivity platform for students.',
+        description: 'Product prototype and web app development for student productivity workflows.',
         href: 'https://studynestt.com/'
       },
       {
         title: 'Lensora Events',
-        description: 'Event media platform for QR-based photo and video sharing.',
+        description: 'Firebase web app and event media product with QR-based photo and video sharing.',
         href: 'https://lensoraevents.com/'
       },
       {
         title: 'Startup projects page',
-        description: 'A local overview of startup products, MVPs, and web apps from Aning Design Lab.',
+        description: 'Startup MVP development, SaaS MVPs, web apps, dashboards, and product prototypes.',
         href: '/startups'
       }
     ],
@@ -654,19 +965,28 @@ export const servicePages = [
       {
         question: 'Can this still include a startup website?',
         answer:
-          'Yes. A startup website or landing page can be part of the service, especially when the goal is validation, signups, demo requests, or early customer conversations.'
+          'Yes. A startup landing page can be part of the MVP when the goal is validation, signups, demo requests, or early customer conversations.'
       },
       {
         question: 'Can you add login, dashboard, or database features?',
         answer:
-          'Yes, when those features fit the MVP scope. The build can include authentication flows, Firebase setup, basic database structure, dashboards, user portals, and simple admin views.'
+          'Yes. A Firebase web app can include authentication, basic database structure, dashboard design, user portals, or admin views when they fit the MVP scope.'
       },
       {
-        question: 'Is this enterprise software development?',
+        question: 'Is this full enterprise software development?',
         answer:
-          'No. This is positioned for early-stage MVPs, SaaS prototypes, startup landing pages, and practical web app builds before full product investment.'
+          'No. This is for startup MVP development, SaaS MVP development, product prototypes, and practical web app development before full product investment.'
       }
-    ]
+    ],
+    finalCta: {
+      label: 'Startup MVP development',
+      heading: 'Need to shape the first useful version?',
+      text: 'Send the product idea, audience, core features, and launch goal. I will help define the MVP scope.',
+      primaryLabel: 'Plan the MVP',
+      primaryHref: '/contact',
+      secondaryLabel: 'View startup projects',
+      secondaryHref: '/startups'
+    }
   }
 ]
 
@@ -674,80 +994,64 @@ export const servicesIndexPage = {
   title: 'Services',
   shortTitle: 'Services',
   path: '/services',
-  kicker: 'Aning Design services',
-  h1: 'Web design, branding, and creative services for digital growth.',
+  kicker: 'AningDesign services',
+  h1: 'Find the right service.',
   intro:
-    'Explore focused design services for website design, graphic design, branding, social media design, UI/UX design, and startup MVPs or web apps. Each service is built to help businesses create a clearer online presence, stronger visual identity, and better conversion path.',
+    'Choose the right path for website design, WordPress, React web apps, graphic design, branding, social media visuals, UI/UX, or an MVP. Each service page shows scope, process, proof, and the next step.',
   introCta: {
     heading: 'Not sure which service fits?',
-    text: 'Share what you are building and I will help you choose the right service path.',
+    text: 'Send the goal and deadline. I will point you to the right service.',
     primaryLabel: 'Start a project',
-    primaryHref: '/contact',
-    secondaryLabel: 'View MVP services',
-    secondaryHref: '/services/startup-websites'
+    primaryHref: '/contact'
   },
   directoryIntro:
-    'Use the cards to compare the right path by project type: a business website, brand identity, social graphics, product interface, startup MVP, or web app.',
-  directoryHighlights: [
-    'Start with website design when the main goal is a clearer public website and conversion path.',
-    'Start with Startup MVPs & Web Apps when the project needs a launch page, SaaS MVP, dashboard, portal, or product prototype.',
-    'Start with branding, graphic design, or social media design when the visual system needs more consistency.',
-    'Start with UI/UX design when users need a simpler way to move through a website, dashboard, or web app.'
-  ],
+    'Start with the card that matches the output you need. The service page will show scope, process, proof, and next action.',
   seoTitle: 'Services | Website Design, Branding, UI/UX and Graphic Design',
   seoDescription:
-    'Explore Aning Design services for website design, graphic design, branding, social media design, UI/UX design, startup MVPs, and web apps.',
+    'Explore AningDesign services for website design, WordPress websites, React web apps, graphic design, branding, social media design, UI/UX, and startup MVPs.',
   keywords:
-    'website design services, graphic design services, branding services, social media design, UI UX design, startup MVPs, web apps',
-  overviewTitle: 'A practical creative stack for modern businesses',
-  overview:
-    'The services are designed to work together. A brand system can support a website. A website can support content and lead generation. UI/UX can clarify product flows. Each service page explains what is included, who it is for, and how the work moves from idea to launch.',
-  included: [
-    'Strategy-first page and content structure',
-    'Responsive website and interface design',
-    'Brand identity and visual direction',
-    'Graphic and social media design systems',
-    'Startup MVPs, web apps, and launch pages',
-    'SEO-aware internal linking and readable page content'
-  ],
+    'website design services, WordPress website design, React web app development, graphic design services, branding services, social media design, UI UX design, startup MVPs',
+  audienceTitle: 'Who these services are for',
   audience: [
-    'Businesses that need a stronger digital presence',
-    'Founders launching products or service offers',
-    'Creators building a professional brand system',
-    'Teams that need consistent visuals across channels'
+    'Service businesses that need clearer websites',
+    'Founders launching offers, MVPs, or web apps',
+    'Brands that need consistent visuals',
+    'Teams improving screens, campaigns, or content'
   ],
+  processTitle: 'Process',
   process: [
     {
-      title: 'Choose the service path',
-      description: 'Start with the page that matches your current need, then connect related services when the project requires it.'
+      title: 'Choose a path',
+      description: 'Pick the service that matches the output: site, brand, graphic set, screen flow, or MVP.'
     },
     {
-      title: 'Clarify goals',
-      description: 'The offer, audience, content, timeline, and success criteria are defined before production begins.'
+      title: 'Clarify scope',
+      description: 'Set the audience, content, timeline, deliverables, and final use.'
     },
     {
       title: 'Design and refine',
-      description: 'The work moves through structure, visual direction, responsive design, and revisions.'
+      description: 'Review the first direction, then tighten layout, copy, and visuals.'
     },
     {
       title: 'Prepare for launch',
-      description: 'Final assets or pages are checked for clarity, links, mobile behavior, and handoff needs.'
+      description: 'Check links, mobile behavior, files, and handoff needs.'
     }
   ],
+  examplesTitle: 'Related projects',
   examples: [
     {
       title: 'Website projects',
-      description: 'Selected website builds and case-study style project showcases.',
+      description: 'Selected website builds and service-focused project examples.',
       href: '/#projects'
     },
     {
       title: 'Startup projects',
-      description: 'Web apps and product MVPs built by Aning Design Lab.',
+      description: 'MVPs, web apps, dashboards, and product prototypes.',
       href: '/startups'
     },
     {
       title: 'Design portfolio',
-      description: 'Graphic design, branding, and campaign visuals on Behance.',
+      description: 'Graphic design, branding, campaign visuals, and brand assets.',
       href: 'https://www.behance.net/emmaaning'
     }
   ],
@@ -756,19 +1060,26 @@ export const servicesIndexPage = {
     {
       question: 'Which service should I start with?',
       answer:
-        'If your website is the main business tool, start with website design. If your visuals feel inconsistent, start with branding or graphic design. If you are launching a product, start with Startup MVPs & Web Apps or UI/UX design.'
+        'If the output is a public site, start with website design. If the output is campaign visuals, social graphics, or brand assets, start with graphic design or branding.'
     },
     {
       question: 'Can services be combined?',
       answer:
-        'Yes. Many projects combine branding, website design, UI/UX, and social media assets so the full experience feels consistent.'
+        'Yes. A project can combine branding, website design, UI/UX, social graphics, campaign assets, MVPs, or web apps when the scope needs them.'
     },
     {
-      question: 'Are these pages ready for future prerendering?',
+      question: 'Do I need to know the exact service before contacting?',
       answer:
-        'Yes. The pages use local content, static route paths, and normal internal links so they can be visited by a future prerender build step.'
+        'No. Send the goal, timeline, and current materials. I will help choose the right service path before work starts.'
     }
   ],
+  finalCta: {
+    label: 'Start with the right service',
+    heading: 'Ready to shape the project?',
+    text: 'Send the goal, timeline, and any current materials. I will help confirm the right path before work starts.',
+    primaryLabel: 'Start a Project',
+    primaryHref: '/contact'
+  },
   showDirectory: true
 }
 

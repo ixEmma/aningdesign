@@ -190,7 +190,7 @@ const getServiceLink = (post) => {
     return {
       href: servicePath || relatedService,
       label: 'Related service',
-      description: 'Open the related Aning Design service for this article.'
+      description: 'Open the related AningDesign service for this article.'
     }
   }
 
@@ -290,7 +290,7 @@ function BlogPostContextCta({ serviceLink }) {
     <aside className="blog-post-context-cta" aria-label="Related service">
       <p className="blog-post-context-kicker">Project planning note</p>
       <h2>Want this structure handled for your own website?</h2>
-      <p>{serviceLink.description || 'Use the related service page to plan the next step with Aning Design Lab.'}</p>
+      <p>{serviceLink.description || 'Use the related service page to plan the next step with AningDesign.'}</p>
       <Link to={serviceLink.href}>View {serviceLink.label}</Link>
     </aside>
   )
@@ -329,7 +329,7 @@ function BlogPostFinalCta({ post, serviceLink, youtubeWatchUrl, ctaDescription }
       <h2>Need help building your website?</h2>
       <p>{ctaDescription}</p>
       <div className="blog-post-cta-actions">
-        <Link to="/contact" className="blog-post-cta-primary">Contact Aning Design</Link>
+        <Link to="/contact" className="blog-post-cta-primary">Contact AningDesign</Link>
         {serviceLink && (
           <Link to={serviceLink.href}>View related service</Link>
         )}
@@ -362,8 +362,8 @@ function BlogPost() {
     ? splitContentForContextCta(post.content)
     : { firstPart: post.content, secondPart: '' }
   const ctaDescription = post.type === 'seo'
-    ? 'Use this guide to plan your next step, then contact Aning Design when you are ready to turn the strategy into a working website.'
-    : 'Watch the tutorial, keep practicing, and contact Aning Design when you are ready to turn the lesson into a polished website for your own brand.'
+    ? 'Use this guide to plan your next step, then contact AningDesign when you are ready to turn the strategy into a working website.'
+    : 'Watch the tutorial, keep practicing, and contact AningDesign when you are ready to turn the lesson into a polished website for your own brand.'
 
   useSeo({
     title: `${post.title} | Aning Design Lab`,
@@ -403,7 +403,7 @@ function BlogPost() {
       publisher: {
         '@type': 'Organization',
         '@id': 'https://aningdesign.com/#business',
-        name: 'Aning Design',
+        name: 'AningDesign',
         logo: {
           '@type': 'ImageObject',
           url: 'https://aningdesign.com/images/LOGO.png'

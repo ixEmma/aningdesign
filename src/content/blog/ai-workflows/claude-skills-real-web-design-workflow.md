@@ -171,4 +171,4 @@ The biggest takeaway is that AI becomes much more useful when it has a focused j
 
 Claude Skills are not just a productivity trick. They are a way to make AI more practical for real website work. When you separate debugging, architecture, design, and frontend development into focused workflows, Claude becomes easier to guide and more useful for client projects.
 
-Watch the full video on YouTube, subscribe for more Claude Code and web design tutorials, join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or contact Aning Design through [https://aningdesign.com/](https://aningdesign.com/).
+Watch the full video on YouTube, subscribe for more Claude Code and web design tutorials, join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or contact AningDesign through [https://aningdesign.com/](https://aningdesign.com/).

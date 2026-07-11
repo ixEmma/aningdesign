@@ -5,11 +5,11 @@ import './ContactPage.css'
 
 function ContactPage() {
   useSeo({
-    title: 'Contact Aning Design | Start a Website or Design Project',
+    title: 'Contact AningDesign | Start a Website or Design Project',
     description:
-      'Contact Aning Design to start a website, branding, graphic design, UI/UX, or startup web project with Emmanuel Aning.',
+      'Contact AningDesign to start a website, branding, graphic design, UI/UX, or startup web project with Emmanuel Aning.',
     canonical: `${getDomain()}/contact`,
-    keywords: 'contact Aning Design, start a website project, hire web designer Ghana, design project inquiry',
+    keywords: 'contact AningDesign, start a website project, hire web designer Ghana, design project inquiry',
     type: 'website'
   })
 

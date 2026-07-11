@@ -14,7 +14,7 @@ keywordCluster:
   - wordpress website designer
   - seo and website design
 servicePage: "/services/website-design"
-thumbnail: "https://images.pexels.com/photos/1604024/pexels-photo-1604024.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200"
+thumbnail: "/images/blog/small-business-website-design.webp"
 thumbnailAlt: "Small business owner reviewing website design on a laptop"
 imageCredit: "Vlad Bagacian"
 imageCreditUrl: "https://www.pexels.com/photo/man-in-front-of-laptop-1604024/"
@@ -216,6 +216,6 @@ If several of these are missing, the site probably needs more planning before it
 
 ## Ready To Plan The Website Properly?
 
-Aning Design Lab builds practical websites for small businesses, creators, and brands that need a clear structure, responsive design, and a search-ready foundation.
+AningDesign builds practical websites for small businesses, creators, and brands that need a clear structure, responsive design, and a search-ready foundation.
 
-Start with the [website design service](/services/website-design) if you want help planning the pages, content, and launch path. You can also [contact Aning Design Lab](/contact) when you are ready to discuss the project.
+Start with the [website design service](/services/website-design) if you want help planning the pages, content, and launch path. You can also [contact AningDesign](/contact) when you are ready to discuss the project.

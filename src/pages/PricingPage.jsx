@@ -5,11 +5,11 @@ import './PricingPage.css'
 
 function PricingPage() {
   useSeo({
-    title: 'Pricing | Aning Design Lab',
+    title: 'Pricing | AningDesign',
     description:
-      'View website design, graphic design, branding, and startup project pricing options from Aning Design Lab.',
+      'View website design, graphic design, branding, and startup project pricing options from AningDesign.',
     canonical: `${getDomain()}/pricing`,
-    keywords: 'Aning Design pricing, website design pricing, graphic design pricing, branding pricing, startup website pricing',
+    keywords: 'AningDesign pricing, website design pricing, graphic design pricing, branding pricing, startup website pricing',
     type: 'website'
   })
 

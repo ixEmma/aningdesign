@@ -4,8 +4,8 @@ import './ThankYou.css'
 
 function ThankYou() {
   useSeo({
-    title: 'Thank You | Aning Design',
-    description: 'Thank you for contacting Aning Design. Your website inquiry has been received.',
+    title: 'Thank You | AningDesign',
+    description: 'Thank you for contacting AningDesign. Your website inquiry has been received.',
     canonical: `${getDomain()}/thank-you`,
     robots: 'noindex, follow',
     type: 'website'
@@ -17,7 +17,7 @@ function ThankYou() {
         <p className="thank-you-label">Message received</p>
         <h1 id="thank-you-title">Thank you for reaching out.</h1>
         <p className="thank-you-copy">
-          Your inquiry has been sent to Aning Design. I will review your message and reply as
+          Your inquiry has been sent to AningDesign. I will review your message and reply as
           soon as possible.
         </p>
         <div className="thank-you-actions" aria-label="Next steps">

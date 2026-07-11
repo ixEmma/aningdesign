@@ -230,4 +230,4 @@ The Codex WordPress Elementor workflow is useful because it gives AI a clear job
 
 If you want more practical WordPress, Elementor, AI web design, and Codex workflow tutorials, watch the full video on Aning Design Lab and explore more guides on [aningdesign.com](https://aningdesign.com/).
 
-You can also contact Aning Design through [https://aningdesign.com/](https://aningdesign.com/), join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), support the work at [https://selar.com/showlove/aningdesignlab](https://selar.com/showlove/aningdesignlab), or view the GitHub repo at [https://github.com/ixEmma/code-wordpress](https://github.com/ixEmma/code-wordpress).
+You can also contact AningDesign through [https://aningdesign.com/](https://aningdesign.com/), join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), support the work at [https://selar.com/showlove/aningdesignlab](https://selar.com/showlove/aningdesignlab), or view the GitHub repo at [https://github.com/ixEmma/code-wordpress](https://github.com/ixEmma/code-wordpress).

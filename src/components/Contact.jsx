@@ -45,7 +45,7 @@ function Contact({ showIntroCta = true, pageMode = false }) {
             method="POST"
             onSubmit={handleSubmit}
           >
-            <input type="hidden" name="_subject" value="New Aning Design Website Inquiry" />
+            <input type="hidden" name="_subject" value="New AningDesign Website Inquiry" />
             <input type="hidden" name="_next" value={THANK_YOU_URL} />
             <input type="hidden" name="_template" value="table" />
             <input
@@ -140,7 +140,7 @@ function Contact({ showIntroCta = true, pageMode = false }) {
             href={WHATSAPP_URL}
             {...getExternalLinkProps(WHATSAPP_URL)}
             className="whatsapp-cta-btn"
-            aria-label="Chat with Aning Design on WhatsApp"
+            aria-label="Chat on WhatsApp with AningDesign"
           >
             <MessageCircle size={18} strokeWidth={2.2} aria-hidden="true" />
             Chat on WhatsApp
@@ -156,7 +156,7 @@ function Contact({ showIntroCta = true, pageMode = false }) {
 
           <div className="contact-method-card">
             <span>Response time</span>
-            <p>Most project inquiries receive a reply within 24 hours. <br />For quick questions, WhatsApp is the fastest option.</p>
+            <p>Send your project details and I will respond with the next steps. <br />For quick questions, WhatsApp is the fastest option.</p>
           </div>
 
           <div className="contact-social-block">
@@ -181,4 +181,3 @@ function Contact({ showIntroCta = true, pageMode = false }) {
 }
 
 export default Contact
-

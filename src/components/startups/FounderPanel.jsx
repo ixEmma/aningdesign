@@ -15,12 +15,12 @@ function FounderPanel() {
   return (
     <aside className="startup-founder-panel" aria-labelledby="startup-founder-name">
       <div className="startup-founder-avatar">
-        <img src="/images/LOGO.png" alt="Aning Design Lab logo" width="750" height="750" loading="lazy" decoding="async" />
+        <img src="/images/LOGO.png" alt="AningDesign logo" width="750" height="750" loading="lazy" decoding="async" />
       </div>
 
       <p className="startup-founder-eyebrow">Founder profile</p>
       <h1 id="startup-founder-name">Emmanuel Aning</h1>
-      <p className="startup-founder-role">Founder of Aning Design Lab</p>
+      <p className="startup-founder-role">Founder of AningDesign</p>
 
       <div className="startup-founder-location">
         <MapPin size={17} strokeWidth={2.2} aria-hidden="true" />

@@ -46,8 +46,9 @@
   color: #ffffff;
   font-size: clamp(42px, 6vw, 78px);
   font-weight: 900;
-  line-height: 1;
+  line-height: 1.12;
   letter-spacing: 0;
+  text-wrap: balance;
 }
 
 .service-page-intro {
@@ -459,9 +460,90 @@
   line-height: 1.75;
 }
 
+.service-page--index .service-page-hero {
+  padding-bottom: 52px;
+}
+
+.service-page--index .service-page-hero h1 {
+  max-width: 840px;
+  font-size: clamp(40px, 5.2vw, 68px);
+}
+
+.service-page--index .service-page-intro {
+  max-width: 700px;
+  margin-top: 18px;
+  line-height: 1.65;
+}
+
+.service-page--index .service-page-intro-block {
+  gap: 16px;
+  max-width: 740px;
+  margin-top: 20px;
+}
+
+.service-page--index .service-intro-cta {
+  max-width: 540px;
+  gap: 8px;
+  padding: 16px;
+}
+
+.service-page--index .service-intro-cta h2 {
+  font-size: clamp(20px, 2.4vw, 24px);
+}
+
+.service-page--index .service-cta-text,
+.service-page--index .service-directory-copy {
+  line-height: 1.6;
+}
+
+.service-page--index .service-page-content {
+  gap: 58px;
+  padding-top: 34px;
+  padding-bottom: 86px;
+}
+
+.service-page--index .service-page-section,
+.service-page--index .service-directory {
+  gap: 32px;
+}
+
+.service-page--index .service-section-heading {
+  gap: 12px;
+}
+
+.service-page--index .service-section-heading h2 {
+  font-size: clamp(28px, 3.5vw, 38px);
+}
+
+.service-page--index .service-audience-grid article,
+.service-page--index .service-directory-card,
+.service-page--index .service-example-card {
+  padding: 18px;
+}
+
+.service-page--index .service-directory-card p,
+.service-page--index .service-example-card p,
+.service-page--index .service-process-step p,
+.service-page--index .service-faq-item p {
+  line-height: 1.58;
+}
+
+.service-page--index .service-process-step {
+  gap: 14px;
+  padding: 18px;
+}
+
+.service-page--index .service-final-cta {
+  padding: 28px;
+}
+
 @media (max-width: 900px) {
   .service-page-hero {
     padding: 116px 20px 58px;
+  }
+
+  .service-page--index .service-page-hero {
+    padding-bottom: 46px;
   }
 
   .service-page-content {
@@ -469,10 +551,20 @@
     padding: 34px 20px 86px;
   }
 
+  .service-page--index .service-page-content {
+    gap: 50px;
+    padding-bottom: 76px;
+  }
+
   .service-page-section,
   .service-directory {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+
+  .service-page--index .service-page-section,
+  .service-page--index .service-directory {
+    gap: 20px;
   }
 
   .service-check-grid,
@@ -500,8 +592,16 @@
     padding: 102px 16px 48px;
   }
 
+  .service-page--index .service-page-hero {
+    padding-bottom: 40px;
+  }
+
   .service-page-hero h1 {
     font-size: 36px;
+  }
+
+  .service-page--index .service-page-hero h1 {
+    font-size: 34px;
   }
 
   .service-page-intro,
@@ -512,6 +612,12 @@
   .service-page-content {
     gap: 56px;
     padding: 28px 16px 72px;
+  }
+
+  .service-page--index .service-page-content {
+    gap: 42px;
+    padding-top: 24px;
+    padding-bottom: 62px;
   }
 
   .service-hero-actions,
@@ -529,6 +635,10 @@
   .service-intro-cta,
   .service-mid-cta {
     padding: 20px;
+  }
+
+  .service-page--index .service-intro-cta {
+    padding: 16px;
   }
 
   .service-process-step {

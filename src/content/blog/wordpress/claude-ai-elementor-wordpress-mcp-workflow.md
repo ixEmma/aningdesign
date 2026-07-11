@@ -179,4 +179,4 @@ You should also understand that this workflow is strongest when AI is guided by 
 
 Claude AI can become a practical WordPress and Elementor assistant when it has the right setup, documentation, and workflow. With MCP, Novamira, Claude Code, CLAUDE.md files, and custom skills, you can build a more structured AI web design process for real projects.
 
-Watch the full video on YouTube, subscribe for more WordPress and AI web design tutorials, join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or contact Aning Design through [https://aningdesign.com/](https://aningdesign.com/).
+Watch the full video on YouTube, subscribe for more WordPress and AI web design tutorials, join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or contact AningDesign through [https://aningdesign.com/](https://aningdesign.com/).

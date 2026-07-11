@@ -158,4 +158,4 @@ This related tutorial connects well if you want to keep practicing WordPress web
 
 Learning how to fix bad website design is one of the most useful skills for beginners because many websites do not need more features first. They need better structure, spacing, colors, forms, navigation, and visual hierarchy.
 
-Watch the full video on YouTube, subscribe for more WordPress and Elementor tutorials, join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or contact Aning Design through [https://aningdesign.com/](https://aningdesign.com/).
+Watch the full video on YouTube, subscribe for more WordPress and Elementor tutorials, join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or contact AningDesign through [https://aningdesign.com/](https://aningdesign.com/).

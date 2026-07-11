@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react'
 import './Hero.css'
 
 const socialLinks = [
-  { label: 'Visit Aning Design on X', href: 'https://x.com/Aningdesigns', icon: 'X' },
+  { label: 'Visit AningDesign on X', href: 'https://x.com/Aningdesigns', icon: 'X' },
   { label: 'Visit Emmanuel Aning on LinkedIn', href: 'https://linkedin.com/in/emmanuel-aning-133189310', icon: 'in' },
   { label: 'Visit Emmanuel Aning on Behance', href: 'https://www.behance.net/emmaaning', icon: 'Be' }
 ]
