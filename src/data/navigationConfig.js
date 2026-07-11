@@ -18,9 +18,7 @@ export const projectLinks = [
   {label: 'Startups',href: '/startups'},
   {
     label: 'Books',
-    href: 'https://payhip.com/b/5p0EN',
-    target: '_blank',
-    rel: 'noopener noreferrer'
+    href: '/books'
   }
 ]
 
@@ -55,7 +53,7 @@ export const serviceLinks = whatWeDoLinks.map((service) => ({
 export const resourceLinks = [
   {title: 'Blog',href: '/blog',description: 'Tutorials and website-building notes.'},
   {title: 'Pricing',href: '/pricing',description: 'View website, design, and project pricing options.'},
-  {title: 'Books',href: 'https://payhip.com/b/5p0EN',description: 'Design resources and digital products.',target: '_blank',rel: 'noopener noreferrer'},
+  {title: 'Books',href: '/books',description: 'Practical website-building books and digital resources.'},
   {title: 'Tutorials',href: '/blog',description: 'Practical lessons for web design and AI workflows.'},
   {title: 'Case Studies',href: '/#projects',description: 'Selected website projects and builds.'},
   {title: 'Free Resources',href: '/blog',description: 'Guides, workflow notes, and implementation ideas.'}

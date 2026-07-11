@@ -18,6 +18,8 @@
 - [Web Design in Accra](https://aningdesign.com/web-design-accra.html): Web design services for Accra-based businesses.
 - [International Web Design Services](https://aningdesign.com/international-web-design-services.html): Website services for international clients.
 - [Blog Tutorials](https://aningdesign.com/blog): Practical WordPress, React, SEO, deployment, and AI workflow guides.
+- [Books](https://aningdesign.com/books): Practical website-building books and digital resources.
+- [Client-Ready WordPress Blueprint](https://aningdesign.com/books/client-ready-wordpress-website-blueprint): A WordPress planning, launch, and client-handover blueprint with reusable checklists and prompt packs.
 
 ## Tutorial library
 

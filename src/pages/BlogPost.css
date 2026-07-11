@@ -353,6 +353,17 @@
   background: linear-gradient(90deg, #00fb64, #00c9ff);
 }
 
+.blog-post-product-cta {
+  border-color: rgba(199, 101, 50, 0.34);
+  background:
+    linear-gradient(135deg, rgba(199, 101, 50, 0.16), rgba(0, 251, 100, 0.07), rgba(255, 255, 255, 0.03)),
+    rgba(7, 11, 11, 0.92);
+}
+
+.blog-post-product-cta .blog-post-context-kicker {
+  color: #e08a58;
+}
+
 .blog-post-related-content {
   margin-top: 58px;
 }

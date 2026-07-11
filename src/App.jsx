@@ -27,6 +27,8 @@ const ServicesPage = lazy(() => import('./pages/ServicesPage'))
 const ServiceDetailPage = lazy(() => import('./pages/ServiceDetailPage'))
 const ContactPage = lazy(() => import('./pages/ContactPage'))
 const PricingPage = lazy(() => import('./pages/PricingPage'))
+const BooksPage = lazy(() => import('./pages/BooksPage'))
+const BookDetailPage = lazy(() => import('./pages/BookDetailPage'))
 
 function HashScroller() {
   const location = useLocation()
@@ -157,6 +159,8 @@ function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/services/:slug" element={<ServiceDetailPage />} />
             <Route path="/pricing" element={<PricingPage />} />
+            <Route path="/books" element={<BooksPage />} />
+            <Route path="/books/:slug" element={<BookDetailPage />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/startups" element={<StartupPage />} />

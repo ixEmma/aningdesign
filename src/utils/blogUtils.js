@@ -85,6 +85,7 @@ const normalizePost = ([path, raw]) => {
 
   return {
     title: data.title || 'Untitled Tutorial',
+    seoTitle: data.seoTitle || '',
     description: data.description || '',
     category: data.category || 'Tutorials',
     date: data.date || '',
@@ -94,6 +95,9 @@ const normalizePost = ([path, raw]) => {
     keywordCluster: toArray(data.keywordCluster),
     servicePage: data.servicePage || '',
     relatedService: data.relatedService || '',
+    productPage: data.productPage || '',
+    productCtaText: data.productCtaText || '',
+    productCtaLabel: data.productCtaLabel || '',
     youtubeUrl: data.youtubeUrl || '',
     youtubeEmbedUrl: data.youtubeEmbedUrl || '',
     youtubeVideoId: data.youtubeVideoId || '',

@@ -123,6 +123,26 @@ export const servicePages = [
       }
     ],
     relatedServices: ['wordpress-websites', 'ui-ux-design', 'branding'],
+    resources: [
+      {
+        title: 'Website Design Checklist for Clients',
+        description: 'Prepare goals, page requirements, copy, brand assets, images, access, and approvals before design begins.',
+        href: '/blog/website-design-checklist-for-clients',
+        label: 'Read the client checklist'
+      },
+      {
+        title: 'Website Launch Checklist',
+        description: 'Review content, responsive behavior, SEO, forms, performance, trust, analytics, and post-launch tasks.',
+        href: '/blog/website-launch-checklist',
+        label: 'Read the launch checklist'
+      },
+      {
+        title: 'Client-Ready WordPress Blueprint',
+        description: 'Use a repeatable planning, build, launch, and handover system for WordPress client work.',
+        href: '/books/client-ready-wordpress-website-blueprint',
+        label: 'View the blueprint'
+      }
+    ],
     faqs: [
       {
         question: 'Do you offer small business website design services?',
@@ -239,6 +259,26 @@ export const servicePages = [
       { title: 'Aburi Sweetmother Guesthouse', description: 'Hospitality website with clear accommodation information and contact paths.', href: 'https://aburisweetmother.com' }
     ],
     relatedServices: ['react-web-apps', 'website-design', 'ui-ux-design'],
+    resources: [
+      {
+        title: 'WordPress Website Checklist',
+        description: 'Follow the project from planning and content collection through build, testing, launch, and handover.',
+        href: '/blog/wordpress-website-checklist',
+        label: 'Read the WordPress checklist'
+      },
+      {
+        title: 'WordPress Launch Checklist',
+        description: 'Check settings, backups, caching, forms, SEO, security, redirects, staging cleanup, and admin access.',
+        href: '/blog/wordpress-website-launch-checklist',
+        label: 'Review launch checks'
+      },
+      {
+        title: 'Client-Ready WordPress Blueprint',
+        description: 'Get the complete system with the main ebook, prompt pack, checklists, design rulers, and handover resources.',
+        href: '/books/client-ready-wordpress-website-blueprint',
+        label: 'View the blueprint'
+      }
+    ],
     faqs: [
       { question: 'Can you build with Elementor?', answer: 'Yes. Elementor can be used when it fits the editing workflow, design requirements, and performance scope.' },
       { question: 'Will I be able to update the website?', answer: 'Yes. Editable content areas and a practical handoff can be included so routine updates remain manageable.' },

@@ -288,6 +288,33 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.service-resource-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.service-resource-card {
+  padding: 22px;
+  border: 1px solid rgba(199, 101, 50, 0.24);
+  border-radius: 8px;
+  background: linear-gradient(145deg, rgba(199, 101, 50, 0.08), rgba(8, 12, 12, 0.92));
+}
+
+.service-resource-card h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.service-resource-card p {
+  margin: 10px 0 0;
+  color: rgba(236, 246, 243, 0.7);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
 .service-check-grid {
   padding: 0;
   margin: 0;
@@ -571,7 +598,8 @@
   .service-audience-grid,
   .service-directory-grid,
   .service-example-grid,
-  .service-use-case-grid {
+  .service-use-case-grid,
+  .service-resource-grid {
     grid-template-columns: 1fr;
   }
 

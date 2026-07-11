@@ -72,9 +72,7 @@ const footerProjectLinks = [
 const footerResourceLinks = [
   {
     label: 'Books',
-    href: 'https://payhip.com/b/5p0EN',
-    target: '_blank',
-    rel: 'noopener noreferrer'
+    href: '/books'
   },
   { label: 'Tutorials', href: '/blog' }
 ]

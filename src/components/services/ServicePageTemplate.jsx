@@ -137,6 +137,27 @@ function ServiceUseCases({ service }) {
   )
 }
 
+function ServiceResources({ resources }) {
+  if (!resources?.length) return null
+
+  return (
+    <ServiceSection id="service-resources" kicker="Resources" title="Plan the work before the build starts">
+      <div className="service-resource-grid">
+        {resources.map((resource) => (
+          <article className="service-resource-card" key={resource.href}>
+            <h3>{resource.title}</h3>
+            <p>{resource.description}</p>
+            <SmartServiceLink href={resource.href} className="service-text-link">
+              {resource.label || 'Read resource'}
+              <ArrowRight size={15} strokeWidth={2.2} aria-hidden="true" />
+            </SmartServiceLink>
+          </article>
+        ))}
+      </div>
+    </ServiceSection>
+  )
+}
+
 function ServiceContentSections({ service }) {
   if (!service.contentSections?.length) return null
 
@@ -276,6 +297,8 @@ function ServicePageTemplate({ service }) {
             ))}
           </div>
         </ServiceSection>
+
+        <ServiceResources resources={service.resources} />
 
         <ServiceSection id="service-examples" kicker="Examples" title={service.examplesTitle || 'Related portfolio or examples'}>
           <div className="service-example-grid">

@@ -6,7 +6,7 @@ import BlogPostHeader from '../components/blog/BlogPostHeader'
 import BlogVideoEmbed from '../components/blog/BlogVideoEmbed'
 import { getPostBySlug, getRelatedPosts, formatPostDate } from '../utils/blogUtils'
 import { servicePages, getServicePageBySlug } from '../data/servicePages'
-import { getExternalLinkProps } from '../utils/links'
+import { getExternalLinkProps, isExternalLink } from '../utils/links'
 import { useSeo } from '../utils/seo'
 import './BlogPost.css'
 
@@ -104,6 +104,10 @@ const createMarkdownComponents = () => {
 
   return {
     a({ node, href = '', children, ...props }) {
+      if (href.startsWith('/') && !isExternalLink(href)) {
+        return <Link to={href} {...props}>{children}</Link>
+      }
+
       return (
         <a href={href} {...props} {...getExternalLinkProps(href)}>
           {children}
@@ -136,7 +140,7 @@ const createMarkdownComponents = () => {
   }
 }
 
-const splitContentForContextCta = (content) => {
+const splitContentForContextCta = (content, completedSections = 1) => {
   const lines = content.split('\n')
   const h2Indexes = lines.reduce((indexes, line, index) => {
     if (/^##(?!#)\s+/.test(line.trim())) {
@@ -153,7 +157,7 @@ const splitContentForContextCta = (content) => {
     }
   }
 
-  const splitIndex = h2Indexes[1]
+  const splitIndex = h2Indexes[Math.min(completedSections, h2Indexes.length - 1)]
 
   return {
     firstPart: lines.slice(0, splitIndex).join('\n').trim(),
@@ -296,6 +300,19 @@ function BlogPostContextCta({ serviceLink }) {
   )
 }
 
+function BlogPostProductCta({ post }) {
+  if (!post.productPage) return null
+
+  return (
+    <aside className="blog-post-context-cta blog-post-product-cta" aria-label="Related book">
+      <p className="blog-post-context-kicker">Repeatable WordPress workflow</p>
+      <h2>Need the full planning, launch, and handover system?</h2>
+      <p>{post.productCtaText}</p>
+      <Link to={post.productPage}>{post.productCtaLabel || 'View the Blueprint'}</Link>
+    </aside>
+  )
+}
+
 function BlogPostRelatedContent({ relatedPosts }) {
   if (relatedPosts.length === 0) return null
 
@@ -323,13 +340,21 @@ function BlogPostRelatedContent({ relatedPosts }) {
 }
 
 function BlogPostFinalCta({ post, serviceLink, youtubeWatchUrl, ctaDescription }) {
+  const hasProductCta = Boolean(post.productPage)
+
   return (
     <section className="blog-post-cta" aria-label="Next step">
       <p className="blog-post-cta-kicker">Next step</p>
-      <h2>Need help building your website?</h2>
+      <h2>{hasProductCta ? 'Use a clearer WordPress project workflow.' : 'Need help building your website?'}</h2>
       <p>{ctaDescription}</p>
       <div className="blog-post-cta-actions">
-        <Link to="/contact" className="blog-post-cta-primary">Contact AningDesign</Link>
+        {hasProductCta ? (
+          <Link to={post.productPage} className="blog-post-cta-primary">
+            {post.productCtaLabel || 'Get the Client-Ready WordPress Blueprint'}
+          </Link>
+        ) : (
+          <Link to="/contact" className="blog-post-cta-primary">Contact AningDesign</Link>
+        )}
         {serviceLink && (
           <Link to={serviceLink.href}>View related service</Link>
         )}
@@ -357,16 +382,18 @@ function BlogPost() {
   const serviceLink = useMemo(() => getServiceLink(post), [post])
   const youtubeWatchUrl = getYoutubeWatchUrl(post)
   const markdownComponents = createMarkdownComponents()
-  const shouldShowContextCta = post.type === 'seo' && Boolean(serviceLink)
+  const shouldShowContextCta = post.type === 'seo' && Boolean(post.productPage || serviceLink)
   const { firstPart, secondPart } = shouldShowContextCta
-    ? splitContentForContextCta(post.content)
+    ? splitContentForContextCta(post.content, post.productPage ? 3 : 1)
     : { firstPart: post.content, secondPart: '' }
-  const ctaDescription = post.type === 'seo'
-    ? 'Use this guide to plan your next step, then contact AningDesign when you are ready to turn the strategy into a working website.'
+  const ctaDescription = post.productPage
+    ? 'Move from scattered checks to a reusable system for website direction, structure, responsive review, launch, and client handover.'
+    : post.type === 'seo'
+      ? 'Use this guide to plan your next step, then contact AningDesign when you are ready to turn the strategy into a working website.'
     : 'Watch the tutorial, keep practicing, and contact AningDesign when you are ready to turn the lesson into a polished website for your own brand.'
 
   useSeo({
-    title: `${post.title} | Aning Design Lab`,
+    title: post.seoTitle || `${post.title} | Aning Design Lab`,
     description: post.description,
     canonical: `https://aningdesign.com/blog/${post.slug}`,
     image: postImage,
@@ -430,7 +457,9 @@ function BlogPost() {
               </ReactMarkdown>
 
               {shouldShowContextCta && (
-                <BlogPostContextCta serviceLink={serviceLink} />
+                post.productPage
+                  ? <BlogPostProductCta post={post} />
+                  : <BlogPostContextCta serviceLink={serviceLink} />
               )}
 
               {secondPart && (
