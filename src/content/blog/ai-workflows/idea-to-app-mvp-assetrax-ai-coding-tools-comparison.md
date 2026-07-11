@@ -6,8 +6,13 @@ date: "2026-07-03"
 slug: "idea-to-app-mvp-assetrax-ai-coding-tools-comparison"
 youtubeUrl: "https://youtu.be/Zgsijnmwd-o"
 youtubeEmbedUrl: "https://www.youtube.com/embed/Zgsijnmwd-o"
-thumbnail: "https://img.youtube.com/vi/Zgsijnmwd-o/maxresdefault.jpg"
-thumbnailAlt: "Idea to App MVP comparison thumbnail showing Firebase Studio, Codex, and Claude Code building AssetraX from one prompt"
+thumbnail: "/images/blog/assetrax-ai-coding-tools-comparison.webp"
+thumbnailAlt: "AssetraX finance dashboard connected to Firebase Studio, Codex, and Claude Code for an MVP prompt comparison"
+relatedService: "/services/startup-websites"
+relatedPosts:
+  - how-to-write-mvp-app-prompt
+  - idea-to-app-mvp-firebase-hosting-custom-domain
+  - idea-to-app-mvp-firebase-auth-firestore
 tags:
   - AI coding tools
   - Firebase Studio
@@ -73,6 +78,29 @@ Timestamp: 00:35
 The test starts with one prompt for building AssetraX. The goal is to see how each AI coding tool interprets the same product direction, user needs, feature expectations, and interface requirements.
 
 This is a useful way to compare AI app builders because the prompt becomes the control. If the same prompt creates very different outcomes, you can start to understand each tool's strengths and limitations.
+
+Here is the focused version of the brief each tool received:
+
+```txt
+Build an MVP web app called AssetraX, a personal finance control app.
+
+Include a dashboard with Total Income, Total Expenses, Current Balance,
+and Monthly Spending cards. Add a transaction form with a title, amount,
+income or expense type, category, and date.
+
+List recent transactions and calculate the balance so income increases it
+and expenses reduce it. Show spending by category with simple cards or a
+chart-style summary.
+
+Use React, reusable beginner-friendly components, localStorage, and a
+structure that can support Firebase later. Keep the interface modern,
+minimal, responsive, and suitable for a professional fintech dashboard.
+Do not add authentication or overbuild the first version.
+```
+
+This preview communicates the product, the essential screens, the calculation rules, the technology, and the limits of the first release. Those details make the results easier to compare because each tool receives the same definition of “done.”
+
+> Want to use the exact brief or adapt it for another product? Read [How to Write an MVP App Prompt](/blog/how-to-write-mvp-app-prompt) for the complete copy-ready AssetraX prompt and a section-by-section framework.
 
 ## Building the App With Firebase Studio
 
@@ -162,6 +190,8 @@ The final comparison looks at the strengths and weaknesses of Firebase Studio, C
 
 The takeaway is that AI coding tools can help you move from idea to MVP faster, but you still need to inspect the result, test responsiveness, review structure, and decide what needs refinement before turning the app into a production product.
 
+If you are planning a first version for a real business idea, AningDesign's [MVP development services for startups](/services/startup-websites) focus on selecting a practical release scope before adding production complexity. For a more custom interactive build, see [React Web Apps](/services/react-web-apps), review [Pricing](/pricing), or [contact AningDesign](/contact) to discuss the project.
+
 ## Common Beginner Mistakes
 
 - Comparing AI coding tools with different prompts instead of one shared prompt
@@ -197,6 +227,7 @@ The result is not just about choosing one winner. It is about understanding whic
 
 ## Related Tutorials
 
+- [How to Write an MVP App Prompt: A Beginner-Friendly Framework](/blog/how-to-write-mvp-app-prompt)
 - [Idea to App MVP: Deploy AI-Generated Code with Firebase Hosting and a Custom Domain](/blog/idea-to-app-mvp-firebase-hosting-custom-domain)
 - [Idea to App MVP: Add Google Sign-In and Firestore to a Firebase Web App](/blog/idea-to-app-mvp-firebase-auth-firestore)
 - [How to Build and Deploy a Photography Landing Page with OpenAI Codex, React, GitHub and Netlify](/blog/build-deploy-photography-landing-page-react-netlify)
