@@ -90,13 +90,6 @@ export const fetchYouTubeJson = async (url, signal) => {
   const response = await fetchWithTimeout(url, signal)
   const payload = await parseResponse(response)
 
-  console.log('YouTube fetch result', {
-    url: url.toString(),
-    ok: response.ok,
-    status: response.status,
-    payload
-  })
-
   if (!response.ok) {
     const message = getYouTubeErrorMessage(payload, `YouTube API request failed with status ${response.status}.`)
     const error = new Error(message)

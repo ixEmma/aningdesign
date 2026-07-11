@@ -7,9 +7,9 @@ import './StartupPage.css'
 function StartupPage() {
   useSeo({
     title: 'Startups & Web Apps Built by Emmanuel Aning',
-    description: 'Explore web apps, startup projects, and digital products built by Emmanuel Aning, founder of Aning Design Lab, including StudyNest, CityBeat, AssetRax, and Lensora Events.',
+    description: 'Explore web apps, startup projects, and digital products built by Emmanuel Aning, founder of AningDesign, including StudyNest, CityBeat, AssetRax, and Lensora Events.',
     canonical: `${getDomain()}/startups`,
-    keywords: 'Aning Design Lab startups, Emmanuel Aning web apps, Ghana web app founder, React Firebase projects, startup projects, web design portfolio, AI web app builder',
+    keywords: 'AningDesign startups, Emmanuel Aning web apps, Ghana web app founder, React Firebase projects, startup projects, web design portfolio, AI web app builder',
     type: 'website'
   })
 

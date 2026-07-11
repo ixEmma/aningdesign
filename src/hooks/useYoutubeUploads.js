@@ -116,15 +116,6 @@ export function useYoutubeVideos() {
   })
 
   useEffect(() => {
-    console.log('MODE:', import.meta.env.MODE)
-    console.log('KEY:', apiKey)
-    console.log('CHANNEL:', channelId)
-    console.log('YOUTUBE CONFIG:', {
-      apiKeyPresent: config.apiKeyPresent,
-      channelIdPresent: config.channelIdPresent,
-      ready: configReady
-    })
-
     if (!configReady) {
       const fallback =
         'YouTube showcase is not configured for this environment. Please verify VITE_YOUTUBE_API_KEY and VITE_YOUTUBE_CHANNEL_ID.'
@@ -261,7 +252,6 @@ export function useYoutubeVideos() {
             ? loadError.message
             : 'Unable to load YouTube videos.'
 
-        console.error('YouTube API error:', message, loadError)
         setError(getFallbackMessage(message))
         setDebug((previous) => ({
           ...previous,

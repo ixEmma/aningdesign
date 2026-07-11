@@ -14,7 +14,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: url('/images/LOGO-footer.png');
+  background-image: url('/images/LOGO-footer-300.png');
   background-size: 300px;
   background-position: center;
   background-repeat: no-repeat;
@@ -32,8 +32,8 @@
 
 .footer-layout {
   display: grid;
-  grid-template-columns: minmax(260px, 1.35fr) minmax(130px, 0.75fr) minmax(150px, 0.75fr) minmax(230px, 0.9fr);
-  gap: 44px;
+  grid-template-columns: minmax(240px, 1.35fr) repeat(3, minmax(125px, 0.72fr)) minmax(210px, 0.9fr);
+  gap: 36px;
   align-items: start;
 }
 
@@ -60,6 +60,14 @@
   display: block;
   width: 44px;
   height: auto;
+}
+
+.footer-brand-mark:focus-visible,
+.footer-links a:focus-visible,
+.footer-social a:focus-visible,
+.footer-feedback-link:focus-visible {
+  outline: 2px solid #9af7a3;
+  outline-offset: 5px;
 }
 
 .footer-brand p {
@@ -164,8 +172,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border: 2px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   color: #dcdcdc;
@@ -183,6 +191,13 @@
   background: rgba(0, 201, 255, 0.15);
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 201, 255, 0.2);
+}
+
+.footer-social svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
 }
 
 .footer-feedback-link {
@@ -206,7 +221,6 @@
 .footer-feedback-link:hover,
 .footer-feedback-link:focus-visible {
   color: #00c9ff;
-  outline: none;
 }
 
 .footer-bottom {
@@ -228,7 +242,7 @@
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .footer-name {
     padding: 56px 20px 78px;
   }
@@ -239,8 +253,12 @@
   }
 
   .footer-layout {
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 38px 32px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
   }
 }
 
@@ -278,8 +296,8 @@
   }
 
   .footer-social a {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     font-size: 17px;
   }
 

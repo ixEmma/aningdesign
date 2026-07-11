@@ -1,6 +1,12 @@
 import { useEffect, useState, useRef } from 'react'
 import './Hero.css'
 
+const socialLinks = [
+  { label: 'Visit AningDesign on X', href: 'https://x.com/Aningdesigns', icon: 'X' },
+  { label: 'Visit Emmanuel Aning on LinkedIn', href: 'https://linkedin.com/in/emmanuel-aning-133189310', icon: 'in' },
+  { label: 'Visit Emmanuel Aning on Behance', href: 'https://www.behance.net/emmaaning', icon: 'Be' }
+]
+
 function Hero() {
   const phrases = [
     "WEBSITE DESIGNER",
@@ -73,6 +79,8 @@ function Hero() {
 
         <a
           href="https://wa.me/233557066467?text=Hi, I'm interested in working with you on a project."
+          target="_blank"
+          rel="noopener noreferrer"
           className="cta-button"
         >
           Start a Project →
@@ -80,15 +88,11 @@ function Hero() {
       </div>
 
       <div className="social-media">
-        <a href="https://x.com/Aningdesigns" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-x-twitter"></i>
-        </a>
-        <a href="https://linkedin.com/in/emmanuel-aning-133189310" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-linkedin"></i>
-        </a>
-        <a href="https://www.behance.net/emmaaning" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-behance"></i>
-        </a>
+        {socialLinks.map((link) => (
+          <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label}>
+            <span aria-hidden="true">{link.icon}</span>
+          </a>
+        ))}
       </div>
     </section>
   )

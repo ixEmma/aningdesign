@@ -1,6 +1,6 @@
-# Aning Design
+# AningDesign
 
-> Aning Design is the portfolio, service website, and tutorial library of Emmanuel Aning, a web designer, software developer, graphic designer, and UI/UX designer based in Accra, Ghana and serving clients worldwide.
+> AningDesign is the portfolio and service website of Emmanuel Aning, a web designer, software developer, graphic designer, and UI/UX designer based in Accra, Ghana and serving clients worldwide. Its tutorial library supports content from the Aning Design Lab YouTube channel.
 
 ## Core expertise
 
@@ -34,7 +34,7 @@
 ## Identity
 
 - Creator: Emmanuel Aning
-- Business: Aning Design
+- Business: AningDesign
 - Location: Accra, Ghana
 - Website: https://aningdesign.com/
 - LinkedIn: https://linkedin.com/in/emmanuel-aning-133189310

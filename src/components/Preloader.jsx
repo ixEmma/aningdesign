@@ -4,26 +4,27 @@ import './Preloader.css'
 function Preloader() {
   const [isHidden, setIsHidden] = useState(false)
   const [shouldRemove, setShouldRemove] = useState(false)
-  const timeoutRef = useRef(null)
+  const hideTimeoutRef = useRef(null)
+  const removeTimeoutRef = useRef(null)
 
   useEffect(() => {
-    const handleLoad = () => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    const hidePreloader = () => {
       setIsHidden(true)
-      timeoutRef.current = setTimeout(() => {
+      removeTimeoutRef.current = setTimeout(() => {
         setShouldRemove(true)
-      }, 350)
+      }, prefersReducedMotion ? 0 : 300)
     }
 
-    if (document.readyState === 'complete') {
-      handleLoad()
-    } else {
-      window.addEventListener('load', handleLoad)
-    }
+    hideTimeoutRef.current = setTimeout(hidePreloader, prefersReducedMotion ? 0 : 250)
 
     return () => {
-      window.removeEventListener('load', handleLoad)
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current)
+      if (hideTimeoutRef.current) {
+        clearTimeout(hideTimeoutRef.current)
+      }
+      if (removeTimeoutRef.current) {
+        clearTimeout(removeTimeoutRef.current)
       }
     }
   }, [])

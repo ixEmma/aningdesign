@@ -214,4 +214,4 @@ This gives you a real project you can practice with, improve, and use as part of
 
 Learning how to build and deploy a React website to Netlify is one of the most practical skills for beginner frontend developers. It teaches you how to create a real project, organize components, improve the UI, push code to GitHub, and publish a working website online.
 
-Watch the full video on YouTube, practice with the live project, subscribe for more frontend development tutorials, join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or contact Aning Design through [https://aningdesign.com/](https://aningdesign.com/).
+Watch the full video on YouTube, practice with the live project, subscribe for more frontend development tutorials, join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or contact AningDesign through [https://aningdesign.com/](https://aningdesign.com/).

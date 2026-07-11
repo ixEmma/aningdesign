@@ -42,6 +42,11 @@ body {
   min-height: 100vh;
 }
 
+.route-content-shell,
+.route-loading-shell {
+  min-height: 100svh;
+}
+
 * {
   word-spacing: inherit;
 }

@@ -31,3 +31,12 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  #preloader {
+    transition: none;
+  }
+
+  .spinner {
+    animation: none;
+  }
+}

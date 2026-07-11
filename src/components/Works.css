@@ -13,6 +13,7 @@
   /* Animation paused by default */
   animation: scroll 25s linear infinite;
   animation-play-state: paused;
+  will-change: transform;
 }
 
 /* Only animate when visible */
@@ -21,11 +22,17 @@
 }
 
 .work-card {
-  flex: 0 0 300px;
+  flex: 0 0 auto;
+}
+
+.work-card picture {
+  display: block;
+  height: 300px;
 }
 
 .work-card img {
-  height: 300px;
+  display: block;
+  height: 100%;
   width: auto;
   border-radius: 12px;
   object-fit: cover;
@@ -33,11 +40,7 @@
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
-  .work-card {
-    flex: 0 0 200px;
-  }
-
-  .work-card img {
+  .work-card picture {
     height: 200px;
   }
 
@@ -56,5 +59,11 @@
 
   to {
     transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .works-track {
+    animation-duration: 45s;
   }
 }

@@ -1,0 +1,166 @@
+.pricing-route-page {
+  min-height: 100vh;
+  padding-top: 72px;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(0, 251, 100, 0.1), transparent 34%),
+    radial-gradient(circle at 86% 24%, rgba(0, 201, 255, 0.12), transparent 32%),
+    linear-gradient(180deg, rgba(5, 6, 6, 0.88) 0%, rgba(7, 16, 16, 0.82) 52%, rgba(5, 6, 6, 0.9) 100%);
+  overflow-x: hidden;
+}
+
+.pricing-route-hero,
+.pricing-route-cta {
+  box-sizing: border-box;
+  width: min(100%, 1180px);
+  margin: 0 auto;
+}
+
+.pricing-route-hero {
+  padding: 54px 32px 10px;
+}
+
+.pricing-route-hero > p:first-child,
+.pricing-route-cta > div > p {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  margin: 0;
+  padding: 8px 11px;
+  border: 1px solid rgba(154, 247, 163, 0.24);
+  border-radius: 999px;
+  color: #9af7a3;
+  background: rgba(9, 19, 18, 0.74);
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.pricing-route-hero h1 {
+  max-width: 850px;
+  margin: 20px 0 0;
+  color: #ffffff;
+  font-size: clamp(38px, 5.4vw, 64px);
+  font-weight: 900;
+  line-height: 1.04;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+}
+
+.pricing-route-hero > p:last-child {
+  max-width: 760px;
+  margin: 18px 0 0;
+  color: rgba(236, 246, 243, 0.74);
+  font-size: 18px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.pricing-route-page .services-pricing-root {
+  background: transparent;
+}
+
+.pricing-route-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 10px 32px 92px;
+}
+
+.pricing-route-cta h2 {
+  max-width: 720px;
+  margin: 16px 0 0;
+  color: #ffffff;
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.pricing-route-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.pricing-route-button {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 13px 18px;
+  border: 1px solid rgba(0, 201, 255, 0.45);
+  border-radius: 12px;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.28);
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pricing-route-button:hover,
+.pricing-route-button:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(0, 201, 255, 0.8);
+  background: rgba(0, 201, 255, 0.08);
+  box-shadow: 0 0 14px rgba(0, 201, 255, 0.2);
+  outline: none;
+}
+
+.pricing-route-button-primary {
+  border-color: rgba(0, 251, 100, 0.65);
+  color: #07111f;
+  background: linear-gradient(90deg, #00fb64, #00c9ff);
+  box-shadow: 0 0 14px rgba(0, 251, 100, 0.3);
+}
+
+@media (max-width: 768px) {
+  .pricing-route-page {
+    padding-top: 58px;
+  }
+
+  .pricing-route-hero {
+    padding: 44px 20px 0;
+  }
+
+  .pricing-route-cta {
+    display: grid;
+    padding: 0 20px 76px;
+  }
+
+  .pricing-route-actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-route-hero {
+    padding: 36px 16px 0;
+  }
+
+  .pricing-route-hero h1 {
+    font-size: 32px;
+    line-height: 1.12;
+  }
+
+  .pricing-route-hero > p:last-child {
+    font-size: 16px;
+  }
+
+  .pricing-route-cta {
+    padding: 0 16px 66px;
+  }
+
+  .pricing-route-actions,
+  .pricing-route-button {
+    width: 100%;
+  }
+}

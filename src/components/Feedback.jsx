@@ -44,16 +44,37 @@ function Feedback() {
   useEffect(() => {
     if (!isOpen) return undefined
 
-    const handleEscape = (event) => {
+    const handleDialogKeyDown = (event) => {
       if (event.key === 'Escape') {
         setIsOpen(false)
+        return
+      }
+
+      if (event.key !== 'Tab') return
+
+      const dialog = document.getElementById('feedback-dialog')
+      const focusable = dialog?.querySelectorAll(
+        'button:not([disabled]), textarea:not([disabled]), input:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])'
+      )
+
+      if (!focusable?.length) return
+
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault()
+        first.focus()
       }
     }
 
-    window.addEventListener('keydown', handleEscape)
+    window.addEventListener('keydown', handleDialogKeyDown)
 
     return () => {
-      window.removeEventListener('keydown', handleEscape)
+      window.removeEventListener('keydown', handleDialogKeyDown)
     }
   }, [isOpen])
 

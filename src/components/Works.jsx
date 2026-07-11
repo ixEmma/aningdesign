@@ -1,6 +1,24 @@
 import { useEffect, useRef, useState } from 'react'
 import './Works.css'
 
+const workImages = [
+  {
+    src: '/images/work1.jpg',
+    webp: '/images/work1.webp',
+    alt: 'Web design portfolio preview for AningDesign project one'
+  },
+  {
+    src: '/images/work2.jpg',
+    webp: '/images/work2.webp',
+    alt: 'Web design portfolio preview for AningDesign project two'
+  },
+  {
+    src: '/images/work3.jpg',
+    webp: '/images/work3.webp',
+    alt: 'Web design portfolio preview for AningDesign project three'
+  }
+]
+
 function Works() {
   const trackRef = useRef(null)
   const [isVisible, setIsVisible] = useState(false)
@@ -24,20 +42,6 @@ function Works() {
     return () => observer.disconnect()
   }, [])
 
-  // Force animation restart when visibility changes
-  useEffect(() => {
-    const track = trackRef.current
-    if (!track) return
-
-    if (isVisible) {
-      // Force browser to restart animation
-      track.style.animation = 'none'
-      // Trigger reflow
-      void track.offsetWidth
-      track.style.animation = ''
-    }
-  }, [isVisible])
-
   return (
     <section className="works-section">
       <div className="works-slider">
@@ -45,25 +49,22 @@ function Works() {
           ref={trackRef}
           className={`works-track ${isVisible ? 'is-visible' : ''}`}
         >
-          <div className="work-card">
-            <img src="/images/work1.jpg" alt="Work 1" />
-          </div>
-          <div className="work-card">
-            <img src="/images/work2.jpg" alt="Work 2" />
-          </div>
-          <div className="work-card">
-            <img src="/images/work3.jpg" alt="Work 3" />
-          </div>
-          {/* repeat again for seamless loop */}
-          <div className="work-card">
-            <img src="/images/work1.jpg" alt="Work 1" />
-          </div>
-          <div className="work-card">
-            <img src="/images/work2.jpg" alt="Work 2" />
-          </div>
-          <div className="work-card">
-            <img src="/images/work3.jpg" alt="Work 3" />
-          </div>
+          {[...workImages, ...workImages].map((image, index) => (
+            <div className="work-card" key={`${image.src}-${index}`}>
+              <picture>
+                <source srcSet={image.webp} type="image/webp" />
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  width="1024"
+                  height="320"
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  fetchPriority={index === 0 ? 'high' : 'auto'}
+                  decoding="async"
+                />
+              </picture>
+            </div>
+          ))}
         </div>
       </div>
     </section>

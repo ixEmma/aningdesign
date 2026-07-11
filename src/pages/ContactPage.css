@@ -1,0 +1,87 @@
+.contact-route-page {
+  min-height: 100vh;
+  padding-top: 72px;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(0, 251, 100, 0.1), transparent 34%),
+    radial-gradient(circle at 86% 24%, rgba(0, 201, 255, 0.12), transparent 32%),
+    linear-gradient(180deg, rgba(5, 6, 6, 0.88) 0%, rgba(7, 16, 16, 0.82) 52%, rgba(5, 6, 6, 0.9) 100%);
+  overflow-x: hidden;
+}
+
+.contact-route-hero {
+  width: min(100%, 1180px);
+  margin: 0 auto;
+  padding: 54px 32px 0;
+  box-sizing: border-box;
+}
+
+.contact-route-hero > p:first-child {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  margin: 0;
+  padding: 8px 11px;
+  border: 1px solid rgba(154, 247, 163, 0.24);
+  border-radius: 999px;
+  color: #9af7a3;
+  background: rgba(9, 19, 18, 0.74);
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.contact-route-hero h1 {
+  max-width: 760px;
+  margin: 20px 0 0;
+  color: #ffffff;
+  font-size: clamp(38px, 5.4vw, 64px);
+  font-weight: 900;
+  line-height: 1.04;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+}
+
+.contact-route-hero > p:last-child {
+  max-width: 720px;
+  margin: 18px 0 0;
+  color: rgba(236, 246, 243, 0.74);
+  font-size: 18px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.contact-route-page .contact-section {
+  padding-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .contact-route-page {
+    padding-top: 58px;
+  }
+
+  .contact-route-page .contact-section {
+    padding-top: 24px;
+  }
+
+  .contact-route-hero {
+    padding: 44px 20px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-route-hero {
+    padding: 36px 16px 0;
+  }
+
+  .contact-route-hero h1 {
+    font-size: 32px;
+    line-height: 1.12;
+  }
+
+  .contact-route-hero > p:last-child {
+    font-size: 16px;
+  }
+}

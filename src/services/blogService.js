@@ -1,22 +1,14 @@
 import {fallbackBlogTopics} from '../data/navigationConfig'
-import {getAllPosts, getCategories} from '../utils/blogUtils'
 
 export const getBlogTopics = (limit = 8) => {
-  const categories = getCategories()
-    .filter((category) => category !== 'All')
-    .filter(Boolean)
-
-  const topics = categories.length > 0 ? categories : fallbackBlogTopics
-
-  return topics.slice(0, limit)
+  return fallbackBlogTopics.slice(0, limit)
 }
 
 export const getBlogSearchItems = () => {
-  return getAllPosts().map((post) => ({
-    title: post.title,
+  return fallbackBlogTopics.map((topic) => ({
+    title: `${topic} tutorials`,
     type: 'Blog',
-    description: post.description || post.category,
-    href: `/blog/${post.slug}`
+    description: `Browse ${topic.toLowerCase()} guides and tutorials.`,
+    href: '/blog'
   }))
 }
-

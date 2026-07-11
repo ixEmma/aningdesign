@@ -1,5 +1,5 @@
 import { Route, Routes, useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
+import { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import Preloader from './components/Preloader'
 import Header from './components/Header'
 import Hero from './components/Hero'
@@ -7,22 +7,26 @@ import Works from './components/Works'
 import Skills from './components/Skills'
 import Blueprint from './components/Blueprint'
 import About from './components/About'
-import Services from './components/Services'
 import Projects from './components/Projects'
-import YoutubeShowcase from './components/YoutubeShowcase'
 import Feedback from './components/Feedback'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import AnimatedBackground from './components/AnimatedBackground'
 import Testimonials from './components/Testimonials'
-import LatestBlogTutorials from './components/blog/LatestBlogTutorials'
-import Blog from './pages/Blog'
-import BlogPost from './pages/BlogPost'
-import ThankYou from './pages/ThankYou'
-import StartupPage from './pages/StartupPage'
 import { useSeo } from './utils/seo'
 import { getDomain } from './utils/domain'
+
+const YoutubeShowcase = lazy(() => import('./components/YoutubeShowcase'))
+const LatestBlogTutorials = lazy(() => import('./components/blog/LatestBlogTutorials'))
+const Blog = lazy(() => import('./pages/Blog'))
+const BlogPost = lazy(() => import('./pages/BlogPost'))
+const ThankYou = lazy(() => import('./pages/ThankYou'))
+const StartupPage = lazy(() => import('./pages/StartupPage'))
+const ServicesPage = lazy(() => import('./pages/ServicesPage'))
+const ServiceDetailPage = lazy(() => import('./pages/ServiceDetailPage'))
+const ContactPage = lazy(() => import('./pages/ContactPage'))
+const PricingPage = lazy(() => import('./pages/PricingPage'))
 
 function HashScroller() {
   const location = useLocation()
@@ -44,17 +48,64 @@ function HashScroller() {
   return null
 }
 
+function RouteFallback() {
+  return (
+    <div className="route-loading-shell" role="status" aria-live="polite">
+      <span className="sr-only">Loading page</span>
+    </div>
+  )
+}
+
+function DeferredHomepageSection({ children, minHeight = 1 }) {
+  const [shouldRender, setShouldRender] = useState(false)
+  const sectionRef = useRef(null)
+
+  useEffect(() => {
+    const section = sectionRef.current
+    if (!section || shouldRender) return undefined
+
+    if (!('IntersectionObserver' in window)) {
+      setShouldRender(true)
+      return undefined
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldRender(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '900px 0px' }
+    )
+
+    observer.observe(section)
+
+    return () => observer.disconnect()
+  }, [shouldRender])
+
+  return (
+    <div ref={sectionRef} style={shouldRender ? undefined : { minHeight }}>
+      {shouldRender && (
+        <Suspense fallback={null}>
+          {children}
+        </Suspense>
+      )}
+    </div>
+  )
+}
+
 function LandingPage() {
   useSeo({
     title: 'Emmanuel Aning | Web Designer & Software Developer in Ghana',
     description: 'Emmanuel Aning is a web designer, software developer, and graphic designer in Accra, Ghana, building WordPress, React, UI/UX, and conversion-focused digital experiences for clients worldwide.',
     canonical: getDomain(),
-    keywords: 'web designer Ghana, software developer Ghana, WordPress developer Ghana, React developer Ghana, UI UX designer Ghana, graphic designer Accra, international web design services, Emmanuel Aning, Aning Design',
+    keywords: 'web designer Ghana, software developer Ghana, WordPress developer Ghana, React developer Ghana, UI UX designer Ghana, graphic designer Accra, international web design services, Emmanuel Aning, AningDesign',
     type: 'website'
   })
 
   return (
-    <>
+    <main id="main-content">
       <Hero />
       <Works />
       <Skills />
@@ -62,11 +113,14 @@ function LandingPage() {
       <About />
       <Projects />
       <Testimonials />
-      <YoutubeShowcase />
-      <LatestBlogTutorials />
-      <Services />
+      <DeferredHomepageSection minHeight={680}>
+        <YoutubeShowcase />
+      </DeferredHomepageSection>
+      <DeferredHomepageSection minHeight={520}>
+        <LatestBlogTutorials />
+      </DeferredHomepageSection>
       <Contact />
-    </>
+    </main>
   )
 }
 
@@ -96,14 +150,22 @@ function App() {
       <Preloader />
       <HashScroller />
       <Header />
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:slug" element={<BlogPost />} />
-        <Route path="/startups" element={<StartupPage />} />
-        <Route path="/thank-you" element={<ThankYou />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <div className="route-content-shell">
+        <Suspense fallback={<RouteFallback />}>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/services/:slug" element={<ServiceDetailPage />} />
+            <Route path="/pricing" element={<PricingPage />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/startups" element={<StartupPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
+      </div>
       <Footer />
       <ScrollToTop />
       <Feedback />

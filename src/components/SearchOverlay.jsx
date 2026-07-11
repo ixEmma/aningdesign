@@ -2,16 +2,21 @@ import {useEffect, useMemo, useRef, useState} from 'react'
 import {Search, X} from 'lucide-react'
 import {mainNavLinks, resourceLinks, whatWeDoLinks} from '../data/navigationConfig'
 import {getBlogSearchItems} from '../services/blogService'
+import { getExternalLinkProps } from '../utils/links'
 import './SearchOverlay.css'
 
-const normalizeStaticItem = (item, type) => ({
-  title: item.title || item.label,
-  type,
-  description: item.description || `Open ${item.title || item.label}`,
-  href: item.href,
-  target: item.target,
-  rel: item.rel
-})
+const normalizeStaticItem = (item, type) => {
+  const externalProps = getExternalLinkProps(item.href)
+
+  return {
+    title: item.title || item.label,
+    type,
+    description: item.description || `Open ${item.title || item.label}`,
+    href: item.href,
+    target: item.target || externalProps.target,
+    rel: item.rel || externalProps.rel
+  }
+}
 
 function SearchOverlay({isOpen,onClose,startups}) {
   const [query, setQuery] = useState('')
@@ -63,8 +68,7 @@ function SearchOverlay({isOpen,onClose,startups}) {
       type: 'Startup',
       description: startup.description || startup.category,
       href: startup.href,
-      target: startup.href.startsWith('http') ? '_blank' : undefined,
-      rel: startup.href.startsWith('http') ? 'noopener noreferrer' : undefined
+      ...getExternalLinkProps(startup.href)
     }))
 
     const uniqueItems = [...staticItems, ...startupItems, ...getBlogSearchItems()]
@@ -111,7 +115,7 @@ function SearchOverlay({isOpen,onClose,startups}) {
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search Aning Design Lab..."
+            placeholder="Search AningDesign..."
             autoComplete="off"
           />
         </label>
@@ -140,4 +144,3 @@ function SearchOverlay({isOpen,onClose,startups}) {
 }
 
 export default SearchOverlay
-

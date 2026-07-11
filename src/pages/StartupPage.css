@@ -2,7 +2,7 @@
   min-height: 100vh;
   padding: 132px 24px 72px;
   color: #ffffff;
-  background: linear-gradient(180deg, #050606 0%, #071010 52%, #050606 100%);
+  background: linear-gradient(180deg, rgba(5, 6, 6, 0.86) 0%, rgba(7, 16, 16, 0.8) 52%, rgba(5, 6, 6, 0.88) 100%);
   overflow-x: hidden;
 }
 
