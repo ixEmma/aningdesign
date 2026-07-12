@@ -7,11 +7,12 @@ import { getAllPosts, getCategories } from '../utils/blogUtils'
 import { useSeo } from '../utils/seo'
 import './Blog.css'
 
-const POSTS_PER_BATCH = 6
+const POSTS_PER_BATCH = 18
+const INITIAL_VISIBLE_POSTS = 18
 
 function Blog() {
   const [activeCategory, setActiveCategory] = useState('All')
-  const [visiblePostCount, setVisiblePostCount] = useState(POSTS_PER_BATCH)
+  const [visiblePostCount, setVisiblePostCount] = useState(INITIAL_VISIBLE_POSTS)
   const posts = getAllPosts()
   const categories = getCategories()
 
@@ -29,7 +30,7 @@ function Blog() {
 
   const handleCategoryChange = (category) => {
     setActiveCategory(category)
-    setVisiblePostCount(POSTS_PER_BATCH)
+    setVisiblePostCount(INITIAL_VISIBLE_POSTS)
   }
 
   useSeo({

@@ -52,7 +52,7 @@ The archive page is:
 src/pages/Blog.jsx
 ```
 
-It reads lightweight metadata for every Markdown post, shows the page header and category filters, promotes the newest matching post, and renders six compact archive cards at a time. Visitors can reveal six more tutorials with the load-more control.
+It reads lightweight metadata for every Markdown post, shows the page header and category filters, promotes the newest matching post, and renders 18 compact archive cards initially. Visitors can reveal 18 more tutorials with each use of the load-more control.
 
 Each card links to:
 

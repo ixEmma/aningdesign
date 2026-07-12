@@ -136,7 +136,17 @@
 }
 
 .form-group select {
+  color-scheme: dark;
   cursor: pointer;
+}
+
+.form-group select option {
+  color: #ffffff;
+  background: #0a0d0e;
+}
+
+.form-group select option:disabled {
+  color: #76807d;
 }
 
 .form-group input::placeholder,
