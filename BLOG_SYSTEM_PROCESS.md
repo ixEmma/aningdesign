@@ -52,7 +52,7 @@ The archive page is:
 src/pages/Blog.jsx
 ```
 
-It loads all Markdown blog posts, shows the page header, displays category filters, and renders blog cards.
+It reads lightweight metadata for every Markdown post, shows the page header and category filters, promotes the newest matching post, and renders six compact archive cards at a time. Visitors can reveal six more tutorials with the load-more control.
 
 Each card links to:
 
@@ -68,9 +68,9 @@ The single post page is:
 src/pages/BlogPost.jsx
 ```
 
-It reads the slug from the URL, finds the matching Markdown post, displays the post header, embeds the YouTube video when `youtubeEmbedUrl` exists, and renders the Markdown content.
+It reads the slug from the URL, finds the matching metadata, then lazy-loads only that article's Markdown body. After loading, it displays the post header, embeds the YouTube video when `youtubeEmbedUrl` exists, and renders the Markdown content.
 
-If the slug does not match a post, the visitor is redirected to `/blog`.
+If the slug does not match a post, the visitor is redirected to `/blog`. Valid posts show an accessible loading state and provide retry and back-to-blog actions if the article chunk cannot load.
 
 ## 6. Where Blog Posts Are Stored
 
@@ -107,7 +107,7 @@ src/content/blog/wordpress/my-new-wordpress-tutorial.md
 
 Add frontmatter at the top, then write the article below it.
 
-After saving the file, the blog utility automatically imports it and adds it to the homepage preview, archive page, and category filters.
+After saving the file, the Vite blog metadata plugin automatically reads its frontmatter and adds it to the homepage preview, archive page, and category filters. The full Markdown body is emitted as a separate lazy-loaded article chunk.
 
 ## 8. Required Frontmatter Fields
 

@@ -2,9 +2,9 @@
   position: relative;
   padding: 96px 40px;
   background:
-    radial-gradient(circle at 18% 18%, rgba(0, 251, 100, 0.08), transparent 34%),
+    radial-gradient(circle at 18% 18%, rgba(0, 251, 100, 0.05), transparent 34%),
     radial-gradient(circle at 86% 80%, rgba(0, 201, 255, 0.1), transparent 34%),
-    linear-gradient(180deg, rgba(4, 6, 7, 0), rgba(4, 6, 7, 0.46));
+    linear-gradient(180deg, rgba(4, 6, 7, 0), rgba(4, 6, 7, 0.56));
 }
 
 .latest-blog-tutorials-inner {

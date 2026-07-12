@@ -1,10 +1,10 @@
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { Children, isValidElement, useEffect, useMemo } from 'react'
+import { Children, isValidElement, useEffect, useMemo, useState } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import BlogPostHeader from '../components/blog/BlogPostHeader'
 import BlogVideoEmbed from '../components/blog/BlogVideoEmbed'
-import { getPostBySlug, getRelatedPosts, formatPostDate } from '../utils/blogUtils'
+import { getPostBySlug, getRelatedPosts, loadPostBySlug, formatPostDate } from '../utils/blogUtils'
 import { servicePages, getServicePageBySlug } from '../data/servicePages'
 import { getExternalLinkProps, isExternalLink } from '../utils/links'
 import { useSeo } from '../utils/seo'
@@ -366,14 +366,7 @@ function BlogPostFinalCta({ post, serviceLink, youtubeWatchUrl, ctaDescription }
   )
 }
 
-function BlogPost() {
-  const { slug } = useParams()
-  const post = getPostBySlug(slug)
-
-  if (!post) {
-    return <Navigate to="/blog" replace />
-  }
-
+function BlogPostContent({ post }) {
   const postImage = getBlogImageUrl(post.thumbnail)
   const postKeywords = getPostKeywords(post)
   const postKeywordString = postKeywords.join(', ')
@@ -488,6 +481,73 @@ function BlogPost() {
       </div>
     </main>
   )
+}
+
+function BlogPostLoadState({ error, onRetry }) {
+  return (
+    <main className="blog-post-page blog-post-load-state">
+      <div className="blog-post-load-panel" role={error ? 'alert' : 'status'} aria-live="polite">
+        <p className="blog-post-load-kicker">Aning Design Lab</p>
+        <h1>{error ? 'This tutorial could not load.' : 'Loading tutorial...'}</h1>
+        <p>
+          {error
+            ? 'The article content is temporarily unavailable. Retry the request or return to the blog archive.'
+            : 'Preparing the full written guide.'}
+        </p>
+        {error && (
+          <div className="blog-post-load-actions">
+            <button type="button" onClick={onRetry}>Retry Tutorial</button>
+            <Link to="/blog">Back to Blog</Link>
+          </div>
+        )}
+      </div>
+    </main>
+  )
+}
+
+function BlogPost() {
+  const { slug } = useParams()
+  const metadata = getPostBySlug(slug)
+  const [retryCount, setRetryCount] = useState(0)
+  const [loadState, setLoadState] = useState({ slug: '', post: null, error: null })
+
+  useEffect(() => {
+    if (!metadata) return undefined
+
+    let isCurrent = true
+    setLoadState({ slug, post: null, error: null })
+
+    loadPostBySlug(slug)
+      .then((post) => {
+        if (isCurrent) {
+          setLoadState({ slug, post, error: null })
+        }
+      })
+      .catch((error) => {
+        if (isCurrent) {
+          setLoadState({ slug, post: null, error })
+        }
+      })
+
+    return () => {
+      isCurrent = false
+    }
+  }, [metadata, retryCount, slug])
+
+  if (!metadata) {
+    return <Navigate to="/blog" replace />
+  }
+
+  if (loadState.slug !== slug || !loadState.post) {
+    return (
+      <BlogPostLoadState
+        error={loadState.slug === slug ? loadState.error : null}
+        onRetry={() => setRetryCount((count) => count + 1)}
+      />
+    )
+  }
+
+  return <BlogPostContent post={loadState.post} />
 }
 
 export default BlogPost

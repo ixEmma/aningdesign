@@ -16,11 +16,11 @@
   background:
     linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    radial-gradient(circle at 15% 0%, rgba(0, 251, 100, 0.18), transparent 36%),
+    radial-gradient(circle at 15% 0%, rgba(0, 251, 100, 0.09), transparent 36%),
     radial-gradient(circle at 95% 30%, rgba(0, 201, 255, 0.15), transparent 34%),
     linear-gradient(135deg, rgba(7, 17, 24, 0.98), rgba(7, 36, 31, 0.98));
   background-size: 60px 60px, 60px 60px, auto, auto, auto;
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.46), 0 0 28px rgba(0, 251, 100, 0.08);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.46), 0 0 28px rgba(0, 251, 100, 0.04);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
 }

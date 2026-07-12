@@ -7,6 +7,7 @@ function BlogCategoryFilter({ categories, activeCategory, onChange }) {
         <button
           type="button"
           className={activeCategory === category ? 'is-active' : ''}
+          aria-pressed={activeCategory === category}
           onClick={() => onChange(category)}
           key={category}
         >

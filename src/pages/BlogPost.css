@@ -3,9 +3,9 @@
   padding: 0 32px 110px;
   color: #ffffff;
   background:
-    radial-gradient(circle at 14% 12%, rgba(0, 251, 100, 0.1), transparent 34%),
+    radial-gradient(circle at 14% 12%, rgba(0, 251, 100, 0.06), transparent 34%),
     radial-gradient(circle at 86% 28%, rgba(0, 201, 255, 0.13), transparent 34%),
-    rgba(5, 6, 6, 0.84);
+    rgba(5, 6, 6, 0.9);
   overflow-x: hidden;
 }
 
@@ -467,6 +467,86 @@
   color: #05120a;
   border-color: transparent;
   background: linear-gradient(90deg, #00fb64, #00c9ff);
+}
+
+.blog-post-load-state {
+  display: grid;
+  min-height: 100svh;
+  padding-top: 132px;
+  place-items: start center;
+}
+
+.blog-post-load-panel {
+  box-sizing: border-box;
+  width: min(100%, 680px);
+  padding: 32px;
+  border: 1px solid rgba(154, 247, 163, 0.18);
+  border-radius: 18px;
+  background: rgba(8, 10, 11, 0.9);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
+}
+
+.blog-post-load-kicker {
+  margin: 0;
+  color: #9af7a3;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.blog-post-load-panel h1 {
+  margin: 14px 0 0;
+  color: #ffffff;
+  font-size: clamp(30px, 5vw, 46px);
+  line-height: 1.08;
+}
+
+.blog-post-load-panel > p:not(.blog-post-load-kicker) {
+  margin: 14px 0 0;
+  color: rgba(236, 246, 243, 0.72);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.blog-post-load-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.blog-post-load-actions button,
+.blog-post-load-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-family: "Switzer", sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.blog-post-load-actions button {
+  border: 1px solid transparent;
+  color: #05120a;
+  background: linear-gradient(90deg, #00fb64, #00c9ff);
+}
+
+.blog-post-load-actions a {
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.blog-post-load-actions button:focus-visible,
+.blog-post-load-actions a:focus-visible {
+  outline: 2px solid rgba(154, 247, 163, 0.85);
+  outline-offset: 3px;
 }
 
 @media (max-width: 980px) {
