@@ -52,7 +52,9 @@ The archive page is:
 src/pages/Blog.jsx
 ```
 
-It reads lightweight metadata for every Markdown post, shows the page header and category filters, promotes the newest matching post, and renders 18 compact archive cards initially. Visitors can reveal 18 more tutorials with each use of the load-more control.
+It reads lightweight metadata for every Markdown post, provides title, description, category, tag, and keyword search, shows category filters, promotes the newest matching post, and renders 18 compact archive cards initially. Visitors can reveal 18 more tutorials with each use of the load-more control. Search and category changes reset the visible batch.
+
+The archive also includes an inline newsletter form after the featured article. It sends email, optional first name, interest, source page, and submission time through the same FormSubmit AJAX pattern used elsewhere on the site.
 
 Each card links to:
 

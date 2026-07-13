@@ -47,6 +47,20 @@ body {
   min-height: 100svh;
 }
 
+.route-content-shell {
+  animation: route-content-enter 160ms ease-out;
+}
+
+@keyframes route-content-enter {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 * {
   word-spacing: inherit;
 }
@@ -99,6 +113,16 @@ h2 {
   .contact-info h1 {
     font-size: var(--text-section-title-mobile);
     font-weight: 900; /* Maintain bold weight on mobile */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .route-content-shell {
+    animation: none;
   }
 }
 

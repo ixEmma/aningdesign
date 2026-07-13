@@ -1,9 +1,11 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import BlogCategoryFilter from '../components/blog/BlogCategoryFilter'
+import BlogArchiveSearch from '../components/blog/BlogArchiveSearch'
+import BlogNewsletter from '../components/blog/BlogNewsletter'
 import FeaturedBlogCard from '../components/blog/FeaturedBlogCard'
 import BlogGrid from '../components/blog/BlogGrid'
-import { getAllPosts, getCategories } from '../utils/blogUtils'
+import { filterPostsByArchiveCategory, filterPostsBySearch, getAllPosts, getCategories } from '../utils/blogUtils'
 import { useSeo } from '../utils/seo'
 import './Blog.css'
 
@@ -12,15 +14,16 @@ const INITIAL_VISIBLE_POSTS = 18
 
 function Blog() {
   const [activeCategory, setActiveCategory] = useState('All')
+  const [searchQuery, setSearchQuery] = useState('')
   const [visiblePostCount, setVisiblePostCount] = useState(INITIAL_VISIBLE_POSTS)
   const posts = getAllPosts()
   const categories = getCategories()
 
   const filteredPosts = useMemo(() => {
-    if (activeCategory === 'All') return posts
+    const categoryPosts = filterPostsByArchiveCategory(posts, activeCategory)
 
-    return posts.filter((post) => post.category === activeCategory)
-  }, [activeCategory, posts])
+    return filterPostsBySearch(categoryPosts, searchQuery)
+  }, [activeCategory, posts, searchQuery])
 
   const featuredPost = filteredPosts[0] || null
   const archivePosts = filteredPosts.slice(1)
@@ -30,6 +33,17 @@ function Blog() {
 
   const handleCategoryChange = (category) => {
     setActiveCategory(category)
+    setVisiblePostCount(INITIAL_VISIBLE_POSTS)
+  }
+
+  const handleSearchChange = (query) => {
+    setSearchQuery(query)
+    setVisiblePostCount(INITIAL_VISIBLE_POSTS)
+  }
+
+  const resetArchiveFilters = () => {
+    setActiveCategory('All')
+    setSearchQuery('')
     setVisiblePostCount(INITIAL_VISIBLE_POSTS)
   }
 
@@ -56,6 +70,8 @@ function Blog() {
 
       <section className="blog-archive-list" aria-label="Blog tutorial archive">
         <div className="blog-archive-list-inner">
+          <BlogArchiveSearch value={searchQuery} onChange={handleSearchChange} />
+
           <BlogCategoryFilter
             categories={categories}
             activeCategory={activeCategory}
@@ -65,6 +81,7 @@ function Blog() {
           <div className="blog-archive-results-bar">
             <p aria-live="polite">
               Showing {visibleTotal} of {filteredPosts.length} {filteredPosts.length === 1 ? 'tutorial' : 'tutorials'}
+              {searchQuery.trim() ? ` matching “${searchQuery.trim()}”` : ''}
             </p>
           </div>
 
@@ -107,11 +124,16 @@ function Blog() {
               </details>
             </>
           ) : (
-            <div className="blog-archive-empty" role="status">
-              <h2>No tutorials found</h2>
-              <p>Choose another category to continue browsing.</p>
+            <div className="blog-archive-empty">
+              <div role="status">
+                <h2>No tutorials found</h2>
+                <p>Try another search or category to continue browsing.</p>
+              </div>
+              <button type="button" onClick={resetArchiveFilters}>Reset search and filters</button>
             </div>
           )}
+
+          <BlogNewsletter />
         </div>
       </section>
     </main>

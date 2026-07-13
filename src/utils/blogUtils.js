@@ -15,6 +15,56 @@ export const getAllPosts = () => blogPosts
 
 export const getLatestPosts = (limit = 3) => blogPosts.slice(0, limit)
 
+export const getFreeResourcePosts = (resourceType = '') => {
+  return blogPosts.filter((post) => {
+    if (!post.isFreeResource) return false
+
+    return resourceType ? post.resourceType === resourceType : true
+  })
+}
+
+export const getResourceCategories = (resourceType = '') => {
+  const posts = getFreeResourcePosts(resourceType)
+
+  return ['All', ...new Set(posts.map((post) => post.resourceCategory).filter(Boolean))]
+}
+
+export const filterPostsByArchiveCategory = (posts, category) => {
+  if (category === 'All') return posts
+  if (category === 'Free Resources') return posts.filter((post) => post.isFreeResource)
+  if (category === 'Prompts') return posts.filter((post) => post.resourceType === 'prompt')
+
+  return posts.filter((post) => post.category === category)
+}
+
+export const filterPostsBySearch = (posts, query) => {
+  const normalizedQuery = String(query || '').trim().toLowerCase()
+
+  if (!normalizedQuery) return posts
+
+  return posts.filter((post) => {
+    const searchableText = [
+      post.title,
+      post.description,
+      post.category,
+      post.primaryKeyword,
+      post.resourceType,
+      post.resourceLabel,
+      post.resourceCategory,
+      post.promptTitle,
+      post.promptBestFor,
+      ...(post.tags || []),
+      ...(post.keywordCluster || []),
+      ...(post.toolsUsed || [])
+    ]
+      .filter(Boolean)
+      .join(' ')
+      .toLowerCase()
+
+    return normalizedQuery.split(/\s+/).every((term) => searchableText.includes(term))
+  })
+}
+
 export const getPostBySlug = (slug) => blogPosts.find((post) => post.slug === slug)
 
 export const loadPostBySlug = async (slug) => {
@@ -94,7 +144,11 @@ export const getRelatedPosts = (post, limit = 3) => {
 }
 
 export const getCategories = () => {
-  return ['All', ...new Set(blogPosts.map((post) => post.category))]
+  const resourceCategories = blogPosts.some((post) => post.isFreeResource)
+    ? ['Free Resources', ...(blogPosts.some((post) => post.resourceType === 'prompt') ? ['Prompts'] : [])]
+    : []
+
+  return ['All', ...resourceCategories, ...new Set(blogPosts.map((post) => post.category))]
 }
 
 export const formatPostDate = (date) => {

@@ -1,5 +1,9 @@
 ---
 type: "seo"
+isFreeResource: true
+resourceType: "checklist"
+resourceLabel: "Free Checklist"
+resourceCategory: "Web Design"
 title: "Website Design Checklist for Clients: What to Prepare Before the Project Starts"
 seoTitle: "Website Design Checklist for Clients: What to Prepare | AningDesign"
 description: "Prepare goals, website copy, brand assets, images, features, access, approvals, and launch responsibilities before your web design project begins."
@@ -121,4 +125,3 @@ Before the project starts, decide who launches the website, takes backups, handl
 Also clarify training, maintenance, updates, content publishing, hosting support, plugin licenses, and the support period after launch. These responsibilities are part of a professional handover.
 
 When these materials are ready, the designer can make better decisions earlier and the project is less likely to stall. Continue with the [website launch checklist](/blog/website-launch-checklist), or [contact AningDesign](/contact) when you need the structure and implementation handled with you.
-

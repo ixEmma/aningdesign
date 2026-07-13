@@ -60,6 +60,12 @@
   color: #a8ffd0;
 }
 
+.blog-card-meta small {
+  color: rgba(144, 248, 255, 0.72);
+  font-size: inherit;
+  font-weight: inherit;
+}
+
 .blog-card h3 {
   position: relative;
   z-index: 1;

@@ -1,5 +1,9 @@
 ---
 type: "seo"
+isFreeResource: true
+resourceType: "checklist"
+resourceLabel: "Free Checklist"
+resourceCategory: "WordPress"
 title: "WordPress Website Checklist: Plan, Build, Test, and Launch"
 seoTitle: "WordPress Website Checklist: Plan, Build, Test, and Launch | AningDesign"
 description: "Follow a practical WordPress website checklist for project planning, content, setup, design, plugins, testing, launch, and client handover."
@@ -114,4 +118,3 @@ Handover is part of the project, not an optional final email. Provide the agreed
 Explain what the client owns and what relies on third-party services. Remove your access when appropriate or document why ongoing access is required. Confirm how future requests should be submitted.
 
 A repeatable WordPress workflow protects quality and makes projects easier to estimate. If you need implementation rather than a self-guided process, explore [WordPress Websites](/services/wordpress-websites) or [contact AningDesign](/contact).
-

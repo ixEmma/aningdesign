@@ -1085,8 +1085,8 @@ export const servicesIndexPage = {
       href: '/#projects'
     },
     {
-      title: 'Startup projects',
-      description: 'MVPs, web apps, dashboards, and product prototypes.',
+      title: 'Free resources',
+      description: 'Free web apps and practical digital tools from AningDesign.',
       href: '/startups'
     },
     {

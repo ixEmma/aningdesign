@@ -1,0 +1,215 @@
+.blog-newsletter {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+  gap: 36px;
+  margin-top: 36px;
+  padding: 32px;
+  border: 1px solid rgba(154, 247, 163, 0.16);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(0, 251, 100, 0.055), transparent 40%),
+    rgba(9, 13, 13, 0.88);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.2);
+}
+
+.blog-newsletter__copy,
+.blog-newsletter__form {
+  min-width: 0;
+}
+
+.blog-newsletter__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(144, 248, 255, 0.22);
+  border-radius: 12px;
+  color: #90f8ff;
+  background: rgba(0, 201, 255, 0.07);
+}
+
+.blog-newsletter__eyebrow {
+  margin: 0 0 10px;
+  color: #9af7a3;
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.blog-newsletter h2 {
+  max-width: 520px;
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(27px, 3vw, 38px);
+  font-weight: 900;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.blog-newsletter__copy > p:last-child {
+  max-width: 560px;
+  margin: 16px 0 0;
+  color: rgba(236, 246, 243, 0.7);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.blog-newsletter__form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-content: center;
+}
+
+.blog-newsletter__honeypot {
+  display: none;
+}
+
+.blog-newsletter__field {
+  display: grid;
+  gap: 8px;
+}
+
+.blog-newsletter__field > span {
+  color: rgba(244, 255, 249, 0.78);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.blog-newsletter__field small {
+  margin-left: 4px;
+  color: rgba(236, 246, 243, 0.46);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.blog-newsletter__field input,
+.blog-newsletter__field select {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 12px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 11px;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.3);
+  font-family: "Switzer", sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.blog-newsletter__field select {
+  color-scheme: dark;
+  cursor: pointer;
+}
+
+.blog-newsletter__field select option {
+  color: #ffffff;
+  background: #0a0d0e;
+}
+
+.blog-newsletter__field input::placeholder {
+  color: rgba(236, 246, 243, 0.4);
+}
+
+.blog-newsletter__field input:focus,
+.blog-newsletter__field select:focus {
+  outline: none;
+  border-color: rgba(144, 248, 255, 0.58);
+  box-shadow: 0 0 0 3px rgba(0, 201, 255, 0.08);
+}
+
+.blog-newsletter__form > button {
+  align-self: end;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 18px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  color: #05120a;
+  background: linear-gradient(90deg, #00fb64, #00c9ff);
+  font-family: "Switzer", sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-newsletter__form > button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 201, 255, 0.14);
+}
+
+.blog-newsletter__form > button:focus-visible {
+  outline: 2px solid rgba(144, 248, 255, 0.88);
+  outline-offset: 3px;
+}
+
+.blog-newsletter__form > button:disabled {
+  cursor: wait;
+  opacity: 0.68;
+  transform: none;
+}
+
+.blog-newsletter__privacy,
+.blog-newsletter__status {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.blog-newsletter__privacy {
+  color: rgba(236, 246, 243, 0.5);
+}
+
+.blog-newsletter__status.success {
+  color: #9af7a3;
+}
+
+.blog-newsletter__status.error {
+  color: #ff9999;
+}
+
+@media (max-width: 900px) {
+  .blog-newsletter {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-newsletter {
+    gap: 24px;
+    margin-top: 28px;
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+
+  .blog-newsletter__form {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-newsletter__form > button,
+  .blog-newsletter__privacy,
+  .blog-newsletter__status {
+    grid-column: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-newsletter__form > button {
+    transition: none;
+  }
+}

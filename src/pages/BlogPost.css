@@ -169,7 +169,7 @@
   box-shadow: 0 22px 58px rgba(0, 0, 0, 0.34);
 }
 
-.blog-post-content :where(pre) {
+.blog-post-content :where(pre:not(.prompt-block__content)) {
   margin: 28px 0;
   padding: 18px;
   overflow-x: auto;
@@ -351,6 +351,10 @@
   margin-top: 18px;
   color: #05120a;
   background: linear-gradient(90deg, #00fb64, #00c9ff);
+}
+
+.blog-post-article > .blog-newsletter {
+  margin-top: 54px;
 }
 
 .blog-post-product-cta {

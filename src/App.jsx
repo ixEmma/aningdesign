@@ -23,6 +23,8 @@ const Blog = lazy(() => import('./pages/Blog'))
 const BlogPost = lazy(() => import('./pages/BlogPost'))
 const ThankYou = lazy(() => import('./pages/ThankYou'))
 const StartupPage = lazy(() => import('./pages/StartupPage'))
+const FreeResources = lazy(() => import('./pages/FreeResources'))
+const PromptLibrary = lazy(() => import('./pages/PromptLibrary'))
 const ServicesPage = lazy(() => import('./pages/ServicesPage'))
 const ServiceDetailPage = lazy(() => import('./pages/ServiceDetailPage'))
 const ContactPage = lazy(() => import('./pages/ContactPage'))
@@ -34,18 +36,55 @@ function HashScroller() {
   const location = useLocation()
 
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
     if (!location.hash) {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-      return
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+      return undefined
     }
 
-    window.requestAnimationFrame(() => {
-      const target = document.getElementById(location.hash.slice(1))
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }
+    const targetId = decodeURIComponent(location.hash.slice(1))
+    let frameId
+    let timeoutId
+    let observer
+
+    const scrollToTarget = () => {
+      const target = document.getElementById(targetId)
+
+      if (!target) return false
+
+      target.scrollIntoView({
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
+        block: 'start'
+      })
+      return true
+    }
+
+    frameId = window.requestAnimationFrame(() => {
+      if (scrollToTarget()) return
+
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+
+      const routeShell = document.querySelector('.route-content-shell')
+      if (!routeShell) return
+
+      observer = new MutationObserver(() => {
+        if (scrollToTarget()) {
+          observer.disconnect()
+          window.clearTimeout(timeoutId)
+        }
+      })
+
+      observer.observe(routeShell, { childList: true, subtree: true })
+      timeoutId = window.setTimeout(() => observer.disconnect(), 2500)
     })
-  }, [location.pathname, location.hash])
+
+    return () => {
+      window.cancelAnimationFrame(frameId)
+      window.clearTimeout(timeoutId)
+      observer?.disconnect()
+    }
+  }, [location.pathname, location.hash, location.key])
 
   return null
 }
@@ -146,13 +185,15 @@ function NotFound() {
 }
 
 function App() {
+  const location = useLocation()
+
   return (
     <>
       <AnimatedBackground />
       <Preloader />
       <HashScroller />
       <Header />
-      <div className="route-content-shell">
+      <div className="route-content-shell" key={location.pathname}>
         <Suspense fallback={<RouteFallback />}>
           <Routes>
             <Route path="/" element={<LandingPage />} />
@@ -164,6 +205,8 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/startups" element={<StartupPage />} />
+            <Route path="/free-resources" element={<FreeResources />} />
+            <Route path="/free-resources/prompts" element={<PromptLibrary />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/thank-you" element={<ThankYou />} />
             <Route path="*" element={<NotFound />} />

@@ -1,5 +1,9 @@
 ---
 type: "seo"
+isFreeResource: true
+resourceType: "checklist"
+resourceLabel: "Free Checklist"
+resourceCategory: "Web Design"
 title: "Website Launch Checklist: What to Check Before Going Live"
 seoTitle: "Website Launch Checklist: What to Check Before Going Live | AningDesign"
 description: "Use this website launch checklist to review strategy, content, responsive design, SEO, performance, forms, analytics, trust, and post-launch tasks."
@@ -174,4 +178,3 @@ Review the site again immediately after launch, then after search engines, cache
 - Confirm the client knows how to request support.
 
 A launch checklist reduces risk, but a responsible launch also includes observation and handover. If you need the full WordPress-specific process, continue with the [WordPress website launch checklist](/blog/wordpress-website-launch-checklist) or discuss a [WordPress website project](/services/wordpress-websites) with AningDesign.
-

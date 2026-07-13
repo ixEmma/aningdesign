@@ -3,7 +3,9 @@ import remarkGfm from 'remark-gfm'
 import { Children, isValidElement, useEffect, useMemo, useState } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import BlogPostHeader from '../components/blog/BlogPostHeader'
+import BlogNewsletter from '../components/blog/BlogNewsletter'
 import BlogVideoEmbed from '../components/blog/BlogVideoEmbed'
+import PromptBlock from '../components/resources/PromptBlock'
 import { getPostBySlug, getRelatedPosts, loadPostBySlug, formatPostDate } from '../utils/blogUtils'
 import { servicePages, getServicePageBySlug } from '../data/servicePages'
 import { getExternalLinkProps, isExternalLink } from '../utils/links'
@@ -39,7 +41,9 @@ const getPostKeywords = (post) => {
   return getUniqueKeywords([
     ...(post.tags || []),
     post.primaryKeyword,
-    ...(post.keywordCluster || [])
+    ...(post.keywordCluster || []),
+    post.resourceLabel,
+    post.resourceCategory
   ])
 }
 
@@ -98,9 +102,10 @@ const getTableOfContents = (content) => {
     })
 }
 
-const createMarkdownComponents = () => {
+const createMarkdownComponents = (post) => {
   const h2Counts = new Map()
   const h3Counts = new Map()
+  let promptBlockIndex = 0
 
   return {
     a({ node, href = '', children, ...props }) {
@@ -136,6 +141,20 @@ const createMarkdownComponents = () => {
       return (
         <img loading="lazy" decoding="async" {...props} />
       )
+    },
+    pre({ node, children }) {
+      if (post.isFreeResource && post.resourceType === 'prompt') {
+        const promptText = getChildrenText(children)
+        const title = promptBlockIndex === 0
+          ? post.promptTitle || 'Copy-ready prompt'
+          : 'Reusable prompt template'
+
+        promptBlockIndex += 1
+
+        return <PromptBlock title={title} promptText={promptText} bestFor={post.promptBestFor} />
+      }
+
+      return <pre>{children}</pre>
     }
   }
 }
@@ -374,7 +393,22 @@ function BlogPostContent({ post }) {
   const relatedPosts = useMemo(() => getRelatedPosts(post, 3), [post])
   const serviceLink = useMemo(() => getServiceLink(post), [post])
   const youtubeWatchUrl = getYoutubeWatchUrl(post)
-  const markdownComponents = createMarkdownComponents()
+  const markdownComponents = createMarkdownComponents(post)
+  const canonicalPath = post.canonicalPath || `/blog/${post.slug}`
+  const resourceArchivePath = post.resourceType === 'prompt'
+    ? '/free-resources/prompts'
+    : `/free-resources#${post.resourceType === 'checklist' ? 'checklists' : 'guides'}`
+  const resourceArchiveLabel = post.resourceType === 'prompt'
+    ? 'Prompts'
+    : post.resourceType === 'checklist'
+      ? 'Checklists'
+      : 'Guides'
+  const breadcrumbItems = useMemo(() => post.isFreeResource ? [
+    { label: 'Home', href: '/' },
+    { label: 'Free Resources', href: '/free-resources' },
+    { label: resourceArchiveLabel, href: resourceArchivePath },
+    { label: post.title, href: canonicalPath, schemaPath: canonicalPath }
+  ] : null, [canonicalPath, post.isFreeResource, post.title, resourceArchiveLabel, resourceArchivePath])
   const shouldShowContextCta = post.type === 'seo' && Boolean(post.productPage || serviceLink)
   const { firstPart, secondPart } = shouldShowContextCta
     ? splitContentForContextCta(post.content, post.productPage ? 3 : 1)
@@ -388,7 +422,7 @@ function BlogPostContent({ post }) {
   useSeo({
     title: post.seoTitle || `${post.title} | Aning Design Lab`,
     description: post.description,
-    canonical: `https://aningdesign.com/blog/${post.slug}`,
+    canonical: `https://aningdesign.com${canonicalPath}`,
     image: postImage,
     keywords: postKeywordString,
     type: 'article'
@@ -412,9 +446,13 @@ function BlogPostContent({ post }) {
       description: post.description,
       datePublished: post.date,
       dateModified: post.date,
-      mainEntityOfPage: `https://aningdesign.com/blog/${post.slug}`,
+      mainEntityOfPage: `https://aningdesign.com${canonicalPath}`,
       image: postImage,
       keywords: postKeywordString,
+      ...(post.isFreeResource ? {
+        isAccessibleForFree: true,
+        genre: post.resourceLabel || 'Free Resource'
+      } : {}),
       author: {
         '@type': 'Person',
         '@id': 'https://aningdesign.com/#person',
@@ -437,7 +475,7 @@ function BlogPostContent({ post }) {
   return (
     <main className="blog-post-page">
       <div className="blog-post-shell">
-        <BlogPostHeader post={post} />
+        <BlogPostHeader post={post} breadcrumbItems={breadcrumbItems} />
 
         <div className="blog-post-layout">
           <article className="blog-post-article">
@@ -461,6 +499,16 @@ function BlogPostContent({ post }) {
                 </ReactMarkdown>
               )}
             </div>
+
+            {post.isFreeResource && (
+              <BlogNewsletter
+                source={post.resourceType === 'prompt' ? 'individual-prompt' : 'individual-resource'}
+                resourceSlug={post.slug}
+                title="Get new free prompts and resources"
+                description="Get practical prompts, tools, checklists, and guides when new resources are published."
+                defaultInterest="Free Resources"
+              />
+            )}
 
             <BlogPostRelatedContent relatedPosts={relatedPosts} />
             <BlogPostFinalCta

@@ -26,7 +26,8 @@ function BlogCard({ post }) {
 
       <div className="blog-card__content">
         <div className="blog-card-meta">
-          <span>{post.category}</span>
+          <span>{post.resourceLabel || post.category}</span>
+          {post.isFreeResource && <small>{post.category}</small>}
           <time dateTime={post.date}>{formatPostDate(post.date)}</time>
         </div>
 
@@ -36,7 +37,7 @@ function BlogCard({ post }) {
         <p>{post.description}</p>
 
         <Link to={`/blog/${post.slug}`} className="blog-card-link">
-          Read article
+          {post.resourceType === 'prompt' ? 'View prompt' : 'Read article'}
           <ArrowUpRight size={15} strokeWidth={2.2} aria-hidden="true" />
         </Link>
       </div>

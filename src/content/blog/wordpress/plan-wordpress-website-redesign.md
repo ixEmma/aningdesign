@@ -1,5 +1,9 @@
 ---
 type: "seo"
+isFreeResource: true
+resourceType: "guide"
+resourceLabel: "Free Guide"
+resourceCategory: "WordPress"
 title: "How to Plan a Successful WordPress Website Redesign"
 seoTitle: "How to Plan a Successful WordPress Website Redesign | AningDesign"
 description: "Plan a WordPress website redesign with a content audit, goals, sitemap, SEO protection, redirects, design system, responsive testing, and safe launch."
@@ -101,4 +105,3 @@ Use a controlled launch window. Deploy the approved content, apply redirects, cl
 Monitor 404s, rankings, form submissions, analytics, and performance after launch. A redesign is not complete until the live migration behaves as planned.
 
 If you need the redesign implemented in WordPress, review [WordPress Websites](/services/wordpress-websites) or [contact AningDesign](/contact). For the final production sequence, use the [website launch checklist](/blog/website-launch-checklist).
-

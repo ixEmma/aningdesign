@@ -1,0 +1,103 @@
+.prompt-block {
+  margin: 28px 0;
+  overflow: hidden;
+  border: 1px solid rgba(0, 201, 255, 0.24);
+  border-radius: 14px;
+  background: rgba(4, 8, 9, 0.94);
+  box-shadow: 0 20px 52px rgba(0, 0, 0, 0.28);
+}
+
+.prompt-block__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px;
+  border-bottom: 1px solid rgba(154, 247, 163, 0.12);
+  background: linear-gradient(110deg, rgba(0, 251, 100, 0.07), rgba(0, 201, 255, 0.06));
+}
+
+.prompt-block__header p {
+  margin: 0 0 6px;
+  color: #9af7a3;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.prompt-block__header h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.prompt-block__copy {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 42px;
+  padding: 9px 13px;
+  border: 1px solid rgba(154, 247, 163, 0.3);
+  border-radius: 9px;
+  color: #ffffff;
+  background: rgba(154, 247, 163, 0.08);
+  font: 800 13px/1 "Switzer", sans-serif;
+  cursor: pointer;
+}
+
+.prompt-block__copy:hover,
+.prompt-block__copy--copied {
+  color: #06110a;
+  background: #9af7a3;
+}
+
+.prompt-block__copy--error {
+  color: #ffd6d1;
+  border-color: rgba(255, 130, 116, 0.45);
+  background: rgba(255, 130, 116, 0.1);
+}
+
+.prompt-block__copy:focus-visible {
+  outline: 2px solid #90f8ff;
+  outline-offset: 3px;
+}
+
+.prompt-block__best-for {
+  margin: 0;
+  padding: 14px 18px 0;
+  color: rgba(236, 246, 243, 0.68);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.prompt-block__best-for strong {
+  color: #a8ffd0;
+}
+
+.prompt-block pre {
+  margin: 0;
+  padding: 18px;
+  overflow-x: auto;
+  color: rgba(239, 248, 245, 0.9);
+  background: transparent;
+  font-size: 14px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 520px) {
+  .prompt-block__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .prompt-block__copy {
+    width: 100%;
+  }
+}

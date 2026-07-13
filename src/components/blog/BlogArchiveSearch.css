@@ -1,0 +1,101 @@
+.blog-archive-search {
+  display: grid;
+  gap: 10px;
+  width: min(100%, 720px);
+  margin-bottom: 24px;
+}
+
+.blog-archive-search > label {
+  color: #9af7a3;
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.blog-archive-search__control {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 54px;
+  padding: 0 14px;
+  border: 1px solid rgba(154, 247, 163, 0.18);
+  border-radius: 14px;
+  color: rgba(144, 248, 255, 0.72);
+  background: rgba(7, 11, 11, 0.82);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.blog-archive-search__control:focus-within {
+  border-color: rgba(144, 248, 255, 0.58);
+  background: rgba(8, 14, 14, 0.94);
+  box-shadow: 0 0 0 3px rgba(0, 201, 255, 0.09);
+}
+
+.blog-archive-search__control > svg {
+  flex: 0 0 auto;
+}
+
+.blog-archive-search__control input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  color: #ffffff;
+  background: transparent;
+  font-family: "Switzer", sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.blog-archive-search__control input::placeholder {
+  color: rgba(236, 246, 243, 0.46);
+}
+
+.blog-archive-search__control input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.blog-archive-search__control button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  border-radius: 9px;
+  color: rgba(244, 255, 249, 0.72);
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+}
+
+.blog-archive-search__control button:hover {
+  color: #90f8ff;
+  background: rgba(0, 201, 255, 0.1);
+}
+
+.blog-archive-search__control button:focus-visible {
+  outline: 2px solid rgba(144, 248, 255, 0.82);
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .blog-archive-search {
+    margin-bottom: 20px;
+  }
+
+  .blog-archive-search__control {
+    min-height: 52px;
+    border-radius: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-archive-search__control {
+    transition: none;
+  }
+}

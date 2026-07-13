@@ -16,6 +16,7 @@ export const projectLinks = [
     rel: 'noopener noreferrer'
   },
   {label: 'Startups',href: '/startups'},
+  {label: 'Free Resources',href: '/free-resources'},
   {
     label: 'Books',
     href: '/books'
@@ -52,11 +53,12 @@ export const serviceLinks = whatWeDoLinks.map((service) => ({
 
 export const resourceLinks = [
   {title: 'Blog',href: '/blog',description: 'Tutorials and website-building notes.'},
-  {title: 'Pricing',href: '/pricing',description: 'View website, design, and project pricing options.'},
   {title: 'Books',href: '/books',description: 'Practical website-building books and digital resources.'},
-  {title: 'Tutorials',href: '/blog',description: 'Practical lessons for web design and AI workflows.'},
-  {title: 'Case Studies',href: '/#projects',description: 'Selected website projects and builds.'},
-  {title: 'Free Resources',href: '/blog',description: 'Guides, workflow notes, and implementation ideas.'}
+  {title: 'Free Resources',href: '/free-resources',description: 'Browse every free prompt, tool, checklist, and guide.'},
+  {title: 'Prompt Library',href: '/free-resources/prompts',description: 'Copy-ready prompts for practical digital workflows.'},
+  {title: 'Free Tools',href: '/free-resources#free-tools',description: 'Public web apps and focused utilities.'},
+  {title: 'Checklists',href: '/free-resources#checklists',description: 'Structured website planning and launch checks.'},
+  {title: 'Guides',href: '/free-resources#guides',description: 'Detailed workflows for clearer project decisions.'}
 ]
 
 export const quickLinks = [
@@ -65,6 +67,7 @@ export const quickLinks = [
   {title: 'Projects',href: '/#projects'},
   {title: 'Contact',href: '/contact'},
   {title: 'Startups',href: '/startups'},
+  {title: 'Free Resources',href: '/free-resources'},
   {title: 'Services',href: '/services'},
   {title: 'Pricing',href: '/pricing'},
   {title: 'Blog',href: '/blog'}

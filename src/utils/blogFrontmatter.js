@@ -103,6 +103,13 @@ export const normalizePostMetadata = ({ sourcePath, raw }) => {
     tags: toArray(data.tags),
     relatedPosts: toArray(data.relatedPosts),
     featured: Boolean(data.featured),
+    isFreeResource: Boolean(data.isFreeResource),
+    resourceType: data.resourceType || '',
+    resourceLabel: data.resourceLabel || '',
+    resourceCategory: data.resourceCategory || '',
+    promptTitle: data.promptTitle || '',
+    promptBestFor: data.promptBestFor || '',
+    canonicalPath: data.canonicalPath || `/blog/${slug}`,
     sourcePath
   }
 }

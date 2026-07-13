@@ -1,5 +1,9 @@
 ---
 type: "seo"
+isFreeResource: true
+resourceType: "checklist"
+resourceLabel: "Free Checklist"
+resourceCategory: "WordPress"
 title: "WordPress Website Launch Checklist: Before, During, and After Launch"
 seoTitle: "WordPress Website Launch Checklist | AningDesign"
 description: "Use this WordPress launch checklist for settings, permalinks, plugins, forms, backups, caching, SEO, security, redirects, staging cleanup, and handover."
@@ -129,4 +133,3 @@ Provide the agreed access, training, ownership notes, backup instructions, plugi
 Remove your access when it is no longer required, or document the ongoing maintenance relationship. A clear handover keeps the finished website maintainable.
 
 For a repeatable workflow that begins before launch day, read the full [WordPress website checklist](/blog/wordpress-website-checklist). If you want the website planned and implemented with you, explore [WordPress Websites](/services/wordpress-websites) or [contact AningDesign](/contact).
-

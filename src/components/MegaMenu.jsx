@@ -21,6 +21,7 @@ import {
   socialLinks
 } from '../data/navigationConfig'
 import { getExternalLinkProps } from '../utils/links'
+import { SiteLink } from './SiteLink'
 import './MegaMenu.css'
 
 function SmartLink({item,className = '',children,onNavigate}) {
@@ -30,7 +31,7 @@ function SmartLink({item,className = '',children,onNavigate}) {
   }
 
   return (
-    <a
+    <SiteLink
       href={item.href}
       target={item.target || externalProps.target}
       rel={item.rel || externalProps.rel}
@@ -38,7 +39,7 @@ function SmartLink({item,className = '',children,onNavigate}) {
       onClick={handleClick}
     >
       {children || item.title || item.label}
-    </a>
+    </SiteLink>
   )
 }
 
@@ -59,7 +60,11 @@ const resourceIconMap = {
   Books: BookOpen,
   Tutorials: Monitor,
   'Case Studies': LayoutDashboard,
-  'Free Resources': Gift
+  'Free Resources': Gift,
+  'Prompt Library': BookOpen,
+  'Free Tools': BriefcaseBusiness,
+  Checklists: FileText,
+  Guides: BookOpen
 }
 
 function XLogoIcon() {
@@ -198,7 +203,7 @@ function MegaMenu({isOpen,startups,blogTopics,onClose,onSearch}) {
             <p className="mega-menu-kicker">Blog Topics</p>
             <div className="mega-menu-topic-list">
               {blogTopics.slice(0, 8).map((topic) => (
-                <a key={topic} href="/blog" onClick={onClose}>{topic}</a>
+                <SiteLink key={topic} href="/blog" onClick={onClose}>{topic}</SiteLink>
               ))}
             </div>
           </div>

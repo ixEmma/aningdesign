@@ -3,6 +3,7 @@ import {Search, X} from 'lucide-react'
 import {mainNavLinks, resourceLinks, whatWeDoLinks} from '../data/navigationConfig'
 import {getBlogSearchItems} from '../services/blogService'
 import { getExternalLinkProps } from '../utils/links'
+import { SiteLink } from './SiteLink'
 import './SearchOverlay.css'
 
 const normalizeStaticItem = (item, type) => {
@@ -85,9 +86,12 @@ function SearchOverlay({isOpen,onClose,startups}) {
 
     return searchItems
       .filter((item) => {
-        return [item.title, item.type, item.description]
+        const searchableText = [item.title, item.type, item.description]
           .filter(Boolean)
-          .some((value) => value.toLowerCase().includes(normalizedQuery))
+          .join(' ')
+          .toLowerCase()
+
+        return normalizedQuery.split(/\s+/).every((term) => searchableText.includes(term))
       })
       .slice(0, 8)
   }, [query, searchItems])
@@ -100,7 +104,7 @@ function SearchOverlay({isOpen,onClose,startups}) {
         <div className="search-panel-head">
           <div>
             <p className="search-kicker">Site Search</p>
-            <h2 id="site-search-title">Find pages, tutorials, and startups</h2>
+            <h2 id="site-search-title">Find pages, tutorials, startups, and free resources</h2>
           </div>
           <button type="button" className="search-close" onClick={onClose} aria-label="Close search">
             <X size={20} strokeWidth={2.2} aria-hidden="true" />
@@ -124,7 +128,7 @@ function SearchOverlay({isOpen,onClose,startups}) {
           {!query.trim() && <p className="search-empty">Start typing to search.</p>}
           {query.trim() && filteredResults.length === 0 && <p className="search-empty">No matching results found.</p>}
           {filteredResults.map((result) => (
-            <a
+            <SiteLink
               key={`${result.type}-${result.href}-${result.title}`}
               href={result.href}
               target={result.target}
@@ -135,7 +139,7 @@ function SearchOverlay({isOpen,onClose,startups}) {
               <span className="search-result-type">{result.type}</span>
               <strong>{result.title}</strong>
               <small>{result.description}</small>
-            </a>
+            </SiteLink>
           ))}
         </div>
       </div>

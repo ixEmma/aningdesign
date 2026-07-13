@@ -4,10 +4,10 @@ import NavLink from './NavLink'
 import HeaderIconButton from './HeaderIconButton'
 import MegaMenu from './MegaMenu'
 import SearchOverlay from './SearchOverlay'
+import { SiteLink } from './SiteLink'
 import {mainNavLinks, projectLinks, serviceMegaMenuGroups} from '../data/navigationConfig'
 import {getBlogTopics} from '../services/blogService'
 import {getFeaturedStartups} from '../services/startupService'
-import {getExternalLinkProps} from '../utils/links'
 import './Header.css'
 
 const serviceDropdownGroups = serviceMegaMenuGroups.map((group, index) => ({
@@ -21,18 +21,16 @@ const serviceDropdownGroups = serviceMegaMenuGroups.map((group, index) => ({
 }))
 
 function DropdownLink({item,onNavigate}) {
-  const externalProps = getExternalLinkProps(item.href)
-
   return (
-    <a
+    <SiteLink
       href={item.href}
-      target={item.target || externalProps.target}
-      rel={item.rel || externalProps.rel}
+      target={item.target}
+      rel={item.rel}
       className="nav-dropdown-link"
       onClick={onNavigate}
     >
       {item.label}
-    </a>
+    </SiteLink>
   )
 }
 
@@ -91,10 +89,10 @@ function NavDropdown({link,links = [],groups = [],panelLabel,onNavigate,variant}
       onBlur={handleBlur}
       onMouseEnter={() => setIsDismissed(false)}
     >
-      <a href={link.href} className="nav-link nav-dropdown-trigger" aria-haspopup="true">
+      <SiteLink href={link.href} className="nav-link nav-dropdown-trigger" aria-haspopup="true">
         {link.label}
         <span className="nav-dropdown-chevron" aria-hidden="true"></span>
-      </a>
+      </SiteLink>
       <div className="nav-dropdown-panel" aria-label={panelLabel}>
         {hasGroups ? (
           <div className="nav-dropdown-grid">
@@ -221,9 +219,9 @@ function Header() {
         <header className="site-header">
           <div className="header-container">
             <div className="logo">
-              <a href="/#home" className="logo-link" aria-label="Go to homepage" onClick={closeMegaMenu}>
+              <SiteLink href="/#home" className="logo-link" aria-label="Go to homepage" onClick={closeMegaMenu}>
                 <img src="/images/LOGO-96.png" alt="AningDesign logo" width="96" height="96" decoding="async" />
-              </a>
+              </SiteLink>
             </div>
 
             <div className="available-for-projects-container">

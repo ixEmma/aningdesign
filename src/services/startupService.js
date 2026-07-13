@@ -41,6 +41,7 @@ const normalizeStartup = (startup) => ({
   href: getStartupHref(startup),
   description: getStartupDescription(startup),
   category: startup.category || startup.status || 'Startup',
+  resourceLabel: startup.resourceLabel || 'Free Resource',
   icon: startup.logo || startup.icon || '',
   viewCount: getStartupRank(startup),
   createdAt: getStartupDate(startup)
@@ -69,4 +70,3 @@ export const getStartupSearchItems = async () => {
     href: startup.href
   }))
 }
-

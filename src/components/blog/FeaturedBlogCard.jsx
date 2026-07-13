@@ -26,7 +26,7 @@ function FeaturedBlogCard({ post }) {
       )}
 
       <div className="featured-blog-card__content">
-        <p className="featured-blog-card__eyebrow">Featured article</p>
+        <p className="featured-blog-card__eyebrow">{post.resourceLabel || 'Featured article'}</p>
         <div className="featured-blog-card__meta">
           <span>{post.category}</span>
           <time dateTime={post.date}>{formatPostDate(post.date)}</time>
@@ -38,7 +38,7 @@ function FeaturedBlogCard({ post }) {
         <p className="featured-blog-card__description">{post.description}</p>
 
         <Link to={`/blog/${post.slug}`} className="featured-blog-card__cta">
-          Read article
+          {post.resourceType === 'prompt' ? 'View prompt' : 'Read article'}
           <ArrowUpRight size={16} strokeWidth={2.2} aria-hidden="true" />
         </Link>
       </div>

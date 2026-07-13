@@ -1,5 +1,12 @@
 ---
 type: "seo"
+isFreeResource: true
+resourceType: "prompt"
+resourceLabel: "Free Prompt"
+resourceCategory: "AI Workflows"
+promptTitle: "AssetraX MVP app prompt"
+promptBestFor: "Founders and beginners planning a focused React app MVP"
+canonicalPath: "/blog/how-to-write-mvp-app-prompt"
 title: "How to Write an MVP App Prompt: A Beginner-Friendly Framework"
 description: "Learn how to write a clear MVP app prompt for AI coding tools, with a practical framework and the complete AssetraX personal finance app example."
 category: "AI Workflows"
@@ -34,6 +41,8 @@ featured: true
 A useful MVP app prompt does more than name an idea. It tells an AI coding tool what the product should do, which features belong in the first release, how the data should behave, and where the build should stop.
 
 This guide uses AssetraX, a personal finance control app, as a practical example. The same prompt was used to compare Firebase Studio, Codex, and Claude Code in the [AssetraX AI coding tools test](/blog/idea-to-app-mvp-assetrax-ai-coding-tools-comparison).
+
+Open the live AssetraX app here: [https://assetrax.online/](https://assetrax.online/).
 
 You can copy the full prompt below or use the framework to write a focused brief for your own MVP.
 

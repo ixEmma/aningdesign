@@ -1,4 +1,5 @@
 import { getExternalLinkProps } from '../utils/links'
+import { SiteLink } from './SiteLink'
 import './Footer.css'
 
 function XLogoIcon() {
@@ -70,10 +71,12 @@ const footerProjectLinks = [
 ]
 
 const footerResourceLinks = [
+  { label: 'Free Resources', href: '/free-resources' },
   {
     label: 'Books',
     href: '/books'
   },
+  { label: 'Prompt Library', href: '/free-resources/prompts' },
   { label: 'Tutorials', href: '/blog' }
 ]
 
@@ -106,10 +109,10 @@ function Footer() {
       <div className="footer-content">
         <div className="footer-layout">
           <div className="footer-brand">
-            <a href="/#home" className="footer-brand-mark" aria-label="AningDesign — Home">
+            <SiteLink href="/#home" className="footer-brand-mark" aria-label="AningDesign — Home">
               <img src="/images/LOGO-96.png" alt="" width="96" height="96" loading="lazy" decoding="async" />
               <span>AningDesign</span>
-            </a>
+            </SiteLink>
             <p>Building websites, web apps, tutorials, and digital products.</p>
             <span className="footer-status">
               <span className="footer-status-dot" aria-hidden="true"></span>
@@ -122,7 +125,7 @@ function Footer() {
             <ul className="footer-links">
               {footerMainLinks.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} {...getExternalLinkProps(link.href)}>{link.label}</a>
+                  <SiteLink href={link.href}>{link.label}</SiteLink>
                 </li>
               ))}
             </ul>
@@ -133,9 +136,9 @@ function Footer() {
             <ul className="footer-links">
               {footerProjectLinks.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} {...getLinkAttributes(link)}>
+                  <SiteLink href={link.href} {...getLinkAttributes(link)}>
                     {link.label}
-                  </a>
+                  </SiteLink>
                 </li>
               ))}
             </ul>
@@ -146,9 +149,9 @@ function Footer() {
             <ul className="footer-links">
               {footerResourceLinks.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} {...getLinkAttributes(link)}>
+                  <SiteLink href={link.href} {...getLinkAttributes(link)}>
                     {link.label}
-                  </a>
+                  </SiteLink>
                 </li>
               ))}
             </ul>

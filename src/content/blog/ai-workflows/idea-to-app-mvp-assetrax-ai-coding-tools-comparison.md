@@ -61,7 +61,7 @@ AssetraX is a personal finance app idea designed to help users track spending, i
 
 Watch the full video tutorial here: [Firebase Studio vs Codex vs Claude Code: Building the AssetraX Finance App from One Prompt](https://youtu.be/Zgsijnmwd-o).
 
-You can also use AssetraX here: [https://studio--studio-3214358380-e3942.us-central1.hosted.app/](https://studio--studio-3214358380-e3942.us-central1.hosted.app/).
+Open the live AssetraX app here: [https://assetrax.online/](https://assetrax.online/).
 
 For the related deployment workflow, watch this part here: [https://youtu.be/4OYUpTQG08w](https://youtu.be/4OYUpTQG08w).
 

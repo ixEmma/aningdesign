@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { SiteLink } from './SiteLink'
 import './NavLink.css'
 
 function NavLink({ href, children, onClick }) {
@@ -32,14 +33,14 @@ function NavLink({ href, children, onClick }) {
   }
 
   return (
-    <a 
+    <SiteLink
       href={href} 
       className={`nav-link ${isActive ? 'active' : ''}`}
       onClick={handleClick}
     >
       {isActive && <span className="nav-dot"></span>}
       {children}
-    </a>
+    </SiteLink>
   )
 }
 
