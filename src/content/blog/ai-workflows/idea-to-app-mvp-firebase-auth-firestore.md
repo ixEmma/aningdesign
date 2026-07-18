@@ -1,13 +1,28 @@
 ---
-title: "Idea to App MVP Part 3: Add Google Sign-In and Firestore to a Firebase Web App"
-description: "Continue the Idea to App MVP workflow by adding Google Sign-in authentication and Firestore database support to a Firebase-powered web app after hosting and custom domain setup."
+type: "youtube"
+isFreeResource: true
+resourceType: "guide"
+resourceLabel: "Free Guide"
+resourceCategory: "AI Workflows"
+title: "Firebase Auth and Firestore Setup for an MVP App"
+seoTitle: "Firebase Auth and Firestore Setup for an MVP App"
+description: "Set up Firebase Authentication, Google Sign-In, and Firestore for an MVP app, then connect user access and data storage in a practical workflow."
 category: "AI Workflows"
 date: "2026-07-03"
+updatedDate: "2026-07-14"
 slug: "idea-to-app-mvp-firebase-auth-firestore"
+primaryKeyword: "Firebase Auth and Firestore setup"
+keywordCluster:
+  - Firebase Authentication setup for web apps
+  - Google Sign-In Firebase
+  - Firestore MVP app
+  - React and Firebase development
+servicePage: "/services/react-web-apps"
+relatedService: "/services/startup-websites"
 youtubeUrl: "https://youtu.be/6Q5tjS1L-YI"
 youtubeEmbedUrl: "https://www.youtube.com/embed/6Q5tjS1L-YI"
 thumbnail: "https://img.youtube.com/vi/6Q5tjS1L-YI/maxresdefault.jpg"
-thumbnailAlt: "Firebase Authentication and Firestore tutorial for an AI-built web app MVP"
+thumbnailAlt: "Firebase Authentication and Firestore connected to an AI-built web app MVP"
 tags:
   - Idea to App MVP
   - Firebase Authentication
@@ -17,18 +32,18 @@ tags:
   - AI website workflow
   - ReactJS
   - Firebase backend
+relatedPosts:
+  - idea-to-app-mvp-firebase-hosting-custom-domain
+  - idea-to-app-mvp-assetrax-ai-coding-tools-comparison
+  - how-to-write-mvp-app-prompt
 featured: true
 ---
 
-# Idea to App MVP Part 3: Add Google Sign-In and Firestore to a Firebase Web App
+## Set up Firebase Auth and Firestore for an MVP
 
-## Introduction
+This guide continues the Idea to App MVP series by adding Google Sign-In with Firebase Authentication and connecting Firestore as the database. It starts after the frontend has been deployed with Firebase Hosting and a custom domain.
 
-In this part of the Idea to App MVP series, you continue the Firebase website build by adding Google Sign-in authentication and connecting Firestore as the database. After deploying the website with Firebase Hosting and a custom domain in the previous part, this step turns the hosted frontend into a real Firebase-powered web app.
-
-This tutorial focuses on backend functionality. You will see how to connect frontend code to Firebase services, enable Google Authentication, review Firebase config, create and connect Firestore, save user and project data, and commit the final setup to GitHub.
-
-The goal is to show the next practical step after deployment. A live website is useful, but an MVP starts to feel like an app when users can sign in and the project can store data.
+It is for beginners building a React-style MVP who need user access and persistent data. You will review the Firebase config, enable the Google provider, connect Firestore, save user and project data, test the flow, and commit the working setup.
 
 ## What You Will Learn
 
@@ -44,7 +59,7 @@ The goal is to show the next practical step after deployment. A live website is 
 
 ## Tools Used
 
-![Tools used diagram for Firebase Authentication, Google Sign-in, Firestore, Firebase config, Firebase Console, React, GitHub, and Firebase Hosting](/images/tech-tools-app-setup-diagram.png)
+![Diagram of Firebase Authentication, Google Sign-In, Firestore, React, GitHub, and Firebase Hosting in an MVP workflow](/images/tech-tools-app-setup-diagram.webp)
 
 - Firebase Authentication
 - Google Sign-in provider
@@ -69,6 +84,7 @@ Useful links for the series:
 - Watch Part 1 on YouTube: [https://youtu.be/Zgsijnmwd-o](https://youtu.be/Zgsijnmwd-o)
 - Watch Part 2: [https://youtu.be/4OYUpTQG08w](https://youtu.be/4OYUpTQG08w)
 - Read Part 2: [Deploy AI-Generated Code with Firebase Hosting and a Custom Domain](/blog/idea-to-app-mvp-firebase-hosting-custom-domain)
+- Use the planning framework: [How to write an MVP app prompt](/blog/how-to-write-mvp-app-prompt)
 - Click this link to monitor your finance: [https://assetrax.online/](https://assetrax.online/)
 - Support Aning Design Lab: [https://selar.com/showlove/aningdesignlab](https://selar.com/showlove/aningdesignlab)
 
@@ -167,14 +183,13 @@ At this stage, the MVP has a stronger foundation: it is hosted, connected to a c
 
 You can open the live finance monitoring MVP here: [https://assetrax.online/](https://assetrax.online/).
 
-## Related Tutorials
+## Continue the MVP Series
 
 - [Idea to App MVP Part 1: Firebase Studio vs Codex vs Claude Code Building AssetraX](/blog/idea-to-app-mvp-assetrax-ai-coding-tools-comparison)
 - [Idea to App MVP Part 2: Deploy AI-Generated Code with Firebase Hosting and a Custom Domain](/blog/idea-to-app-mvp-firebase-hosting-custom-domain)
-- [How to Connect a Cloudflare Domain to Netlify Step by Step](/blog/connect-cloudflare-domain-to-netlify)
-- [How to Build and Deploy a Photography Landing Page with OpenAI Codex, React, GitHub and Netlify](/blog/build-deploy-photography-landing-page-react-netlify)
+- [How to write a focused MVP app prompt](/blog/how-to-write-mvp-app-prompt)
 
-## Conclusion
+## Turn Firebase services into a working MVP flow
 
 Firebase Authentication and Firestore are important steps when turning an AI-built website into a working MVP. Hosting makes the app public, but authentication and database support make it interactive and useful.
 
@@ -182,4 +197,4 @@ This part of the series shows how to connect those Firebase backend services wit
 
 If this video helped you, you can support Aning Design Lab here: [Support Aning Design Lab](https://selar.com/showlove/aningdesignlab).
 
-You can also visit AningDesign at [https://aningdesign.com/](https://aningdesign.com/), join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or join the WhatsApp community at [https://chat.whatsapp.com/HzRPHeQ7osYLTMUNrF0Qds](https://chat.whatsapp.com/HzRPHeQ7osYLTMUNrF0Qds).
+You can also visit AningDesign at [https://www.aningdesign.com/](https://www.aningdesign.com/), join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or join the WhatsApp community at [https://chat.whatsapp.com/HzRPHeQ7osYLTMUNrF0Qds](https://chat.whatsapp.com/HzRPHeQ7osYLTMUNrF0Qds).

@@ -164,4 +164,4 @@ These topics connect well because a strong blog post is not only about writing c
 
 Learning how to create a blog post in WordPress is one of the best beginner skills if you want to build websites, share tutorials, or publish content for your brand. This tutorial gives you the full process: theme setup, categories, new posts, titles, content, images, featured images, headings, previewing, and publishing.
 
-Watch the full video on YouTube, subscribe for more beginner-friendly WordPress tutorials, Elementor tutorials, web design tips, and website-building guides, join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or contact AningDesign through [https://aningdesign.com/](https://aningdesign.com/).
+Watch the full video on YouTube, subscribe for more beginner-friendly WordPress tutorials, Elementor tutorials, web design tips, and website-building guides, join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or contact AningDesign through [https://www.aningdesign.com/](https://www.aningdesign.com/).

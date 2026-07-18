@@ -1027,6 +1027,277 @@ export const servicePages = [
       secondaryLabel: 'View startup projects',
       secondaryHref: '/startups'
     }
+  },
+  {
+    slug: 'ai-wordpress-debugging',
+    title: 'AI-Assisted WordPress Debugging',
+    shortTitle: 'WordPress Debugging',
+    path: '/services/ai-wordpress-debugging',
+    kicker: 'AI-assisted WordPress support',
+    h1: 'Fix WordPress Problems Without Hours of Guesswork',
+    intro:
+      'I use Claude, MCP tools, WordPress diagnostics, and a controlled testing process to identify performance, Elementor, SEO, accessibility, and functionality issues, then apply verified fixes with clear rollback protection.',
+    cardDescription:
+      'A controlled WordPress speed optimization and debugging service for Elementor, performance, plugin, caching, accessibility, and technical SEO problems.',
+    heroPrimaryLabel: 'Request a Website Audit',
+    heroSecondaryLabel: 'See how the process works',
+    heroSecondaryHref: '#service-process',
+    seoTitle: 'AI-Assisted WordPress Debugging & Speed Optimization Service | AningDesign',
+    seoDescription:
+      'A WordPress speed optimization service and AI-assisted debugging workflow for Elementor, plugin, caching, technical SEO, accessibility, and website functionality issues.',
+    keywords:
+      'WordPress speed optimization service, WordPress speed optimization services, WordPress page speed optimization service, WordPress performance debugging, Elementor troubleshooting service, AI-assisted WordPress debugging, WordPress troubleshooting service, technical SEO audit service, WordPress website support, website support and maintenance services',
+    overviewTitle: 'WordPress Speed Optimization and Technical Troubleshooting',
+    overview: [
+      'This is a WordPress speed optimization service and AI-assisted debugging workflow for diagnosing Elementor, performance, plugin, caching, accessibility, technical SEO, and functionality problems, then fixing them without guesswork.',
+      'When a page is slow or a layout breaks, the hard part is usually finding the real cause. I combine WordPress diagnostics, Lighthouse and Core Web Vitals data, and a careful review process to locate the source before touching a single setting.',
+      'The goal is practical: reduce hours of manual troubleshooting, diagnose issues faster, and apply human-reviewed changes that are verified and rollback-ready.'
+    ],
+    overviewCta: { label: 'Request a website audit', href: '/contact', variant: 'pill' },
+    includedTitle: 'What I Can Audit and Fix',
+    includedStyle: 'feature',
+    included: [
+      {
+        title: 'WordPress performance',
+        description: 'LCP, TBT, CLS, and FCP, plus images, WebP, fonts, caching, and scripts, reviewed against Lighthouse and Core Web Vitals.'
+      },
+      {
+        title: 'Elementor troubleshooting',
+        description: 'Containers and responsive layouts, widgets, templates, menus, and carousels, plus HTML widgets, custom CSS, and rendering problems.'
+      },
+      {
+        title: 'Plugin and cache conflicts',
+        description: 'Optimization stacks such as SiteGround and EWWW, conflicting lazy loading, and CSS or JavaScript execution problems.'
+      },
+      {
+        title: 'Accessibility',
+        description: 'Heading structure, main landmarks and skip links, color contrast, labels, and keyboard access.'
+      },
+      {
+        title: 'Technical SEO',
+        description: 'A technical SEO audit covering crawlable links, metadata and canonical tags, heading hierarchy, alt text, and schema checks.'
+      },
+      {
+        title: 'Forms and functionality',
+        description: 'Contact forms, buttons and navigation, popups, links, and interactive elements that have stopped working.'
+      }
+    ],
+    midPageCta: {
+      heading: 'Not sure what is slowing your site down?',
+      text: 'Share the website, the symptoms, and your current hosting and plugins. I will scope a read-only audit before any changes are made.',
+      primaryLabel: 'Request a Website Audit',
+      primaryHref: '/contact'
+    },
+    audienceTitle: 'Who This Service Is For',
+    audience: [
+      'Business owners with a slow WordPress website',
+      'Elementor designers facing difficult technical problems',
+      'Agencies that need troubleshooting support',
+      'Website owners with unstable optimization settings',
+      'Teams receiving poor Lighthouse results',
+      'Developers who want a second diagnostic review'
+    ],
+    audienceStyle: 'list',
+    useCasesTitle: 'When WordPress Problems Start Consuming Your Time',
+    useCasesStyle: 'tonal',
+    useCasesCta: { label: 'Get these problems diagnosed', href: '/contact', variant: 'pill' },
+    useCases: [
+      {
+        title: 'Slow pages and low scores',
+        description: 'Pages load slowly and Lighthouse or Core Web Vitals scores stay low no matter what you try.'
+      },
+      {
+        title: 'Layouts break across devices',
+        description: 'Elementor sections look right on desktop but shift, overflow, or clip on tablet and mobile.'
+      },
+      {
+        title: 'Heavy media and remote fonts',
+        description: 'Large images and remotely loaded fonts delay the first paint and push back the largest content.'
+      },
+      {
+        title: 'Plugin, cache, and script conflicts',
+        description: 'Caching, CSS, or JavaScript from different plugins collide and cause unpredictable behavior.'
+      },
+      {
+        title: 'Features stop working',
+        description: 'Menus, forms, carousels, or popups break after an update or an optimization change.'
+      },
+      {
+        title: 'One fix breaks another',
+        description: 'A change improves one metric but quietly breaks a feature, with unclear errors and no obvious source.'
+      }
+    ],
+    contentSections: [
+      {
+        id: 'service-safety',
+        kicker: 'Safety',
+        title: 'Every Change Is Tested and Reversible',
+        panelStyle: 'trust',
+        panelCta: {
+          note: 'Every change is documented with a clear rollback path.',
+          label: 'Start with a read-only audit',
+          href: '/contact',
+          variant: 'pill'
+        },
+        body: [
+          'Debugging should never put your live site at risk. Before anything changes, I back up important states, investigate in read-only mode, and confirm the real cause.',
+          'Changes are applied one at a time and tested before they are kept, so improvements are measurable and regressions are easy to reverse.'
+        ],
+        items: [
+          { title: 'Backup before important changes', description: 'A restore point is captured before any change that could affect the live site.' },
+          { title: 'Read-only investigation first', description: 'The cause is confirmed before any setting is touched.' },
+          { title: 'One change at a time', description: 'No batching several edits together, so each result is clear.' },
+          { title: 'No blind plugin disabling', description: 'Plugins are only changed with a reason and a rollback path.' },
+          { title: 'No redesign unless approved', description: 'Your layout and content stay as they are unless you ask for changes.' },
+          { title: 'Functional testing after each fix', description: 'Desktop, tablet, mobile, console, and key features are checked.' },
+          { title: 'Documented rollback steps', description: 'Every change has a clear way back if it does not help.' },
+          { title: 'Clear before-and-after reporting', description: 'You see what changed and what it improved.' }
+        ]
+      },
+      {
+        id: 'service-results',
+        kicker: 'Results',
+        title: 'Built Around Measurable Results',
+        body:
+          'Performance work is verified with measurable Lighthouse audits rather than assumptions. The result below was captured during real website optimization work, after reviewing page speed, accessibility, technical SEO, and the underlying technical implementation.',
+        metrics: [
+          { score: '90', label: 'Performance' },
+          { score: '96', label: 'Accessibility' },
+          { score: '100', label: 'Best Practices' },
+          { score: '100', label: 'SEO' }
+        ],
+        items: [
+          'Largest Contentful Paint (LCP) reduced from over 7 seconds to roughly 2 to 3 seconds',
+          'Core Web Vitals and WordPress performance stayed stable across repeated audits',
+          'Website functionality and visual design were fully preserved'
+        ],
+        note:
+          'Results vary depending on hosting, plugins, page complexity, third-party scripts, and the existing condition of the website. Specific scores are not guaranteed for every site.',
+        proofImage: {
+          src: '/images/lighthouse-audit-wordpress-optimization.webp',
+          alt: 'Lighthouse audit showing 90 performance, 96 accessibility, 100 Best Practices, and 100 SEO.',
+          width: 957,
+          height: 421,
+          caption: 'Documented Lighthouse audit from real WordPress performance and technical SEO optimization work.'
+        },
+        proofCta: { label: 'Request a Website Audit', href: '/contact', variant: 'solid' }
+      },
+      {
+        id: 'service-deliverables',
+        kicker: 'Deliverables',
+        title: 'What You Receive',
+        listStyle: 'rows',
+        body: 'Each engagement is documented so you can see what was found, what changed, and what to do next.',
+        items: [
+          { title: 'Website audit', description: 'A read-only review of performance, Elementor, plugins, accessibility, and technical SEO.' },
+          { title: 'Issue-priority list', description: 'Problems ranked by impact so the important ones are handled first.' },
+          { title: 'Before-and-after Lighthouse results', description: 'Clear metrics captured around each meaningful change.' },
+          { title: 'Approved fixes', description: 'Only changes you have approved, applied one at a time.' },
+          { title: 'Functional verification', description: 'Checks across desktop, tablet, mobile, and key features.' },
+          { title: 'Rollback documentation', description: 'A clear way to reverse any change that does not help.' },
+          { title: 'Final technical report', description: 'A summary of findings, changes, and outcomes.' },
+          { title: 'Recommendations for remaining issues', description: 'Guidance on anything left to address later.' }
+        ]
+      }
+    ],
+    processTitle: 'A Controlled AI-Assisted Debugging Process',
+    processStyle: 'timeline',
+    processCta: { label: 'Start the audit process', href: '/contact', variant: 'solid' },
+    process: [
+      {
+        title: 'Connect and inspect',
+        description: 'Securely inspect the WordPress site, settings, templates, and active tools. Claude and MCP connectors are AI helpers that let me read the site and diagnostics safely, without acting on their own.'
+      },
+      {
+        title: 'Run a read-only audit',
+        description: 'Identify the real cause with Lighthouse, Core Web Vitals, and console data before making any changes.'
+      },
+      {
+        title: 'Approve one change',
+        description: 'Apply one controlled fix at a time instead of changing several settings together.'
+      },
+      {
+        title: 'Verify the result',
+        description: 'Check desktop, tablet, mobile, console errors, functionality, and Lighthouse metrics.'
+      },
+      {
+        title: 'Keep or roll back',
+        description: 'Keep changes that improve the site and reverse anything that causes a regression.'
+      }
+    ],
+    examplesTitle: 'Related AI and Elementor workflow guides',
+    examples: [
+      {
+        title: 'Claude AI with Elementor and WordPress MCP',
+        description: 'How Claude, Claude Code, and the WordPress MCP workflow fit into a practical, human-reviewed website process.',
+        href: '/blog/claude-ai-elementor-wordpress-mcp-workflow'
+      },
+      {
+        title: 'Claude Skills for real web design work',
+        description: 'My real Claude Code workflow for WordPress, Elementor, frontend design, and debugging.',
+        href: '/blog/claude-skills-real-web-design-workflow'
+      },
+      {
+        title: 'Fix a bad website with Elementor',
+        description: 'A step-by-step Elementor troubleshooting and cleanup walkthrough for a messy WordPress site.',
+        href: '/blog/fix-bad-website-design-wordpress-elementor'
+      }
+    ],
+    relatedServices: ['wordpress-websites', 'website-design', 'react-web-apps'],
+    faqStyle: 'rows',
+    faqIntro: 'Access, safety, scope, and results — the practical details before an audit starts.',
+    faqCta: { label: 'Ask about your website', href: '/contact', variant: 'solid' },
+    faqs: [
+      {
+        question: 'Do you need my WordPress login?',
+        answer:
+          'Usually yes, an admin or a suitable diagnostic access is needed to inspect settings and templates. Access is used carefully, and a backup is taken before important changes.'
+      },
+      {
+        question: 'Can you work with Elementor websites?',
+        answer:
+          'Yes. Elementor containers, responsive layouts, widgets, templates, custom CSS, and HTML widgets are a core part of this Elementor troubleshooting service.'
+      },
+      {
+        question: 'Will the fixes change my website design?',
+        answer:
+          'No, not unless you ask for it. The focus is diagnosis and safe fixes. Your layout and content stay as they are unless a redesign is approved.'
+      },
+      {
+        question: 'Can every website reach a 90+ performance score?',
+        answer:
+          'No. Hosting, plugins, and design complexity all affect what is realistic. I aim for meaningful, stable improvements rather than a guaranteed number.'
+      },
+      {
+        question: 'What happens if a fix causes another problem?',
+        answer:
+          'Every change is tested and documented with rollback steps, so anything that causes a regression can be reversed quickly.'
+      },
+      {
+        question: 'Do you work with SiteGround and caching plugins?',
+        answer:
+          'Yes. Host-level tools such as SiteGround and common caching and optimization plugins are part of the WordPress performance debugging process.'
+      },
+      {
+        question: 'Can you fix accessibility and SEO warnings?',
+        answer:
+          'Yes. A technical SEO audit and accessibility checks cover headings, landmarks, contrast, labels, metadata, alt text, and schema, within what the platform allows.'
+      },
+      {
+        question: 'How long does the audit take?',
+        answer:
+          'A focused read-only audit is usually quick, while the fixing stage depends on the number and complexity of issues. I confirm scope before starting.'
+      }
+    ],
+    finalCta: {
+      label: 'AI-assisted WordPress debugging',
+      heading: 'Stop Guessing What Is Slowing Down Your Website',
+      text: 'Get a structured WordPress speed optimization service and audit, identify the real cause, and apply fixes that are tested before they are kept. WordPress, Elementor, performance, accessibility, and technical SEO.',
+      primaryLabel: 'Request a Website Audit',
+      primaryHref: '/contact',
+      secondaryLabel: 'View all services',
+      secondaryHref: '/services'
+    }
   }
 ]
 
@@ -1046,19 +1317,52 @@ export const servicesIndexPage = {
   },
   directoryIntro:
     'Start with the card that matches the output you need. The service page will show scope, process, proof, and next action.',
+  directoryGroups: [
+    {
+      label: 'Website & product development',
+      columns: 2,
+      slugs: ['website-design', 'wordpress-websites', 'react-web-apps', 'startup-websites', 'ai-wordpress-debugging'],
+      featured: 'ai-wordpress-debugging',
+      featuredMeta: {
+        label: 'Specialized service',
+        note: 'WordPress performance, Elementor, accessibility, and technical SEO debugging.'
+      }
+    },
+    {
+      label: 'Brand & visual communication',
+      columns: 3,
+      slugs: ['graphic-design', 'branding', 'social-media-design']
+    },
+    {
+      label: 'Experience design',
+      columns: 1,
+      slugs: ['ui-ux-design']
+    }
+  ],
+  directoryCta: {
+    heading: 'Not sure which service fits?',
+    text: 'Send the goal and deadline and I will point you to the right path.',
+    label: 'Help me choose',
+    href: '/contact',
+    variant: 'solid'
+  },
   seoTitle: 'Services | Website Design, Branding, UI/UX and Graphic Design',
   seoDescription:
     'Explore AningDesign services for website design, WordPress websites, React web apps, graphic design, branding, social media design, UI/UX, and startup MVPs.',
   keywords:
     'website design services, WordPress website design, React web app development, graphic design services, branding services, social media design, UI UX design, startup MVPs',
   audienceTitle: 'Who these services are for',
+  audienceStyle: 'list',
   audience: [
     'Service businesses that need clearer websites',
     'Founders launching offers, MVPs, or web apps',
     'Brands that need consistent visuals',
     'Teams improving screens, campaigns, or content'
   ],
+  audienceCta: { label: 'Discuss your project', href: '/contact', variant: 'solid' },
   processTitle: 'Process',
+  processStyle: 'timeline',
+  processCta: { label: 'Start with your project goal', href: '/contact', variant: 'solid' },
   process: [
     {
       title: 'Choose a path',
@@ -1078,7 +1382,20 @@ export const servicesIndexPage = {
     }
   ],
   examplesTitle: 'Related projects',
+  examplesStyle: 'showcase',
   examples: [
+    {
+      title: 'Design portfolio',
+      description: 'Graphic design, branding, campaign visuals, and brand assets.',
+      href: 'https://www.behance.net/emmaaning',
+      featured: true,
+      image: {
+        src: '/images/work1.webp',
+        alt: 'Collage of AningDesign graphic design work: campaign posters, event flyers, and brand visuals',
+        width: 1024,
+        height: 320
+      }
+    },
     {
       title: 'Website projects',
       description: 'Selected website builds and service-focused project examples.',
@@ -1088,14 +1405,12 @@ export const servicesIndexPage = {
       title: 'Free resources',
       description: 'Free web apps and practical digital tools from AningDesign.',
       href: '/startups'
-    },
-    {
-      title: 'Design portfolio',
-      description: 'Graphic design, branding, campaign visuals, and brand assets.',
-      href: 'https://www.behance.net/emmaaning'
     }
   ],
   relatedServices: servicePages.map((service) => service.slug),
+  faqStyle: 'rows',
+  faqIntro: 'Choosing, combining, and starting a project — the practical details before we scope.',
+  faqCta: { label: 'Ask about your project', href: '/contact', variant: 'solid' },
   faqs: [
     {
       question: 'Which service should I start with?',

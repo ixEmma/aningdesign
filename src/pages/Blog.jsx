@@ -6,6 +6,7 @@ import BlogNewsletter from '../components/blog/BlogNewsletter'
 import FeaturedBlogCard from '../components/blog/FeaturedBlogCard'
 import BlogGrid from '../components/blog/BlogGrid'
 import { filterPostsByArchiveCategory, filterPostsBySearch, getAllPosts, getCategories } from '../utils/blogUtils'
+import { getDomain } from '../utils/domain'
 import { useSeo } from '../utils/seo'
 import './Blog.css'
 
@@ -50,7 +51,7 @@ function Blog() {
   useSeo({
     title: 'Blog Tutorials | Aning Design Lab',
     description: "Read practical WordPress, software development, web design, SEO, and website-building tutorials from Aning Design Lab, connected to Emmanuel Aning's YouTube guides.",
-    canonical: 'https://aningdesign.com/blog',
+    canonical: `${getDomain()}/blog`,
     keywords: 'web design tutorials, WordPress tutorials, React tutorials, SEO tutorials, AI web design workflow, software development tutorials, Aning Design Lab',
     type: 'website'
   })

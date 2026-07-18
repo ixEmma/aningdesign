@@ -5,7 +5,7 @@ import './Feedback.css'
 
 const FEEDBACK_SUBMIT_ENDPOINT = 'https://formsubmit.co/aningemma1@gmail.com'
 const FEEDBACK_AJAX_ENDPOINT = 'https://formsubmit.co/ajax/aningemma1@gmail.com'
-const THANK_YOU_URL = 'https://aningdesign.com/thank-you'
+const THANK_YOU_URL = 'https://www.aningdesign.com/thank-you'
 
 function FeedbackButton({ onClick, isOpen }) {
   return (

@@ -1,13 +1,23 @@
 ---
-title: "How My Claude AI Designs with Elementor to Build WordPress Websites"
-description: "Learn how I connected Claude AI to WordPress using MCP and the Novamira plugin, then used Claude Code, CLAUDE.md files, and custom skills to build Elementor landing pages."
+type: "youtube"
+title: "How to Use Claude AI with Elementor and WordPress MCP"
+seoTitle: "How to Use Claude AI with Elementor and WordPress MCP"
+description: "Learn how Claude AI, Elementor, WordPress MCP, Claude Code, and custom skills fit into a practical website workflow with setup and review steps."
 category: "WordPress"
 date: "2026-05-17"
+updatedDate: "2026-07-14"
 slug: "claude-ai-elementor-wordpress-mcp-workflow"
+primaryKeyword: "Claude AI Elementor WordPress MCP workflow"
+keywordCluster:
+  - Claude AI with Elementor
+  - WordPress MCP workflow
+  - Claude Code for WordPress
+  - AI-assisted Elementor workflow
+servicePage: "/services/wordpress-websites"
 youtubeUrl: "https://youtu.be/cy6bCzCIMP0"
 youtubeEmbedUrl: "https://www.youtube.com/embed/cy6bCzCIMP0"
 thumbnail: "https://img.youtube.com/vi/cy6bCzCIMP0/maxresdefault.jpg"
-thumbnailAlt: "Claude AI Elementor WordPress MCP workflow tutorial thumbnail"
+thumbnailAlt: "Claude AI, Elementor, and WordPress MCP workflow shown in the video tutorial"
 tags:
   - Claude AI
   - Claude Code
@@ -17,18 +27,18 @@ tags:
   - AI Web Design
   - Landing Page Design
   - Claude Skills
+relatedPosts:
+  - claude-skills-real-web-design-workflow
+  - codex-wordpress-elementor-workflow
+  - fix-bad-website-design-wordpress-elementor
 featured: true
 ---
 
-# How My Claude AI Designs with Elementor to Build WordPress Websites
+## How the Claude AI and Elementor workflow works
 
-## Introduction
+This tutorial shows how I connected Claude AI to WordPress through MCP and the Novamira plugin, then used Claude Code, `CLAUDE.md` project files, and custom Claude Skills to support Elementor website design.
 
-This tutorial shows how I connected Claude AI to WordPress using MCP and the Novamira plugin, then used Claude Code, CLAUDE.md project files, and custom Claude Skills to support Elementor website design.
-
-If you build WordPress websites, Elementor landing pages, or client websites and want a smarter AI workflow, this guide will help you understand the full setup. The goal is not to replace your judgment as a designer. The goal is to give Claude better access, better instructions, and a clearer workflow so it can help you build faster and more intentionally.
-
-The tutorial covers both the creative side of AI web design and the technical side of connecting Claude to WordPress.
+It is for WordPress designers and developers who want a controlled AI-assisted workflow for landing pages or client websites. You will see how the connection, project instructions, design skills, and review process fit together before Claude is allowed to support real WordPress changes.
 
 ## What You Will Learn
 
@@ -151,6 +161,8 @@ This Claude AI Elementor WordPress workflow matters because it gives web designe
 
 That can help you build faster, structure pages better, and spot issues earlier. It also helps you create repeatable workflows for landing pages instead of starting from scratch every time.
 
+For a second approach to the same problem, compare this setup with my [Codex, WordPress, and Elementor workflow](/blog/codex-wordpress-elementor-workflow). If the page already exists but needs stronger structure, use the [WordPress and Elementor redesign tutorial](/blog/fix-bad-website-design-wordpress-elementor) as the practical review stage.
+
 ## Common Beginner Mistakes
 
 - Skipping CLAUDE.md documentation
@@ -167,16 +179,15 @@ By the end of the tutorial, you should understand how Claude AI can connect with
 
 You should also understand that this workflow is strongest when AI is guided by clear project rules, careful testing, and human design judgment.
 
-## Related Tutorials
+## Continue Learning
 
-- Claude Skills for web design workflows
-- WordPress MCP workflows
-- Elementor landing page design
-- AI web design systems
-- Frontend design systems
+- [Claude Skills for a real web design workflow](/blog/claude-skills-real-web-design-workflow)
+- [Codex, WordPress, and Elementor workflow](/blog/codex-wordpress-elementor-workflow)
+- [How to fix a weak WordPress design with Elementor](/blog/fix-bad-website-design-wordpress-elementor)
+- [Plan a WordPress website redesign](/blog/plan-wordpress-website-redesign)
 
-## Conclusion
+## Use Claude as a guided WordPress assistant
 
 Claude AI can become a practical WordPress and Elementor assistant when it has the right setup, documentation, and workflow. With MCP, Novamira, Claude Code, CLAUDE.md files, and custom skills, you can build a more structured AI web design process for real projects.
 
-Watch the full video on YouTube, subscribe for more WordPress and AI web design tutorials, join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or contact AningDesign through [https://aningdesign.com/](https://aningdesign.com/).
+Watch the full video on YouTube, subscribe for more WordPress and AI web design tutorials, join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or contact AningDesign through [https://www.aningdesign.com/](https://www.aningdesign.com/).

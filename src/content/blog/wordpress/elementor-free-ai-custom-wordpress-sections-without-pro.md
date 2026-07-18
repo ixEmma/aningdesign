@@ -192,4 +192,4 @@ Elementor Free can still be powerful when you combine it with simple HTML, CSS, 
 
 If this video helped you, you can support Aning Design Lab here: [Support Aning Design Lab](https://selar.com/showlove/aningdesignlab).
 
-You can also contact AningDesign through [https://aningdesign.com/](https://aningdesign.com/), join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or join the WhatsApp community at [https://chat.whatsapp.com/HzRPHeQ7osYLTMUNrF0Qds](https://chat.whatsapp.com/HzRPHeQ7osYLTMUNrF0Qds).
+You can also contact AningDesign through [https://www.aningdesign.com/](https://www.aningdesign.com/), join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or join the WhatsApp community at [https://chat.whatsapp.com/HzRPHeQ7osYLTMUNrF0Qds](https://chat.whatsapp.com/HzRPHeQ7osYLTMUNrF0Qds).

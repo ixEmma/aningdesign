@@ -5,7 +5,7 @@ import { getExternalLinkProps } from '../../utils/links'
 const youtubeUrl = 'https://www.youtube.com/channel/UCUBBcAJYllM2DVZ46Wkepxg'
 
 const founderLinks = [
-  { label: 'Website', href: 'https://aningdesign.com/', icon: Globe2 },
+  { label: 'Website', href: 'https://www.aningdesign.com/', icon: Globe2 },
   { label: 'YouTube', href: youtubeUrl, icon: Youtube },
   { label: 'Telegram', href: 'https://t.me/AningDzn', icon: Send },
   { label: 'GitHub', href: 'https://github.com/ixEmma', icon: Github }

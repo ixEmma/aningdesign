@@ -9,15 +9,18 @@ import PromptBlock from '../components/resources/PromptBlock'
 import { getPostBySlug, getRelatedPosts, loadPostBySlug, formatPostDate } from '../utils/blogUtils'
 import { servicePages, getServicePageBySlug } from '../data/servicePages'
 import { getExternalLinkProps, isExternalLink } from '../utils/links'
+import { getDomain } from '../utils/domain'
 import { useSeo } from '../utils/seo'
 import './BlogPost.css'
 
 const getBlogImageUrl = (thumbnail) => {
-  if (!thumbnail) return 'https://aningdesign.com/images/LOGO.png'
-  if (/^https?:\/\//i.test(thumbnail)) return thumbnail
-  if (thumbnail.startsWith('/')) return `https://aningdesign.com${thumbnail}`
+  const domain = getDomain()
 
-  return `https://aningdesign.com/${thumbnail}`
+  if (!thumbnail) return `${domain}/images/LOGO.png`
+  if (/^https?:\/\//i.test(thumbnail)) return thumbnail
+  if (thumbnail.startsWith('/')) return `${domain}${thumbnail}`
+
+  return `${domain}/${thumbnail}`
 }
 
 const getUniqueKeywords = (keywords) => {
@@ -386,6 +389,7 @@ function BlogPostFinalCta({ post, serviceLink, youtubeWatchUrl, ctaDescription }
 }
 
 function BlogPostContent({ post }) {
+  const domain = getDomain()
   const postImage = getBlogImageUrl(post.thumbnail)
   const postKeywords = getPostKeywords(post)
   const postKeywordString = postKeywords.join(', ')
@@ -422,7 +426,7 @@ function BlogPostContent({ post }) {
   useSeo({
     title: post.seoTitle || `${post.title} | Aning Design Lab`,
     description: post.description,
-    canonical: `https://aningdesign.com${canonicalPath}`,
+    canonical: `${domain}${canonicalPath}`,
     image: postImage,
     keywords: postKeywordString,
     type: 'article'
@@ -445,8 +449,8 @@ function BlogPostContent({ post }) {
       headline: post.title,
       description: post.description,
       datePublished: post.date,
-      dateModified: post.date,
-      mainEntityOfPage: `https://aningdesign.com${canonicalPath}`,
+      dateModified: post.updatedDate || post.date,
+      mainEntityOfPage: `${domain}${canonicalPath}`,
       image: postImage,
       keywords: postKeywordString,
       ...(post.isFreeResource ? {
@@ -455,22 +459,22 @@ function BlogPostContent({ post }) {
       } : {}),
       author: {
         '@type': 'Person',
-        '@id': 'https://aningdesign.com/#person',
+        '@id': `${domain}/#person`,
         name: 'Emmanuel Aning'
       },
       publisher: {
         '@type': 'Organization',
-        '@id': 'https://aningdesign.com/#business',
+        '@id': `${domain}/#business`,
         name: 'AningDesign',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://aningdesign.com/images/LOGO.png'
+          url: `${domain}/images/LOGO.png`
         }
       }
     })
 
     return () => script.remove()
-  }, [post, postImage, postKeywordString])
+  }, [canonicalPath, domain, post, postImage, postKeywordString])
 
   return (
     <main className="blog-post-page">

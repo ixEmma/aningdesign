@@ -163,4 +163,4 @@ You should also understand the basic safety habits needed when working with AI c
 
 Clawbot can become a useful AI coding assistant when it is installed, configured, and tested properly. The important part is not only getting the extension to run, but understanding how provider setup, API keys, project context, refactoring, debugging, and remote interaction fit into a real developer workflow.
 
-You can contact AningDesign through [https://aningdesign.com/](https://aningdesign.com/), join the Telegram community at [https://t.me/AningDzn](https://t.me/AningDzn), or join the WhatsApp community at [https://chat.whatsapp.com/HzRPHeQ7osYLTMUNrF0Qds?mode=wwt](https://chat.whatsapp.com/HzRPHeQ7osYLTMUNrF0Qds?mode=wwt).
+You can contact AningDesign through [https://www.aningdesign.com/](https://www.aningdesign.com/), join the Telegram community at [https://t.me/AningDzn](https://t.me/AningDzn), or join the WhatsApp community at [https://chat.whatsapp.com/HzRPHeQ7osYLTMUNrF0Qds?mode=wwt](https://chat.whatsapp.com/HzRPHeQ7osYLTMUNrF0Qds?mode=wwt).

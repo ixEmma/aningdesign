@@ -1,13 +1,23 @@
 ---
-title: "How to Connect a Cloudflare Domain to Netlify Step by Step"
-description: "Learn how to connect a Cloudflare domain to Netlify step by step. This guide explains DNS, CNAME records, custom domain setup, Netlify verification, and SSL for your website."
+type: "youtube"
+title: "How to Connect a Cloudflare Domain to Netlify"
+seoTitle: "How to Connect a Cloudflare Domain to Netlify"
+description: "Connect a Cloudflare-managed domain to Netlify by setting DNS records, verifying the domain, enabling SSL, and testing the root and www versions."
 category: "React"
 date: "2026-06-05"
+updatedDate: "2026-07-14"
 slug: "connect-cloudflare-domain-to-netlify"
+primaryKeyword: "connect Cloudflare domain to Netlify"
+keywordCluster:
+  - Cloudflare Netlify DNS setup
+  - Netlify custom domain setup
+  - CNAME record for Netlify
+  - Netlify SSL setup
+servicePage: "/services/react-web-apps"
 youtubeUrl: "https://youtu.be/IgiGB98V81s"
 youtubeEmbedUrl: "https://www.youtube.com/embed/IgiGB98V81s"
 thumbnail: "https://img.youtube.com/vi/IgiGB98V81s/maxresdefault.jpg"
-thumbnailAlt: "How to connect a Cloudflare domain to Netlify tutorial thumbnail"
+thumbnailAlt: "Cloudflare DNS and Netlify custom domain setup shown in the tutorial"
 tags:
   - Connect Cloudflare domain to Netlify
   - Cloudflare domain setup
@@ -20,18 +30,18 @@ tags:
   - Netlify SSL setup
   - Custom domain not working Netlify
   - Cloudflare Netlify DNS tutorial
+relatedPosts:
+  - idea-to-app-mvp-firebase-hosting-custom-domain
+  - website-launch-checklist
+  - build-deploy-photography-landing-page-react-netlify
 featured: true
 ---
 
-# How to Connect a Cloudflare Domain to Netlify Step by Step
-
-## Introduction
+## Connect Cloudflare DNS to Netlify
 
 If your Netlify website is live but your custom domain is not opening, the issue is usually your DNS records. This guide shows you how to connect a Cloudflare domain to Netlify correctly.
 
-In this tutorial, you will learn how to connect a domain managed in Cloudflare to a website hosted on Netlify. The process includes adding the custom domain in Netlify, opening Cloudflare DNS settings, adding the correct CNAME records, checking domain verification, and making sure SSL is ready.
-
-This guide is beginner-friendly, so you do not need to be a DNS expert. The goal is to understand what each record does and how to fix a Netlify custom domain that is not working.
+It is for beginners whose domain uses Cloudflare DNS while the website is hosted on Netlify. You will add the domain in Netlify, update the required DNS records in Cloudflare, check for conflicts, verify SSL, and test both the root and `www` versions.
 
 ## What You Will Learn
 
@@ -219,17 +229,17 @@ By the end of this tutorial, you should understand how to point a Cloudflare-man
 
 You should also understand why DNS records matter, why CNAME targets must be correct, and why a custom domain can fail even when the Netlify website itself is already live.
 
-## Related Tutorials
+## Continue Learning
 
 - [How to Build and Deploy a Photography Landing Page with OpenAI Codex, React, GitHub and Netlify](/blog/build-deploy-photography-landing-page-react-netlify)
-- [How to Install WordPress Locally Using XAMPP: Beginner Step-by-Step Guide](/blog/how-to-install-wordpress-locally-using-xampp)
-- [My Codex to WordPress Workflow for Building Elementor Websites Faster](/blog/codex-wordpress-elementor-workflow)
-- [Claude Skills Explained: My Real Claude Code Workflow for WordPress, Elementor and Frontend Design](/blog/claude-skills-real-web-design-workflow)
+- [Deploy an MVP with Firebase Hosting and a custom domain](/blog/idea-to-app-mvp-firebase-hosting-custom-domain)
+- [Use the website launch checklist before going live](/blog/website-launch-checklist)
+- [Review the WordPress launch checklist for a CMS deployment](/blog/wordpress-website-launch-checklist)
 
-## Conclusion
+## Keep DNS changes focused and verifiable
 
 Connecting a Cloudflare domain to Netlify becomes much easier when you understand the flow: Netlify hosts the website, Cloudflare controls the DNS records, and SSL makes the final domain open securely with HTTPS.
 
-If you want more practical website setup, DNS, deployment, WordPress, React, and web design tutorials, watch the full video on Aning Design Lab and explore more guides on [aningdesign.com](https://aningdesign.com/).
+If you want more practical website setup, DNS, deployment, WordPress, React, and web design tutorials, watch the full video on Aning Design Lab and explore more guides on [aningdesign.com](https://www.aningdesign.com/).
 
-You can also contact AningDesign through [https://aningdesign.com/](https://aningdesign.com/), join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or support the work at [https://selar.com/showlove/aningdesignlab](https://selar.com/showlove/aningdesignlab).
+You can also contact AningDesign through [https://www.aningdesign.com/](https://www.aningdesign.com/), join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or support the work at [https://selar.com/showlove/aningdesignlab](https://selar.com/showlove/aningdesignlab).

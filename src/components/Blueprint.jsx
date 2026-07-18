@@ -18,7 +18,7 @@ const blueprintFeatures = [
   {
     title: 'React & Frontend Engineering',
     description:
-      'Component-based interfaces, responsive layouts, clean UI systems, and optimized frontend builds designed for modern business websites.',
+      'Component-based interfaces, responsive layouts, Firebase integrations, and optimized frontend builds for websites and practical web apps.',
     icon: PanelsTopLeft
   },
   {
@@ -64,7 +64,7 @@ function Blueprint() {
           </h2>
           <p>
             We combine results-driven web design, frontend development, WordPress expertise, and
-            AI-assisted workflows to create digital experiences that feel premium, load fast, and
+            AI-assisted workflows to create websites and web apps that feel premium, load fast, and
             support real business goals.
           </p>
 

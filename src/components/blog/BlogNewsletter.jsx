@@ -4,7 +4,7 @@ import './BlogNewsletter.css'
 
 const NEWSLETTER_SUBMIT_ENDPOINT = 'https://formsubmit.co/aningemma1@gmail.com'
 const NEWSLETTER_AJAX_ENDPOINT = 'https://formsubmit.co/ajax/aningemma1@gmail.com'
-const THANK_YOU_URL = 'https://aningdesign.com/thank-you'
+const THANK_YOU_URL = 'https://www.aningdesign.com/thank-you'
 
 function BlogNewsletter({
   source = 'blog',

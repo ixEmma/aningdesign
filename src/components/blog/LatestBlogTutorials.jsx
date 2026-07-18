@@ -15,8 +15,8 @@ function LatestBlogTutorials() {
           <span className="latest-blog-tutorials-badge">Written tutorials</span>
           <h2 id="latest-blog-tutorials-title">Latest Blog Tutorials</h2>
           <p>
-            Step-by-step written guides connected to the YouTube channel, built for WordPress,
-            web design, SEO, and beginner-friendly website workflows.
+            Step-by-step tutorials and free resources for WordPress, React and Firebase,
+            web design, SEO, and practical AI-assisted workflows.
           </p>
         </div>
 
@@ -24,6 +24,7 @@ function LatestBlogTutorials() {
 
         <div className="latest-blog-tutorials-actions">
           <Link to="/blog">View All Blog Tutorials</Link>
+          <Link to="/free-resources">Explore Free Resources</Link>
         </div>
       </div>
     </section>

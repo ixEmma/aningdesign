@@ -83,6 +83,7 @@ export const normalizePostMetadata = ({ sourcePath, raw }) => {
     description: data.description || '',
     category: data.category || 'Tutorials',
     date: data.date || '',
+    updatedDate: data.updatedDate || data.date || '',
     slug,
     type: inferPostType(data),
     primaryKeyword: data.primaryKeyword || '',

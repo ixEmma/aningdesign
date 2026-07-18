@@ -22,4 +22,4 @@ Allow: /
 User-agent: Claude-SearchBot
 Allow: /
 
-Sitemap: https://aningdesign.com/sitemap.xml
+Sitemap: https://www.aningdesign.com/sitemap.xml

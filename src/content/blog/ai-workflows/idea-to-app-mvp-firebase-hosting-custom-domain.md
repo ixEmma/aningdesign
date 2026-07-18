@@ -1,13 +1,24 @@
 ---
-title: "Idea to App MVP Part 2: Deploy AI-Generated Code with Firebase Hosting and a Custom Domain"
-description: "Learn how to deploy AI-generated website code live with Firebase Hosting, including Firebase CLI setup, hosting initialization, custom domain setup, DNS records, verification, and final deployment checks."
+type: "youtube"
+title: "Deploy an MVP with Firebase Hosting and a Custom Domain"
+seoTitle: "Deploy an MVP with Firebase Hosting and a Custom Domain"
+description: "Deploy a React-style MVP with Firebase Hosting, configure the CLI and SPA output, connect a custom domain, add DNS records, and verify the live site."
 category: "AI Workflows"
 date: "2026-07-03"
+updatedDate: "2026-07-14"
 slug: "idea-to-app-mvp-firebase-hosting-custom-domain"
+primaryKeyword: "Firebase Hosting custom domain setup"
+keywordCluster:
+  - deploy an MVP with Firebase Hosting
+  - Firebase CLI hosting setup
+  - Firebase custom domain DNS
+  - React MVP deployment
+servicePage: "/services/startup-websites"
+relatedService: "/services/react-web-apps"
 youtubeUrl: "https://youtu.be/4OYUpTQG08w"
 youtubeEmbedUrl: "https://www.youtube.com/embed/4OYUpTQG08w"
 thumbnail: "https://img.youtube.com/vi/4OYUpTQG08w/maxresdefault.jpg"
-thumbnailAlt: "Firebase Hosting tutorial showing how to deploy AI-generated website code with a custom domain"
+thumbnailAlt: "Firebase Hosting deployment and custom domain setup for an AI-built MVP"
 tags:
   - Idea to App MVP
   - Firebase Hosting
@@ -17,18 +28,18 @@ tags:
   - React website deployment
   - Firebase CLI
   - AI coding workflow
+relatedPosts:
+  - idea-to-app-mvp-firebase-auth-firestore
+  - idea-to-app-mvp-assetrax-ai-coding-tools-comparison
+  - how-to-write-mvp-app-prompt
 featured: true
 ---
 
-# Idea to App MVP Part 2: Deploy AI-Generated Code with Firebase Hosting and a Custom Domain
+## Deploy an MVP with Firebase Hosting
 
-## Introduction
+This guide shows how to take AI-generated website code live with Firebase Hosting and a custom domain. It is the deployment stage of the Idea to App MVP series, where the project moves from a local codebase to a public URL that people can test.
 
-In this part of the Idea to App MVP series, you will learn how to take AI-generated website code and deploy it live using Firebase Hosting with a custom domain. This is the stage where the project stops living only inside your code editor and becomes a real website people can visit.
-
-This tutorial walks through the practical Firebase Hosting workflow, including preparing the project, installing Firebase, adding the Firebase project, initializing hosting, connecting a custom domain, editing DNS records, waiting for verification, and checking the final result.
-
-Instead of only showing the polished result, this video keeps the important real-world parts of the process. You see the setup steps, the waiting time, the DNS work, the mistakes, and the fixes that often happen when turning an AI-built project into a live MVP.
+It is for beginners deploying a React-style MVP. You will prepare the project, install and log in to the Firebase CLI, initialize hosting for a single-page app, choose the correct build output, connect DNS records, wait for domain verification, and check the live result.
 
 ## What You Will Learn
 
@@ -66,6 +77,8 @@ Click this link to monitor your finance: [https://assetrax.online/](https://asse
 This video is part of a larger Idea to App MVP workflow. The goal of the series is to show how an idea can move through AI-assisted planning, frontend generation, hosting, custom domain setup, authentication, database connection, and real app functionality.
 
 This part focuses on deployment. Before adding backend features like login and database storage, the website needs a stable live URL. Firebase Hosting is useful here because it gives beginners a direct way to publish a web project, connect a custom domain, and prepare the app for the next Firebase services.
+
+If the app scope is still unclear, use the [MVP app prompt framework](/blog/how-to-write-mvp-app-prompt) before deployment so the first release stays focused.
 
 ## Step-by-Step Firebase Hosting Workflow
 
@@ -245,17 +258,17 @@ You can open the live MVP here: [https://assetrax.online/](https://assetrax.onli
 
 This sets up the next stage of the series: turning the hosted frontend into a real app by adding Firebase Authentication and Firestore database support.
 
-## Related Tutorials
+## Continue the MVP Series
 
 - [Idea to App MVP Part 1: Firebase Studio vs Codex vs Claude Code Building AssetraX](/blog/idea-to-app-mvp-assetrax-ai-coding-tools-comparison)
 - [Idea to App MVP Part 3: Add Google Sign-In and Firestore to a Firebase Web App](/blog/idea-to-app-mvp-firebase-auth-firestore)
+- [How to write a focused MVP app prompt](/blog/how-to-write-mvp-app-prompt)
 - [How to Connect a Cloudflare Domain to Netlify Step by Step](/blog/connect-cloudflare-domain-to-netlify)
-- [How to Build and Deploy a Photography Landing Page with OpenAI Codex, React, GitHub and Netlify](/blog/build-deploy-photography-landing-page-react-netlify)
 
-## Conclusion
+## Deploy first, then add app functionality
 
 Firebase Hosting is a strong option when you want to move from AI-generated code to a real live website. It gives beginners a clear deployment path, custom domain support, and a foundation for adding more Firebase services later.
 
 If this video helped you, you can support Aning Design Lab here: [Support Aning Design Lab](https://selar.com/showlove/aningdesignlab).
 
-You can also contact AningDesign through [https://aningdesign.com/](https://aningdesign.com/), join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or join the WhatsApp community at [https://chat.whatsapp.com/HzRPHeQ7osYLTMUNrF0Qds](https://chat.whatsapp.com/HzRPHeQ7osYLTMUNrF0Qds).
+You can also contact AningDesign through [https://www.aningdesign.com/](https://www.aningdesign.com/), join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or join the WhatsApp community at [https://chat.whatsapp.com/HzRPHeQ7osYLTMUNrF0Qds](https://chat.whatsapp.com/HzRPHeQ7osYLTMUNrF0Qds).

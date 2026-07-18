@@ -5,7 +5,7 @@ import CTA from './CTA'
 import { getExternalLinkProps } from '../utils/links'
 
 const FORM_SUBMIT_ENDPOINT = 'https://formsubmit.co/aningemma1@gmail.com'
-const THANK_YOU_URL = 'https://aningdesign.com/thank-you'
+const THANK_YOU_URL = 'https://www.aningdesign.com/thank-you'
 const CONTACT_EMAIL = 'aningemma1@gmail.com'
 const WHATSAPP_URL = 'https://wa.me/233557066467?text=Hi Emmanuel, I am interested in working with you on a project.'
 

@@ -3,7 +3,7 @@
  * @returns {string} The domain URL without trailing slash
  */
 export const getDomain = () => {
-  return import.meta.env.VITE_DOMAIN || 'https://aningdesign.com'
+  return import.meta.env.VITE_DOMAIN || 'https://www.aningdesign.com'
 }
 
 /**

@@ -564,6 +564,766 @@
   padding: 28px;
 }
 
+/* ---------------------------------------------------------------- */
+/* Reusable CTA system (see service-design-patterns.md)             */
+/* primary = gradient (highest priority only)                       */
+/* solid   = tonal brand button, default alternative CTA            */
+/* pill    = compact section-level CTA                              */
+/* ---------------------------------------------------------------- */
+
+.service-solid-action,
+.service-pill-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 900;
+  text-decoration: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.service-solid-action {
+  padding: 12px 18px;
+  color: #9af7a3;
+  border: 1px solid rgba(154, 247, 163, 0.3);
+  background: rgba(154, 247, 163, 0.1);
+}
+
+.service-solid-action:hover {
+  transform: translateY(-2px);
+  border-color: rgba(154, 247, 163, 0.55);
+  background: rgba(154, 247, 163, 0.16);
+}
+
+.service-pill-action {
+  min-height: 38px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  color: #eafff0;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.07);
+  font-size: 13px;
+}
+
+.service-pill-action:hover {
+  transform: translateY(-2px);
+  border-color: rgba(154, 247, 163, 0.55);
+  color: #9af7a3;
+  background: rgba(154, 247, 163, 0.08);
+}
+
+/* Section header pattern: intro + CTA in the heading column */
+.service-section-intro {
+  max-width: 300px;
+  margin: 0;
+  color: rgba(236, 246, 243, 0.66);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.service-section-cta {
+  display: flex;
+}
+
+/* CTA row after a content block (cards, process steps) */
+.service-section-footer-cta {
+  display: flex;
+  margin-top: 28px;
+}
+
+/* ---------------------------------------------------------------- */
+/* Feature card grid variant A: index chip + title + description    */
+/* Opt-in via includedStyle: 'feature'                              */
+/* ---------------------------------------------------------------- */
+
+.service-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.service-feature-card {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.service-feature-card:hover {
+  border-color: rgba(154, 247, 163, 0.35);
+  background: rgba(154, 247, 163, 0.04);
+}
+
+.service-feature-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(154, 247, 163, 0.3);
+  border-radius: 8px;
+  color: #9af7a3;
+  background: rgba(154, 247, 163, 0.08);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.service-feature-card h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.service-feature-card p {
+  margin: 0;
+  color: rgba(236, 246, 243, 0.7);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* ---------------------------------------------------------------- */
+/* Editorial checklist list: divider rows instead of cards          */
+/* Opt-in via audienceStyle: 'list'                                 */
+/* ---------------------------------------------------------------- */
+
+.service-audience-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 44px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.service-audience-list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 17px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.service-audience-list svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: #9af7a3;
+}
+
+/* ---------------------------------------------------------------- */
+/* Feature card grid variant B: tonal cards with top accent         */
+/* Opt-in via useCasesStyle: 'tonal'                                */
+/* ---------------------------------------------------------------- */
+
+.service-use-case-grid--tonal .service-use-case-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 2px solid rgba(154, 247, 163, 0.45);
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow: none;
+}
+
+/* ---------------------------------------------------------------- */
+/* Trust panel: one framed surface with internal rows + CTA strip   */
+/* Opt-in via panelStyle: 'trust' on a content section              */
+/* ---------------------------------------------------------------- */
+
+.service-trust-panel {
+  margin-top: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+}
+
+.service-trust-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 28px;
+  padding: 8px 24px;
+  margin: 0;
+  list-style: none;
+}
+
+.service-trust-list li {
+  display: flex;
+  gap: 10px;
+  min-width: 0;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  line-height: 1.55;
+}
+
+.service-trust-list li:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+
+.service-trust-list svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: #9af7a3;
+}
+
+.service-trust-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(154, 247, 163, 0.05);
+}
+
+.service-trust-footer p {
+  margin: 0;
+  color: rgba(236, 246, 243, 0.72);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ---------------------------------------------------------------- */
+/* Deliverables row list: editorial divider rows, title + detail    */
+/* Opt-in via listStyle: 'rows' on a content section                */
+/* ---------------------------------------------------------------- */
+
+.service-row-list {
+  display: grid;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.service-row-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 230px) minmax(0, 1fr);
+  gap: 6px 32px;
+  padding: 17px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.service-row-list li:first-child {
+  padding-top: 4px;
+}
+
+.service-row-list strong {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.service-row-list span {
+  color: rgba(236, 246, 243, 0.68);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* ---------------------------------------------------------------- */
+/* Process timeline: connected steps instead of stacked cards       */
+/* Opt-in via processStyle: 'timeline'                              */
+/* ---------------------------------------------------------------- */
+
+.service-process-list--timeline {
+  gap: 0;
+}
+
+.service-process-list--timeline .service-process-step {
+  position: relative;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 20px;
+  padding: 0 0 30px;
+  border: none;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.service-process-list--timeline .service-process-step:last-child {
+  padding-bottom: 0;
+}
+
+.service-process-list--timeline .service-process-step::before {
+  content: '';
+  position: absolute;
+  top: 44px;
+  bottom: 4px;
+  left: 20px;
+  width: 1px;
+  background: rgba(154, 247, 163, 0.22);
+}
+
+.service-process-list--timeline .service-process-step:last-child::before {
+  display: none;
+}
+
+.service-process-list--timeline .service-process-step > span {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(154, 247, 163, 0.35);
+  border-radius: 999px;
+  color: #9af7a3;
+  background: rgba(154, 247, 163, 0.08);
+}
+
+/* Listing-page process: stronger visual weight (scoped to /services) */
+.service-page--index .service-process-list--timeline .service-process-step {
+  gap: 22px;
+  padding-bottom: 40px;
+}
+
+.service-page--index .service-process-list--timeline .service-process-step::before {
+  top: 46px;
+  bottom: 6px;
+  left: 19px;
+  width: 2px;
+  background: rgba(154, 247, 163, 0.32);
+}
+
+.service-page--index .service-process-list--timeline .service-process-step > span {
+  border-width: 1.5px;
+  border-color: rgba(154, 247, 163, 0.55);
+  background: rgba(154, 247, 163, 0.12);
+  font-size: 14px;
+  box-shadow: 0 0 0 4px rgba(154, 247, 163, 0.06);
+}
+
+.service-page--index .service-process-list--timeline .service-process-step h3 {
+  font-size: 20px;
+}
+
+.service-page--index .service-process-list--timeline .service-process-step p {
+  font-size: 16px;
+  line-height: 1.62;
+}
+
+/* ---------------------------------------------------------------- */
+/* FAQ rows: left intro + right accordion with divider rows         */
+/* Opt-in via faqStyle: 'rows'                                      */
+/* ---------------------------------------------------------------- */
+
+.service-faq-list--rows {
+  gap: 0;
+}
+
+.service-faq-list--rows .service-faq-item {
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.service-faq-list--rows .service-faq-item summary {
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 62px;
+  padding: 20px 4px;
+}
+
+.service-faq-list--rows .service-faq-item summary svg {
+  flex: 0 0 auto;
+  color: #9af7a3;
+  transition: transform 0.2s ease;
+}
+
+.service-faq-list--rows .service-faq-item[open] summary svg {
+  transform: rotate(45deg);
+}
+
+.service-faq-list--rows .service-faq-item p {
+  padding: 0 4px 20px;
+}
+
+/* ---------------------------------------------------------------- */
+/* Service matrix: labelled groups + featured wide card             */
+/* Listing-page pattern, opt-in via directoryGroups                 */
+/* ---------------------------------------------------------------- */
+
+.service-directory-body {
+  display: grid;
+  gap: 22px;
+  min-width: 0;
+}
+
+.service-matrix {
+  display: grid;
+  gap: 30px;
+}
+
+.service-matrix-group {
+  display: grid;
+  gap: 14px;
+}
+
+.service-matrix-group-label {
+  margin: 0;
+  color: #9af7a3;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.service-matrix-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.service-matrix-grid--cols-1 { grid-template-columns: minmax(0, 1fr); }
+.service-matrix-grid--cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.service-matrix-grid--cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.service-matrix-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.service-matrix-card:hover,
+.service-matrix-card:focus-within {
+  border-color: rgba(154, 247, 163, 0.35);
+  background: rgba(154, 247, 163, 0.04);
+}
+
+.service-matrix-card-body {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.service-matrix-card h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.service-matrix-card p {
+  margin: 0;
+  color: rgba(236, 246, 243, 0.7);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.service-matrix-tag {
+  justify-self: start;
+  padding: 5px 10px;
+  border: 1px solid rgba(154, 247, 163, 0.3);
+  border-radius: 999px;
+  color: #9af7a3;
+  background: rgba(154, 247, 163, 0.08);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.service-matrix-card .service-matrix-note {
+  margin-top: 2px;
+  color: rgba(154, 247, 163, 0.82);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.service-matrix-link {
+  margin-top: auto;
+}
+
+/* Whole card clickable via the visible link (no nested anchors) */
+.service-matrix-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+}
+
+.service-matrix-card--wide {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-color: rgba(154, 247, 163, 0.28);
+  background: rgba(154, 247, 163, 0.05);
+}
+
+.service-matrix-card--wide .service-matrix-card-body {
+  max-width: 660px;
+}
+
+.service-matrix-card--wide .service-matrix-link {
+  flex: 0 0 auto;
+  margin-top: 0;
+}
+
+/* Inline CTA strip after a card group */
+.service-inline-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding: 20px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.service-inline-cta-copy {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.service-inline-cta-copy strong {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.service-inline-cta-copy span {
+  color: rgba(236, 246, 243, 0.68);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ---------------------------------------------------------------- */
+/* Mixed showcase: one featured media card + supporting cards       */
+/* Opt-in via examplesStyle: 'showcase'                             */
+/* ---------------------------------------------------------------- */
+
+.service-showcase {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.service-showcase-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.service-showcase-card:hover,
+.service-showcase-card:focus-within {
+  border-color: rgba(154, 247, 163, 0.35);
+  background: rgba(154, 247, 163, 0.04);
+}
+
+.service-showcase-card--featured {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.service-showcase-media {
+  flex: 0 0 46%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.service-showcase-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.service-showcase-body {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  min-width: 0;
+}
+
+.service-showcase-card--featured .service-showcase-body {
+  padding: 28px;
+  align-content: center;
+}
+
+.service-showcase-body h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.service-showcase-card--featured .service-showcase-body h3 {
+  font-size: 22px;
+}
+
+.service-showcase-body p {
+  margin: 0;
+  color: rgba(236, 246, 243, 0.7);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.service-showcase-body .service-text-link {
+  margin-top: 6px;
+}
+
+.service-showcase-body .service-text-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+}
+
+/* ---------------------------------------------------------------- */
+/* Listing hero: copy + integrated service-matching CTA panel       */
+/* ---------------------------------------------------------------- */
+
+@media (min-width: 760px) {
+  .service-page--index .service-page-intro-block {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 380px);
+    align-items: center;
+    gap: 34px;
+    max-width: none;
+  }
+
+  .service-page--index .service-page-intro-block .service-page-intro {
+    max-width: 520px;
+  }
+}
+
+/* Listing final CTA: deep tonal surface instead of a gradient */
+.service-page--index .service-final-cta {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* Measurable results proof block (Lighthouse evidence) */
+.service-proof {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.15fr);
+  gap: 30px;
+  align-items: start;
+}
+
+.service-proof-copy {
+  display: grid;
+  gap: 20px;
+  min-width: 0;
+}
+
+.service-proof-copy .service-lead {
+  max-width: none;
+}
+
+.service-proof-copy .service-check-grid {
+  grid-template-columns: 1fr;
+}
+
+.service-proof-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.service-proof-metrics li {
+  display: grid;
+  gap: 5px;
+  padding: 16px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.service-proof-score {
+  color: #9af7a3;
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.service-proof-metric-label {
+  color: rgba(236, 246, 243, 0.72);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.service-proof-note {
+  margin: 0;
+  color: rgba(236, 246, 243, 0.58);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.service-proof-figure {
+  margin: 0;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 20px 46px rgba(0, 0, 0, 0.32);
+}
+
+.service-proof-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 957 / 421;
+  border-radius: 8px;
+}
+
+.service-proof-figure figcaption {
+  margin-top: 12px;
+  color: rgba(236, 246, 243, 0.58);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* Wide media/proof card pattern: framed evidence + CTA underneath */
+.service-proof-media {
+  display: grid;
+  gap: 16px;
+  justify-items: start;
+  min-width: 0;
+}
+
+.service-proof-media .service-proof-figure {
+  width: 100%;
+}
+
 @media (max-width: 900px) {
   .service-page-hero {
     padding: 116px 20px 58px;
@@ -601,6 +1361,14 @@
   .service-use-case-grid,
   .service-resource-grid {
     grid-template-columns: 1fr;
+  }
+
+  .service-section-intro {
+    max-width: 560px;
+  }
+
+  .service-matrix-grid--cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .service-mid-cta {
@@ -671,6 +1439,94 @@
 
   .service-process-step {
     grid-template-columns: 1fr;
+  }
+
+  .service-proof {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .service-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-matrix-grid--cols-2,
+  .service-matrix-grid--cols-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .service-matrix-card--wide {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .service-matrix-card--wide .service-matrix-link {
+    width: 100%;
+  }
+
+  .service-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .service-showcase-card--featured {
+    flex-direction: column;
+  }
+
+  .service-showcase-media {
+    flex: none;
+    aspect-ratio: 16 / 9;
+  }
+
+  .service-inline-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .service-inline-cta .service-solid-action,
+  .service-inline-cta .service-pill-action {
+    width: 100%;
+  }
+
+  .service-audience-list {
+    grid-template-columns: 1fr;
+  }
+
+  .service-trust-list {
+    grid-template-columns: 1fr;
+    padding: 6px 18px;
+  }
+
+  .service-trust-list li:nth-last-child(-n+2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .service-trust-list li:last-child {
+    border-bottom: none;
+  }
+
+  .service-trust-footer {
+    padding: 16px 18px;
+  }
+
+  .service-trust-footer .service-pill-action,
+  .service-trust-footer .service-solid-action {
+    width: 100%;
+  }
+
+  .service-row-list li {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .service-section-footer-cta .service-solid-action,
+  .service-section-footer-cta .service-pill-action,
+  .service-proof-media .service-proof-cta {
+    width: 100%;
+  }
+
+  .service-process-list--timeline .service-process-step {
+    grid-template-columns: 44px minmax(0, 1fr);
   }
 
   .service-faq-item p {
