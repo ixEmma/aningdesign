@@ -1,10 +1,11 @@
 import { useEffect, useState, useRef } from 'react'
 import './Hero.css'
+import { XLogoIcon, LinkedInLogoIcon, BehanceLogoIcon } from './SocialIcons'
 
 const socialLinks = [
-  { label: 'Visit AningDesign on X', href: 'https://x.com/Aningdesigns', icon: 'X' },
-  { label: 'Visit Emmanuel Aning on LinkedIn', href: 'https://linkedin.com/in/emmanuel-aning-133189310', icon: 'in' },
-  { label: 'Visit Emmanuel Aning on Behance', href: 'https://www.behance.net/emmaaning', icon: 'Be' }
+  { label: 'Visit AningDesign on X', href: 'https://x.com/Aningdesigns', icon: XLogoIcon },
+  { label: 'Visit Emmanuel Aning on LinkedIn', href: 'https://linkedin.com/in/emmanuel-aning-133189310', icon: LinkedInLogoIcon },
+  { label: 'Visit Emmanuel Aning on Behance', href: 'https://www.behance.net/emmaaning', icon: BehanceLogoIcon }
 ]
 
 function Hero() {
@@ -88,9 +89,9 @@ function Hero() {
       </div>
 
       <div className="social-media">
-        {socialLinks.map((link) => (
-          <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label}>
-            <span aria-hidden="true">{link.icon}</span>
+        {socialLinks.map(({ label, href, icon: Icon }) => (
+          <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
+            <Icon />
           </a>
         ))}
       </div>

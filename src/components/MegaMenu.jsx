@@ -22,6 +22,7 @@ import {
 } from '../data/navigationConfig'
 import { getExternalLinkProps } from '../utils/links'
 import { SiteLink } from './SiteLink'
+import { XLogoIcon, YoutubeLogoIcon } from './SocialIcons'
 import './MegaMenu.css'
 
 function SmartLink({item,className = '',children,onNavigate}) {
@@ -65,22 +66,6 @@ const resourceIconMap = {
   'Free Tools': BriefcaseBusiness,
   Checklists: FileText,
   Guides: BookOpen
-}
-
-function XLogoIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path d="M14.72 10.46 22.04 2h-1.73l-6.36 7.35L8.88 2H3.03l7.68 11.12L3.03 22h1.73l6.72-7.77L16.85 22h5.85l-7.98-11.54Zm-2.38 2.75-.78-1.11L5.37 3.3h2.68l5 7.1.78 1.11 6.49 9.23h-2.68l-5.3-7.53Z" />
-    </svg>
-  )
-}
-
-function YoutubeLogoIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path d="M23.5 6.2a3.01 3.01 0 0 0-2.12-2.13C19.51 3.56 12 3.56 12 3.56s-7.51 0-9.38.51A3.01 3.01 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.01 3.01 0 0 0 2.12 2.13c1.87.51 9.38.51 9.38.51s7.51 0 9.38-.51a3.01 3.01 0 0 0 2.12-2.13C24 15.92 24 12 24 12s0-3.92-.5-5.8ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z" />
-    </svg>
-  )
 }
 
 function MegaMenu({isOpen,startups,blogTopics,onClose,onSearch}) {

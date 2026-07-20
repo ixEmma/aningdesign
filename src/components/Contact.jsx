@@ -3,6 +3,14 @@ import { Mail, MessageCircle, Send } from 'lucide-react'
 import './Contact.css'
 import CTA from './CTA'
 import { getExternalLinkProps } from '../utils/links'
+import {
+  XLogoIcon,
+  LinkedInLogoIcon,
+  BehanceLogoIcon,
+  YoutubeLogoIcon,
+  GithubLogoIcon,
+  TelegramLogoIcon
+} from './SocialIcons'
 
 const FORM_SUBMIT_ENDPOINT = 'https://formsubmit.co/aningemma1@gmail.com'
 const THANK_YOU_URL = 'https://www.aningdesign.com/thank-you'
@@ -10,12 +18,12 @@ const CONTACT_EMAIL = 'aningemma1@gmail.com'
 const WHATSAPP_URL = 'https://wa.me/233557066467?text=Hi Emmanuel, I am interested in working with you on a project.'
 
 const contactSocialLinks = [
-  { label: 'X', href: 'https://x.com/Aningdesigns' },
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/emmanuel-aning-133189310' },
-  { label: 'Behance', href: 'https://www.behance.net/emmaaning' },
-  { label: 'YouTube', href: 'https://www.youtube.com/channel/UCUBBcAJYllM2DVZ46Wkepxg' },
-  { label: 'GitHub', href: 'https://github.com/ixEmma' },
-  { label: 'Telegram', href: 'https://t.me/AningDzn' }
+  { label: 'X', href: 'https://x.com/Aningdesigns', icon: XLogoIcon },
+  { label: 'LinkedIn', href: 'https://linkedin.com/in/emmanuel-aning-133189310', icon: LinkedInLogoIcon },
+  { label: 'Behance', href: 'https://www.behance.net/emmaaning', icon: BehanceLogoIcon },
+  { label: 'YouTube', href: 'https://www.youtube.com/channel/UCUBBcAJYllM2DVZ46Wkepxg', icon: YoutubeLogoIcon },
+  { label: 'GitHub', href: 'https://github.com/ixEmma', icon: GithubLogoIcon },
+  { label: 'Telegram', href: 'https://t.me/AningDzn', icon: TelegramLogoIcon }
 ]
 
 function Contact({ showIntroCta = true, pageMode = false }) {
@@ -162,14 +170,15 @@ function Contact({ showIntroCta = true, pageMode = false }) {
           <div className="contact-social-block">
             <p>Connect</p>
             <div className="contact-social-links">
-              {contactSocialLinks.map((link) => (
+              {contactSocialLinks.map(({ label, href, icon: Icon }) => (
                 <a
-                  key={link.label}
-                  href={link.href}
-                  {...getExternalLinkProps(link.href)}
-                  aria-label={`Open ${link.label}`}
+                  key={label}
+                  href={href}
+                  {...getExternalLinkProps(href)}
+                  aria-label={`Open ${label}`}
                 >
-                  {link.label}
+                  <Icon />
+                  <span>{label}</span>
                 </a>
               ))}
             </div>

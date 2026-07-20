@@ -459,7 +459,22 @@ export const servicePages = [
     examplesStyle: 'showcase',
     examplesCta: { label: 'View more product work', href: '/#projects', variant: 'solid' },
     examples: [
-      { title: 'Lensora Events', description: 'Event media web application with Firebase-connected sharing workflows.', href: 'https://lensoraevents.com/', featured: true },
+      {
+        title: 'Lensora Events',
+        description: 'Event media web application with Firebase-connected sharing workflows.',
+        href: 'https://lensoraevents.com/',
+        featured: true,
+        label: 'Live product landing page',
+        meta: 'QR guest uploads, live event galleries, and Firebase-connected media workflows.',
+        image: {
+          src: '/images/projects/lensora-landing-page-1200.webp',
+          srcSet: '/images/projects/lensora-landing-page-768.webp 768w, /images/projects/lensora-landing-page-1200.webp 1200w, /images/projects/lensora-landing-page-1600.webp 1600w',
+          sizes: '(max-width: 560px) 100vw, (max-width: 900px) 46vw, 60vw',
+          width: 1600,
+          height: 900,
+          alt: 'Lensora Events landing page showing QR guest uploads and a live event gallery.'
+        }
+      },
       { title: 'AssetRax', description: 'Dashboard interface and product workflows for finance and asset tracking.', href: 'https://assetrax.online/' },
       { title: 'StudyNest', description: 'Student productivity product prototype with focused application workflows.', href: 'https://studynestt.com/' }
     ],
@@ -863,6 +878,40 @@ export const servicePages = [
     shortTitle: 'Social Media',
     path: '/services/social-media-design',
     kicker: 'Social media design services',
+    flatSurfaces: true,
+    solidPrimaryCta: true,
+    spacingRhythm: true,
+    sectionSpacing: { overview: 'spacious', midCta: 'compact', process: 'spacious', examples: 'spacious' },
+    heroArtworkStyle: 'collage',
+    heroArtwork: {
+      featured: {
+        src: '/images/portfolio/tony-delivery.webp',
+        srcSet: '/images/portfolio/tony-delivery-640.webp 640w, /images/portfolio/tony-delivery.webp 1080w',
+        sizes: '(max-width: 900px) 92vw, 30vw',
+        width: 1080,
+        height: 1350,
+        eager: true,
+        alt: 'Nexalite Logistics "We Deliver" promotional campaign graphic with a delivery rider and a service list'
+      },
+      supporting: [
+        {
+          src: '/images/portfolio/reggae-night.webp',
+          srcSet: '/images/portfolio/reggae-night-640.webp 640w, /images/portfolio/reggae-night.webp 990w',
+          sizes: '(max-width: 900px) 46vw, 16vw',
+          width: 990,
+          height: 1400,
+          alt: 'Reggae Night event launch flyer with dreadlocked musicians and bold 3D lettering'
+        },
+        {
+          src: '/images/portfolio/princess.webp',
+          srcSet: '/images/portfolio/princess-640.webp 640w, /images/portfolio/princess.webp 1120w',
+          sizes: '(max-width: 900px) 46vw, 16vw',
+          width: 1120,
+          height: 1400,
+          alt: 'Belle Classique promotional social post for gym and sportswear with a framed product layout'
+        }
+      ]
+    },
     h1: 'Social media design for campaigns.',
     intro:
       'Social media design services for Instagram post design, carousel design, promotional graphics, and content design. Use this when your brand needs consistent social media graphics for campaigns, launches, and regular posts.',
@@ -879,7 +928,17 @@ export const servicePages = [
       'Campaign graphics can cover announcements, offers, launches, events, reminders, and promotional content.',
       'Content design keeps repeated posts clear while still matching the brand direction.'
     ],
+    overviewCta: { label: 'Discuss your campaign', href: '/contact', variant: 'solid' },
+    relatedLinksStyle: 'inline',
     includedTitle: 'What I design',
+    includedStyle: 'grouped',
+    includedFeatured:
+      'A complete social media design system — post formats, campaign assets, and reusable content templates delivered in platform-ready export sizes.',
+    includedGroups: [
+      { label: 'Content formats', items: ['Instagram post design', 'Carousel design', 'Story graphics'] },
+      { label: 'Campaign assets', items: ['Campaign graphics', 'Launch visuals', 'Promotional graphics'] },
+      { label: 'Reusable delivery', items: ['Reusable content templates', 'Platform-ready export sizes'] }
+    ],
     included: [
       'Instagram post design',
       'Carousel design',
@@ -896,6 +955,9 @@ export const servicePages = [
       primaryLabel: 'Plan social designs',
       primaryHref: '/contact'
     },
+    audienceStyle: 'list',
+    audienceIntro: 'This service fits brands and creators who post often and need a consistent look across recurring content.',
+    audienceCta: { label: 'Discuss your content plan', href: '/contact', variant: 'solid' },
     audience: [
       'Brands posting regularly on social platforms',
       'Creators launching offers or digital products',
@@ -904,14 +966,16 @@ export const servicePages = [
       'Brands that need content design for recurring posts'
     ],
     useCasesTitle: 'Instagram post design and carousel design',
+    useCasesStyle: 'featured',
+    useCasesCta: { label: 'Plan the content set', href: '/contact', variant: 'solid' },
     useCases: [
+      {
+        title: 'Carousel design',
+        description: 'Multi-slide layouts for education, storytelling, product details, launch explainers, or step-by-step posts. Repeated structure carries a campaign story across slides.'
+      },
       {
         title: 'Instagram post design',
         description: 'Static post layouts for offers, announcements, quotes, testimonials, reminders, and branded updates.'
-      },
-      {
-        title: 'Carousel design',
-        description: 'Multi-slide layouts for education, storytelling, product details, launch explainers, or step-by-step posts.'
       },
       {
         title: 'Campaign graphics',
@@ -922,7 +986,57 @@ export const servicePages = [
         description: 'Templates for recurring post types so the brand stays consistent across repeated content.'
       }
     ],
+    contentSections: [
+      {
+        id: 'service-social-proof',
+        kicker: 'Selected work',
+        title: 'Selected social media work',
+        spacing: 'spacious',
+        body: 'A few recent pieces — a promotional campaign graphic, a recurring content design, and an event launch visual.',
+        showcase: [
+          {
+            image: {
+              src: '/images/portfolio/tony-delivery.webp',
+              srcSet: '/images/portfolio/tony-delivery-640.webp 640w, /images/portfolio/tony-delivery.webp 1080w',
+              sizes: '(max-width: 560px) 100vw, (max-width: 900px) 45vw, 30vw',
+              width: 1080,
+              height: 1350,
+              alt: 'Nexalite Logistics "We Deliver" promotional campaign graphic with a delivery rider and a service list'
+            },
+            heading: 'Campaign design',
+            caption: 'Coordinated promotional graphic with a clear offer and call to action, sized for social feeds.'
+          },
+          {
+            image: {
+              src: '/images/portfolio/ronaldinho.webp',
+              srcSet: '/images/portfolio/ronaldinho-640.webp 640w, /images/portfolio/ronaldinho.webp 1120w',
+              sizes: '(max-width: 560px) 100vw, (max-width: 900px) 45vw, 30vw',
+              width: 1120,
+              height: 1400,
+              alt: 'Ronaldinho Nike Total 90 branded content design on a floodlit street pitch'
+            },
+            heading: 'Recurring content system',
+            caption: 'Branded content built on a repeatable layout so a content series stays consistent post to post.'
+          },
+          {
+            image: {
+              src: '/images/portfolio/reggae-night.webp',
+              srcSet: '/images/portfolio/reggae-night-640.webp 640w, /images/portfolio/reggae-night.webp 990w',
+              sizes: '(max-width: 560px) 100vw, (max-width: 900px) 45vw, 30vw',
+              width: 990,
+              height: 1400,
+              alt: 'Reggae Night event launch flyer with dreadlocked musicians and bold 3D lettering'
+            },
+            heading: 'Launch visual',
+            caption: 'An event announcement with strong hierarchy that stays readable at mobile-feed size.'
+          }
+        ],
+        galleryCta: { label: 'View more social media work', href: 'https://www.behance.net/emmaaning', variant: 'solid' }
+      }
+    ],
     processTitle: 'Social media design process',
+    processStyle: 'timeline',
+    processCta: { label: 'Start with the content brief', href: '/contact', variant: 'solid' },
     process: [
       {
         title: 'Share the content goal',
@@ -945,14 +1059,23 @@ export const servicePages = [
         description: 'Receive final social media graphics in the correct sizes for publishing.'
       }
     ],
+    examplesTitle: 'Related portfolio or examples',
+    examplesStyle: 'showcase',
     examples: [
       {
         title: 'Behance social and campaign visuals',
         description: 'Social media graphics, campaign graphics, carousel design, and brand assets.',
-        href: 'https://www.behance.net/emmaaning'
+        href: 'https://www.behance.net/emmaaning',
+        featured: true,
+        label: 'Full portfolio',
+        meta: 'The complete set of social media graphic design services work, updated regularly.',
+        linkLabel: 'View the social media portfolio'
       }
     ],
     relatedServices: ['graphic-design', 'branding', 'website-design'],
+    faqStyle: 'rows',
+    faqIntro: 'Ask about reusable post templates, launch campaign sets, or Instagram and carousel design before starting.',
+    faqCta: { label: 'Ask about your campaign', href: '/contact', variant: 'solid' },
     faqs: [
       {
         question: 'Can you design reusable post templates?',
@@ -970,6 +1093,7 @@ export const servicePages = [
           'Yes. Instagram post design and carousel design can be planned as single assets or as a full visual set.'
       }
     ],
+    finalCtaStyle: 'tonal',
     finalCta: {
       label: 'Social media design services',
       heading: 'Need consistent social media graphics?',

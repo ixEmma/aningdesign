@@ -295,6 +295,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   min-height: 42px;
   padding: 10px;
   border: 1px solid rgba(154, 247, 163, 0.14);
@@ -305,6 +306,13 @@
   font-weight: 850;
   line-height: 1.2;
   text-decoration: none;
+}
+
+.contact-social-links svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
 }
 
 .contact-social-links a:hover {

@@ -344,7 +344,35 @@ function ServiceArtworkGrid({ artwork, className = '' }) {
   )
 }
 
-/* Brand showcase: uncropped mixed-ratio portfolio grid (image + heading + caption).
+/* Uncropped mixed-ratio proof grid (image + heading + caption). Reused by the
+ * brand-showcase section and by content-section proof blocks (section.showcase). */
+function ServiceShowcaseGrid({ items }) {
+  if (!items?.length) return null
+  return (
+    <div className="service-brand-showcase">
+      {items.map((item) => (
+        <figure className="service-brand-card" key={item.image.src}>
+          <img
+            src={item.image.src}
+            srcSet={item.image.srcSet}
+            sizes={item.image.sizes}
+            alt={item.image.alt}
+            width={item.image.width}
+            height={item.image.height}
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>
+            <h3>{item.heading}</h3>
+            {item.caption && <p>{item.caption}</p>}
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  )
+}
+
+/* Brand showcase section: uncropped portfolio grid.
  * Data-driven via service.brandShowcase = { kicker, title, intro, items: [{ image, heading, caption }] }. */
 function ServiceBrandShowcase({ showcase, spacing }) {
   if (!showcase?.items?.length) return null
@@ -357,25 +385,43 @@ function ServiceBrandShowcase({ showcase, spacing }) {
       spacing={spacing}
       className="service-brand-showcase-section"
     >
-      <div className="service-brand-showcase">
-        {showcase.items.map((item) => (
-          <figure className="service-brand-card" key={item.image.src}>
-            <img
-              src={item.image.src}
-              alt={item.image.alt}
-              width={item.image.width}
-              height={item.image.height}
-              loading="lazy"
-              decoding="async"
-            />
-            <figcaption>
-              <h3>{item.heading}</h3>
-              {item.caption && <p>{item.caption}</p>}
-            </figcaption>
-          </figure>
-        ))}
-      </div>
+      <ServiceShowcaseGrid items={showcase.items} />
     </ServiceSection>
+  )
+}
+
+/* Art-directed portrait hero composition: one featured design + up to two
+ * supporting designs, shown uncropped. Opt-in via heroArtworkStyle: 'collage'.
+ * Suited to portrait social/campaign artwork the banner grid would crop. */
+function ServiceHeroCollage({ artwork }) {
+  if (!artwork?.featured) return null
+  const supporting = (artwork.supporting || []).slice(0, 2)
+  const Frame = ({ image, className, eager }) => (
+    <figure className={className}>
+      <img
+        src={image.src}
+        srcSet={image.srcSet}
+        sizes={image.sizes}
+        alt={image.alt}
+        width={image.width}
+        height={image.height}
+        loading={eager ? 'eager' : 'lazy'}
+        fetchPriority={eager ? 'high' : undefined}
+        decoding="async"
+      />
+    </figure>
+  )
+  return (
+    <div className="service-hero-collage">
+      <Frame image={artwork.featured} className="service-hero-collage-featured" eager={artwork.featured.eager} />
+      {supporting.length > 0 && (
+        <div className="service-hero-collage-support">
+          {supporting.map((image) => (
+            <Frame key={image.src} image={image} className="service-hero-collage-item" />
+          ))}
+        </div>
+      )}
+    </div>
   )
 }
 
@@ -552,6 +598,11 @@ function ServiceContentSections({ service }) {
       ) : (
         <>
           <ServiceSectionContent section={section} />
+          {section.showcase && (
+            <div className="service-section-showcase">
+              <ServiceShowcaseGrid items={section.showcase} />
+            </div>
+          )}
           {section.gallery && (
             <ServiceArtworkGrid artwork={section.gallery} className="service-section-gallery" />
           )}
@@ -602,6 +653,7 @@ function ServicePageTemplate({ service }) {
   if (isServicesIndex) mainClasses.push('service-page--index')
   if (useRhythm) mainClasses.push('service-page--rhythm')
   if (service.flatSurfaces) mainClasses.push('service-page--flat')
+  if (service.solidPrimaryCta) mainClasses.push('service-page--solid-primary')
 
   return (
     <main className={mainClasses.join(' ')}>
@@ -623,7 +675,11 @@ function ServicePageTemplate({ service }) {
                   </SmartServiceLink>
                 </div>
               </div>
-              <ServiceArtworkGrid artwork={service.heroArtwork} className="service-hero-artwork" />
+              {service.heroArtworkStyle === 'collage' ? (
+                <ServiceHeroCollage artwork={service.heroArtwork} />
+              ) : (
+                <ServiceArtworkGrid artwork={service.heroArtwork} className="service-hero-artwork" />
+              )}
             </div>
           ) : service.heroPanel ? (
             <div className="service-hero-split">
@@ -756,6 +812,7 @@ function ServicePageTemplate({ service }) {
           id="service-audience"
           kicker="Best for"
           title={service.audienceTitle || 'Who this service is for'}
+          intro={service.audienceIntro}
           spacing={spacingFor('audience', 'standard')}
         >
           {service.audienceStyle === 'list' ? (
@@ -840,6 +897,8 @@ function ServicePageTemplate({ service }) {
                     <div className="service-showcase-media">
                       <img
                         src={example.image.src}
+                        srcSet={example.image.srcSet}
+                        sizes={example.image.sizes}
                         alt={example.image.alt}
                         width={example.image.width}
                         height={example.image.height}
@@ -849,10 +908,12 @@ function ServicePageTemplate({ service }) {
                     </div>
                   )}
                   <div className="service-showcase-body">
+                    {example.label && <span className="service-showcase-label">{example.label}</span>}
                     <h3>{example.title}</h3>
                     <p>{example.description}</p>
+                    {example.meta && <p className="service-showcase-meta">{example.meta}</p>}
                     <SmartServiceLink href={example.href} className="service-text-link">
-                      View example
+                      {example.linkLabel || 'View example'}
                       <ArrowRight size={15} strokeWidth={2.2} aria-hidden="true" />
                     </SmartServiceLink>
                   </div>

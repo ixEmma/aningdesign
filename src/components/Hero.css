@@ -175,6 +175,12 @@
   text-decoration: none;
 }
 
+.social-media a svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
 .social-media a:hover {
   color: #1da1f2;
   transform: translateY(-2px);

@@ -1202,16 +1202,46 @@
 .service-showcase-card--featured {
   grid-column: 1 / -1;
   flex-direction: row;
-  align-items: stretch;
+  align-items: center;
   gap: 0;
   padding: 0;
   overflow: hidden;
 }
 
+/* Featured card WITH a screenshot: full-width image on top (dominant proof),
+   project content in a horizontal row beneath. Scoped so text-only featured
+   cards keep their default row layout. */
+.service-showcase-card--featured:has(.service-showcase-media) {
+  flex-direction: column;
+  align-items: stretch;
+}
+
 .service-showcase-media {
-  flex: 0 0 46%;
+  flex: none;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(0, 0, 0, 0.3);
+}
+
+.service-showcase-card--featured:has(.service-showcase-media) .service-showcase-body {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  column-gap: 24px;
+  padding: 24px 28px;
+}
+
+.service-showcase-card--featured:has(.service-showcase-media) .service-showcase-body > * {
+  grid-column: 1;
+}
+
+.service-showcase-card--featured:has(.service-showcase-media) .service-showcase-body > .service-text-link {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  align-self: center;
+  margin-top: 0;
 }
 
 .service-showcase-media img {
@@ -1219,6 +1249,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.service-showcase-card--featured:hover .service-showcase-media img,
+.service-showcase-card--featured:focus-within .service-showcase-media img {
+  transform: scale(1.02);
 }
 
 .service-showcase-body {
@@ -1231,6 +1267,22 @@
 .service-showcase-card--featured .service-showcase-body {
   padding: 28px;
   align-content: center;
+}
+
+.service-showcase-label {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 2px;
+  color: #9af7a3;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.service-showcase-body p.service-showcase-meta {
+  color: rgba(236, 246, 243, 0.55);
+  font-size: 13.5px;
 }
 
 .service-showcase-body h3 {
@@ -1634,6 +1686,21 @@
 }
 
 /* ---------------------------------------------------------------- */
+/* Solid (gradient-free) primary button. Opt-in via solidPrimaryCta */
+/* on a single page; other pages keep the shared gradient primary.  */
+/* Also neutralises the timeline number badge gradient on this page.*/
+/* ---------------------------------------------------------------- */
+.service-page--solid-primary .service-primary-action {
+  color: #05120a;
+  background: #00fb64;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.28);
+}
+
+.service-page--solid-primary .service-process-step > span {
+  background: #00fb64;
+}
+
+/* ---------------------------------------------------------------- */
 /* Art-directed portfolio grid: featured image + supporting images. */
 /* Data-driven (heroArtwork / contentSections[].gallery). Reusable  */
 /* for future Branding and Social Media Design pages.               */
@@ -1743,6 +1810,81 @@
 @media (max-width: 560px) {
   .service-brand-showcase {
     columns: 1;
+  }
+}
+
+/* ---------------------------------------------------------------- */
+/* Selected-proof grid inside a content section (section.showcase). */
+/* Controlled 3-up grid (not masonry), uncropped portrait artwork.  */
+/* ---------------------------------------------------------------- */
+.service-section-showcase {
+  margin-top: var(--section-intro-gap, 32px);
+}
+
+.service-section-showcase .service-brand-showcase {
+  columns: auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+
+.service-section-showcase .service-brand-card {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .service-section-showcase .service-brand-showcase {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .service-section-showcase .service-brand-showcase {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------------------------------------------------------------- */
+/* Art-directed portrait hero composition (heroArtworkStyle: 'collage').*/
+/* One featured design + two supporting designs, shown uncropped.   */
+/* ---------------------------------------------------------------- */
+.service-hero-collage {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 12px;
+  align-items: start;
+  min-width: 0;
+}
+
+.service-hero-collage figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.service-hero-collage img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.service-hero-collage-support {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .service-hero-collage {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .service-hero-collage-support {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -1899,6 +2041,17 @@
   .service-showcase-media {
     flex: none;
     aspect-ratio: 16 / 9;
+  }
+
+  .service-showcase-card--featured:has(.service-showcase-media) .service-showcase-body {
+    grid-template-columns: 1fr;
+  }
+
+  .service-showcase-card--featured:has(.service-showcase-media) .service-showcase-body > .service-text-link {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+    margin-top: 6px;
   }
 
   .service-inline-cta {
