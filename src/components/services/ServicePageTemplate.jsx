@@ -48,10 +48,14 @@ function ServiceCta({ cta, className = '' }) {
   )
 }
 
-function ServiceSection({ id, kicker, title, intro, cta, className = '', children }) {
+function ServiceSection({ id, kicker, title, intro, cta, className = '', spacing, children }) {
+  const classes = ['service-page-section']
+  if (spacing) classes.push(`section-space--${spacing}`)
+  if (className) classes.push(className)
+
   return (
     <section
-      className={className ? `service-page-section ${className}` : 'service-page-section'}
+      className={classes.join(' ')}
       aria-labelledby={id}
     >
       <div className="service-section-heading">
@@ -69,15 +73,23 @@ function ServiceSection({ id, kicker, title, intro, cta, className = '', childre
   )
 }
 
-function ServiceCtaBlock({ cta, id, className }) {
+function ServiceCtaBlock({ cta, id, className = '', spacing }) {
   if (!cta) return null
 
+  const classes = []
+  if (className) classes.push(className)
+  if (spacing) classes.push(`section-space--${spacing}`)
+
+  const primaryClass = cta.primaryVariant === 'solid'
+    ? 'service-solid-action'
+    : 'service-primary-action'
+
   return (
-    <section className={className} aria-labelledby={id}>
+    <section className={classes.join(' ')} aria-labelledby={id}>
       <h2 id={id}>{cta.heading}</h2>
       <p className="service-cta-text">{cta.text}</p>
       <div className="service-cta-actions">
-        <SmartServiceLink href={cta.primaryHref} className="service-primary-action">
+        <SmartServiceLink href={cta.primaryHref} className={primaryClass}>
           {cta.primaryLabel}
           <ArrowRight size={17} strokeWidth={2.2} aria-hidden="true" />
         </SmartServiceLink>
@@ -112,8 +124,12 @@ function RelatedServiceLinks({ service }) {
 
   if (!relatedServices.length) return null
 
+  const className = service.relatedLinksStyle === 'inline'
+    ? 'service-related-links service-related-links--inline'
+    : 'service-related-links'
+
   return (
-    <div className="service-related-links" aria-label="Related service pages">
+    <div className={className} aria-label="Related service pages">
       {relatedServices.map((item) => (
         <SmartServiceLink key={item.slug} href={item.path}>
           {item.shortTitle}
@@ -177,11 +193,14 @@ function ServiceMatrix({ groups }) {
   )
 }
 
-function ServiceDirectory({ service }) {
+function ServiceDirectory({ service, spacing }) {
   const useMatrix = service.directoryGroups?.length > 0
+  const className = spacing
+    ? `service-directory section-space--${spacing}`
+    : 'service-directory'
 
   return (
-    <section className="service-directory" aria-labelledby="service-directory-title">
+    <section className={className} aria-labelledby="service-directory-title">
       <div className="service-section-heading service-directory-aside">
         <p className="service-section-kicker">Service pages</p>
         <h2 id="service-directory-title">Choose the service that matches your next move.</h2>
@@ -225,12 +244,14 @@ function ServiceDirectory({ service }) {
   )
 }
 
-function ServiceUseCases({ service }) {
+function ServiceUseCases({ service, spacing }) {
   if (!service.useCases?.length) return null
 
-  const gridClass = service.useCasesStyle === 'tonal'
-    ? 'service-use-case-grid service-use-case-grid--tonal'
-    : 'service-use-case-grid'
+  const featured = service.useCasesStyle === 'featured'
+  const tonal = featured || service.useCasesStyle === 'tonal'
+  const gridClasses = ['service-use-case-grid']
+  if (tonal) gridClasses.push('service-use-case-grid--tonal')
+  if (featured) gridClasses.push('service-use-case-grid--featured')
 
   return (
     <ServiceSection
@@ -238,10 +259,16 @@ function ServiceUseCases({ service }) {
       kicker="Use cases"
       title={service.useCasesTitle || 'Common use cases'}
       cta={service.useCasesCta}
+      spacing={spacing}
     >
-      <div className={gridClass}>
-        {service.useCases.map((item) => (
-          <article className="service-use-case-card" key={item.title}>
+      <div className={gridClasses.join(' ')}>
+        {service.useCases.map((item, index) => (
+          <article
+            className={featured && index === 0
+              ? 'service-use-case-card service-use-case-card--wide'
+              : 'service-use-case-card'}
+            key={item.title}
+          >
             <h3>{item.title}</h3>
             <p>{item.description}</p>
           </article>
@@ -251,14 +278,23 @@ function ServiceUseCases({ service }) {
   )
 }
 
-function ServiceResources({ resources }) {
+function ServiceResources({ resources, spacing, showcase }) {
   if (!resources?.length) return null
 
+  const gridClass = showcase
+    ? 'service-resource-grid service-resource-grid--showcase'
+    : 'service-resource-grid'
+
   return (
-    <ServiceSection id="service-resources" kicker="Resources" title="Plan the work before the build starts">
-      <div className="service-resource-grid">
-        {resources.map((resource) => (
-          <article className="service-resource-card" key={resource.href}>
+    <ServiceSection id="service-resources" kicker="Resources" title="Plan the work before the build starts" spacing={spacing}>
+      <div className={gridClass}>
+        {resources.map((resource, index) => (
+          <article
+            className={showcase && index === 0
+              ? 'service-resource-card service-resource-card--featured'
+              : 'service-resource-card'}
+            key={resource.href}
+          >
             <h3>{resource.title}</h3>
             <p>{resource.description}</p>
             <SmartServiceLink href={resource.href} className="service-text-link">
@@ -269,6 +305,107 @@ function ServiceResources({ resources }) {
         ))}
       </div>
     </ServiceSection>
+  )
+}
+
+/* Art-directed portfolio grid: one featured image + supporting images.
+ * Data-driven so image slots can be swapped later without layout changes.
+ * artwork = { featured: {src,alt,width,height,caption?,eager?}, supporting: [ ... ] } */
+function ServiceArtworkGrid({ artwork, className = '' }) {
+  if (!artwork?.featured) return null
+  const supporting = artwork.supporting || []
+
+  const Figure = ({ image, variant }) => (
+    <figure className={variant}>
+      <img
+        src={image.src}
+        alt={image.alt}
+        width={image.width}
+        height={image.height}
+        loading={image.eager ? 'eager' : 'lazy'}
+        fetchPriority={image.eager ? 'high' : undefined}
+        decoding="async"
+      />
+      {image.caption && <figcaption>{image.caption}</figcaption>}
+    </figure>
+  )
+
+  return (
+    <div className={className ? `service-artwork-grid ${className}` : 'service-artwork-grid'}>
+      <Figure image={artwork.featured} variant="service-artwork-featured" />
+      {supporting.length > 0 && (
+        <div className="service-artwork-supporting">
+          {supporting.map((image) => (
+            <Figure key={image.src + image.alt} image={image} variant="service-artwork-item" />
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
+/* Brand showcase: uncropped mixed-ratio portfolio grid (image + heading + caption).
+ * Data-driven via service.brandShowcase = { kicker, title, intro, items: [{ image, heading, caption }] }. */
+function ServiceBrandShowcase({ showcase, spacing }) {
+  if (!showcase?.items?.length) return null
+  return (
+    <ServiceSection
+      id="service-brand-showcase"
+      kicker={showcase.kicker || 'Selected work'}
+      title={showcase.title}
+      intro={showcase.intro}
+      spacing={spacing}
+      className="service-brand-showcase-section"
+    >
+      <div className="service-brand-showcase">
+        {showcase.items.map((item) => (
+          <figure className="service-brand-card" key={item.image.src}>
+            <img
+              src={item.image.src}
+              alt={item.image.alt}
+              width={item.image.width}
+              height={item.image.height}
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>
+              <h3>{item.heading}</h3>
+              {item.caption && <p>{item.caption}</p>}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </ServiceSection>
+  )
+}
+
+/* Grouped capabilities: one featured capability + labelled groups.
+ * Opt-in via includedStyle: 'grouped' (with includedFeatured + includedGroups). */
+function ServiceCapabilitySystem({ featured, groups }) {
+  return (
+    <div className="service-capability-system">
+      {featured && (
+        <article className="service-capability-featured">
+          <span className="service-capability-tag">Core</span>
+          <h3>{featured}</h3>
+        </article>
+      )}
+      <div className="service-capability-groups">
+        {groups.map((group) => (
+          <div className="service-capability-group" key={group.label}>
+            <p className="service-capability-group-label">{group.label}</p>
+            <ul>
+              {group.items.map((item) => (
+                <li key={item}>
+                  <CheckCircle2 size={16} strokeWidth={2.2} aria-hidden="true" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
   )
 }
 
@@ -406,13 +543,24 @@ function ServiceContentSections({ service }) {
       title={section.title}
       intro={section.intro}
       cta={section.cta}
+      spacing={section.spacing || 'standard'}
     >
       {section.proofImage ? (
         <ServiceProofSection section={section} />
       ) : section.panelStyle === 'trust' ? (
         <ServiceTrustPanel section={section} />
       ) : (
-        <ServiceSectionContent section={section} />
+        <>
+          <ServiceSectionContent section={section} />
+          {section.gallery && (
+            <ServiceArtworkGrid artwork={section.gallery} className="service-section-gallery" />
+          )}
+          {section.galleryCta && (
+            <div className="service-section-footer-cta">
+              <ServiceCta cta={section.galleryCta} />
+            </div>
+          )}
+        </>
       )}
     </ServiceSection>
   ))
@@ -438,6 +586,9 @@ function ServicePageTemplate({ service }) {
   )
   const hasIncluded = service.included?.length > 0
   const faqRows = service.faqStyle === 'rows'
+  const useRhythm = service.spacingRhythm === true
+  const sectionSpacing = service.sectionSpacing || {}
+  const spacingFor = (key, fallback) => sectionSpacing[key] || fallback
   const finalCta = service.finalCta || {
     label: 'Ready when you are',
     heading: 'Turn this service into a clear project plan.',
@@ -447,13 +598,60 @@ function ServicePageTemplate({ service }) {
     secondaryHref: '/#projects'
   }
 
+  const mainClasses = ['service-page']
+  if (isServicesIndex) mainClasses.push('service-page--index')
+  if (useRhythm) mainClasses.push('service-page--rhythm')
+  if (service.flatSurfaces) mainClasses.push('service-page--flat')
+
   return (
-    <main className={isServicesIndex ? 'service-page service-page--index' : 'service-page'}>
+    <main className={mainClasses.join(' ')}>
       <section className="service-page-hero" aria-labelledby="service-page-title">
         <div className="service-page-shell">
           <p className="service-page-kicker">{service.kicker}</p>
           <h1 id="service-page-title">{service.h1}</h1>
-          {service.introCta ? (
+          {service.heroArtwork ? (
+            <div className="service-hero-split service-hero-split--artwork">
+              <div className="service-hero-lead">
+                <p className="service-page-intro">{service.intro}</p>
+                <div className="service-hero-actions" aria-label="Service page actions">
+                  <SmartServiceLink href="/contact" className="service-primary-action">
+                    {service.heroPrimaryLabel || 'Start a project'}
+                    <ArrowRight size={17} strokeWidth={2.2} aria-hidden="true" />
+                  </SmartServiceLink>
+                  <SmartServiceLink href={service.heroSecondaryHref || '/services'} className="service-secondary-action">
+                    {service.heroSecondaryLabel || 'View all services'}
+                  </SmartServiceLink>
+                </div>
+              </div>
+              <ServiceArtworkGrid artwork={service.heroArtwork} className="service-hero-artwork" />
+            </div>
+          ) : service.heroPanel ? (
+            <div className="service-hero-split">
+              <div className="service-hero-lead">
+                <p className="service-page-intro">{service.intro}</p>
+                <div className="service-hero-actions" aria-label="Service page actions">
+                  <SmartServiceLink href="/contact" className="service-primary-action">
+                    {service.heroPrimaryLabel || 'Start a project'}
+                    <ArrowRight size={17} strokeWidth={2.2} aria-hidden="true" />
+                  </SmartServiceLink>
+                  <SmartServiceLink href={service.heroSecondaryHref || '/services'} className="service-secondary-action">
+                    {service.heroSecondaryLabel || 'View all services'}
+                  </SmartServiceLink>
+                </div>
+              </div>
+              <aside className="service-hero-panel" aria-label={service.heroPanel.title}>
+                <p className="service-hero-panel-title">{service.heroPanel.title}</p>
+                <ul>
+                  {service.heroPanel.items.map((item) => (
+                    <li key={item}>
+                      <CheckCircle2 size={17} strokeWidth={2.2} aria-hidden="true" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </aside>
+            </div>
+          ) : service.introCta ? (
             <div className="service-page-intro-block">
               <p className="service-page-intro">{service.intro}</p>
               <ServiceCtaBlock cta={service.introCta} id="service-intro-cta-title" className="service-intro-cta" />
@@ -482,13 +680,23 @@ function ServicePageTemplate({ service }) {
             kicker="Overview"
             title={service.overviewTitle}
             cta={service.overviewCta}
+            spacing={spacingFor('overview', 'standard')}
           >
             <ServiceOverview overview={service.overview} />
             <RelatedServiceLinks service={service} />
           </ServiceSection>
         )}
 
-        {service.showDirectory && <ServiceDirectory service={service} />}
+        {service.brandShowcase && (
+          <ServiceBrandShowcase
+            showcase={service.brandShowcase}
+            spacing={spacingFor('brandShowcase', 'spacious')}
+          />
+        )}
+
+        {service.showDirectory && (
+          <ServiceDirectory service={service} spacing={spacingFor('directory', 'spacious')} />
+        )}
 
         {hasIncluded && (
           <ServiceSection
@@ -496,18 +704,33 @@ function ServicePageTemplate({ service }) {
             kicker="Included"
             title={service.includedTitle || 'What is included'}
             cta={service.includedCta}
+            spacing={spacingFor('included', 'standard')}
           >
-            {service.includedStyle === 'feature' ? (
-              <div className="service-feature-grid">
-                {service.included.map((item, index) => (
-                  <article className="service-feature-card" key={item.title}>
-                    <span className="service-feature-index" aria-hidden="true">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
-                  </article>
-                ))}
+            {service.includedStyle === 'grouped' ? (
+              <ServiceCapabilitySystem
+                featured={service.includedFeatured}
+                groups={service.includedGroups}
+              />
+            ) : service.includedStyle === 'feature' ? (
+              <div className={service.includedFeatured
+                ? 'service-feature-grid service-feature-grid--featured'
+                : 'service-feature-grid'}>
+                {service.included.map((item, index) => {
+                  const isObject = typeof item === 'object'
+                  const wide = service.includedFeatured && index === 0
+                  return (
+                    <article
+                      className={wide ? 'service-feature-card service-feature-card--wide' : 'service-feature-card'}
+                      key={isObject ? item.title : item}
+                    >
+                      <span className="service-feature-index" aria-hidden="true">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                      <h3>{isObject ? item.title : item}</h3>
+                      {isObject && item.description && <p>{item.description}</p>}
+                    </article>
+                  )
+                })}
               </div>
             ) : (
               <ul className="service-check-grid">
@@ -522,9 +745,19 @@ function ServicePageTemplate({ service }) {
           </ServiceSection>
         )}
 
-        <ServiceCtaBlock cta={service.midPageCta} id="service-mid-cta-title" className="service-mid-cta" />
+        <ServiceCtaBlock
+          cta={service.midPageCta}
+          id="service-mid-cta-title"
+          className="service-mid-cta"
+          spacing={spacingFor('midCta', 'standard')}
+        />
 
-        <ServiceSection id="service-audience" kicker="Best for" title={service.audienceTitle || 'Who this service is for'}>
+        <ServiceSection
+          id="service-audience"
+          kicker="Best for"
+          title={service.audienceTitle || 'Who this service is for'}
+          spacing={spacingFor('audience', 'standard')}
+        >
           {service.audienceStyle === 'list' ? (
             <ul className="service-audience-list">
               {service.audience.map((item) => (
@@ -550,11 +783,16 @@ function ServicePageTemplate({ service }) {
           )}
         </ServiceSection>
 
-        <ServiceUseCases service={service} />
+        <ServiceUseCases service={service} spacing={spacingFor('useCases', 'standard')} />
 
         <ServiceContentSections service={service} />
 
-        <ServiceSection id="service-process" kicker="Process" title={service.processTitle || 'How the work moves'}>
+        <ServiceSection
+          id="service-process"
+          kicker="Process"
+          title={service.processTitle || 'How the work moves'}
+          spacing={spacingFor('process', 'standard')}
+        >
           <div
             className={service.processStyle === 'timeline'
               ? 'service-process-list service-process-list--timeline'
@@ -577,9 +815,18 @@ function ServicePageTemplate({ service }) {
           )}
         </ServiceSection>
 
-        <ServiceResources resources={service.resources} />
+        <ServiceResources
+          resources={service.resources}
+          spacing={spacingFor('resources', 'standard')}
+          showcase={service.resourcesStyle === 'showcase'}
+        />
 
-        <ServiceSection id="service-examples" kicker="Examples" title={service.examplesTitle || 'Related portfolio or examples'}>
+        <ServiceSection
+          id="service-examples"
+          kicker="Examples"
+          title={service.examplesTitle || 'Related portfolio or examples'}
+          spacing={spacingFor('examples', 'standard')}
+        >
           {service.examplesStyle === 'showcase' ? (
             <div className="service-showcase">
               {service.examples.map((example) => (
@@ -613,7 +860,9 @@ function ServicePageTemplate({ service }) {
               ))}
             </div>
           ) : (
-            <div className="service-example-grid">
+            <div className={service.examplesStyle === 'trio'
+              ? 'service-example-grid service-example-grid--trio'
+              : 'service-example-grid'}>
               {service.examples.map((example) => (
                 <article key={example.title} className="service-example-card">
                   <LinkIcon size={18} strokeWidth={2.2} aria-hidden="true" />
@@ -627,6 +876,11 @@ function ServicePageTemplate({ service }) {
               ))}
             </div>
           )}
+          {service.examplesCta && (
+            <div className="service-section-footer-cta">
+              <ServiceCta cta={service.examplesCta} />
+            </div>
+          )}
         </ServiceSection>
 
         <ServiceSection
@@ -635,6 +889,7 @@ function ServicePageTemplate({ service }) {
           title="Questions clients usually ask"
           intro={service.faqIntro}
           cta={service.faqCta}
+          spacing={spacingFor('faq', 'spacious')}
         >
           <div className={faqRows ? 'service-faq-list service-faq-list--rows' : 'service-faq-list'}>
             {service.faqs.map((faq) => (
@@ -658,7 +913,14 @@ function ServicePageTemplate({ service }) {
           </div>
         </ServiceSection>
 
-        <section className="service-final-cta" aria-labelledby="service-final-cta-title">
+        <section
+          className={[
+            'service-final-cta',
+            service.finalCtaStyle === 'tonal' ? 'service-final-cta--tonal' : '',
+            `section-space--${spacingFor('finalCta', 'spacious')}`
+          ].filter(Boolean).join(' ')}
+          aria-labelledby="service-final-cta-title"
+        >
           <p>{finalCta.label}</p>
           <h2 id="service-final-cta-title">{finalCta.heading}</h2>
           {finalCta.text && <p className="service-final-cta-text">{finalCta.text}</p>}

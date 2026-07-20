@@ -29,6 +29,16 @@ The website must remain premium, dark, modern, sharp, technical, clean, responsi
 * Do not change routing, deployment, environment configuration, backend logic, or hosting settings unless required.
 * Maintain semantic HTML, keyboard access, focus states, labels, reduced-motion support, and responsive desktop/tablet/mobile behavior.
 
+## Section spacing
+
+All new or modified pages must use the shared compact, standard, and spacious
+section-spacing system documented in `docs/design-system/section-spacing.md`.
+
+Do not add arbitrary section margins, empty spacer elements, or broad `section` selectors.
+Section wrappers own page-level vertical spacing; components own only their internal
+spacing. The system is opt-in per page (`spacingRhythm`), so never affect a page that has
+not opted in. Verify desktop, tablet, and mobile spacing before completion.
+
 ## UI and Copy
 
 Maintain:

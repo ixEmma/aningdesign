@@ -75,7 +75,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 30px;
+  margin-top: 34px;
 }
 
 .service-primary-action,
@@ -105,8 +105,8 @@
 .service-secondary-action {
   padding: 12px 18px;
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .service-primary-action:hover,
@@ -194,6 +194,41 @@
   padding: 42px 24px 110px;
 }
 
+/* ---------------------------------------------------------------- */
+/* Section-spacing system (opt-in via .service-page--rhythm).       */
+/* Full documentation: docs/design-system/section-spacing.md        */
+/* The section wrapper owns the vertical gap ABOVE it (margin-top), */
+/* so every gap has exactly one owner and never doubles.            */
+/* ---------------------------------------------------------------- */
+.service-page--rhythm .service-page-content {
+  gap: 0;
+  padding-top: var(--section-lead-top);
+  padding-bottom: var(--section-space-standard);
+}
+
+.service-page--rhythm .service-page-content > * {
+  margin-top: var(--section-space-standard);
+}
+
+.service-page--rhythm .service-page-content > .section-space--compact {
+  margin-top: var(--section-space-compact);
+}
+
+.service-page--rhythm .service-page-content > .section-space--spacious {
+  margin-top: var(--section-space-spacious);
+}
+
+/* Hero owns the lead-in gap via the content padding-top; the first
+   content section never adds its own top gap. */
+.service-page--rhythm .service-page-content > *:first-child {
+  margin-top: 0;
+}
+
+/* Internal rhythm: distance from a section's content to its own CTA. */
+.service-page--rhythm .service-section-footer-cta {
+  margin-top: var(--section-cta-gap);
+}
+
 .service-page-section,
 .service-directory {
   display: grid;
@@ -274,6 +309,32 @@
   background: rgba(255, 255, 255, 0.04);
 }
 
+/* Restrained inline related links: lower-emphasis text actions */
+/* Opt-in via relatedLinksStyle: 'inline' so supporting links do   */
+/* not compete with a dominant section CTA.                        */
+.service-related-links--inline {
+  gap: 6px 20px;
+  margin-top: 20px;
+}
+
+.service-related-links--inline a {
+  min-height: 30px;
+  padding: 2px 0;
+  color: #9af7a3;
+  border: none;
+  border-radius: 0;
+  background: none;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.service-related-links--inline a:hover {
+  border-color: transparent;
+  background: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .service-check-grid,
 .service-audience-grid,
 .service-directory-grid,
@@ -285,6 +346,11 @@
 }
 
 .service-use-case-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Related guides as three equal columns (opt-in via examplesStyle: 'trio') */
+.service-example-grid--trio {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -521,12 +587,6 @@
 .service-page--index .service-cta-text,
 .service-page--index .service-directory-copy {
   line-height: 1.6;
-}
-
-.service-page--index .service-page-content {
-  gap: 58px;
-  padding-top: 34px;
-  padding-bottom: 86px;
 }
 
 .service-page--index .service-page-section,
@@ -1230,7 +1290,7 @@
 /* Measurable results proof block (Lighthouse evidence) */
 .service-proof {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.15fr);
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.35fr);
   gap: 30px;
   align-items: start;
 }
@@ -1324,6 +1384,368 @@
   width: 100%;
 }
 
+/* ---------------------------------------------------------------- */
+/* Hero summary panel: copy + actions left, factual summary right.  */
+/* Opt-in via a `heroPanel` object in page data.                    */
+/* ---------------------------------------------------------------- */
+.service-hero-split {
+  display: grid;
+  gap: 30px;
+  margin-top: 24px;
+}
+
+.service-hero-lead {
+  min-width: 0;
+}
+
+.service-hero-lead .service-page-intro {
+  margin-top: 0;
+}
+
+.service-hero-panel {
+  align-self: start;
+  padding: 22px 24px;
+  border: 1px solid rgba(154, 247, 163, 0.18);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.service-hero-panel-title {
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.service-hero-panel ul {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-hero-panel li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: rgba(236, 246, 243, 0.82);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.service-hero-panel svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: #9af7a3;
+}
+
+@media (min-width: 860px) {
+  .service-hero-split {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 380px);
+    align-items: center;
+    gap: 40px;
+  }
+}
+
+/* ---------------------------------------------------------------- */
+/* Grouped capabilities: featured lead + labelled group panels.     */
+/* Opt-in via includedStyle: 'grouped'.                             */
+/* ---------------------------------------------------------------- */
+.service-capability-system {
+  display: grid;
+  gap: 14px;
+}
+
+.service-capability-featured {
+  display: grid;
+  gap: 10px;
+  padding: 24px;
+  border: 1px solid rgba(154, 247, 163, 0.3);
+  border-radius: 8px;
+  background: rgba(154, 247, 163, 0.05);
+}
+
+.service-capability-tag {
+  justify-self: start;
+  padding: 5px 10px;
+  border: 1px solid rgba(154, 247, 163, 0.3);
+  border-radius: 999px;
+  color: #9af7a3;
+  background: rgba(154, 247, 163, 0.08);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.service-capability-featured h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.service-capability-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+}
+
+.service-capability-group {
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.service-capability-group-label {
+  margin: 0 0 12px;
+  color: #9af7a3;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.service-capability-group ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-capability-group li {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  color: rgba(236, 246, 243, 0.82);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.service-capability-group svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: #9af7a3;
+}
+
+/* ---------------------------------------------------------------- */
+/* Featured feature grid: one wide lead item + supporting items.    */
+/* Opt-in via includedFeatured: true (with includedStyle: 'feature')*/
+/* ---------------------------------------------------------------- */
+.service-feature-grid--featured .service-feature-card--wide {
+  grid-column: 1 / -1;
+  border-color: rgba(154, 247, 163, 0.3);
+  background: rgba(154, 247, 163, 0.05);
+}
+
+.service-feature-grid--featured .service-feature-card--wide h3 {
+  font-size: 22px;
+}
+
+/* ---------------------------------------------------------------- */
+/* Featured use-case grid: one wide lead card + supporting tonal    */
+/* cards. Opt-in via useCasesStyle: 'featured'.                     */
+/* ---------------------------------------------------------------- */
+.service-use-case-grid--featured .service-use-case-card--wide {
+  grid-column: 1 / -1;
+}
+
+.service-use-case-grid--featured .service-use-case-card--wide h3 {
+  font-size: 22px;
+}
+
+.service-use-case-grid--featured .service-use-case-card--wide.service-use-case-card {
+  border-color: rgba(154, 247, 163, 0.3);
+  background: rgba(154, 247, 163, 0.05);
+}
+
+/* ---------------------------------------------------------------- */
+/* Resource showcase: featured lead resource + supporting cards,    */
+/* tonal (green) surfaces. Opt-in via resourcesStyle: 'showcase'.   */
+/* ---------------------------------------------------------------- */
+.service-resource-grid--showcase {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.service-resource-grid--showcase .service-resource-card {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.service-resource-grid--showcase .service-resource-card--featured {
+  grid-column: 1 / -1;
+  border-color: rgba(154, 247, 163, 0.28);
+  background: rgba(154, 247, 163, 0.05);
+}
+
+.service-resource-grid--showcase .service-resource-card--featured h3 {
+  font-size: 22px;
+}
+
+/* Showcase with exactly one supporting card after the featured one:
+   let it span the full width instead of sitting half-empty. */
+.service-showcase-card--featured + .service-showcase-card:last-child {
+  grid-column: 1 / -1;
+}
+
+/* Tonal final CTA (no gradient background). Opt-in via
+   finalCtaStyle: 'tonal'. */
+.service-final-cta--tonal {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------------------------------------------------------------- */
+/* Flat (no-gradient) surfaces. Opt-in via flatSurfaces: true.      */
+/* Replaces every gradient on the page with solid / tonal colour:   */
+/* page + hero backgrounds, the primary button, and the mid CTA.    */
+/* ---------------------------------------------------------------- */
+.service-page--flat {
+  background: #070b0b;
+}
+
+.service-page--flat .service-page-hero {
+  background: #0a0f0f;
+}
+
+/* Primary button keeps the standard green→cyan gradient (see .service-primary-action)
+   even on flat pages, so the primary CTA looks identical across all service pages. */
+
+.service-page--flat .service-mid-cta,
+.service-page--flat .service-intro-cta {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Neutralise the shared 145deg card gradient to a solid tonal surface.
+   (Timeline steps and FAQ rows are transparent via their own variants,
+   so they are intentionally excluded here.) */
+.service-page--flat .service-check-grid li,
+.service-page--flat .service-audience-grid article,
+.service-page--flat .service-directory-card,
+.service-page--flat .service-example-card,
+.service-page--flat .service-use-case-card {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* ---------------------------------------------------------------- */
+/* Art-directed portfolio grid: featured image + supporting images. */
+/* Data-driven (heroArtwork / contentSections[].gallery). Reusable  */
+/* for future Branding and Social Media Design pages.               */
+/* ---------------------------------------------------------------- */
+.service-artwork-grid {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+
+.service-artwork-grid figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.service-artwork-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1024 / 320;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.service-artwork-grid figcaption {
+  margin-top: 8px;
+  color: rgba(236, 246, 243, 0.6);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.service-artwork-supporting {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* In the wider content column, let the section gallery breathe more */
+.service-section-gallery {
+  margin-top: 26px;
+  gap: 14px;
+}
+
+.service-section-gallery .service-artwork-supporting {
+  gap: 14px;
+}
+
+/* ---------------------------------------------------------------- */
+/* Brand showcase: uncropped mixed-ratio portfolio grid.            */
+/* Masonry columns so portrait/landscape work shows at natural      */
+/* aspect ratio (no banner crop). Opt-in via brandShowcase field.   */
+/* ---------------------------------------------------------------- */
+.service-brand-showcase {
+  columns: 3 260px;
+  column-gap: 18px;
+}
+
+.service-brand-card {
+  break-inside: avoid;
+  margin: 0 0 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.service-brand-card:hover {
+  border-color: rgba(0, 251, 100, 0.35);
+}
+
+.service-brand-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.service-brand-card figcaption {
+  padding: 16px 18px 18px;
+}
+
+.service-brand-card h3 {
+  margin: 0 0 6px;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.service-brand-card p {
+  margin: 0;
+  color: rgba(236, 246, 243, 0.7);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .service-brand-showcase {
+    columns: 2 220px;
+  }
+}
+
+@media (max-width: 560px) {
+  .service-brand-showcase {
+    columns: 1;
+  }
+}
+
 @media (max-width: 900px) {
   .service-page-hero {
     padding: 116px 20px 58px;
@@ -1338,11 +1760,6 @@
     padding: 34px 20px 86px;
   }
 
-  .service-page--index .service-page-content {
-    gap: 50px;
-    padding-bottom: 76px;
-  }
-
   .service-page-section,
   .service-directory {
     grid-template-columns: 1fr;
@@ -1354,6 +1771,11 @@
     gap: 20px;
   }
 
+  .service-proof {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
   .service-check-grid,
   .service-audience-grid,
   .service-directory-grid,
@@ -1361,6 +1783,10 @@
   .service-use-case-grid,
   .service-resource-grid {
     grid-template-columns: 1fr;
+  }
+
+  .service-example-grid--trio {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .service-section-intro {
@@ -1410,16 +1836,14 @@
     padding: 28px 16px 72px;
   }
 
-  .service-page--index .service-page-content {
-    gap: 42px;
-    padding-top: 24px;
-    padding-bottom: 62px;
-  }
-
   .service-hero-actions,
   .service-final-actions,
   .service-cta-actions {
     display: grid;
+  }
+
+  .service-example-grid--trio {
+    grid-template-columns: 1fr;
   }
 
   .service-primary-action,
@@ -1441,12 +1865,11 @@
     grid-template-columns: 1fr;
   }
 
-  .service-proof {
+  .service-feature-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
   }
 
-  .service-feature-grid {
+  .service-artwork-supporting {
     grid-template-columns: 1fr;
   }
 

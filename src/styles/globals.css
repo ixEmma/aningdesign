@@ -31,6 +31,16 @@ body {
   --line-body: 1.6;
   --tracking-title: -1px;
   --tracking-label: 0.06em;
+  /* Section-spacing system — see docs/design-system/section-spacing.md.
+     Global tokens are available site-wide; the compact/standard/spacious
+     section variants must be explicitly opted into per page. */
+  --section-space-compact: clamp(52px, 40px + 3.5vw, 88px);
+  --section-space-standard: clamp(64px, 48px + 5vw, 120px);
+  --section-space-spacious: clamp(72px, 52px + 6.4vw, 144px);
+  --section-lead-top: clamp(44px, 26px + 4.5vw, 72px);
+  --section-intro-gap: clamp(32px, 24px + 2vw, 56px);
+  --section-content-gap: clamp(20px, 16px + 1vw, 32px);
+  --section-cta-gap: clamp(28px, 20px + 2vw, 40px);
   font-family: "Switzer", sans-serif, Helvetica, sans-serif;
   font-weight: 400;
   background-color: #0a0a0a;

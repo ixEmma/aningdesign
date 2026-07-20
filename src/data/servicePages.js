@@ -5,6 +5,17 @@ export const servicePages = [
     shortTitle: 'Website Design',
     path: '/services/website-design',
     kicker: 'Website design services',
+    spacingRhythm: true,
+    sectionSpacing: { midCta: 'compact', process: 'spacious', resources: 'spacious' },
+    heroPanel: {
+      title: 'What a website project covers',
+      items: [
+        'Responsive page and service-page structure',
+        'Custom or WordPress implementation',
+        'SEO-ready content sections',
+        'Contact, booking, and inquiry paths'
+      ]
+    },
     h1: 'Small business website design.',
     intro:
       'Small business website design services for clear business websites, custom website design, responsive pages, and SEO-ready structure. Use this when your site needs to explain the offer and move visitors to calls, forms, bookings, or inquiries.',
@@ -23,7 +34,11 @@ export const servicePages = [
       'Custom website design is planned around your offer, audience, brand direction, and the action visitors should take.',
       'Business website design can include service pages, contact paths, SEO and website design basics, and marketing website design for a specific offer.'
     ],
+    overviewCta: { label: 'Discuss your website', href: '/contact', variant: 'solid' },
+    relatedLinksStyle: 'inline',
     includedTitle: 'What I build',
+    includedStyle: 'feature',
+    includedFeatured: true,
     included: [
       'Homepage and service page structure',
       'Custom website design',
@@ -38,8 +53,11 @@ export const servicePages = [
       heading: 'Need a clearer business website?',
       text: 'Share the offer, page list, current website, and main action visitors should take.',
       primaryLabel: 'Start a website project',
-      primaryHref: '/contact'
+      primaryHref: '/contact',
+      primaryVariant: 'solid'
     },
+    audienceStyle: 'list',
+    audienceCta: { label: 'Discuss your project', href: '/contact', variant: 'solid' },
     audience: [
       'Small businesses that need a professional website',
       'Service brands that need clearer pages',
@@ -49,6 +67,8 @@ export const servicePages = [
       'Teams comparing website design companies for small business'
     ],
     useCasesTitle: 'Website design services for small businesses',
+    useCasesStyle: 'featured',
+    useCasesCta: { label: 'Plan your website', href: '/contact', variant: 'solid' },
     useCases: [
       {
         title: 'Business service websites',
@@ -72,6 +92,9 @@ export const servicePages = [
         id: 'service-wordpress-custom-seo',
         kicker: 'Website setup',
         title: 'WordPress, custom website design, and SEO-ready pages',
+        spacing: 'spacious',
+        listStyle: 'rows',
+        cta: { label: 'Choose the right website approach', href: '/contact', variant: 'solid' },
         body: [
           'SEO and website design are handled through page hierarchy, headings, metadata support, internal links, and readable service content.',
           'Affordable website design services can still use custom structure when the scope is limited by page count, content, and launch needs.'
@@ -87,6 +110,8 @@ export const servicePages = [
       }
     ],
     processTitle: 'Website design process',
+    processStyle: 'timeline',
+    processCta: { label: 'Start with your website goal', href: '/contact', variant: 'solid' },
     process: [
       {
         title: 'Share the website goal',
@@ -110,11 +135,14 @@ export const servicePages = [
       }
     ],
     examplesTitle: 'Related website design examples',
+    examplesStyle: 'showcase',
+    examplesCta: { label: 'View more website projects', href: '/#projects', variant: 'solid' },
     examples: [
       {
         title: 'Aburi Sweetmother Guesthouse',
         description: 'Hospitality business website design with clear service pages and a direct contact path.',
-        href: 'https://aburisweetmother.com'
+        href: 'https://aburisweetmother.com',
+        featured: true
       },
       {
         title: 'Dr Oliver Rabie',
@@ -123,7 +151,14 @@ export const servicePages = [
       }
     ],
     relatedServices: ['wordpress-websites', 'ui-ux-design', 'branding'],
+    resourcesStyle: 'showcase',
     resources: [
+      {
+        title: 'Client-Ready WordPress Blueprint',
+        description: 'Use a repeatable planning, build, launch, and handover system for WordPress client work.',
+        href: '/books/client-ready-wordpress-website-blueprint',
+        label: 'View the blueprint'
+      },
       {
         title: 'Website Design Checklist for Clients',
         description: 'Prepare goals, page requirements, copy, brand assets, images, access, and approvals before design begins.',
@@ -135,14 +170,11 @@ export const servicePages = [
         description: 'Review content, responsive behavior, SEO, forms, performance, trust, analytics, and post-launch tasks.',
         href: '/blog/website-launch-checklist',
         label: 'Read the launch checklist'
-      },
-      {
-        title: 'Client-Ready WordPress Blueprint',
-        description: 'Use a repeatable planning, build, launch, and handover system for WordPress client work.',
-        href: '/books/client-ready-wordpress-website-blueprint',
-        label: 'View the blueprint'
       }
     ],
+    faqStyle: 'rows',
+    faqIntro: 'Ask about redesigns, WordPress, SEO, forms, or combining website and graphic design before starting.',
+    faqCta: { label: 'Ask about your website', href: '/contact', variant: 'solid' },
     faqs: [
       {
         question: 'Do you offer small business website design services?',
@@ -180,6 +212,7 @@ export const servicePages = [
           'I design websites for service businesses, consultants, creators, local brands, healthcare-related brands, hospitality businesses, startups, and small businesses.'
       }
     ],
+    finalCtaStyle: 'tonal',
     finalCta: {
       label: 'Website design services',
       heading: 'Need a clearer small business website?',
@@ -196,6 +229,17 @@ export const servicePages = [
     shortTitle: 'WordPress Websites',
     path: '/services/wordpress-websites',
     kicker: 'WordPress website design',
+    spacingRhythm: true,
+    sectionSpacing: { midCta: 'compact', process: 'spacious', resources: 'spacious' },
+    heroPanel: {
+      title: 'What a WordPress build covers',
+      items: [
+        'Editable WordPress pages',
+        'Responsive Elementor or custom build',
+        'SEO-ready structure and metadata',
+        'Contact forms and integrations'
+      ]
+    },
     h1: 'WordPress websites built for clear business growth.',
     intro:
       'WordPress website design and development for service businesses that need responsive pages, practical content management, reliable forms, and an SEO-ready structure.',
@@ -214,7 +258,10 @@ export const servicePages = [
       'Projects can use Elementor or a custom WordPress implementation based on the content, performance needs, and maintenance workflow.',
       'Page hierarchy, metadata support, internal links, forms, and responsive checks create a stronger base for launch and ongoing SEO work.'
     ],
+    overviewCta: { label: 'Discuss your WordPress website', href: '/contact', variant: 'solid' },
+    relatedLinksStyle: 'inline',
     includedTitle: 'What is included',
+    includedStyle: 'feature',
     included: [
       'Homepage and service-page structure',
       'Responsive Elementor or custom WordPress build',
@@ -229,8 +276,11 @@ export const servicePages = [
       heading: 'Need an editable business website?',
       text: 'Share the business, required pages, content, and current WordPress setup. I will help define the right build scope.',
       primaryLabel: 'Discuss your website',
-      primaryHref: '/contact'
+      primaryHref: '/contact',
+      primaryVariant: 'solid'
     },
+    audienceStyle: 'list',
+    audienceCta: { label: 'Discuss your project', href: '/contact', variant: 'solid' },
     audience: [
       'Service businesses that need an editable website',
       'Consultants and healthcare providers',
@@ -239,6 +289,8 @@ export const servicePages = [
       'Agencies that need WordPress implementation support'
     ],
     useCasesTitle: 'Common WordPress website needs',
+    useCasesStyle: 'featured',
+    useCasesCta: { label: 'Plan your WordPress website', href: '/contact', variant: 'solid' },
     useCases: [
       { title: 'Service business websites', description: 'Clear service pages, trust content, inquiry paths, and manageable updates.' },
       { title: 'Elementor website builds', description: 'Responsive WordPress pages that remain practical for teams to edit.' },
@@ -246,6 +298,8 @@ export const servicePages = [
       { title: 'Blog and content structures', description: 'Organized publishing foundations with categories, article templates, and internal links.' }
     ],
     processTitle: 'WordPress website process',
+    processStyle: 'timeline',
+    processCta: { label: 'Start with your website goals', href: '/contact', variant: 'solid' },
     process: [
       { title: 'Define the website scope', description: 'Confirm the audience, pages, content, integrations, and main visitor action.' },
       { title: 'Plan the page structure', description: 'Map navigation, service pages, blog needs, forms, and content hierarchy.' },
@@ -254,12 +308,21 @@ export const servicePages = [
       { title: 'Test and prepare launch', description: 'Check responsive behavior, links, forms, performance basics, metadata, and handoff.' }
     ],
     examplesTitle: 'Relevant website work',
+    examplesStyle: 'showcase',
+    examplesCta: { label: 'View more website projects', href: '/#projects', variant: 'solid' },
     examples: [
-      { title: 'Dr Oliver Rabie', description: 'Healthcare website with structured service information and trust-focused content.', href: 'https://www.droliverrabie.co.uk/' },
+      { title: 'Dr Oliver Rabie', description: 'Healthcare website with structured service information and trust-focused content.', href: 'https://www.droliverrabie.co.uk/', featured: true },
       { title: 'Aburi Sweetmother Guesthouse', description: 'Hospitality website with clear accommodation information and contact paths.', href: 'https://aburisweetmother.com' }
     ],
     relatedServices: ['react-web-apps', 'website-design', 'ui-ux-design'],
+    resourcesStyle: 'showcase',
     resources: [
+      {
+        title: 'Client-Ready WordPress Blueprint',
+        description: 'Get the complete system with the main ebook, prompt pack, checklists, design rulers, and handover resources.',
+        href: '/books/client-ready-wordpress-website-blueprint',
+        label: 'View the blueprint'
+      },
       {
         title: 'WordPress Website Checklist',
         description: 'Follow the project from planning and content collection through build, testing, launch, and handover.',
@@ -271,20 +334,18 @@ export const servicePages = [
         description: 'Check settings, backups, caching, forms, SEO, security, redirects, staging cleanup, and admin access.',
         href: '/blog/wordpress-website-launch-checklist',
         label: 'Review launch checks'
-      },
-      {
-        title: 'Client-Ready WordPress Blueprint',
-        description: 'Get the complete system with the main ebook, prompt pack, checklists, design rulers, and handover resources.',
-        href: '/books/client-ready-wordpress-website-blueprint',
-        label: 'View the blueprint'
       }
     ],
+    faqStyle: 'rows',
+    faqIntro: 'Ask about Elementor, editing, forms, integrations, or SEO before starting.',
+    faqCta: { label: 'Ask about your website', href: '/contact', variant: 'solid' },
     faqs: [
       { question: 'Can you build with Elementor?', answer: 'Yes. Elementor can be used when it fits the editing workflow, design requirements, and performance scope.' },
       { question: 'Will I be able to update the website?', answer: 'Yes. Editable content areas and a practical handoff can be included so routine updates remain manageable.' },
       { question: 'Can the website include forms and integrations?', answer: 'Yes. Contact forms and suitable third-party integrations can be included when they are defined in the project scope.' },
       { question: 'Is SEO included?', answer: 'The implementation can include SEO-ready headings, metadata support, internal links, responsive pages, and performance basics. Ongoing SEO is a separate scope.' }
     ],
+    finalCtaStyle: 'tonal',
     finalCta: {
       label: 'WordPress website design',
       heading: 'Ready to plan your WordPress website?',
@@ -301,6 +362,17 @@ export const servicePages = [
     shortTitle: 'React Web Apps',
     path: '/services/react-web-apps',
     kicker: 'React web app development',
+    spacingRhythm: true,
+    sectionSpacing: { midCta: 'compact', process: 'spacious', examples: 'spacious' },
+    heroPanel: {
+      title: 'How the build fits together',
+      items: [
+        'React interface and reusable components',
+        'Firebase authentication and data flows',
+        'Responsive product states',
+        'Production deployment support'
+      ]
+    },
     h1: 'React web apps for real product workflows.',
     intro:
       'React web app development for dashboards, portals, SaaS frontends, Firebase-connected applications, and responsive product interfaces built around a clear user workflow.',
@@ -319,7 +391,25 @@ export const servicePages = [
       'A focused build can connect authentication, Firebase data, dashboards, portals, and product workflows without turning the first version into an oversized platform.',
       'Responsive UI, clear loading and error states, and production deployment are planned as part of the application experience.'
     ],
+    overviewCta: { label: 'Discuss your product workflow', href: '/contact', variant: 'solid' },
+    relatedLinksStyle: 'inline',
     includedTitle: 'Core capabilities',
+    includedStyle: 'grouped',
+    includedFeatured: 'Custom React interfaces',
+    includedGroups: [
+      {
+        label: 'Interface',
+        items: ['Dashboard and portal UI', 'Responsive application layouts', 'Reusable component structure']
+      },
+      {
+        label: 'Data & state',
+        items: ['Firebase authentication and data flows', 'Forms, validation, and product states']
+      },
+      {
+        label: 'Delivery',
+        items: ['SaaS frontend development', 'Production deployment support']
+      }
+    ],
     included: [
       'Custom React interfaces',
       'Dashboard and portal UI',
@@ -334,8 +424,11 @@ export const servicePages = [
       heading: 'Have a product workflow to build?',
       text: 'Share the users, screens, data needs, and first essential workflow. I will help define a focused React build.',
       primaryLabel: 'Discuss your product',
-      primaryHref: '/contact'
+      primaryHref: '/contact',
+      primaryVariant: 'solid'
     },
+    audienceStyle: 'list',
+    audienceCta: { label: 'Discuss your product', href: '/contact', variant: 'solid' },
     audience: [
       'Startups and founders building digital products',
       'Product teams that need frontend implementation',
@@ -344,6 +437,8 @@ export const servicePages = [
       'Agencies that need React implementation support'
     ],
     useCasesTitle: 'React application use cases',
+    useCasesStyle: 'featured',
+    useCasesCta: { label: 'Plan your application', href: '/contact', variant: 'solid' },
     useCases: [
       { title: 'Dashboards', description: 'Responsive views for data, tasks, account activity, and administrative workflows.' },
       { title: 'Client and user portals', description: 'Authenticated spaces for users to manage information and complete defined tasks.' },
@@ -351,6 +446,8 @@ export const servicePages = [
       { title: 'Firebase React applications', description: 'React interfaces connected to authentication and practical cloud data workflows.' }
     ],
     processTitle: 'React development process',
+    processStyle: 'timeline',
+    processCta: { label: 'Start with the core workflow', href: '/contact', variant: 'solid' },
     process: [
       { title: 'Define the core workflow', description: 'Clarify the users, product goal, essential screens, data, and release scope.' },
       { title: 'Map screens and states', description: 'Plan navigation, user flows, loading states, errors, forms, and permissions.' },
@@ -359,18 +456,24 @@ export const servicePages = [
       { title: 'Test and deploy', description: 'Check workflows, validation, accessibility, responsive behavior, errors, and production deployment.' }
     ],
     examplesTitle: 'Relevant product work',
+    examplesStyle: 'showcase',
+    examplesCta: { label: 'View more product work', href: '/#projects', variant: 'solid' },
     examples: [
-      { title: 'Lensora Events', description: 'Event media web application with Firebase-connected sharing workflows.', href: 'https://lensoraevents.com/' },
+      { title: 'Lensora Events', description: 'Event media web application with Firebase-connected sharing workflows.', href: 'https://lensoraevents.com/', featured: true },
       { title: 'AssetRax', description: 'Dashboard interface and product workflows for finance and asset tracking.', href: 'https://assetrax.online/' },
       { title: 'StudyNest', description: 'Student productivity product prototype with focused application workflows.', href: 'https://studynestt.com/' }
     ],
     relatedServices: ['startup-websites', 'ui-ux-design', 'website-design'],
+    faqStyle: 'rows',
+    faqIntro: 'Ask about Firebase, dashboards, portals, MVP scope, or building from existing designs before starting.',
+    faqCta: { label: 'Ask about your product', href: '/contact', variant: 'solid' },
     faqs: [
       { question: 'Can a React app include Firebase?', answer: 'Yes. Authentication and suitable Firebase data workflows can be included when they match the project scope.' },
       { question: 'Can you build a dashboard or portal?', answer: 'Yes. Dashboards and authenticated portals are common React application use cases.' },
       { question: 'Is this the same as an MVP?', answer: 'A React application can be part of an MVP. The React service focuses on implementation, while the MVP service also emphasizes validation and first-version scope.' },
       { question: 'Can you work from existing designs?', answer: 'Yes. Existing UI designs can be reviewed and implemented, or UI/UX design can be included before development.' }
     ],
+    finalCtaStyle: 'tonal',
     finalCta: {
       label: 'React web app development',
       heading: 'Ready to build the core product workflow?',
@@ -387,6 +490,9 @@ export const servicePages = [
     shortTitle: 'Graphic Design',
     path: '/services/graphic-design',
     kicker: 'Graphic design services',
+    flatSurfaces: true,
+    spacingRhythm: true,
+    sectionSpacing: { midCta: 'compact', process: 'spacious', examples: 'spacious' },
     h1: 'Graphic design for brands.',
     intro:
       'Graphic design services for campaigns, launches, and consistent brand visuals. Social media graphics, flyers, posters, brand assets, and campaign visuals are planned around the message and final channel.',
@@ -403,11 +509,102 @@ export const servicePages = [
       'Use these online graphic design services when you need campaign assets, launch graphics, or day-to-day marketing visuals with clear hierarchy and brand consistency.',
       'Freelance graphic design services can cover one asset or a full set. The scope is based on formats, content, deadline, and final file needs.'
     ],
+    overviewCta: { label: 'Discuss your design project', href: '/contact', variant: 'solid' },
+    brandShowcase: {
+      kicker: 'Selected work',
+      title: 'Your brand. Your story. Designed to be seen.',
+      intro: 'A few recent pieces — sports edits, event flyers, and business promos — each built around one message and its final channel.',
+      items: [
+        {
+          image: {
+            src: '/images/portfolio/dislate-portrait.webp',
+            alt: 'Cristiano Ronaldo tribute poster: a photo collage forming his silhouette with a "5x Ballon d\'Or" callout',
+            width: 1000,
+            height: 1400
+          },
+          heading: 'Poster art that tells a career.',
+          caption: 'A photo mosaic composited into a single silhouette — layered, textured, and built to be printed big.'
+        },
+        {
+          image: {
+            src: '/images/portfolio/tony-delivery.webp',
+            alt: 'Nexalite Logistics "We Deliver" courier flyer with a red delivery rider and a service list',
+            width: 1080,
+            height: 1350
+          },
+          heading: 'Service promos that convert.',
+          caption: 'Clear offer, scannable service list, and a strong call to action sized for social feeds.'
+        },
+        {
+          image: {
+            src: '/images/portfolio/premier-league-proven.webp',
+            alt: 'Premier League "Proven" sports edit of footballers Cunha and Mbuemo styled as Western outlaws at Old Trafford',
+            width: 1400,
+            height: 990
+          },
+          heading: 'Cinematic sports edits.',
+          caption: 'Heavy compositing and colour grading that reframe a matchup as a movie poster.'
+        },
+        {
+          image: {
+            src: '/images/portfolio/reggae-night.webp',
+            alt: 'Reggae Night event flyer for Aburi Sweetmother with dreadlocked musicians and gold 3D lettering',
+            width: 990,
+            height: 1400
+          },
+          heading: 'Event flyers that fill the room.',
+          caption: 'Bold 3D lettering, a clear lineup hierarchy, and every detail — date, price, RSVP — easy to find at a glance.'
+        },
+        {
+          image: {
+            src: '/images/portfolio/ronaldo-timeless.webp',
+            alt: '"Timeless Tales" Cristiano Ronaldo edit with a Nike swoosh-shaped photo collage',
+            width: 1400,
+            height: 779
+          },
+          heading: 'Brand-shaped storytelling.',
+          caption: 'A collage masked into the Nike swoosh, turning career highlights into one clean, recognisable form.'
+        },
+        {
+          image: {
+            src: '/images/portfolio/princess.webp',
+            alt: 'Belle Classique retail promo flyer for gym and sportswear with a framed product layout',
+            width: 1120,
+            height: 1400
+          },
+          heading: 'Retail promos that sell.',
+          caption: 'Product shots, lifestyle imagery, and contact details arranged so the offer reads in seconds.'
+        },
+        {
+          image: {
+            src: '/images/portfolio/ronaldinho.webp',
+            alt: 'Ronaldinho Nike Total 90 retro-style poster on a floodlit street pitch',
+            width: 1120,
+            height: 1400
+          },
+          heading: 'Retro-inspired campaigns.',
+          caption: 'Grain, chrome type, and a vintage Total 90 palette recreated for a modern feed.'
+        },
+        {
+          image: {
+            src: '/images/portfolio/ronaldo-33.webp',
+            alt: 'Cristiano Ronaldo tribute graphic in a square social-media crop',
+            width: 1080,
+            height: 1350
+          },
+          heading: 'Built for the feed.',
+          caption: 'The same identity re-cut to a square ratio so it lands instantly on mobile.'
+        }
+      ]
+    },
+    relatedLinksStyle: 'inline',
     includedTitle: 'What I design',
+    includedStyle: 'feature',
+    includedFeatured: true,
     included: [
-      'Social media graphics',
-      'Flyers and posters',
       'Campaign visuals',
+      'Flyers and posters',
+      'Social media graphics',
       'Launch graphics',
       'Brand assets',
       'Business cards and stationery',
@@ -420,6 +617,8 @@ export const servicePages = [
       primaryLabel: 'Start a project',
       primaryHref: '/contact'
     },
+    audienceStyle: 'list',
+    audienceCta: { label: 'Discuss your campaign', href: '/contact', variant: 'solid' },
     audience: [
       'Businesses launching campaigns or offers',
       'Startups preparing product or service launches',
@@ -427,6 +626,8 @@ export const servicePages = [
       'Organizations that need clear marketing communication'
     ],
     useCasesTitle: 'Graphic design and branding services',
+    useCasesStyle: 'tonal',
+    useCasesCta: { label: 'Plan the campaign visuals', href: '/contact', variant: 'solid' },
     useCases: [
       {
         title: 'Brand consistency',
@@ -446,6 +647,7 @@ export const servicePages = [
         id: 'service-social-media-graphic-design',
         kicker: 'Social media',
         title: 'Social media graphic design services',
+        spacing: 'spacious',
         body: [
           'Social media graphic design services cover Instagram posts, carousels, promotional graphics, ads, launch visuals, and content graphics.',
           'Assets are sized for the platform and structured so the message is easy to scan.'
@@ -461,6 +663,8 @@ export const servicePages = [
       }
     ],
     processTitle: 'Design process',
+    processStyle: 'timeline',
+    processCta: { label: 'Start with the design brief', href: '/contact', variant: 'solid' },
     process: [
       {
         title: 'Share your goal',
@@ -483,7 +687,15 @@ export const servicePages = [
         description: 'Receive exported files prepared for social, web, print, or campaign use.'
       }
     ],
+    examplesTitle: 'Related portfolio or examples',
+    examplesStyle: 'showcase',
+    examplesCta: { label: 'View the graphic design portfolio', href: 'https://www.behance.net/emmaaning', variant: 'solid' },
     examples: [
+      {
+        title: 'Campaign & poster design',
+        description: 'Campaign visuals, flyers, posters, and launch graphics.',
+        href: 'https://www.behance.net/emmaaning'
+      },
       {
         title: 'Behance design portfolio',
         description: 'Graphic design, branding services, campaign visuals, and brand assets.',
@@ -491,6 +703,9 @@ export const servicePages = [
       }
     ],
     relatedServices: ['branding', 'social-media-design', 'website-design'],
+    faqStyle: 'rows',
+    faqIntro: 'Ask about campaign assets, social media graphics, or combining graphic design and branding before starting.',
+    faqCta: { label: 'Ask about your design project', href: '/contact', variant: 'solid' },
     faqs: [
       {
         question: 'Do you offer professional graphic design services for businesses?',
@@ -508,6 +723,7 @@ export const servicePages = [
           'Yes. Brand assets and campaign visuals can be designed around the same visual identity for consistency.'
       }
     ],
+    finalCtaStyle: 'tonal',
     finalCta: {
       label: 'Graphic design services',
       heading: 'Need clean graphics for your next campaign?',
@@ -898,6 +1114,17 @@ export const servicePages = [
     shortTitle: 'Startup MVPs & Web Apps',
     path: '/services/startup-websites',
     kicker: 'Startup MVP development',
+    spacingRhythm: true,
+    sectionSpacing: { midCta: 'compact', process: 'spacious', examples: 'spacious' },
+    heroPanel: {
+      title: 'How an MVP is scoped',
+      items: [
+        'Validate the offer',
+        'Define the core workflow',
+        'Build the first useful version',
+        'Test and launch'
+      ]
+    },
     h1: 'Startup MVP development for focused launches.',
     intro:
       'Startup MVP development for landing pages, SaaS MVP development, web app development, dashboards, and product prototypes. Use this when the project needs more than a static website.',
@@ -914,7 +1141,25 @@ export const servicePages = [
       'A startup landing page can validate the offer, collect signups, explain the product, or support demo requests.',
       'SaaS MVP development and web app development can include screens, authentication, simple data, dashboards, and launch support.'
     ],
+    overviewCta: { label: 'Discuss your MVP idea', href: '/contact', variant: 'solid' },
+    relatedLinksStyle: 'inline',
     includedTitle: 'What I build',
+    includedStyle: 'grouped',
+    includedFeatured: 'MVP product planning',
+    includedGroups: [
+      {
+        label: 'Plan & validate',
+        items: ['Startup landing page', 'Product prototype']
+      },
+      {
+        label: 'Product & data',
+        items: ['SaaS MVP interface', 'Authentication flow', 'Dashboard design', 'Basic database structure']
+      },
+      {
+        label: 'Build & launch',
+        items: ['Web app development', 'Firebase web app setup', 'Launch support']
+      }
+    ],
     included: [
       'Startup landing page',
       'MVP product planning',
@@ -931,8 +1176,11 @@ export const servicePages = [
       heading: 'Have an MVP idea to shape?',
       text: 'Share the product stage, audience, and core feature set. I will scope the first useful version before build work starts.',
       primaryLabel: 'Plan the MVP',
-      primaryHref: '/contact'
+      primaryHref: '/contact',
+      primaryVariant: 'solid'
     },
+    audienceStyle: 'list',
+    audienceCta: { label: 'Discuss your startup idea', href: '/contact', variant: 'solid' },
     audience: [
       'Founders testing a SaaS idea',
       'Creators launching a digital product',
@@ -942,14 +1190,16 @@ export const servicePages = [
       'Founders comparing startup landing page and web app development paths'
     ],
     useCasesTitle: 'Firebase web app and dashboard design',
+    useCasesStyle: 'featured',
+    useCasesCta: { label: 'Define the first useful version', href: '/contact', variant: 'solid' },
     useCases: [
-      {
-        title: 'Startup landing pages',
-        description: 'Launch pages for product positioning, signup paths, demo requests, or waitlist validation.'
-      },
       {
         title: 'SaaS MVP development',
         description: 'Early SaaS builds with product screens, account flows, simple data, and core feature paths.'
+      },
+      {
+        title: 'Startup landing pages',
+        description: 'Launch pages for product positioning, signup paths, demo requests, or waitlist validation.'
       },
       {
         title: 'Firebase web app',
@@ -961,6 +1211,8 @@ export const servicePages = [
       }
     ],
     processTitle: 'MVP process',
+    processStyle: 'timeline',
+    processCta: { label: 'Start with the MVP goal', href: '/contact', variant: 'solid' },
     process: [
       {
         title: 'Define the MVP goal',
@@ -983,16 +1235,20 @@ export const servicePages = [
         description: 'Test user flows, links, forms, authentication paths, mobile behavior, and deployment needs.'
       }
     ],
+    examplesTitle: 'Related portfolio or examples',
+    examplesStyle: 'showcase',
+    examplesCta: { label: 'View more startup projects', href: '/startups', variant: 'solid' },
     examples: [
+      {
+        title: 'Lensora Events',
+        description: 'Firebase web app and event media product with QR-based photo and video sharing.',
+        href: 'https://lensoraevents.com/',
+        featured: true
+      },
       {
         title: 'StudyNest',
         description: 'Product prototype and web app development for student productivity workflows.',
         href: 'https://studynestt.com/'
-      },
-      {
-        title: 'Lensora Events',
-        description: 'Firebase web app and event media product with QR-based photo and video sharing.',
-        href: 'https://lensoraevents.com/'
       },
       {
         title: 'Startup projects page',
@@ -1001,6 +1257,9 @@ export const servicePages = [
       }
     ],
     relatedServices: ['website-design', 'ui-ux-design', 'branding'],
+    faqStyle: 'rows',
+    faqIntro: 'Ask about startup websites, login and dashboards, database features, or MVP scope before starting.',
+    faqCta: { label: 'Ask about your MVP', href: '/contact', variant: 'solid' },
     faqs: [
       {
         question: 'Can this still include a startup website?',
@@ -1018,6 +1277,7 @@ export const servicePages = [
           'No. This is for startup MVP development, SaaS MVP development, product prototypes, and practical web app development before full product investment.'
       }
     ],
+    finalCtaStyle: 'tonal',
     finalCta: {
       label: 'Startup MVP development',
       heading: 'Need to shape the first useful version?',
@@ -1034,6 +1294,8 @@ export const servicePages = [
     shortTitle: 'WordPress Debugging',
     path: '/services/ai-wordpress-debugging',
     kicker: 'AI-assisted WordPress support',
+    spacingRhythm: true,
+    sectionSpacing: { midCta: 'compact' },
     h1: 'Fix WordPress Problems Without Hours of Guesswork',
     intro:
       'I use Claude, MCP tools, WordPress diagnostics, and a controlled testing process to identify performance, Elementor, SEO, accessibility, and functionality issues, then apply verified fixes with clear rollback protection.',
@@ -1053,7 +1315,8 @@ export const servicePages = [
       'When a page is slow or a layout breaks, the hard part is usually finding the real cause. I combine WordPress diagnostics, Lighthouse and Core Web Vitals data, and a careful review process to locate the source before touching a single setting.',
       'The goal is practical: reduce hours of manual troubleshooting, diagnose issues faster, and apply human-reviewed changes that are verified and rollback-ready.'
     ],
-    overviewCta: { label: 'Request a website audit', href: '/contact', variant: 'pill' },
+    overviewCta: { label: 'Request a website audit', href: '/contact', variant: 'solid' },
+    relatedLinksStyle: 'inline',
     includedTitle: 'What I Can Audit and Fix',
     includedStyle: 'feature',
     included: [
@@ -1132,6 +1395,7 @@ export const servicePages = [
         id: 'service-safety',
         kicker: 'Safety',
         title: 'Every Change Is Tested and Reversible',
+        spacing: 'spacious',
         panelStyle: 'trust',
         panelCta: {
           note: 'Every change is documented with a clear rollback path.',
@@ -1158,6 +1422,7 @@ export const servicePages = [
         id: 'service-results',
         kicker: 'Results',
         title: 'Built Around Measurable Results',
+        spacing: 'spacious',
         body:
           'Performance work is verified with measurable Lighthouse audits rather than assumptions. The result below was captured during real website optimization work, after reviewing page speed, accessibility, technical SEO, and the underlying technical implementation.',
         metrics: [
@@ -1186,6 +1451,7 @@ export const servicePages = [
         id: 'service-deliverables',
         kicker: 'Deliverables',
         title: 'What You Receive',
+        spacing: 'spacious',
         listStyle: 'rows',
         body: 'Each engagement is documented so you can see what was found, what changed, and what to do next.',
         items: [
@@ -1226,6 +1492,7 @@ export const servicePages = [
       }
     ],
     examplesTitle: 'Related AI and Elementor workflow guides',
+    examplesStyle: 'trio',
     examples: [
       {
         title: 'Claude AI with Elementor and WordPress MCP',
@@ -1306,6 +1573,8 @@ export const servicesIndexPage = {
   shortTitle: 'Services',
   path: '/services',
   kicker: 'AningDesign services',
+  spacingRhythm: true,
+  sectionSpacing: { audience: 'spacious' },
   h1: 'Find the right service.',
   intro:
     'Choose the right path for website design, WordPress, React web apps, graphic design, branding, social media visuals, UI/UX, or an MVP. Each service page shows scope, process, proof, and the next step.',
