@@ -879,7 +879,6 @@ export const servicePages = [
     path: '/services/social-media-design',
     kicker: 'Social media design services',
     flatSurfaces: true,
-    solidPrimaryCta: true,
     spacingRhythm: true,
     sectionSpacing: { overview: 'spacious', midCta: 'compact', process: 'spacious', examples: 'spacious' },
     heroArtworkStyle: 'collage',

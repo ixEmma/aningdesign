@@ -96,6 +96,14 @@ Use service-specific copy. Do not repeat generic text across pages.
 * Do not add placeholder or non-functional buttons.
 * Verify every CTA destination.
 
+## AningDesign button system
+
+* The green-to-cyan AningDesign button is the locked primary CTA.
+* Before creating a button, reuse the shared implementation documented in [docs/design-system/buttons.md](docs/design-system/buttons.md).
+* Do not replace it with pale green, white, gray, or another generic fill; pale green is a supporting accent, not the primary CTA background.
+* Use Lucide arrows instead of text arrow characters.
+* Do not add page-specific primary-button classes. New visual variants require Emmanuel’s explicit approval.
+
 ## Navigation
 
 Main navigation should prioritize:

@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
+import { ArrowRight } from 'lucide-react'
 import './Hero.css'
 import { XLogoIcon, LinkedInLogoIcon, BehanceLogoIcon } from './SocialIcons'
 
@@ -10,12 +11,12 @@ const socialLinks = [
 
 function Hero() {
   const phrases = [
-    "WEBSITE DESIGNER",
-    "GRAPHIC DESIGNER",
-    "UI/UX DESIGNER",
-    "FRONTEND DEVELOPER",
-    "SOFTWARE DEVELOPER",
-    "FREELANCER"
+    'WEBSITE DESIGNER',
+    'GRAPHIC DESIGNER',
+    'UI/UX DESIGNER',
+    'FRONTEND DEVELOPER',
+    'SOFTWARE DEVELOPER',
+    'FREELANCER'
   ]
 
   const [displayText, setDisplayText] = useState('')
@@ -41,39 +42,34 @@ function Hero() {
           isDeletingRef.current = true
           timeoutRef.current = setTimeout(type, pauseAfter)
         }
+      } else if (charIndexRef.current > 0) {
+        setDisplayText(current.slice(0, charIndexRef.current - 1))
+        charIndexRef.current -= 1
+        timeoutRef.current = setTimeout(type, deletingSpeed)
       } else {
-        if (charIndexRef.current > 0) {
-          setDisplayText(current.slice(0, charIndexRef.current - 1))
-          charIndexRef.current -= 1
-          timeoutRef.current = setTimeout(type, deletingSpeed)
-        } else {
-          isDeletingRef.current = false
-          phraseIndexRef.current = (phraseIndexRef.current + 1) % phrases.length
-          charIndexRef.current = 0
-          timeoutRef.current = setTimeout(type, typingSpeed)
-        }
+        isDeletingRef.current = false
+        phraseIndexRef.current = (phraseIndexRef.current + 1) % phrases.length
+        charIndexRef.current = 0
+        timeoutRef.current = setTimeout(type, typingSpeed)
       }
     }
 
     timeoutRef.current = setTimeout(type, typingSpeed)
 
     return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current)
-      }
+      if (timeoutRef.current) clearTimeout(timeoutRef.current)
     }
   }, [])
 
   return (
     <section className="hero" id="home">
       <div className="hero-content">
-
         <span id="hey">Hi 👋, I'm Emmanuel</span>
 
         <h1 className="hero-title">
           I build <span className="hero-accent">premium websites</span>
           <br />
-         <span className="hero-script">That convert.</span>
+          <span className="hero-script">That convert.</span>
         </h1>
 
         <p className="hero-p" id="typewriter">{displayText}</p>
@@ -82,9 +78,10 @@ function Hero() {
           href="https://wa.me/233557066467?text=Hi, I'm interested in working with you on a project."
           target="_blank"
           rel="noopener noreferrer"
-          className="cta-button"
+          className="aning-button aning-button--primary aning-button--large"
         >
-          Start a Project →
+          Start a Project
+          <ArrowRight size={19} strokeWidth={2.2} aria-hidden="true" />
         </a>
       </div>
 

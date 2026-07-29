@@ -4,275 +4,270 @@ isFreeResource: true
 resourceType: "guide"
 resourceLabel: "Free Guide"
 resourceCategory: "WordPress"
-title: "Install WordPress Locally with XAMPP: Step-by-Step Guide"
-seoTitle: "Install WordPress Locally with XAMPP: Step-by-Step Guide"
-description: "Install WordPress locally with XAMPP on Windows. Follow the setup for Apache, MySQL, phpMyAdmin, htdocs, the database, and WordPress admin login."
+title: "How to Install WordPress on Localhost Using XAMPP: Beginner Guide"
+seoTitle: "How to Install WordPress on Localhost Using XAMPP: Beginner Guide"
+description: "Learn how to install XAMPP on Windows, start Apache and MySQL, create a database in phpMyAdmin, and install WordPress on localhost."
 category: "WordPress"
-date: "2026-06-05"
-updatedDate: "2026-07-14"
+date: "2026-07-29"
+updatedDate: "2026-07-29"
 slug: "how-to-install-wordpress-locally-using-xampp"
-primaryKeyword: "install WordPress locally with XAMPP"
+primaryKeyword: "install WordPress on localhost using XAMPP"
 keywordCluster:
-  - install WordPress on localhost
-  - XAMPP WordPress installation
-  - WordPress local development
-  - phpMyAdmin WordPress database
+  - "how to install XAMPP on Windows"
+  - "WordPress localhost installation"
+  - "XAMPP WordPress tutorial"
+  - "install WordPress locally"
+  - "create WordPress database in phpMyAdmin"
+  - "WordPress development environment"
 servicePage: "/services/wordpress-websites"
-youtubeUrl: "https://youtu.be/JPdXXY-Sp2w"
-youtubeEmbedUrl: "https://www.youtube.com/embed/JPdXXY-Sp2w"
-thumbnail: "https://img.youtube.com/vi/JPdXXY-Sp2w/maxresdefault.jpg"
-thumbnailAlt: "XAMPP and WordPress local installation workflow shown in the beginner tutorial"
+relatedService: "wordpress-websites"
+youtubeVideoId: "jcW0TtM5Zf4"
+youtubeUrl: "https://youtu.be/jcW0TtM5Zf4"
+youtubeEmbedUrl: "https://www.youtube.com/embed/jcW0TtM5Zf4"
+thumbnail: "/images/blog/xampp-wordpress-localhost-tutorial-thumbnail.webp"
+thumbnailAlt: "XAMPP and WordPress localhost installation tutorial video thumbnail"
+toolsUsed:
+  - "XAMPP"
+  - "WordPress"
+  - "Apache"
+  - "MySQL"
+  - "phpMyAdmin"
 tags:
-  - WordPress
-  - XAMPP WordPress installation
-  - Install WordPress on localhost
-  - WordPress local development
-  - phpMyAdmin WordPress database
-  - Apache MySQL WordPress
-  - htdocs WordPress setup
-  - Localhost WordPress tutorial
+  - "WordPress"
+  - "XAMPP"
+  - "Localhost"
+  - "WordPress for Beginners"
 relatedPosts:
+  - wordpress-dashboard-tutorial-for-beginners
   - wordpress-website-checklist
-  - wordpress-website-launch-checklist
-  - fix-bad-website-design-wordpress-elementor
+  - wordpress-website-tutorial-localwp-elementor-astra
 featured: true
 ---
 
-## Install WordPress locally before you start building
+This tutorial is for complete beginners who want to practise building WordPress websites before buying hosting or connecting a domain. You will install WordPress on your Windows computer, open it through localhost, and finish with a working local dashboard.
 
-If you are trying to install WordPress locally but XAMPP, phpMyAdmin, htdocs, and localhost all feel confusing, this guide will show you the clean way to set everything up.
+Local development gives you a private place to learn, test a theme or plugin, and practise page design without changing a live website. It is a development environment, not a replacement for secure public hosting.
 
-It is for Windows beginners who want a private WordPress installation for practice, theme testing, or a client-site draft. You will set up Apache and MySQL, create the database in phpMyAdmin, place WordPress in `htdocs`, complete the installer, and verify the local site and admin login.
+## What does localhost mean?
 
-## What You Will Learn
+Localhost means your own computer is acting as the server. Instead of visiting a website on the internet, your browser opens files and services running on your machine.
 
-- How to download and install XAMPP
-- How to start Apache and MySQL
-- What Apache does in a local WordPress setup
-- What MySQL does in a local WordPress setup
-- How to open localhost correctly
-- How to use phpMyAdmin
-- How to create a WordPress database
-- How to copy WordPress files into htdocs
-- Why the database name must match the WordPress setup
-- Why XAMPP uses root as the default database username
-- Why the password is empty on local XAMPP
-- How WordPress files and the database connect
+A local WordPress website is normally private to that computer. It is useful for:
 
-## Tools Used
+- learning WordPress;
+- testing plugins and themes;
+- practising website design;
+- developing without affecting a live website; and
+- experimenting before buying hosting.
 
-- XAMPP
-- Apache
-- MySQL
-- phpMyAdmin
-- WordPress
-- Windows
-- Localhost
+The site will not be available to real visitors until it is migrated or rebuilt on a public hosting server.
 
-## Watch the Video Tutorial
+## What is XAMPP?
 
-Watch the full video tutorial here: [How to Install WordPress Locally Using XAMPP](https://youtu.be/JPdXXY-Sp2w).
+XAMPP is a local server package that provides the core services WordPress needs on a computer. For a beginner, the most important parts are:
 
-The video embed appears near the top of this page so you can follow the XAMPP WordPress installation visually while using this written guide as a checklist.
+- **Apache:** serves website files to the browser.
+- **MySQL or MariaDB:** stores WordPress content, users, and settings.
+- **PHP:** runs the WordPress application code.
+- **phpMyAdmin:** provides a browser interface for working with the database.
 
-## Step-by-Step Guide
+You do not need to master each component before starting. The important idea is that WordPress needs web-server software, PHP, and a database to work together.
 
-### Step 1: Download and Install XAMPP
+## How XAMPP, Apache, MySQL, and WordPress work together
 
-Timestamp: 02:15
+| Component | Purpose |
+| --- | --- |
+| XAMPP | Provides the local server environment |
+| Apache | Serves the website files |
+| MySQL/MariaDB | Stores website content and settings |
+| phpMyAdmin | Provides a browser interface for database management |
+| WordPress | Runs the website and admin dashboard |
+| localhost | Opens the local website through your browser |
 
-Start by downloading [XAMPP for Windows from Apache Friends](https://www.apachefriends.org/download.html). XAMPP gives you the local server tools WordPress needs to run on your computer.
+Apache reads the WordPress files and sends the website to the browser. MySQL stores the data WordPress needs. Localhost is the address your browser uses to open that local system.
 
-During installation, keep the default setup simple. For a beginner WordPress setup on Windows with XAMPP, the most important parts are Apache, MySQL, and phpMyAdmin.
+![Infographic explaining how XAMPP Apache MySQL localhost and WordPress work together](/images/blog/how-xampp-wordpress-localhost-work-together.webp)
 
-### Step 2: Open XAMPP Control Panel
+## Download XAMPP safely
 
-After installing XAMPP, open the XAMPP Control Panel. This is where you start and stop the local server services.
+Download XAMPP from the [official Apache Friends download page](https://www.apachefriends.org/download.html). This guide focuses on the Windows installer. Avoid third-party download websites, because they can bundle unwanted software or provide outdated files.
 
-Think of the control panel as the switchboard for your local WordPress website. If Apache or MySQL is not running, WordPress will not load correctly.
+Windows may show an administrator prompt or a security warning while you open the installer. Read the prompt and confirm it matches the installer you intentionally downloaded; do not disable antivirus or firewall protection globally to install a local development tool.
 
-### Step 3: Start Apache and MySQL
+## Install XAMPP on Windows
 
-Timestamp: 03:30
+Open the installer and follow its guided setup. The labels can vary by XAMPP version, but the typical process is:
 
-Start Apache and MySQL from the XAMPP Control Panel.
+1. Allow the installer to run.
+2. Keep the components needed for a standard WordPress setup, including Apache, MySQL, PHP, and phpMyAdmin.
+3. Choose an installation directory.
+4. Complete installation and open the XAMPP Control Panel.
 
-Apache acts like the local web server. It allows your browser to open WordPress through localhost. MySQL stores the WordPress database, including pages, posts, users, settings, and other site information.
+The common directory is `C:\xampp`, but your installation can be elsewhere. Use the folder you chose rather than assuming every machine uses the default path.
 
-For a working XAMPP Apache MySQL WordPress setup, both services need to be running.
+## Installation workflow
 
-### Step 4: Open Localhost
+Use this sequence as a map before you start. The detailed steps below explain the decisions that matter at each stage.
 
-Open your browser and go to:
+![Step-by-step XAMPP and WordPress localhost installation workflow](/images/blog/xampp-wordpress-installation-workflow.webp)
 
-```txt
-http://localhost/
+## Download WordPress safely
+
+Download the WordPress ZIP file from the [official WordPress download page](https://wordpress.org/download/). The ZIP contains the core WordPress files that will become your local website.
+
+Extract the ZIP file after it downloads. Do not download WordPress from third-party software libraries or file-sharing sites.
+
+## Move WordPress into the XAMPP htdocs folder
+
+XAMPP uses an `htdocs` folder as the normal location for local web projects. For a default Windows installation, the common path is:
+
+```text
+C:\xampp\htdocs\
 ```
 
-Localhost means your own computer. When Apache is running, localhost opens the local server instead of a live website on the internet.
+Create a project folder inside it, for example:
 
-If localhost opens correctly, XAMPP is ready for the next step.
-
-### Step 5: Open phpMyAdmin
-
-Timestamp: 05:20
-
-Open phpMyAdmin from the XAMPP Control Panel or visit:
-
-```txt
-http://localhost/phpmyadmin/
+```text
+C:\xampp\htdocs\mywebsite
 ```
 
-phpMyAdmin is the browser tool you use to manage MySQL databases. For WordPress local development, phpMyAdmin is where you create the empty database that WordPress will connect to during installation.
+Place the extracted WordPress files inside `mywebsite`. The folder name becomes part of the local URL, so this project would normally open at:
 
-### Step 6: Create a WordPress Database
-
-Timestamp: 04:22
-
-Inside phpMyAdmin, create a new database for your local WordPress website. Use a simple name with no spaces, such as:
-
-```txt
-wordpress_local
+```text
+http://localhost/mywebsite
 ```
 
-The database name matters because WordPress will ask for it during setup. If the name you type in WordPress does not match the database name in phpMyAdmin, WordPress cannot connect.
+If XAMPP is installed somewhere else, find the `htdocs` folder within that installation instead. Keep each WordPress project in its own folder to avoid mixing files.
 
-### Step 7: Download WordPress
+## Start Apache and MySQL
 
-Download WordPress from the [official WordPress download page](https://wordpress.org/download/). You will get a compressed file that contains the WordPress core files.
+Open the XAMPP Control Panel and start **Apache** and **MySQL**. Their visual status can differ between versions, but the control panel should indicate that both services are running.
 
-After downloading, extract the files so you can copy the WordPress folder into XAMPP.
+Apache and MySQL generally need to remain running whenever you use the local WordPress site. If they are stopped, localhost cannot serve the site or connect WordPress to its database.
 
-### Step 8: Copy WordPress Files Into htdocs
+## Common Apache and MySQL startup problems
 
-Timestamp: 07:30
+If Apache or MySQL does not start, begin with the XAMPP logs and the message shown in the Control Panel. Common causes include port conflicts, another web server or database service already using the same port, insufficient permissions, an unexpected shutdown, or an installation-directory issue.
 
-Find the XAMPP `htdocs` folder. On a typical Windows installation, it is often located here:
+Avoid changing ports or stopping Windows services until you understand what is using them. Do not disable security tools globally as a first fix. A measured first step is to read the log, close an application you recognize as using the local server, then try again.
 
-```txt
-C:\xampp\htdocs
+## Open phpMyAdmin
+
+With Apache and MySQL running, phpMyAdmin is commonly available at:
+
+```text
+http://localhost/phpmyadmin
 ```
 
-Copy your WordPress folder into `htdocs`. The folder name becomes part of your local website URL. For example, if the folder is named `mywebsite`, your local WordPress installer will open at:
+That address assumes a standard XAMPP configuration. If it does not open, first check that both services are running and review the XAMPP Control Panel messages.
 
-```txt
-http://localhost/mywebsite/
+## Create the WordPress database
+
+In phpMyAdmin, create an empty database for the new website:
+
+1. Open the database-creation option.
+2. Enter a simple name, such as `mywebsite_db`.
+3. Create the database.
+
+The database does not need tables yet. WordPress creates its own tables during the installation process. Use a separate database for each local project so the data stays organized.
+
+## Run the WordPress installation
+
+Open the project URL in the browser:
+
+```text
+http://localhost/mywebsite
 ```
 
-Folder naming matters. Keep it short, lowercase, and easy to type.
+WordPress will guide you through selecting a language and connecting to the database. For a common default XAMPP configuration, the database fields may be:
 
-### Step 9: Open the Local WordPress Installer
-
-Timestamp: 06:11
-
-In your browser, open the local WordPress folder through localhost. If your folder is named `mywebsite`, visit:
-
-```txt
-http://localhost/mywebsite/
+```text
+Database name: mywebsite_db
+Username: root
+Password: blank
+Database host: localhost
+Table prefix: wp_
 ```
 
-WordPress should load the installer. This means Apache can read the WordPress files from `htdocs`.
+These are common local-development defaults, not production credentials. They can differ if you changed the XAMPP or database configuration. A blank password and the `root` user are not appropriate defaults for public hosting.
 
-### Step 10: Connect WordPress to the Database
+![Diagram showing how WordPress connects to a MySQL database created in phpMyAdmin](/images/blog/wordpress-phpmyadmin-database-connection.webp)
 
-Timestamp: 08:45
+Submit the database connection details, then run the installer. If WordPress cannot connect, recheck the database name, username, password, host, and whether MySQL is running before changing other settings.
 
-WordPress will ask for database details. For a default local XAMPP setup, use:
+## Create the WordPress administrator account
 
-- Database name: the name you created in phpMyAdmin
-- Username: root
-- Password: leave empty
-- Database host: localhost
-- Table prefix: keep the default unless you know why you are changing it
+The installer asks for a site title, administrator username, administrator password, and administrator email address. Use a unique username and a strong password, then record the details securely.
 
-XAMPP uses `root` as the default local database username. On a normal local XAMPP setup, the password is empty. This is for local development only, not a live production website.
+The search-engine visibility option does not matter much for an offline local website, but it becomes important when you move a site to public hosting. Do not treat a local administrator account or database configuration as a production security setup.
 
-### Step 11: Create the WordPress Admin Account
+## Log in to the local WordPress dashboard
 
-Timestamp: 10:00
+For the example project, the standard admin URL is:
 
-After the database connection works, WordPress will ask for your site title, admin username, password, and email address.
+```text
+http://localhost/mywebsite/wp-admin
+```
 
-Create an admin account you can remember. This account is what you will use to log in to the local WordPress dashboard and build the website.
+Replace `mywebsite` with your own project-folder name. This opens the private WordPress administration area where you can create pages, upload media, and manage the local website.
 
-### Step 12: Test the Local WordPress Website
+For the next lesson, use the [WordPress Dashboard Tutorial for Beginners](/blog/wordpress-dashboard-tutorial-for-beginners) or [watch the dashboard video](https://youtu.be/jcEqcDRm0jo).
 
-Timestamp: 11:10
+## Verify the installation
 
-After installation, open the local site and log in to the dashboard. Check both the front end and the admin area.
+Confirm the following before you move on:
 
-By this stage, your WordPress files in `htdocs` and your MySQL database in phpMyAdmin should be connected. That connection is the core idea behind installing WordPress on localhost.
+- the local website opens;
+- the `/wp-admin` login works;
+- Apache remains running;
+- MySQL remains running;
+- the Media Library opens;
+- pages can be created; and
+- WordPress settings are accessible.
 
-## Common Problems and Fixes
+## Beginner localhost tips
 
-### Apache Does Not Start
+- Start Apache and MySQL before opening the website.
+- Stop local services when you no longer need them.
+- Keep each project in a separate folder and use a separate database for each one.
+- Back up both project files and database exports before important changes.
+- Do not reuse localhost credentials on live hosting.
+- Avoid editing WordPress core files.
+- Use trusted plugins and themes only.
 
-If Apache does not start, another app may already be using the same port. Close apps that may be using port 80 or 443, then try starting Apache again from the XAMPP Control Panel.
+## Localhost versus live hosting
 
-### MySQL Does Not Start
+| Localhost | Live hosting |
+| --- | --- |
+| Runs on your computer | Runs on an internet-connected server |
+| Normally private | Publicly accessible |
+| Useful for practice and development | Used for real visitors and clients |
+| Often uses local defaults | Requires secure production credentials |
+| No domain required | Usually uses a domain |
+| Stops when local services stop | Designed to remain available online |
 
-If MySQL does not start, restart XAMPP and check whether another database service is already running. WordPress needs MySQL running before it can connect to the database.
+Before visitors can use the website, it must be migrated or rebuilt on hosting. If you are planning an editable business website rather than a practice project, explore [WordPress Websites](/services/wordpress-websites) or [contact AningDesign](/contact) to discuss the build.
 
-### phpMyAdmin Does Not Open
+## Get the Client-Ready WordPress Blueprint
 
-If phpMyAdmin does not open, confirm that Apache and MySQL are both running. Then open `http://localhost/phpmyadmin/` directly in your browser.
+> **Get the Client-Ready WordPress Blueprint**
+>
+> Build professional WordPress websites with a practical step-by-step guide covering planning, design, page structure, AI workflows, review, and client handover.
+>
+> YouTube viewers get 50% off with the discount code **YOUTUBE50**.
+>
+> [Explore the Client-Ready WordPress Blueprint](https://www.aningdesign.com/books)
 
-### Localhost Opens the Wrong Page
+## Useful resources
 
-If localhost opens a page you did not expect, check the folder name inside `htdocs`. Your WordPress site URL depends on that folder name.
+- **Visit AningDesign:** [aningdesign.com](https://aningdesign.com/)
+- **Continue the beginner series:** [WordPress Dashboard Tutorial for Beginners](/blog/wordpress-dashboard-tutorial-for-beginners) — or [watch the video](https://youtu.be/jcEqcDRm0jo).
+- **Support Aning Design Lab:** [Show your support](https://selar.com/showlove/aningdesignlab)
+- **Telegram channel:** [Join AningDzn](https://t.me/AningDzn)
+- **WhatsApp community:** [Join the community](https://chat.whatsapp.com/HzRPHeQ7osYLTMUNrF0Qds)
 
-### WordPress Cannot Connect to the Database
+## Final recap
 
-If WordPress cannot connect to the database, check the database name, username, password, and host. For default local XAMPP, the username is `root`, the password is empty, and the host is `localhost`.
+The sequence is simple: install XAMPP, start Apache and MySQL, add the WordPress files to `htdocs`, create a database, run the installer, create an administrator login, and open the local dashboard.
 
-### Database Name Does Not Match
-
-The database name in WordPress must match the database name you created in phpMyAdmin. Even a small spelling difference can stop the connection.
-
-### Confusion Around Root Username
-
-In local XAMPP, `root` is the default MySQL username. Beginners often try to create a new username too early, but for a basic local setup, `root` is the normal option.
-
-### Confusion Around Empty Password
-
-On a default local XAMPP setup, the database password is empty. Leave the password field blank during WordPress setup unless you manually changed the MySQL password.
-
-### WordPress Folder Copied Incorrectly Into htdocs
-
-Make sure you copied the actual WordPress files into the correct folder. If you accidentally create an extra nested folder, your URL may not open the installer where you expect.
-
-## Timestamps
-
-- 00:00 Intro and what we are building
-- 00:33 Folder naming best practices
-- 02:15 Installing XAMPP on Windows
-- 03:30 Starting Apache and MySQL
-- 04:22 Creating the WordPress database
-- 05:20 Understanding phpMyAdmin, root, and localhost
-- 06:11 Installing WordPress locally
-- 07:30 Copying WordPress files into htdocs
-- 08:45 Connecting WordPress to the database
-- 10:00 Creating the WordPress admin account
-- 11:10 Testing the local WordPress website
-- 12:00 Final recap and outro
-
-## Final Result
-
-By the end of this tutorial, you should have a working local WordPress website running on XAMPP and connected to a local MySQL database.
-
-You should also understand the basic relationship between Apache, MySQL, phpMyAdmin, localhost, htdocs, the root user, the empty local password, and the WordPress installer.
-
-## Continue Learning
-
-- [Use the WordPress website checklist before a full build](/blog/wordpress-website-checklist)
-- [Review the WordPress launch checklist before going live](/blog/wordpress-website-launch-checklist)
-- [Fix a weak WordPress design with Elementor](/blog/fix-bad-website-design-wordpress-elementor)
-- [Use Claude AI with Elementor and WordPress MCP](/blog/claude-ai-elementor-wordpress-mcp-workflow)
-
-## Build and test locally before launch
-
-Learning how to install WordPress locally using XAMPP is one of the best first steps for WordPress beginners. It gives you a private place to practice, test ideas, build client drafts, and understand how WordPress files and databases work before moving a website live.
-
-If you want more practical WordPress, web design, and website setup tutorials, watch the video on Aning Design Lab and explore more guides on [aningdesign.com](https://www.aningdesign.com/).
-
-You can also contact AningDesign through [https://www.aningdesign.com/](https://www.aningdesign.com/), join the Telegram channel at [https://t.me/AningDzn](https://t.me/AningDzn), or support the work at [https://selar.com/showlove/aningdesignlab](https://selar.com/showlove/aningdesignlab).
+Use the local site to learn and test safely, then move to secure public hosting when you are ready for visitors.

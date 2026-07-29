@@ -1,5 +1,6 @@
 import {
   Bot,
+  ArrowRight,
   Gauge,
   LayoutDashboard,
   PanelsTopLeft,
@@ -74,9 +75,10 @@ function Blueprint() {
               href={blueprintWhatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="blueprint-cta-button"
+              className="aning-button aning-button--primary"
             >
               Start a Project
+              <ArrowRight size={17} strokeWidth={2.2} aria-hidden="true" />
             </a>
           </div>
         </div>

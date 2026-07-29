@@ -30,7 +30,7 @@ function SmartServiceLink({ href, className = '', children, ariaLabel }) {
  * - pill:    compact section-level CTA
  */
 const CTA_VARIANT_CLASS = {
-  primary: 'service-primary-action',
+  primary: 'aning-button aning-button--primary',
   solid: 'service-solid-action',
   pill: 'service-pill-action'
 }
@@ -82,7 +82,7 @@ function ServiceCtaBlock({ cta, id, className = '', spacing }) {
 
   const primaryClass = cta.primaryVariant === 'solid'
     ? 'service-solid-action'
-    : 'service-primary-action'
+    : 'aning-button aning-button--primary'
 
   return (
     <section className={classes.join(' ')} aria-labelledby={id}>
@@ -653,7 +653,6 @@ function ServicePageTemplate({ service }) {
   if (isServicesIndex) mainClasses.push('service-page--index')
   if (useRhythm) mainClasses.push('service-page--rhythm')
   if (service.flatSurfaces) mainClasses.push('service-page--flat')
-  if (service.solidPrimaryCta) mainClasses.push('service-page--solid-primary')
 
   return (
     <main className={mainClasses.join(' ')}>
@@ -666,11 +665,11 @@ function ServicePageTemplate({ service }) {
               <div className="service-hero-lead">
                 <p className="service-page-intro">{service.intro}</p>
                 <div className="service-hero-actions" aria-label="Service page actions">
-                  <SmartServiceLink href="/contact" className="service-primary-action">
+                  <SmartServiceLink href="/contact" className="aning-button aning-button--primary">
                     {service.heroPrimaryLabel || 'Start a project'}
                     <ArrowRight size={17} strokeWidth={2.2} aria-hidden="true" />
                   </SmartServiceLink>
-                  <SmartServiceLink href={service.heroSecondaryHref || '/services'} className="service-secondary-action">
+                  <SmartServiceLink href={service.heroSecondaryHref || '/services'} className="aning-button aning-button--secondary">
                     {service.heroSecondaryLabel || 'View all services'}
                   </SmartServiceLink>
                 </div>
@@ -686,11 +685,11 @@ function ServicePageTemplate({ service }) {
               <div className="service-hero-lead">
                 <p className="service-page-intro">{service.intro}</p>
                 <div className="service-hero-actions" aria-label="Service page actions">
-                  <SmartServiceLink href="/contact" className="service-primary-action">
+                  <SmartServiceLink href="/contact" className="aning-button aning-button--primary">
                     {service.heroPrimaryLabel || 'Start a project'}
                     <ArrowRight size={17} strokeWidth={2.2} aria-hidden="true" />
                   </SmartServiceLink>
-                  <SmartServiceLink href={service.heroSecondaryHref || '/services'} className="service-secondary-action">
+                  <SmartServiceLink href={service.heroSecondaryHref || '/services'} className="aning-button aning-button--secondary">
                     {service.heroSecondaryLabel || 'View all services'}
                   </SmartServiceLink>
                 </div>
@@ -716,11 +715,11 @@ function ServicePageTemplate({ service }) {
             <>
               <p className="service-page-intro">{service.intro}</p>
               <div className="service-hero-actions" aria-label="Service page actions">
-                <SmartServiceLink href="/contact" className="service-primary-action">
+                <SmartServiceLink href="/contact" className="aning-button aning-button--primary">
                   {service.heroPrimaryLabel || 'Start a project'}
                   <ArrowRight size={17} strokeWidth={2.2} aria-hidden="true" />
                 </SmartServiceLink>
-                <SmartServiceLink href={service.heroSecondaryHref || '/services'} className="service-secondary-action">
+                <SmartServiceLink href={service.heroSecondaryHref || '/services'} className="aning-button aning-button--secondary">
                   {service.heroSecondaryLabel || 'View all services'}
                 </SmartServiceLink>
               </div>
@@ -986,12 +985,12 @@ function ServicePageTemplate({ service }) {
           <h2 id="service-final-cta-title">{finalCta.heading}</h2>
           {finalCta.text && <p className="service-final-cta-text">{finalCta.text}</p>}
           <div className="service-final-actions">
-            <SmartServiceLink href={finalCta.primaryHref} className="service-primary-action">
+            <SmartServiceLink href={finalCta.primaryHref} className="aning-button aning-button--primary">
               {finalCta.primaryLabel}
               <ArrowRight size={17} strokeWidth={2.2} aria-hidden="true" />
             </SmartServiceLink>
             {finalCta.secondaryHref && (
-              <SmartServiceLink href={finalCta.secondaryHref} className="service-secondary-action">
+              <SmartServiceLink href={finalCta.secondaryHref} className="aning-button aning-button--secondary">
                 {finalCta.secondaryLabel}
               </SmartServiceLink>
             )}

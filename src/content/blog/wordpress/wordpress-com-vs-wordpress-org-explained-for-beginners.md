@@ -1,231 +1,186 @@
 ---
 type: "youtube"
-title: "WordPress.com vs WordPress.org Explained for Beginners"
-seoTitle: "WordPress.com vs WordPress.org: Beginner Guide | AningDesign"
-description: "Learn the difference between WordPress.com and WordPress.org, then tour the WordPress dashboard, important settings, and themes in this beginner lesson."
+title: "What Is WordPress? Complete Beginner Introduction to WordPress"
+seoTitle: "What Is WordPress? Beginner Guide | Aning Design Lab"
+description: "Learn what WordPress is, the difference between WordPress.com and WordPress.org, how the dashboard and settings work, and how WordPress themes control a website."
 category: "WordPress"
-date: "2026-07-13"
+date: "2026-07-29"
+updatedDate: "2026-07-29"
 slug: "wordpress-com-vs-wordpress-org-explained-for-beginners"
-primaryKeyword: "wordpress.com vs wordpress.org"
+primaryKeyword: "what is WordPress"
 keywordCluster:
-  - WordPress.org vs WordPress.com
-  - WordPress tutorial for beginners
-  - WordPress tutorial
-  - what is WordPress
-  - WordPress dashboard
-  - WordPress settings
-  - WordPress themes
-  - self-hosted WordPress
+  - WordPress for beginners
+  - WordPress.com vs WordPress.org
+  - how WordPress works
+  - how WordPress themes work
 servicePage: "/services/wordpress-websites"
+relatedService: "wordpress-websites"
 productPage: "/books/client-ready-wordpress-website-blueprint"
 productCtaText: "Use the Client-Ready WordPress Blueprint to plan, build, review, launch, and hand over WordPress websites with a repeatable workflow."
-productCtaLabel: "Get the Client-Ready WordPress Blueprint"
+productCtaLabel: "Read about the Client-Ready WordPress Blueprint"
 youtubeVideoId: "4YFOaUq6xVE"
 youtubeUrl: "https://youtu.be/4YFOaUq6xVE"
 youtubeEmbedUrl: "https://www.youtube.com/embed/4YFOaUq6xVE"
-thumbnail: "https://img.youtube.com/vi/4YFOaUq6xVE/maxresdefault.jpg"
-thumbnailAlt: "WordPress.com vs WordPress.org beginner tutorial covering the WordPress dashboard, settings, and themes"
+thumbnail: "/images/blog/what-is-wordpress-beginner-guide-thumbnail.webp"
+thumbnailAlt: "Aning Design Lab video thumbnail comparing WordPress.com and WordPress.org with the presenter"
+imageCredit: "Official YouTube thumbnail from Aning Design Lab"
 toolsUsed:
   - WordPress
-  - WordPress Dashboard
-  - WordPress Themes
 tags:
   - WordPress
-  - WordPress Tutorial
   - WordPress for Beginners
-  - WordPress Dashboard
-  - WordPress Themes
   - WordPress.com
   - WordPress.org
+featured: false
 relatedPosts:
   - how-to-install-wordpress-locally-using-xampp
-  - wordpress-website-tutorial-localwp-elementor-astra
+  - wordpress-dashboard-tutorial-for-beginners
   - wordpress-website-checklist
-featured: true
 ---
 
-WordPress is often introduced as one platform, but beginners quickly encounter two addresses: WordPress.com and WordPress.org. They use the same core WordPress software, but they offer different ways to host, manage, and maintain a website.
+Welcome to lesson one of the Aning Design Lab WordPress beginner series. If you want to build a blog, business site, portfolio, service website, store, or client website, this guide gives you the vocabulary before you install anything.
 
-This first lesson in the Aning Design Lab WordPress beginner series explains that difference before touring the WordPress dashboard, the settings worth checking early, and the role themes play in a website. It gives you the foundation you need before installing tools or building pages.
-
-## What you will learn
-
-By the end of this lesson, you will understand:
-
-- What WordPress is and what it can build
-- The difference between WordPress.com and WordPress.org
-- What self-hosted WordPress means
-- How the WordPress dashboard is organized
-- Which settings beginners should review first
-- What a WordPress theme controls
-- Which WordPress option may fit your project
+By the end, you will know what WordPress does, why WordPress.com and WordPress.org are different, where the dashboard fits, and what to learn next. Watch the video above first, then use this guide as a reference while you practise.
 
 ## What is WordPress?
 
-WordPress is open-source publishing software and a content management system. It provides an administration area where you can create pages, publish posts, upload media, manage users, change the website's appearance, and extend its features.
+WordPress is open-source software and a **content management system** (CMS). A CMS gives you an administration area where you can create pages, publish articles, upload images, manage users, and adjust a website without manually writing every page file.
 
-You can use WordPress for a blog, business website, portfolio, publication, membership website, or online store when the appropriate theme, plugins, hosting, and setup are in place. The software gives you the foundation, but the quality of the finished website still depends on its structure, content, design decisions, performance, and maintenance.
+WordPress is beginner-friendly, but it also supports custom design and development. It is not only a page builder: the core software, a theme, optional plugins, hosting, and your content each have different jobs. [WordPress.org describes the project as open-source software](https://wordpress.org/about/) built for people with different levels of technical experience.
 
-The important point is that WordPress.com and WordPress.org are not two unrelated website builders. Both use WordPress. The main difference is how the software is hosted and who handles the technical environment.
+![Infographic explaining WordPress as a content management system for websites](/images/blog/what-is-wordpress-cms-overview.webp)
 
-## WordPress.com vs WordPress.org: the main difference
+## What can you build with WordPress?
 
-WordPress.com is a managed hosting service. Hosting is included, and the platform handles much of the underlying technical setup. You choose a plan based on the features, storage, support, and level of control you need.
+With the right structure, design, hosting, and maintenance, WordPress can support:
 
-WordPress.org is the home of the free, open-source WordPress software. To use it for a public website, you arrange your own domain and hosting or select a host that installs WordPress for you. This approach is commonly called **self-hosted WordPress**.
+- business and service websites;
+- blogs, news sites, and educational resources;
+- portfolios and landing pages;
+- membership sites and directories;
+- online stores; and
+- editable client websites.
 
-The [official WordPress comparison](https://wordpress.org/documentation/article/difference-between-wordpress-org-and-wordpress-com/) explains the distinction between the open-source project and the commercial hosted service.
+The software provides a flexible foundation. Advanced features can require suitable themes, plugins, development work, and ongoing care, so not every project is equally simple to build.
+
+## Is WordPress free?
+
+The WordPress software available through WordPress.org can be downloaded without a software licence fee. A public professional website still normally has related costs, such as a domain, hosting, premium themes or plugins, maintenance, backups, and professional design or development.
+
+That distinction matters: **WordPress software is not the same as running a website.** Choose the tools and services that fit the project rather than assuming every part is free.
+
+## WordPress.com versus WordPress.org
+
+WordPress.com and WordPress.org are related, but they are not the same service. Both use WordPress software; the practical difference is hosting and who manages the technical environment. The [official WordPress.com comparison](https://wordpress.com/support/com-vs-org/) is useful when you need to check current platform details.
 
 | Area | WordPress.com | WordPress.org / self-hosted WordPress |
 | --- | --- | --- |
-| Hosting | Included and managed by WordPress.com | Purchased and managed through a hosting provider |
-| Initial setup | Guided platform setup | Hosting setup or a host-provided installer |
-| Maintenance | Many platform-level tasks are managed for you | You or your provider manage updates, backups, security, and performance |
-| Themes and plugins | Access depends on the selected plan and current plan features | You can install compatible themes and plugins on your hosting environment |
-| Technical control | Controlled by the WordPress.com platform and plan | More control over hosting, files, database, and development workflow |
-| Support | Included according to the plan | Comes from your host, theme or plugin providers, documentation, or hired support |
-| Cost | Based on the WordPress.com plan and optional services | WordPress software is free, but hosting, domain, and optional products cost money |
+| Hosting | Included in the platform | Purchased separately from a hosting provider |
+| Setup | Managed platform setup | Self-managed or handled by a developer or host |
+| Control | Depends on the plan | Greater hosting and website control |
+| Themes and plugins | Depends on available plan features | Can generally install compatible themes and plugins |
+| Maintenance | More platform-managed | The owner or provider is more responsible |
+| Best fit | Convenience and simpler publishing | Flexible, self-hosted professional projects |
 
-Neither option is automatically right for everyone. The practical choice depends on how much control you need and how much technical responsibility you want to manage.
+Neither choice is universally better. WordPress.com can suit someone who values an all-in-one managed platform. Self-hosted WordPress can suit a project that needs more control over hosting, design, plugins, and workflow.
 
-## Which WordPress option should a beginner choose?
+![WordPress.com versus WordPress.org comparison infographic](/images/blog/wordpress-com-vs-wordpress-org-comparison.webp)
 
-### Choose WordPress.com when you want a managed start
+### Which version does this series use?
 
-WordPress.com can suit a personal blog, simple website, or creator who wants hosting and platform management together. It reduces the number of separate services you must configure at the beginning.
+This series focuses mainly on self-hosted WordPress using WordPress.org software. It is a common approach for professional business websites, client work, custom themes and plugins, page builders, and transferable WordPress skills. It does not make WordPress.com the wrong choice; it reflects the workflow used in these lessons.
 
-Before choosing a plan, check the current limits for storage, custom domains, themes, plugins, monetization, support, and any advanced features you expect to use. Do not assume every feature is included on every plan.
+## How WordPress works
 
-### Choose self-hosted WordPress when you need more control
+For a public website, a domain points visitors to hosting. The hosting environment runs WordPress and stores information in a database. A theme controls the visual templates, plugins add selected features, and people add pages, posts, media, and user accounts through the dashboard. Visitors see the published result in their browser.
 
-WordPress.org is usually the stronger fit when you want to choose your hosting provider, work with website files and databases, build a custom client workflow, or control a broader range of compatible themes and plugins.
+When you are learning, **localhost** can temporarily replace public hosting. It lets WordPress run on your computer so you can practise safely before making a site live. The next lesson shows how to [install WordPress locally using XAMPP](/blog/how-to-install-wordpress-locally-using-xampp).
 
-That flexibility also creates responsibility. A self-hosted website needs reliable hosting, backups, security, updates, performance checks, and ongoing maintenance. The freedom is useful when you are prepared to manage the website properly.
+![Diagram showing how hosting WordPress themes plugins content and media form a website](/images/blog/how-wordpress-website-works.webp)
 
-For professional client work, self-hosted WordPress is common because the project can be planned around the client's hosting, content management, integrations, maintenance agreement, and ownership requirements. If you need that work handled for your business, review AningDesign's [WordPress website service](/services/wordpress-websites).
+## What is the WordPress dashboard?
 
-## How the WordPress dashboard works
+The dashboard is the private management area of a WordPress site. It is where you usually work with Posts, Media, Pages, Comments, Appearance, Plugins, Users, Tools, and Settings.
 
-After logging in, the WordPress dashboard becomes the control area for your website. The exact menu can change when themes and plugins add their own options, but a standard installation includes several important sections.
+This introduction is deliberately brief so it does not repeat the dedicated lesson. Continue with the [complete WordPress dashboard tutorial for beginners](/blog/wordpress-dashboard-tutorial-for-beginners), or [watch the dashboard video](https://youtu.be/jcEqcDRm0jo), for a focused tour of the menu and everyday tasks.
 
-The [official Administration Screens guide](https://wordpress.org/documentation/article/administration-screens/) documents the main dashboard areas and settings.
+## Important WordPress settings
 
-### Posts
+Settings are not something to change all at once. Start by understanding what each area affects:
 
-Posts are normally used for dated content such as articles, news, or tutorials. They can be organized with categories and tags and displayed in a blog archive.
+- **General:** site title, language, timezone, and basic site details.
+- **Writing:** defaults that affect creating content.
+- **Reading:** homepage, blog page, and search-engine visibility options.
+- **Discussion:** comment behavior and notifications.
+- **Media:** default image sizes.
+- **Permalinks:** the structure of page and post URLs.
+- **Privacy:** the site privacy-policy page.
 
-### Pages
-
-Pages are used for more permanent website content such as Home, About, Services, Projects, Pricing, and Contact. A page is not automatically part of a blog feed.
-
-### Media
-
-The Media Library stores uploaded images, documents, audio, and video files. Upload appropriately sized, optimized assets and add useful alternative text when an image communicates meaning.
-
-### Comments
-
-Comments let you review and moderate responses when commenting is enabled. A business website that does not need comments should configure the Discussion settings deliberately instead of leaving them unattended.
-
-### Appearance
-
-Appearance contains theme-related controls. Depending on whether the active theme is a block theme or a classic theme, you may see the Site Editor, Customizer, widgets, menus, or other theme options.
-
-### Plugins
-
-Plugins add functionality such as forms, SEO controls, backups, security, caching, and ecommerce. Install a plugin because the website needs its function, not because it appears on a generic list.
-
-### Users
-
-Users controls who can access the dashboard and what each person is allowed to do. Give people the lowest role that still lets them complete their work, and avoid sharing one administrator account.
-
-### Tools
-
-Tools includes utilities for importing, exporting, and checking parts of the website. Plugins may add more tools here.
-
-### Settings
-
-Settings controls important site-wide behavior. This area should be reviewed before publishing content because early choices affect URLs, the homepage, comments, media, and other parts of the website.
-
-## Important WordPress settings to review first
-
-You do not need to change every option immediately. Start with settings that affect the site's identity, content structure, and public behavior.
-
-### General settings
-
-Confirm the site title, tagline, administration email, language, timezone, and date format. The timezone matters for scheduled posts and other time-based activity.
-
-### Reading settings
-
-Choose whether the homepage shows the latest posts or a static page. Most business websites use a designed static homepage and a separate page for blog posts.
-
-Also check the search-engine visibility option. A private development or staging website may need indexing discouraged temporarily, but that setting should not remain enabled when an approved production website is meant to appear in search results.
-
-### Discussion settings
-
-Decide whether new posts accept comments, how comments are moderated, and when notifications are sent. Match these choices to the website's actual content plan.
-
-### Media settings
-
-Review the default image sizes and keep the Media Library organized. WordPress can generate multiple image sizes, so uploading oversized files still wastes storage and processing resources.
-
-### Permalink settings
-
-Permalinks control the URL structure for posts and archives. Choose a clear structure before publishing a large amount of content, because changing established URLs later can require redirects and careful SEO handling.
+On an established website, changing site URLs, permalink structures, or reading settings can affect links, search visibility, and functionality. Check the impact first and make a backup before significant changes.
 
 ## How WordPress themes work
 
-A WordPress theme controls the visual presentation and templates used across a website. It can affect typography, colors, layout, headers, footers, content templates, and other display behavior.
+A WordPress theme controls the site’s overall presentation and template system: typography, colors, headers, footers, blog layouts, page templates, and responsive behavior. Block themes can support the Site Editor; classic themes usually offer their own customization approach. Some themes are designed to work with page builders.
 
-The [official WordPress theme guide](https://wordpress.org/documentation/article/work-with-themes/) describes a theme as a collection of files that works together to produce the website's interface and unifying design.
+A theme does not normally contain all of your website content. Changing themes can alter styling and layout, so test a change carefully on a staging or local copy before doing it on a live site.
 
-Only one theme is active at a time, although you can keep other themes installed for testing or fallback purposes. Changing the active theme does not normally delete your posts and pages, but it can change how that content is presented and may remove access to theme-specific layouts or features.
+### Themes, the editor, and page builders are different
 
-Before activating a theme, check:
+- A **theme** provides presentation and templates.
+- The **block editor** is WordPress’s built-in content editor.
+- The **Site Editor** lets compatible block themes edit wider template areas.
+- A **page builder** is an additional design tool; Elementor is one example.
+- **Plugins** add specific functionality.
 
-- Whether it supports the current WordPress version
-- How it handles desktop, tablet, and mobile layouts
-- Whether it works with the editor or page builder you plan to use
-- How frequently it is maintained
-- Whether its typography, spacing, and layout controls fit the project
-- What happens to theme-specific features if you switch later
+You do not need a third-party page builder for every WordPress website. Choose the smallest, well-supported setup that meets the site’s real needs.
 
-Themes provide a starting system, not a finished content strategy. A professional website still needs a clear sitemap, useful copy, consistent design rules, accessible navigation, responsive review, and launch testing.
+## Plugins and functionality
 
-> **YouTube exclusive: save 50% for a limited time.** The 330-page [Client-Ready WordPress Blueprint](/books/client-ready-wordpress-website-blueprint) includes a practical project system plus AI prompts, checklists, design rulers, and handover resources. Use coupon **YOUTUBE50** when you [get the blueprint on Payhip](https://payhip.com/b/5p0EN). No expiry date is stated, so check the product page to confirm the offer is still active.
+Plugins can add forms, SEO tools, backups, security, ecommerce, performance features, and learning systems. Install only trusted, necessary plugins, keep them updated, and remove tools you no longer use. Too many or poorly maintained plugins can create security, compatibility, and performance problems.
 
-## Video chapters
+## WordPress pages and posts
 
-Use these timestamps to revisit a specific part of the lesson:
+Pages are usually for permanent website content, such as Home, About, Services, or Contact. Posts are commonly dated or categorized articles, such as a blog tutorial. The dashboard lesson explains where you create and manage both: [read the full dashboard overview](/blog/wordpress-dashboard-tutorial-for-beginners).
 
-- **00:00** — Introduction
-- **00:45** — WordPress.com vs WordPress.org
-- **02:35** — WordPress dashboard overview
-- **03:55** — WordPress settings
-- **04:51** — WordPress themes
-- **05:43** — Client-Ready WordPress Blueprint
+## Beginner mistakes to avoid
 
-## Beginner checklist before the next lesson
+- Confusing WordPress.com with WordPress.org.
+- Installing WordPress from unofficial sources.
+- Choosing hosting without researching support, security, backups, and renewal terms.
+- Installing too many plugins or using unlicensed premium products.
+- Using weak administrator credentials or ignoring backups.
+- Editing WordPress core files directly.
+- Changing settings without understanding the effect.
+- Assuming a theme automatically creates all the site content.
+- Making major changes directly on a live website.
 
-- Decide whether you need managed WordPress.com hosting or a self-hosted installation
-- Write down the type of website you want to build
-- List the pages the website needs
-- Review the main dashboard menu
-- Confirm the general and reading settings
-- Choose a sensible permalink structure before publishing
-- Avoid installing unnecessary themes and plugins
-- Plan backups, security, updates, and maintenance
-- Keep the website private until its content and settings are ready for launch
+## Recommended WordPress beginner learning order
 
-## Continue the WordPress beginner series
+1. Understand what WordPress is.
+2. [Install XAMPP and WordPress on localhost](/blog/how-to-install-wordpress-locally-using-xampp).
+3. [Learn the WordPress dashboard](/blog/wordpress-dashboard-tutorial-for-beginners).
+4. Understand themes and page structure.
+5. Create the main website pages.
+6. Learn plugins and functionality.
+7. Build and review a complete website.
+8. Prepare the site for launch and client handover.
 
-Once you understand the platform, the next practical step is learning how WordPress runs in a development environment and how a complete website workflow fits together.
+### WordPress beginner series
 
-- [How to Install WordPress Locally Using XAMPP](/blog/how-to-install-wordpress-locally-using-xampp)
-- [Build WordPress Locally with LocalWP, Elementor, and Astra](/blog/wordpress-website-tutorial-localwp-elementor-astra)
-- [WordPress Website Checklist: Plan, Build, Test, and Launch](/blog/wordpress-website-checklist)
+- **Lesson 1 — What Is WordPress?** You are here.
+- **Lesson 2 — [Install WordPress on Localhost Using XAMPP](/blog/how-to-install-wordpress-locally-using-xampp).** [Watch the setup video](https://youtu.be/jcW0TtM5Zf4).
+- **Lesson 3 — [WordPress Dashboard Tutorial for Beginners](/blog/wordpress-dashboard-tutorial-for-beginners).** [Watch the dashboard video](https://youtu.be/jcEqcDRm0jo).
 
-## Final takeaway
+## Get the Client-Ready WordPress Blueprint
 
-WordPress.com gives you WordPress with managed hosting, while WordPress.org gives you the open-source software for a self-hosted setup. The easier option depends on your project: managed convenience and plan-based features on one side, or wider hosting control and greater maintenance responsibility on the other.
+Build professional WordPress websites faster with a practical guide covering planning, design, page structure, AI workflows, review, and client handover. The [Client-Ready WordPress Blueprint](/books/client-ready-wordpress-website-blueprint) explains the guide in full.
 
-Whichever route you choose, learn the dashboard and configure the important settings before building pages. That foundation will make the next lessons on installation, themes, page builders, content, performance, and launch much easier to follow.
+**Current YouTube offer:** 50% off with code `YOUTUBE50`.
+
+[Purchase the Client-Ready WordPress Blueprint](https://payhip.com/b/5p0EN)
+
+## Final recap
+
+WordPress is a content management system for creating and managing websites. WordPress.com is a hosted platform, while WordPress.org provides self-hosted WordPress software. The dashboard is the management area, settings control important site behavior, themes control presentation and templates, and plugins add functionality.
+
+The practical next step is to [set up WordPress locally with XAMPP](/blog/how-to-install-wordpress-locally-using-xampp). When you are ready to plan an editable business website or client project, explore [AningDesign WordPress website services](/services/wordpress-websites) or [contact AningDesign](/contact).

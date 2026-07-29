@@ -224,7 +224,7 @@ const getServiceLink = (post) => {
 }
 
 function BlogFeaturedImage({ post }) {
-  if (!post.thumbnail || post.youtubeEmbedUrl) return null
+  if (!post.thumbnail) return null
 
   return (
     <figure className="blog-post-featured-image">
@@ -483,8 +483,8 @@ function BlogPostContent({ post }) {
 
         <div className="blog-post-layout">
           <article className="blog-post-article">
-            <BlogVideoEmbed title={post.title} youtubeEmbedUrl={post.youtubeEmbedUrl} />
             <BlogFeaturedImage post={post} />
+            <BlogVideoEmbed title={post.title} youtubeEmbedUrl={post.youtubeEmbedUrl} />
 
             <div className="blog-post-content">
               <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>

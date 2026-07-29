@@ -78,8 +78,6 @@
   margin-top: 34px;
 }
 
-.service-primary-action,
-.service-secondary-action,
 .service-text-link,
 .service-related-links a,
 .service-inline-action {
@@ -95,29 +93,12 @@
   transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
-.service-primary-action {
-  padding: 12px 18px;
-  color: #05120a;
-  background: linear-gradient(90deg, #00fb64, #00c9ff);
-  box-shadow: 0 14px 28px rgba(0, 251, 100, 0.16);
-}
-
-.service-secondary-action {
-  padding: 12px 18px;
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.service-primary-action:hover,
-.service-secondary-action:hover,
 .service-text-link:hover,
 .service-related-links a:hover,
 .service-inline-action:hover {
   transform: translateY(-2px);
 }
 
-.service-secondary-action:hover,
 .service-text-link:hover,
 .service-related-links a:hover,
 .service-inline-action:hover {
@@ -1666,8 +1647,7 @@
   background: #0a0f0f;
 }
 
-/* Primary button keeps the standard green→cyan gradient (see .service-primary-action)
-   even on flat pages, so the primary CTA looks identical across all service pages. */
+/* The shared primary button keeps its green-to-cyan gradient on flat pages. */
 
 .service-page--flat .service-mid-cta,
 .service-page--flat .service-intro-cta {
@@ -1683,21 +1663,6 @@
 .service-page--flat .service-example-card,
 .service-page--flat .service-use-case-card {
   background: rgba(255, 255, 255, 0.03);
-}
-
-/* ---------------------------------------------------------------- */
-/* Solid (gradient-free) primary button. Opt-in via solidPrimaryCta */
-/* on a single page; other pages keep the shared gradient primary.  */
-/* Also neutralises the timeline number badge gradient on this page.*/
-/* ---------------------------------------------------------------- */
-.service-page--solid-primary .service-primary-action {
-  color: #05120a;
-  background: #00fb64;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.28);
-}
-
-.service-page--solid-primary .service-process-step > span {
-  background: #00fb64;
 }
 
 /* ---------------------------------------------------------------- */
@@ -1988,8 +1953,9 @@
     grid-template-columns: 1fr;
   }
 
-  .service-primary-action,
-  .service-secondary-action,
+  .service-hero-actions .aning-button,
+  .service-final-actions .aning-button,
+  .service-cta-actions .aning-button,
   .service-inline-action {
     width: 100%;
   }

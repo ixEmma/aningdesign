@@ -41,6 +41,14 @@ body {
   --section-intro-gap: clamp(32px, 24px + 2vw, 56px);
   --section-content-gap: clamp(20px, 16px + 1vw, 32px);
   --section-cta-gap: clamp(28px, 20px + 2vw, 40px);
+  /* AningDesign button system — see docs/design-system/buttons.md */
+  --aning-green: #00fb64;
+  --aning-cyan: #00c9ff;
+  --aning-button-ink: #05120a;
+  --aning-button-radius: 15px;
+  --aning-button-radius-large: 18px;
+  --aning-button-shadow: 0 12px 26px rgba(0, 251, 100, 0.18);
+  --aning-button-focus: #90f8ff;
   font-family: "Switzer", sans-serif, Helvetica, sans-serif;
   font-weight: 400;
   background-color: #0a0a0a;
@@ -227,6 +235,94 @@ h2 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* AningDesign button system — primary, secondary, and text variants. */
+.aning-button {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 22px;
+  border: 1px solid transparent;
+  border-radius: var(--aning-button-radius);
+  font-family: var(--font-family-base);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background-color 180ms ease, color 180ms ease, filter 180ms ease;
+}
+
+.aning-button svg {
+  flex: 0 0 auto;
+}
+
+.aning-button--primary {
+  color: var(--aning-button-ink);
+  background: linear-gradient(90deg, var(--aning-green), var(--aning-cyan));
+  box-shadow: var(--aning-button-shadow);
+}
+
+.aning-button--primary:hover {
+  color: var(--aning-button-ink);
+  filter: brightness(1.04);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(0, 251, 100, 0.24);
+}
+
+.aning-button--primary:active {
+  transform: translateY(0);
+  filter: brightness(0.98);
+}
+
+.aning-button--secondary {
+  color: #ffffff;
+  border-color: rgba(154, 247, 163, 0.38);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.aning-button--secondary:hover {
+  color: #9af7a3;
+  border-color: rgba(154, 247, 163, 0.72);
+  background: rgba(154, 247, 163, 0.08);
+  transform: translateY(-2px);
+}
+
+.aning-button--text {
+  min-height: 44px;
+  padding: 10px 0;
+  color: #9af7a3;
+  border-color: transparent;
+  background: transparent;
+  border-radius: 0;
+}
+
+.aning-button--text:hover {
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
+.aning-button--large {
+  min-height: 56px;
+  padding: 16px 28px;
+  border-radius: var(--aning-button-radius-large);
+  font-size: 17px;
+}
+
+.aning-button:focus-visible {
+  outline: 3px solid var(--aning-button-focus);
+  outline-offset: 3px;
+}
+
+.aning-button:disabled,
+.aning-button[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.54;
+  pointer-events: none;
 }
 
 .sr-only {

@@ -90,8 +90,8 @@ function BooksPage() {
                   <div><dt>Price</dt><dd>{book.priceLabel}</dd></div>
                   <div><dt>For</dt><dd>{book.audienceSummary}</dd></div>
                 </dl>
-                <Link to={book.path} className="books-primary-action">
-                  View the Blueprint
+                <Link to={book.path} className="aning-button aning-button--primary">
+                  Choose an Edition
                   <ArrowRight size={17} aria-hidden="true" />
                 </Link>
               </div>
@@ -122,8 +122,8 @@ function BooksPage() {
           <h2 id="books-support-title">Use the process yourself—or bring AningDesign into the project.</h2>
         </div>
         <div className="books-support-actions">
-          <Link to="/services/wordpress-websites">View WordPress Websites</Link>
-          <Link to="/contact">Contact AningDesign</Link>
+          <Link to="/services/wordpress-websites" className="aning-button aning-button--secondary">View WordPress Websites</Link>
+          <Link to="/contact" className="aning-button aning-button--secondary">Contact AningDesign</Link>
         </div>
       </section>
     </main>
@@ -131,4 +131,3 @@ function BooksPage() {
 }
 
 export default BooksPage
-
