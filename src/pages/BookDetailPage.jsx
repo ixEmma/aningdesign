@@ -157,8 +157,8 @@ function BookProductPage({ book }) {
             <h2 id="book-preview-title">A practical editorial system for the work between start and launch.</h2>
           </div>
           <figure className="book-preview-figure">
-            <img src={book.previewImage} alt="Selected interior pages from the Client-Ready WordPress Website Blueprint." width="1600" height="1200" loading="lazy" decoding="async" />
-            <figcaption>Selected pages from the main book, showing the planning and review approach.</figcaption>
+            <img src={book.previewImage} alt="Opening preview pages from the Client-Ready WordPress Blueprint Complete Package." width="2400" height="1200" loading="lazy" decoding="async" />
+            <figcaption>Opening pages from the Complete Package preview, showing the included resources, full book map, and eight-stage workflow.</figcaption>
           </figure>
         </section>
 
@@ -189,6 +189,36 @@ function BookProductPage({ book }) {
                 </a>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section className="book-section book-free-preview" aria-labelledby="book-free-preview-title">
+          <figure className="book-free-preview-visual">
+            <img
+              src={book.freePreviewImage}
+              alt="Preview pages from the Client-Ready WordPress Blueprint complete package"
+              width="2400"
+              height="1200"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <div className="book-free-preview-copy">
+            <p>Free sample</p>
+            <h2 id="book-free-preview-title">Preview the complete package before you buy</h2>
+            <p>
+              Explore selected pages from the Client-Ready WordPress Blueprint and all four practical bonus resources. See the writing quality, design system, workflows, prompts, checklists, and client-ready templates included in the complete package.
+            </p>
+            <a
+              href="https://payhip.com/b/BKgxC"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="aning-button aning-button--secondary"
+            >
+              Download the Free Preview
+              <ArrowRight size={17} aria-hidden="true" />
+            </a>
+            <p className="book-free-preview-note">Free preview edition. No payment required. The complete products remain available above.</p>
           </div>
         </section>
 

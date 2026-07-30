@@ -51,6 +51,7 @@ export const books = [
     heroImage: '/images/books/client-ready-wordpress-blueprint-hero.webp',
     bundleImage: '/images/books/client-ready-wordpress-blueprint-resource-bundle.webp',
     previewImage: '/images/books/client-ready-wordpress-blueprint-interior-preview.webp',
+    freePreviewImage: '/images/books/client-ready-wordpress-complete-package-preview-clean.webp',
     ogImage: '/images/books/client-ready-wordpress-blueprint-og.webp',
     audienceSummary: 'Beginners, designers, freelancers, Elementor users, and creators building client websites.',
     audience: [
