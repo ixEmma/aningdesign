@@ -1,0 +1,111 @@
+.capability-reel {
+  container-type: inline-size;
+  min-width: 0;
+}
+
+.capability-reel__viewport {
+  --reel-row-height: 58px;
+  position: relative;
+  overflow: hidden;
+  height: calc(var(--reel-row-height) * 7);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 13%, #000 87%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 13%, #000 87%, transparent 100%);
+}
+
+.capability-reel__track {
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+}
+
+.capability-reel__track.is-moving {
+  transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.capability-reel__row {
+  display: flex;
+  flex: 0 0 var(--reel-row-height);
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  color: rgba(177, 197, 190, 0.72);
+  font-family: var(--font-family-base);
+  font-size: var(--type-h3-size);
+  font-size: clamp(1.125rem, 6cqw, var(--type-h3-size));
+  font-weight: var(--type-weight-semibold);
+  line-height: 1;
+  letter-spacing: -0.015em;
+  white-space: nowrap;
+  transition: color 420ms ease, opacity 650ms ease;
+}
+
+.capability-reel__row.is-active {
+  color: #f3fbfb;
+  font-weight: var(--type-weight-bold);
+}
+
+.capability-reel__marker {
+  flex: 0 0 auto;
+  color: #00fb64;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: color 420ms ease, opacity 420ms ease, transform 420ms ease;
+}
+
+.capability-reel__row.is-active .capability-reel__marker {
+  color: #00c9ff;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 1100px) and (min-width: 901px) {
+  .capability-reel__viewport {
+    --reel-row-height: 54px;
+  }
+
+  .capability-reel__row {
+    gap: 10px;
+  }
+
+  .capability-reel__marker {
+    width: 21px;
+    height: 21px;
+  }
+}
+
+@media (max-width: 900px) {
+  .capability-reel {
+    width: 100%;
+  }
+
+  .capability-reel__viewport {
+    --reel-row-height: 48px;
+    height: calc(var(--reel-row-height) * 3);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 22%, #000 78%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 22%, #000 78%, transparent 100%);
+  }
+
+}
+
+@media (max-width: 480px) {
+  .capability-reel__viewport {
+    --reel-row-height: 46px;
+  }
+
+  .capability-reel__row {
+    gap: 10px;
+  }
+
+  .capability-reel__marker {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .capability-reel__track,
+  .capability-reel__row,
+  .capability-reel__marker {
+    transition: none;
+  }
+}

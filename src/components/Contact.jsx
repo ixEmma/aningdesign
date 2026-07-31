@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { Mail, MessageCircle, Send } from 'lucide-react'
+import { ArrowRight, CheckCircle2, Mail, MessageCircle } from 'lucide-react'
+import HomepageSectionHeading from './HomepageSectionHeading'
 import './Contact.css'
-import CTA from './CTA'
 import { getExternalLinkProps } from '../utils/links'
 import {
   XLogoIcon,
@@ -17,6 +17,14 @@ const THANK_YOU_URL = 'https://www.aningdesign.com/thank-you'
 const CONTACT_EMAIL = 'aningemma1@gmail.com'
 const WHATSAPP_URL = 'https://wa.me/233557066467?text=Hi Emmanuel, I am interested in working with you on a project.'
 
+const projectFitItems = [
+  'A new business or professional website',
+  'A redesign for an outdated or underperforming website',
+  'A WordPress website your team can manage',
+  'A dashboard, portal or early-stage web product',
+  'Design and development handled as one connected process'
+]
+
 const contactSocialLinks = [
   { label: 'X', href: 'https://x.com/Aningdesigns', icon: XLogoIcon },
   { label: 'LinkedIn', href: 'https://linkedin.com/in/emmanuel-aning-133189310', icon: LinkedInLogoIcon },
@@ -26,24 +34,125 @@ const contactSocialLinks = [
   { label: 'Telegram', href: 'https://t.me/AningDzn', icon: TelegramLogoIcon }
 ]
 
+function HomepageContactSupport() {
+  return (
+    <aside className="bento-card contact-details-card home-contact__support" aria-labelledby="project-fit-title">
+      <div>
+        <p className="contact-card-kicker type-eyebrow">Project fit</p>
+        <h3 className="type-h3" id="project-fit-title">A good fit when you need</h3>
+      </div>
+
+      <ul className="home-contact__fit-list">
+        {projectFitItems.map((item) => (
+          <li className="type-body" key={item}>
+            <CheckCircle2 size={17} strokeWidth={1.8} aria-hidden="true" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+
+      <div className="home-contact__alternative">
+        <p className="type-body">Prefer a direct conversation?</p>
+        <a
+          href={WHATSAPP_URL}
+          {...getExternalLinkProps(WHATSAPP_URL)}
+          className="aning-button aning-button--text"
+          aria-label="Send a direct WhatsApp message to AningDesign"
+        >
+          <MessageCircle size={18} strokeWidth={1.8} aria-hidden="true" />
+          <span>Send a Direct Message</span>
+        </a>
+      </div>
+
+      <p className="home-contact__expectation type-small">
+        You will receive a clear response about project fit, scope and the recommended next step.
+      </p>
+    </aside>
+  )
+}
+
+function ContactPageSupport() {
+  return (
+    <aside className="bento-card contact-details-card" aria-labelledby="contact-options-title">
+      <div>
+        <p className="contact-card-kicker type-eyebrow">Direct options</p>
+        <h3 className="type-h3" id="contact-options-title">Choose the contact option that works best.</h3>
+        <p className="contact-details-copy type-body">
+          Send the form for project details, use WhatsApp for quick questions, or connect through social links to view more work before reaching out.
+        </p>
+      </div>
+
+      <a
+        href={WHATSAPP_URL}
+        {...getExternalLinkProps(WHATSAPP_URL)}
+        className="aning-button aning-button--primary whatsapp-cta-btn"
+        aria-label="Chat on WhatsApp with AningDesign"
+      >
+        <MessageCircle size={18} strokeWidth={2.2} aria-hidden="true" />
+        Chat on WhatsApp
+      </a>
+
+      <div className="contact-method-card">
+        <span>Email</span>
+        <a href={`mailto:${CONTACT_EMAIL}`}>
+          <Mail size={16} strokeWidth={2.2} aria-hidden="true" />
+          {CONTACT_EMAIL}
+        </a>
+      </div>
+
+      <div className="contact-social-block">
+        <p>Connect</p>
+        <div className="contact-social-links">
+          {contactSocialLinks.map(({ label, href, icon: Icon }) => (
+            <a
+              key={label}
+              href={href}
+              {...getExternalLinkProps(href)}
+              aria-label={`Open ${label}`}
+            >
+              <Icon />
+              <span>{label}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </aside>
+  )
+}
+
 function Contact({ showIntroCta = true, pageMode = false }) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitState, setSubmitState] = useState({ type: '', text: '' })
 
   const handleSubmit = () => {
     setIsSubmitting(true)
-    setSubmitState({ type: 'success', text: 'Sending your inquiry securely...' })
+    setSubmitState({ type: 'success', text: 'Sending your enquiry securely...' })
   }
 
   return (
-    <section className={`contact-section${pageMode ? ' contact-section--page' : ''}`} id="contact">
-      {showIntroCta && <CTA />}
-      
+    <section
+      className={`contact-section ${pageMode ? 'contact-section--page' : 'contact-section--home'}`}
+      id="contact"
+      aria-labelledby={showIntroCta ? 'home-contact-title' : undefined}
+    >
+      {showIntroCta && (
+        <HomepageSectionHeading
+          description="Share what you are building, what is currently not working and the result you need. I’ll review the details and recommend the most practical next step."
+          eyebrow="Start a project"
+          title="Have a website or digital product that needs a clearer direction?"
+          titleId="home-contact-title"
+        />
+      )}
+
       <div className="contact-bento-container">
         <div className="bento-card contact-form-card">
-          <p className="contact-card-kicker">Contact</p>
-          <h2>Send message</h2>
-          <p className="contact-description">
+          <p className="contact-card-kicker type-eyebrow">{pageMode ? 'Contact' : 'Project enquiry'}</p>
+          {pageMode ? (
+            <h2 className="type-h2">Send message</h2>
+          ) : (
+            <h3 className="type-h3">Tell me about the project</h3>
+          )}
+          <p className="contact-description type-body">
             Share the project, the goal, and where you need help. I will review it and reply with the best next step.
           </p>
 
@@ -65,7 +174,7 @@ function Contact({ showIntroCta = true, pageMode = false }) {
             />
 
             <div className="form-group">
-              <label htmlFor="name">Full name</label>
+              <label className="type-small" htmlFor="name">Full name</label>
               <input
                 type="text"
                 id="name"
@@ -77,7 +186,7 @@ function Contact({ showIntroCta = true, pageMode = false }) {
             </div>
 
             <div className="form-group">
-              <label htmlFor="email">Email</label>
+              <label className="type-small" htmlFor="email">Email</label>
               <input
                 type="email"
                 id="email"
@@ -89,18 +198,20 @@ function Contact({ showIntroCta = true, pageMode = false }) {
             </div>
 
             <div className="form-group">
-              <label htmlFor="company">Company or brand name</label>
+              <label className="type-small" htmlFor="company">
+                {pageMode ? 'Company or brand name' : 'Business or project name'}
+              </label>
               <input
                 type="text"
                 id="company"
                 name="company"
-                placeholder="Your company, brand, or project"
+                placeholder={pageMode ? 'Your company, brand, or project' : 'Your business, brand, or project'}
                 autoComplete="organization"
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="projectType">Project type</label>
+              <label className="type-small" htmlFor="projectType">Project type</label>
               <select id="projectType" name="projectType" defaultValue="" required>
                 <option value="" disabled>Select a project type</option>
                 <option value="Website design">Website design</option>
@@ -113,77 +224,33 @@ function Contact({ showIntroCta = true, pageMode = false }) {
             </div>
 
             <div className="form-group">
-              <label htmlFor="message">Message</label>
+              <label className="type-small" htmlFor="message">{pageMode ? 'Message' : 'Project summary'}</label>
               <textarea
                 id="message"
                 name="message"
                 rows="5"
-                placeholder="Tell me about your project..."
+                placeholder={pageMode ? 'Tell me about your project...' : 'What are you building, what is not working, and what result do you need?'}
                 required
               ></textarea>
             </div>
 
-            <button type="submit" className="form-submit-btn" disabled={isSubmitting}>
-              {isSubmitting ? 'Sending...' : 'Send message'}
-              <Send size={18} strokeWidth={2.2} aria-hidden="true" />
+            <button
+              type="submit"
+              className="aning-button aning-button--primary form-submit-btn"
+              disabled={isSubmitting}
+            >
+              <span>{isSubmitting ? 'Sending...' : pageMode ? 'Send message' : 'Send Project Enquiry'}</span>
+              <ArrowRight size={18} strokeWidth={1.8} aria-hidden="true" />
             </button>
             {submitState.text && (
-              <p className={`contact-form-status ${submitState.type}`} aria-live="polite">
+              <p className={`contact-form-status ${submitState.type} type-small`} aria-live="polite">
                 {submitState.text}
               </p>
             )}
           </form>
         </div>
 
-        <aside className="bento-card contact-details-card" aria-labelledby="contact-options-title">
-          <div>
-            <p className="contact-card-kicker">Direct options</p>
-            <h3 id="contact-options-title">Choose the contact option that works best.</h3>
-            <p className="contact-details-copy">
-              Send the form for project details, use WhatsApp for quick questions, or connect through social links to view more work before reaching out.
-            </p>
-          </div>
-
-          <a
-            href={WHATSAPP_URL}
-            {...getExternalLinkProps(WHATSAPP_URL)}
-            className="whatsapp-cta-btn"
-            aria-label="Chat on WhatsApp with AningDesign"
-          >
-            <MessageCircle size={18} strokeWidth={2.2} aria-hidden="true" />
-            Chat on WhatsApp
-          </a>
-
-          <div className="contact-method-card">
-            <span>Email</span>
-            <a href={`mailto:${CONTACT_EMAIL}`}>
-              <Mail size={16} strokeWidth={2.2} aria-hidden="true" />
-              {CONTACT_EMAIL}
-            </a>
-          </div>
-
-          <div className="contact-method-card">
-            <span>Response time</span>
-            <p>Send your project details and I will respond with the next steps. <br />For quick questions, WhatsApp is the fastest option.</p>
-          </div>
-
-          <div className="contact-social-block">
-            <p>Connect</p>
-            <div className="contact-social-links">
-              {contactSocialLinks.map(({ label, href, icon: Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  {...getExternalLinkProps(href)}
-                  aria-label={`Open ${label}`}
-                >
-                  <Icon />
-                  <span>{label}</span>
-                </a>
-              ))}
-            </div>
-          </div>
-        </aside>
+        {pageMode ? <ContactPageSupport /> : <HomepageContactSupport />}
       </div>
     </section>
   )

@@ -1,96 +1,44 @@
-import { useEffect, useState, useRef } from 'react'
 import { ArrowRight } from 'lucide-react'
 import './Hero.css'
-import { XLogoIcon, LinkedInLogoIcon, BehanceLogoIcon } from './SocialIcons'
-
-const socialLinks = [
-  { label: 'Visit AningDesign on X', href: 'https://x.com/Aningdesigns', icon: XLogoIcon },
-  { label: 'Visit Emmanuel Aning on LinkedIn', href: 'https://linkedin.com/in/emmanuel-aning-133189310', icon: LinkedInLogoIcon },
-  { label: 'Visit Emmanuel Aning on Behance', href: 'https://www.behance.net/emmaaning', icon: BehanceLogoIcon }
-]
+import CapabilityReel from './CapabilityReel'
+import ProofBar from './ProofBar'
+import { SiteLink } from './SiteLink'
 
 function Hero() {
-  const phrases = [
-    'WEBSITE DESIGNER',
-    'GRAPHIC DESIGNER',
-    'UI/UX DESIGNER',
-    'FRONTEND DEVELOPER',
-    'SOFTWARE DEVELOPER',
-    'FREELANCER'
-  ]
-
-  const [displayText, setDisplayText] = useState('')
-  const phraseIndexRef = useRef(0)
-  const charIndexRef = useRef(0)
-  const isDeletingRef = useRef(false)
-  const timeoutRef = useRef(null)
-
-  useEffect(() => {
-    const typingSpeed = 100
-    const deletingSpeed = 50
-    const pauseAfter = 1500
-
-    const type = () => {
-      const current = phrases[phraseIndexRef.current]
-
-      if (!isDeletingRef.current) {
-        if (charIndexRef.current < current.length) {
-          setDisplayText(current.slice(0, charIndexRef.current + 1))
-          charIndexRef.current += 1
-          timeoutRef.current = setTimeout(type, typingSpeed)
-        } else {
-          isDeletingRef.current = true
-          timeoutRef.current = setTimeout(type, pauseAfter)
-        }
-      } else if (charIndexRef.current > 0) {
-        setDisplayText(current.slice(0, charIndexRef.current - 1))
-        charIndexRef.current -= 1
-        timeoutRef.current = setTimeout(type, deletingSpeed)
-      } else {
-        isDeletingRef.current = false
-        phraseIndexRef.current = (phraseIndexRef.current + 1) % phrases.length
-        charIndexRef.current = 0
-        timeoutRef.current = setTimeout(type, typingSpeed)
-      }
-    }
-
-    timeoutRef.current = setTimeout(type, typingSpeed)
-
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current)
-    }
-  }, [])
-
   return (
     <section className="hero" id="home">
-      <div className="hero-content">
-        <span id="hey">Hi 👋, I'm Emmanuel</span>
+      <div className="hero-shell">
+        <div className="hero-grid">
+          <div className="hero-content">
+            <SiteLink href="/#about" className="hero-context-link">
+              <span>Founder of Aning Design Lab · Builder of Lensora Events</span>
+              <ArrowRight size={17} strokeWidth={2} aria-hidden="true" />
+            </SiteLink>
 
-        <h1 className="hero-title">
-          I build <span className="hero-accent">premium websites</span>
-          <br />
-          <span className="hero-script">That convert.</span>
-        </h1>
+            <h1 className="hero-title">
+              Websites and digital products built for growth.
+            </h1>
 
-        <p className="hero-p" id="typewriter">{displayText}</p>
+            <p className="hero-description">
+              I combine strategy, interface design and development to build credible WordPress websites, web applications and digital products for businesses and founders.
+            </p>
 
-        <a
-          href="https://wa.me/233557066467?text=Hi, I'm interested in working with you on a project."
-          target="_blank"
-          rel="noopener noreferrer"
-          className="aning-button aning-button--primary aning-button--large"
-        >
-          Start a Project
-          <ArrowRight size={19} strokeWidth={2.2} aria-hidden="true" />
-        </a>
-      </div>
+            <div className="hero-actions">
+              <SiteLink href="/contact" className="aning-button aning-button--primary">
+                Start a Project
+                <ArrowRight size={19} strokeWidth={2.2} aria-hidden="true" />
+              </SiteLink>
+              <SiteLink href="/#projects" className="aning-button aning-button--secondary">
+                View Selected Work
+                <ArrowRight size={19} strokeWidth={2.2} aria-hidden="true" />
+              </SiteLink>
+            </div>
+          </div>
 
-      <div className="social-media">
-        {socialLinks.map(({ label, href, icon: Icon }) => (
-          <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
-            <Icon />
-          </a>
-        ))}
+          <CapabilityReel />
+        </div>
+
+        <ProofBar />
       </div>
     </section>
   )

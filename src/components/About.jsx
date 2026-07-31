@@ -1,58 +1,72 @@
-import {useState} from 'react'
-import {ChevronDown, ChevronUp} from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
+import { SiteLink } from './SiteLink'
 import './About.css'
 
+const authorityPoints = [
+  'Founder of Aning Design Lab',
+  'Builder of Lensora Events',
+  'Author of the Client-Ready WordPress Blueprint',
+  'WordPress, React and Firebase implementation',
+  'Graphic Design background at Takoradi Technical University'
+]
+
 function About() {
-  const [showMore, setShowMore] = useState(false)
-
   return (
-    <div className="flex-Container" id="about">
-      <div className="aboutUs">
-        <img
-          src="/images/papi.webp"
-          alt="Mr Aning"
-          width="512"
-          height="512"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
+    <section className="about-section" id="about" aria-labelledby="about-title">
+      <div className="about-section__inner">
+        <header className="about-section__heading">
+          <p className="about-section__eyebrow type-eyebrow">About</p>
+          <h2 className="type-h2" id="about-title">
+            Design strategy backed by practical development
+          </h2>
+        </header>
 
-      <div className="aboutUs">
-        <h2 className="section-title">MEET ANING</h2>
-        <p className="myself-description">
-          <strong>
-            Hi, I'm Emmanuel Aning, a Graphic Designer and Web Developer based in Accra, Ghana. I specialize in designing and building high-performing digital experiences, combining strong visual design with clean, scalable code.
-          </strong>
-        </p>
+        <figure className="about-section__portrait">
+          <img
+            src="/images/papi.webp"
+            alt="Portrait of Emmanuel Aning, web designer and developer"
+            width="512"
+            height="512"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
 
-        <p>
-          I work across the full spectrum of design and development, from brand identity and UI/UX design to complete website and software builds. Whether it is a full redesign or a custom solution, I create responsive, conversion-focused interfaces using modern frontend technologies, CMS platforms like WordPress and Wix, and fully custom-coded systems.
-        </p>
-
-        {showMore && (
-          <>
-            <p>
-              My expertise includes frontend development, backend integrations, custom UI systems, and database-driven applications. I also build lead capture systems, automations, and performance-optimized websites designed to generate measurable business results.
+        <div className="about-section__content">
+          <div className="about-section__copy">
+            <p className="type-body">
+              I’m Emmanuel Aning, a web designer and developer helping businesses turn
+              unclear or outdated digital experiences into credible, usable and
+              conversion-focused websites and products.
             </p>
-
-            <p>
-              With experience across branding, marketing, and digital product teams, I approach every project with a focus on clarity, functionality, and long-term scalability.
+            <p className="type-body">
+              My work combines visual design, WordPress, frontend development and product
+              thinking. This allows me to consider both how a digital experience
+              communicates and how it functions after launch.
             </p>
-          </>
-        )}
+            <p className="type-body">
+              Alongside client work, I build independent products and publish practical
+              WordPress and design education through Aning Design Lab.
+            </p>
+          </div>
 
-        <button
-          type="button"
-          className="about-read-more-btn"
-          onClick={() => setShowMore((prev) => !prev)}
-          aria-expanded={showMore}
-        >
-          {showMore ? <ChevronUp size={16} aria-hidden="true" /> : <ChevronDown size={16} aria-hidden="true" />}
-          <span>{showMore ? 'Read less' : 'Read more'}</span>
-        </button>
+          <ul className="about-section__proof" aria-label="Professional background">
+            {authorityPoints.map((point) => (
+              <li className="type-small" key={point}>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="about-section__actions">
+            <SiteLink className="aning-button aning-button--primary" href="/contact">
+              <span>Start a Project</span>
+              <ArrowRight size={18} strokeWidth={1.8} aria-hidden="true" />
+            </SiteLink>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   )
 }
 

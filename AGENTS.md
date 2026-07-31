@@ -39,7 +39,17 @@ Section wrappers own page-level vertical spacing; components own only their inte
 spacing. The system is opt-in per page (`spacingRhythm`), so never affect a page that has
 not opted in. Verify desktop, tablet, and mobile spacing before completion.
 
+## Typography
+
+Use the shared Switzer `--type-*` tokens or `.type-*` utilities documented in
+`docs/design-system/typography.md`; do not invent page-specific type sizes, weights,
+line heights, or tracking. Only the homepage hero may use `display`; standard page
+headlines use `h1`.
+
 ## UI and Copy
+
+Homepage supporting projects must reuse the shared card system documented in
+`docs/design-system/homepage-case-studies.md`; Lensora remains the distinct featured showcase.
 
 Maintain:
 

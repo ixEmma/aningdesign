@@ -1,3 +1,4 @@
+import { ArrowRight } from 'lucide-react'
 import { getExternalLinkProps } from '../utils/links'
 import { SiteLink } from './SiteLink'
 import {
@@ -31,6 +32,7 @@ const footerProjectLinks = [
 ]
 
 const footerResourceLinks = [
+  { label: 'Free Website Audit', href: '/free-website-audit' },
   { label: 'Free Resources', href: '/free-resources' },
   {
     label: 'Books',
@@ -73,11 +75,10 @@ function Footer() {
               <img src="/images/LOGO-96.png" alt="" width="96" height="96" loading="lazy" decoding="async" />
               <span>AningDesign</span>
             </SiteLink>
-            <p>Building websites, web apps, tutorials, and digital products.</p>
-            <span className="footer-status">
-              <span className="footer-status-dot" aria-hidden="true"></span>
-              Available for new projects
-            </span>
+            <p>Websites, digital products and practical design education.</p>
+            <SiteLink href="/contact" className="aning-button aning-button--secondary">
+              Start a Project <ArrowRight size={17} aria-hidden="true" />
+            </SiteLink>
           </div>
 
           <nav className="footer-link-group" aria-label="Explore links">
@@ -126,9 +127,13 @@ function Footer() {
                 </a>
               ))}
             </div>
-            <button type="button" className="footer-feedback-link" onClick={openFeedback}>
-              Send Feedback
-            </button>
+            <ul className="footer-links footer-connect-links">
+              <li>
+                <button type="button" className="footer-feedback-link" onClick={openFeedback}>
+                  Send Feedback
+                </button>
+              </li>
+            </ul>
           </div>
         </div>
 

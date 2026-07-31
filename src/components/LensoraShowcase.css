@@ -1,0 +1,491 @@
+.lensora-showcase {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(89, 190, 119, 0.18);
+  border-radius: 24px;
+  color: #f5faf7;
+  background: linear-gradient(135deg, rgba(12, 23, 18, 0.96), rgba(7, 14, 13, 0.92));
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+.lensora-showcase *,
+.lensora-showcase *::before,
+.lensora-showcase *::after {
+  box-sizing: border-box;
+}
+
+.lensora-showcase__main {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.62fr) minmax(0, 1.38fr);
+  min-height: 640px;
+}
+
+.lensora-showcase__rail {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: clamp(30px, 3.8vw, 48px);
+  border-right: 1px solid rgba(238, 246, 241, 0.09);
+  background: rgba(8, 17, 13, 0.52);
+}
+
+.lensora-showcase__eyebrow {
+  margin: 0 0 14px;
+  color: #9af7a3;
+  text-transform: uppercase;
+}
+
+.lensora-showcase__intro h3 {
+  margin: 0;
+  color: #f7fbf9;
+  font-size: var(--type-h3-size);
+  font-weight: var(--type-weight-bold);
+  line-height: var(--type-line-h3);
+  letter-spacing: var(--type-tracking-heading);
+}
+
+.lensora-showcase__summary {
+  margin: 16px 0 0;
+  color: rgba(226, 236, 231, 0.76);
+}
+
+.lensora-showcase__intro-action {
+  justify-content: flex-start;
+  margin-top: 18px;
+  padding-inline: 0;
+}
+
+.lensora-showcase__intro-action svg,
+.lensora-showcase__footer-action svg {
+  transition: transform 180ms ease;
+}
+
+.lensora-showcase__intro-action:hover svg,
+.lensora-showcase__footer-action:hover svg {
+  transform: translateX(3px);
+}
+
+.lensora-feature-list {
+  display: grid;
+  margin-top: auto;
+  padding-top: var(--section-content-gap);
+}
+
+.lensora-feature {
+  position: relative;
+  width: 100%;
+  min-height: 58px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border: 0;
+  border-bottom: 1px solid rgba(238, 246, 241, 0.11);
+  padding: 17px 0;
+  color: rgba(238, 246, 241, 0.5);
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.lensora-feature:first-child {
+  border-top: 1px solid rgba(238, 246, 241, 0.11);
+}
+
+.lensora-feature::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--aning-green), var(--aning-cyan));
+  transition: width 320ms ease;
+}
+
+.lensora-feature:hover {
+  color: rgba(238, 246, 241, 0.78);
+}
+
+.lensora-feature:focus-visible {
+  z-index: 1;
+  border-radius: 4px;
+  outline: 2px solid var(--aning-button-focus);
+  outline-offset: 5px;
+}
+
+.lensora-feature--active {
+  color: rgba(238, 246, 241, 0.98);
+}
+
+.lensora-feature--active::after {
+  width: 42%;
+}
+
+.lensora-feature__title {
+  font-size: var(--type-body-size);
+  font-weight: var(--type-weight-semibold);
+  line-height: var(--type-line-ui);
+}
+
+.lensora-feature__description {
+  display: block;
+  margin-top: 9px;
+  color: rgba(223, 234, 228, 0.66);
+}
+
+.lensora-preview {
+  position: relative;
+  min-width: 0;
+  min-height: 640px;
+  overflow: hidden;
+  padding: clamp(30px, 4vw, 54px) clamp(150px, 15vw, 210px) clamp(30px, 4vw, 54px)
+    clamp(28px, 3.5vw, 48px);
+  background: radial-gradient(circle at 35% 30%, rgba(0, 251, 100, 0.07), transparent 45%);
+}
+
+.lensora-preview__transition {
+  height: 100%;
+  animation: lensora-feature-enter 360ms ease both;
+}
+
+.lensora-preview__frame {
+  width: 100%;
+  height: 100%;
+  min-height: 532px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(238, 246, 241, 0.1);
+  border-radius: 18px;
+  background: rgba(2, 7, 8, 0.8);
+  box-shadow: 0 24px 52px rgba(0, 0, 0, 0.24);
+}
+
+.lensora-preview__frame img {
+  width: 100%;
+  height: 100%;
+  max-height: 532px;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+}
+
+.lensora-preview--phones .lensora-preview__frame img {
+  width: auto;
+  max-width: 100%;
+}
+
+.lensora-detail-panel {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  right: clamp(18px, 2.6vw, 36px);
+  width: min(290px, 36%);
+  overflow: hidden;
+  border: 1px solid rgba(238, 246, 241, 0.11);
+  border-radius: 16px;
+  background: rgba(15, 20, 18, 0.95);
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.34);
+  transform: translateY(-50%);
+  backdrop-filter: blur(14px);
+}
+
+.lensora-detail-panel__media {
+  height: 168px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(238, 246, 241, 0.09);
+  background: #020708;
+}
+
+.lensora-detail-panel__media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.lensora-detail-panel__media--upload img {
+  object-position: 16% 48%;
+}
+
+.lensora-detail-panel__media--gallery img {
+  object-position: 86% 48%;
+}
+
+.lensora-detail-panel__media--overview img {
+  object-position: 78% 32%;
+}
+
+.lensora-detail-panel__copy {
+  padding: 20px;
+}
+
+.lensora-detail-panel__copy .type-eyebrow {
+  margin: 0 0 9px;
+  color: rgba(154, 247, 163, 0.72);
+  text-transform: uppercase;
+}
+
+.lensora-detail-panel__copy h4 {
+  margin: 0;
+  color: #f5faf7;
+  font-size: var(--type-body-large-size);
+  font-weight: var(--type-weight-bold);
+  line-height: var(--type-line-h3);
+  letter-spacing: var(--type-tracking-heading);
+}
+
+.lensora-detail-panel__copy .type-small {
+  margin: 9px 0 0;
+  color: rgba(223, 234, 228, 0.68);
+}
+
+.lensora-showcase__footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--section-content-gap);
+  align-items: center;
+  padding: clamp(24px, 3vw, 34px) clamp(30px, 3.8vw, 48px);
+  border-top: 1px solid rgba(238, 246, 241, 0.09);
+  background: rgba(6, 13, 10, 0.66);
+}
+
+.lensora-showcase__metadata {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.8fr) minmax(260px, 1.25fr) minmax(180px, 0.7fr);
+  gap: clamp(20px, 3vw, 34px);
+  margin: 0;
+}
+
+.lensora-showcase__metadata div {
+  min-width: 0;
+}
+
+.lensora-showcase__metadata dt {
+  margin-bottom: 9px;
+  color: rgba(154, 247, 163, 0.72);
+  text-transform: uppercase;
+}
+
+.lensora-showcase__metadata dd {
+  margin: 0;
+  color: rgba(223, 234, 228, 0.72);
+}
+
+.lensora-showcase__footer-action {
+  flex: 0 0 auto;
+}
+
+@keyframes lensora-feature-enter {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 1100px) {
+  .lensora-showcase__main {
+    grid-template-columns: minmax(270px, 0.78fr) minmax(0, 1.22fr);
+  }
+
+  .lensora-preview {
+    padding-right: 140px;
+  }
+
+  .lensora-detail-panel {
+    right: 18px;
+    width: min(250px, 38%);
+  }
+
+  .lensora-showcase__footer {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lensora-showcase__footer-action {
+    justify-self: start;
+  }
+}
+
+@media (min-width: 1200px) {
+  .lensora-preview {
+    padding-right: clamp(28px, 3.5vw, 48px);
+  }
+
+  .lensora-preview__transition {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) clamp(250px, 30%, 300px);
+    align-items: center;
+    gap: clamp(24px, 2.5vw, 40px);
+  }
+
+  .lensora-preview__media-stage,
+  .lensora-preview__detail-rail {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .lensora-preview__media-stage {
+    justify-content: center;
+  }
+
+  .lensora-preview__detail-rail {
+    justify-content: center;
+  }
+
+  .lensora-detail-panel {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    max-width: 300px;
+    transform: none;
+  }
+}
+
+@media (min-width: 841px) and (max-width: 1199px) {
+  .lensora-preview {
+    padding-right: clamp(28px, 3.5vw, 48px);
+  }
+
+  .lensora-preview__transition {
+    height: auto;
+  }
+
+  .lensora-preview__detail-rail {
+    display: flex;
+    justify-content: stretch;
+  }
+
+  .lensora-detail-panel {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    max-width: none;
+    margin-top: clamp(18px, 2.5vw, 24px);
+    transform: none;
+  }
+}
+
+@media (max-width: 840px) {
+  .lensora-showcase__main {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: auto;
+  }
+
+  .lensora-showcase__rail {
+    border-right: 0;
+    border-bottom: 1px solid rgba(238, 246, 241, 0.09);
+  }
+
+  .lensora-feature-list {
+    margin-top: var(--section-content-gap);
+    padding-top: 0;
+  }
+
+  .lensora-preview {
+    min-height: auto;
+    padding: clamp(22px, 4vw, 34px);
+  }
+
+  .lensora-preview__transition {
+    height: auto;
+  }
+
+  .lensora-preview__frame {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+
+  .lensora-preview__frame img {
+    max-height: 540px;
+  }
+
+  .lensora-preview--phones .lensora-preview__frame {
+    aspect-ratio: 4 / 3;
+  }
+
+  .lensora-detail-panel {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    display: block;
+    margin-top: clamp(14px, 2.5vw, 20px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.24);
+    transform: none;
+  }
+
+  .lensora-detail-panel__media {
+    display: none;
+  }
+
+  .lensora-detail-panel__copy {
+    padding: 18px 20px;
+  }
+
+  .lensora-showcase__metadata {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .lensora-showcase {
+    border-radius: 18px;
+  }
+
+  .lensora-showcase__rail,
+  .lensora-showcase__footer {
+    padding: 24px 20px;
+  }
+
+  .lensora-preview {
+    padding: 18px;
+  }
+
+  .lensora-preview__frame,
+  .lensora-preview--phones .lensora-preview__frame {
+    aspect-ratio: 1 / 1;
+    border-radius: 14px;
+  }
+
+  .lensora-preview__frame img {
+    max-height: none;
+  }
+
+  .lensora-detail-panel__copy {
+    padding: 18px;
+  }
+
+  .lensora-showcase__metadata {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lensora-showcase__footer-action {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lensora-preview__transition {
+    animation: none;
+  }
+
+  .lensora-feature::after,
+  .lensora-showcase__intro-action svg,
+  .lensora-showcase__footer-action svg {
+    transition: none;
+  }
+}

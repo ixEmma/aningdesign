@@ -1,94 +1,73 @@
 import { Star } from 'lucide-react'
+import { featuredHomepageTestimonials } from '../data/homepageTestimonials'
+import HomepageSectionHeading from './HomepageSectionHeading'
 import './Testimonials.css'
 
-const Testimonials = () => {
-  const testimonials = [
-    {
-      id: 1,
-      rating: 4.9,
-      quote: 'Emmanuel completely redesigned our restaurant website. Bookings increased by 45% in the first month. The site loads fast and customers love the menu integration.',
-      author: 'Opong Bediako',
-      role: 'Restaurant Owner',
-      size: 'large'
-    },
-    {
-      id: 2,
-      rating: 5.0,
-      quote: 'My e-commerce store went from barely ranking to page one for all my target keywords. SEO work was technical but the results speak for themselves.',
-      author: 'Kyekyeku Mensah',
-      role: 'E-commerce Founder',
-      size: 'small'
-    },
-    {
-      id: 3,
-      rating: 4.9,
-      quote: 'Migrated our WordPress site to a faster platform. Page speed improved dramatically and our conversion rate went up 32%. Highly recommend.',
-      author: 'Dr. Olie Kareem',
-      role: 'Medical Consultant',
-      size: 'small'
-    },
-    {
-      id: 4,
-      rating: 4.8,
-      quote: 'The Shopify redesign transformed how we present our products. Mobile experience is smooth, checkout is optimized, and sales have increased consistently.',
-      author: 'Miss Thelma Addo',
-      role: 'Fashion Brand Owner',
-      size: 'medium'
-    },
-    {
-      id: 5,
-      rating: 5.0,
-      quote: 'Professional, responsive, and delivered exactly what we needed. Our real estate website now generates quality leads automatically.',
-      author: 'Nana Kwaku',
-      role: 'Real Estate Agency',
-      size: 'small'
-    }
-  ]
+function TestimonialRating({ rating }) {
+  return (
+    <div className="client-result__rating" aria-label={`${rating} out of 5 stars`}>
+      <span className="client-result__stars" aria-hidden="true">
+        {Array.from({ length: 5 }, (_, index) => (
+          <Star
+            className={`client-result__star${index < Math.round(rating) ? ' is-filled' : ''}`}
+            key={index}
+            size={16}
+            strokeWidth={1.7}
+          />
+        ))}
+      </span>
+      <span className="client-result__rating-value type-small" aria-hidden="true">
+        {rating.toFixed(1)}
+      </span>
+    </div>
+  )
+}
 
-  const renderStars = (rating) => {
-    const fullStars = Math.floor(rating)
-    const hasHalfStar = rating % 1 !== 0
+function TestimonialCard({ testimonial, featured = false }) {
+  return (
+    <article
+      className={`client-result${featured ? ' client-result--featured' : ''}`}
+      aria-labelledby={`client-result-${testimonial.id}`}
+    >
+      <p className="client-result__context type-eyebrow">{testimonial.context}</p>
+      <TestimonialRating rating={testimonial.rating} />
+      <blockquote className={featured ? 'type-h3' : 'type-body'}>
+        <p>“{testimonial.quote}”</p>
+      </blockquote>
+      <footer className="client-result__identity">
+        <cite className="client-result__name type-body" id={`client-result-${testimonial.id}`}>
+          {testimonial.name}
+        </cite>
+        {testimonial.role && <p className="client-result__role type-small">{testimonial.role}</p>}
+        {testimonial.service && (
+          <p className="client-result__service type-small">{testimonial.service}</p>
+        )}
+      </footer>
+    </article>
+  )
+}
 
-    return (
-      <div className="star-container">
-        {[...Array(5)].map((_, i) => {
-          const isFilled = i < fullStars
-          const isHalf = i === fullStars && hasHalfStar
-
-          return (
-            <Star
-              key={i}
-              size={16}
-              className={`star-icon ${isFilled ? 'filled' : isHalf ? 'half' : ''}`}
-            />
-          )
-        })}
-        <span className="rating-text">{rating}</span>
-      </div>
-    )
-  }
+function Testimonials() {
+  const [featuredTestimonial, ...supportingTestimonials] = featuredHomepageTestimonials
 
   return (
-    <section className="testimonials-section" id="testimonials">
-      <div className="testimonials-header">
-        <h2 className="testimonials-title section-title">Client Results</h2>
-        <p className="testimonials-subtitle section-description">Hear from businesses we've helped grow and scale</p>
-      </div>
+    <section className="testimonials-section" id="testimonials" aria-labelledby="client-results-title">
+      <div className="testimonials-section__inner">
+        <HomepageSectionHeading
+          description="Feedback from clients and collaborators across website design, development and digital projects."
+          eyebrow="Client feedback"
+          title="Client Results"
+          titleId="client-results-title"
+        />
 
-      <div className="testimonials-grid">
-        {testimonials.map((testimonial) => (
-          <div
-            key={testimonial.id}
-            className={`testimonial-card testimonial-${testimonial.size}`}
-          >
-            {renderStars(testimonial.rating)}
-            <p className="testimonial-quote">{testimonial.quote}</p>
-            <div className="testimonial-author">
-              <p className="author-name">{testimonial.author}</p>
-              <p className="author-role">{testimonial.role}</p>
-            </div>
+        <div className="client-results-grid">
+          <TestimonialCard testimonial={featuredTestimonial} featured />
+          <div className="client-results-supporting">
+            {supportingTestimonials.map((testimonial) => (
+              <TestimonialCard testimonial={testimonial} key={testimonial.id} />
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </section>
   )

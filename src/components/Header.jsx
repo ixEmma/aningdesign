@@ -1,13 +1,13 @@
-import {useCallback, useEffect, useRef, useState} from 'react'
-import {Menu, Search, X} from 'lucide-react'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import { Menu, Search, X } from 'lucide-react'
 import NavLink from './NavLink'
 import HeaderIconButton from './HeaderIconButton'
 import MegaMenu from './MegaMenu'
 import SearchOverlay from './SearchOverlay'
 import { SiteLink } from './SiteLink'
-import {mainNavLinks, projectLinks, serviceMegaMenuGroups} from '../data/navigationConfig'
-import {getBlogTopics} from '../services/blogService'
-import {getFeaturedStartups} from '../services/startupService'
+import { mainNavLinks, projectLinks, serviceMegaMenuGroups } from '../data/navigationConfig'
+import { getBlogTopics } from '../services/blogService'
+import { getFeaturedStartups } from '../services/startupService'
 import './Header.css'
 
 const serviceDropdownGroups = serviceMegaMenuGroups.map((group, index) => ({
@@ -20,7 +20,7 @@ const serviceDropdownGroups = serviceMegaMenuGroups.map((group, index) => ({
   }))
 }))
 
-function DropdownLink({item,onNavigate}) {
+function DropdownLink({ item, onNavigate }) {
   return (
     <SiteLink
       href={item.href}
@@ -34,7 +34,7 @@ function DropdownLink({item,onNavigate}) {
   )
 }
 
-function NavDropdown({link,links = [],groups = [],panelLabel,onNavigate,variant}) {
+function NavDropdown({ link, links = [], groups = [], panelLabel, onNavigate, variant }) {
   const [isDismissed, setIsDismissed] = useState(false)
   const dropdownRef = useRef(null)
   const isServiceMenu = variant === 'services'
@@ -219,14 +219,18 @@ function Header() {
         <header className="site-header">
           <div className="header-container">
             <div className="logo">
-              <SiteLink href="/#home" className="logo-link" aria-label="Go to homepage" onClick={closeMegaMenu}>
-                <img src="/images/LOGO-96.png" alt="AningDesign logo" width="96" height="96" decoding="async" />
+              <SiteLink href="/" className="site-brand" aria-label="AningDesign home" onClick={closeMegaMenu}>
+                <img src="/images/LOGO-96.png" alt="" width="96" height="96" decoding="async" />
+                <span className="site-brand__name">AningDesign</span>
               </SiteLink>
             </div>
 
-            <div className="available-for-projects-container">
-              <div className="circle-icon"></div>
-              <h4 className="available-for-projects">Available for new Projects</h4>
+            <div className="available-for-projects-container" aria-label="Available for new projects">
+              <div className="circle-icon" aria-hidden="true"></div>
+              <p className="available-for-projects">
+                <span className="availability-full">Available for new Projects</span>
+                <span className="availability-short" aria-hidden="true">Available</span>
+              </p>
             </div>
 
             <nav className="main-nav" aria-label="Primary navigation">

@@ -1,11 +1,11 @@
-import { Route, Routes, useLocation } from 'react-router-dom'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import Preloader from './components/Preloader'
 import Header from './components/Header'
 import Hero from './components/Hero'
-import Works from './components/Works'
 import Skills from './components/Skills'
-import Blueprint from './components/Blueprint'
+import Process from './components/Process'
+import HomepageServices from './components/Blueprint'
 import About from './components/About'
 import Projects from './components/Projects'
 import Feedback from './components/Feedback'
@@ -28,6 +28,7 @@ const PromptLibrary = lazy(() => import('./pages/PromptLibrary'))
 const ServicesPage = lazy(() => import('./pages/ServicesPage'))
 const ServiceDetailPage = lazy(() => import('./pages/ServiceDetailPage'))
 const ContactPage = lazy(() => import('./pages/ContactPage'))
+const FreeWebsiteAuditPage = lazy(() => import('./pages/FreeWebsiteAuditPage'))
 const PricingPage = lazy(() => import('./pages/PricingPage'))
 const BooksPage = lazy(() => import('./pages/BooksPage'))
 const BookDetailPage = lazy(() => import('./pages/BookDetailPage'))
@@ -148,11 +149,11 @@ function LandingPage() {
   return (
     <main id="main-content">
       <Hero />
-      <Works />
-      <Skills />
-      <Blueprint />
-      <About />
       <Projects />
+      <HomepageServices />
+      <Skills />
+      <Process />
+      <About />
       <Testimonials />
       <DeferredHomepageSection minHeight={680}>
         <YoutubeShowcase />
@@ -186,13 +187,14 @@ function NotFound() {
 
 function App() {
   const location = useLocation()
+  const isAuditPage = location.pathname === '/free-website-audit' || location.pathname === '/audit'
 
   return (
     <>
       <AnimatedBackground />
       <Preloader />
       <HashScroller />
-      <Header />
+      {!isAuditPage && <Header />}
       <div className="route-content-shell" key={location.pathname}>
         <Suspense fallback={<RouteFallback />}>
           <Routes>
@@ -208,14 +210,16 @@ function App() {
             <Route path="/free-resources" element={<FreeResources />} />
             <Route path="/free-resources/prompts" element={<PromptLibrary />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/free-website-audit" element={<FreeWebsiteAuditPage />} />
+            <Route path="/audit" element={<Navigate to="/free-website-audit" replace />} />
             <Route path="/thank-you" element={<ThankYou />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </div>
-      <Footer />
-      <ScrollToTop />
-      <Feedback />
+      {!isAuditPage && <Footer />}
+      {!isAuditPage && <ScrollToTop />}
+      {!isAuditPage && <Feedback />}
     </>
   )
 }
