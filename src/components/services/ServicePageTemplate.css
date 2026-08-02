@@ -1778,6 +1778,42 @@
   }
 }
 
+/* Shared typography roles. These rules intentionally override the legacy
+   service declarations above while leaving compact supporting UI untouched. */
+.service-page .type-h1 {
+  font-size: var(--type-h1-size);
+  font-weight: var(--type-weight-black);
+  line-height: var(--type-line-h1);
+  letter-spacing: var(--type-tracking-heading);
+}
+
+.service-page-hero .type-h1 {
+  max-width: 760px;
+}
+
+.service-page .type-h2 {
+  font-size: var(--type-h2-size);
+  font-weight: var(--type-weight-black);
+  line-height: var(--type-line-h2);
+  letter-spacing: var(--type-tracking-heading);
+}
+
+.service-page .type-h3 {
+  font-size: var(--type-h3-size);
+  font-weight: var(--type-weight-bold);
+  line-height: var(--type-line-h3);
+  letter-spacing: var(--type-tracking-heading);
+}
+
+.service-page .service-page-kicker.type-eyebrow,
+.service-page .service-section-kicker.type-eyebrow,
+.service-page .service-final-cta > .type-eyebrow {
+  font-size: var(--type-eyebrow-size);
+  font-weight: var(--type-weight-bold);
+  line-height: var(--type-line-eyebrow);
+  letter-spacing: var(--type-tracking-eyebrow);
+}
+
 /* ---------------------------------------------------------------- */
 /* Selected-proof grid inside a content section (section.showcase). */
 /* Controlled 3-up grid (not masonry), uncropped portrait artwork.  */
@@ -2078,4 +2114,12 @@
   .service-final-cta {
     padding: 26px 22px;
   }
+}
+
+/* Keep featured service-card titles on the shared H3 role as well. */
+.service-page .service-feature-grid--featured .service-feature-card--wide .type-h3,
+.service-page .service-use-case-grid--featured .service-use-case-card--wide .type-h3,
+.service-page .service-resource-grid--showcase .service-resource-card--featured .type-h3,
+.service-page .service-showcase-card--featured .service-showcase-body .type-h3 {
+  font-size: var(--type-h3-size);
 }

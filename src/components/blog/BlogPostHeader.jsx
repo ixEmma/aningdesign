@@ -15,7 +15,7 @@ function BlogPostHeader({ post, breadcrumbItems }) {
         <span>{post.category}</span>
         <time dateTime={post.date}>{formatPostDate(post.date)}</time>
       </div>
-      <h1>{post.title}</h1>
+      <h1 className="type-h1">{post.title}</h1>
       <p>{post.description}</p>
       <div className="blog-post-header-tags" aria-label="Tutorial tags">
         {post.tags.map((tag) => (

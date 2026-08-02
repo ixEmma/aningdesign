@@ -839,3 +839,404 @@
     transition: none;
   }
 }
+
+/* Client-Ready WordPress Blueprint funnel. The page opts into the shared
+   rhythm and typography tokens without changing the catalogue presentation. */
+.book-funnel {
+  padding-bottom: var(--section-space-spacious);
+}
+
+.book-funnel__hero {
+  padding: clamp(112px, 12vw, 164px) 0 var(--section-space-standard);
+  border-bottom: 1px solid rgba(154, 247, 163, 0.12);
+  background:
+    radial-gradient(circle at 78% 36%, rgba(0, 201, 255, 0.11), transparent 31%),
+    radial-gradient(circle at 64% 64%, rgba(0, 251, 100, 0.08), transparent 26%),
+    linear-gradient(180deg, rgba(6, 9, 10, 0.38), rgba(6, 9, 10, 0.7));
+}
+
+.book-funnel__hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 440px);
+  gap: clamp(40px, 7vw, 96px);
+  align-items: center;
+}
+
+.book-funnel__hero-copy {
+  min-width: 0;
+}
+
+.book-funnel .type-eyebrow {
+  margin: 0;
+  color: #9af7a3;
+}
+
+.book-funnel h1,
+.book-funnel h2,
+.book-funnel h3 {
+  margin: 0;
+  color: #ffffff;
+}
+
+.book-funnel .type-h1 {
+  max-width: 760px;
+  margin-top: 16px;
+}
+
+.book-funnel__hero-copy > .type-body-large {
+  max-width: 650px;
+  margin: 20px 0 0;
+  color: rgba(235, 244, 241, 0.76);
+}
+
+.book-funnel__hero-actions,
+.book-funnel .book-final-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: var(--section-cta-gap);
+}
+
+.book-funnel__hero-visual {
+  justify-self: center;
+  width: min(100%, 400px);
+  margin: 0;
+  padding: clamp(10px, 1.6vw, 18px);
+  border: 1px solid rgba(154, 247, 163, 0.2);
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(8, 12, 12, 0.64));
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.35);
+}
+
+.book-funnel__hero-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.book-funnel__proof {
+  padding: clamp(22px, 3vw, 32px);
+  border: 1px solid rgba(154, 247, 163, 0.17);
+  border-radius: 12px;
+  background: rgba(10, 14, 14, 0.76);
+}
+
+.book-funnel__proof dl {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--section-content-gap);
+  margin: 0;
+}
+
+.book-funnel__proof dt,
+.book-funnel__bundle-list dt {
+  color: #ffffff;
+  font-size: var(--type-body-size);
+  font-weight: var(--type-weight-bold);
+  line-height: var(--type-line-ui);
+}
+
+.book-funnel__proof dd,
+.book-funnel__bundle-list dd {
+  margin: 6px 0 0;
+  color: rgba(238, 246, 243, 0.62);
+  font-size: var(--type-small-size);
+  font-weight: var(--type-weight-medium);
+  line-height: var(--type-line-small);
+}
+
+.book-funnel__outcome,
+.book-funnel__bundle,
+.book-funnel__free-preview {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(28px, 5vw, 68px);
+  align-items: start;
+}
+
+.book-funnel__outcome-detail {
+  display: grid;
+  gap: 16px;
+  padding-top: 4px;
+}
+
+.book-funnel__outcome-detail p {
+  margin: 0;
+  color: rgba(238, 246, 243, 0.74);
+}
+
+.book-funnel__heading {
+  max-width: 740px;
+}
+
+.book-funnel__heading .type-h2 {
+  margin-top: 14px;
+}
+
+.book-funnel__intro {
+  max-width: 680px;
+  margin: 20px 0 0;
+  color: rgba(238, 246, 243, 0.7);
+}
+
+.book-funnel__workflow-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+  gap: clamp(28px, 5vw, 68px);
+  align-items: center;
+  margin-top: var(--section-intro-gap);
+}
+
+.book-funnel__steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.book-funnel__steps li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.book-funnel__steps li > span {
+  color: #9af7a3;
+  font-size: var(--type-eyebrow-size);
+  font-weight: var(--type-weight-bold);
+  line-height: var(--type-line-eyebrow);
+  letter-spacing: var(--type-tracking-eyebrow);
+}
+
+.book-funnel__steps .type-small {
+  margin: 6px 0 0;
+  color: rgba(238, 246, 243, 0.62);
+}
+
+.book-funnel__media-card {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(154, 247, 163, 0.16);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.book-funnel__media-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.book-funnel__preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--section-content-gap);
+  margin-top: var(--section-intro-gap);
+}
+
+.book-funnel__bundle {
+  align-items: center;
+}
+
+.book-funnel__bundle-list {
+  display: grid;
+  gap: 0;
+  margin: var(--section-intro-gap) 0 0;
+}
+
+.book-funnel__bundle-list div {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.book-funnel__bundle-list dd {
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+.book-funnel__purchase .book-edition-grid {
+  margin-top: var(--section-intro-gap);
+}
+
+.book-funnel .book-edition-card {
+  border-color: rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  background: rgba(10, 14, 14, 0.82);
+}
+
+.book-funnel .book-edition-card--featured {
+  border-color: rgba(154, 247, 163, 0.48);
+  background: linear-gradient(145deg, rgba(0, 251, 100, 0.1), rgba(10, 14, 14, 0.94) 52%);
+}
+
+.book-funnel .book-edition-card-heading h3 {
+  font-size: var(--type-h3-size);
+  font-weight: var(--type-weight-bold);
+  line-height: var(--type-line-h3);
+  letter-spacing: var(--type-tracking-heading);
+}
+
+.book-funnel .book-edition-card > .type-body {
+  color: rgba(238, 246, 243, 0.72);
+}
+
+.book-funnel .book-edition-card li {
+  font-size: var(--type-small-size);
+  font-weight: var(--type-weight-regular);
+  line-height: var(--type-line-small);
+}
+
+.book-funnel .book-edition-note {
+  font-size: var(--type-small-size);
+  font-weight: var(--type-weight-medium);
+  line-height: var(--type-line-small);
+}
+
+.book-funnel__free-preview {
+  padding: clamp(28px, 4.5vw, 56px);
+  border: 1px solid rgba(0, 201, 255, 0.24);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  align-items: center;
+}
+
+.book-funnel__free-preview .type-body {
+  max-width: 510px;
+  margin: 20px 0 0;
+  color: rgba(238, 246, 243, 0.72);
+}
+
+.book-funnel__free-preview .aning-button {
+  margin-top: var(--section-cta-gap);
+}
+
+.book-funnel__audience-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0;
+  margin: var(--section-intro-gap) 0 0;
+  list-style: none;
+}
+
+.book-funnel__audience-list li {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: rgba(238, 246, 243, 0.76);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.book-funnel__author > .type-body {
+  max-width: 720px;
+  margin: 20px 0 0;
+  color: rgba(238, 246, 243, 0.72);
+}
+
+.book-funnel .book-faq-list {
+  margin-top: var(--section-intro-gap);
+}
+
+.book-funnel .book-faq-list summary {
+  font-size: var(--type-body-size);
+  font-weight: var(--type-weight-bold);
+  line-height: var(--type-line-ui);
+}
+
+.book-funnel .book-faq-list p {
+  color: rgba(238, 246, 243, 0.7);
+}
+
+.book-funnel .book-final-cta {
+  justify-items: start;
+  border-color: rgba(154, 247, 163, 0.2);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(0, 251, 100, 0.1), rgba(0, 201, 255, 0.06), rgba(255, 255, 255, 0.03));
+}
+
+.book-funnel .book-final-cta > .type-eyebrow {
+  font-size: var(--type-eyebrow-size);
+  font-weight: var(--type-weight-bold);
+  line-height: var(--type-line-eyebrow);
+  letter-spacing: var(--type-tracking-eyebrow);
+}
+
+.book-funnel .book-final-cta > .type-h2 {
+  max-width: 700px;
+  margin-top: 14px;
+}
+
+.book-funnel .book-final-cta > .type-body-large {
+  max-width: 620px;
+  margin: 20px 0 0;
+  color: rgba(238, 246, 243, 0.74);
+}
+
+@media (max-width: 980px) {
+  .book-funnel__hero-grid,
+  .book-funnel__workflow-layout,
+  .book-funnel__bundle,
+  .book-funnel__free-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .book-funnel__hero-visual {
+    width: min(100%, 380px);
+  }
+
+  .book-funnel__workflow-layout {
+    align-items: start;
+  }
+}
+
+@media (max-width: 768px) {
+  .book-funnel__proof dl,
+  .book-funnel__audience-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .book-funnel__steps,
+  .book-funnel__preview-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-funnel__hero {
+    padding-top: 104px;
+  }
+
+  .book-funnel__hero-actions,
+  .book-funnel .book-final-actions {
+    display: grid;
+  }
+
+  .book-funnel__hero-actions .aning-button,
+  .book-funnel .book-final-actions .aning-button,
+  .book-funnel .book-edition-card .aning-button,
+  .book-funnel__free-preview .aning-button {
+    width: 100%;
+  }
+
+  .book-funnel__proof dl,
+  .book-funnel__audience-list {
+    grid-template-columns: 1fr;
+  }
+
+  .book-funnel__free-preview {
+    padding: 24px;
+  }
+}

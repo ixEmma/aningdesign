@@ -1,14 +1,44 @@
 import { useEffect } from 'react'
-import { ArrowRight, CheckCircle2, FileCheck2 } from 'lucide-react'
-import { Link, Navigate, useParams } from 'react-router-dom'
-import { bookArticleLinks, books } from '../data/books'
+import { ArrowRight, CheckCircle2 } from 'lucide-react'
+import { Navigate, useParams } from 'react-router-dom'
+import { books } from '../data/books'
 import { useSeo } from '../utils/seo'
 import './Books.css'
+
+const assetBase = '/images/books/client-ready-wordpress-blueprint'
+
+const stages = [
+  ['01', 'Direction', 'Set the goals, audience, and project brief.'],
+  ['02', 'Structure', 'Map pages, hierarchy, and useful navigation.'],
+  ['03', 'Content', 'Prepare the message before layout begins.'],
+  ['04', 'WordPress Setup', 'Create a reliable foundation for the build.'],
+  ['05', 'Design System', 'Define the reusable visual rules.'],
+  ['06', 'Page Build', 'Turn the plan into clear responsive pages.'],
+  ['07', 'Client-Ready Polish', 'Review the details before launch.'],
+  ['08', 'Handover', 'Deliver a site the client can use and maintain.']
+]
+
+const bundleItems = [
+  ['Main Book', '222 pages'],
+  ['AI Prompt Pack', '32 pages'],
+  ['Checklist Pack', '30 pages'],
+  ['Design Ruler Pack', '27 pages'],
+  ['Client Handover & Maintenance Pack', '29 pages']
+]
+
+const audiences = [
+  'Beginner WordPress builders',
+  'Freelancers',
+  'Graphic designers moving into web design',
+  'Elementor users',
+  'Creators using AI-assisted workflows',
+  'People who can build pages but need a professional project system'
+]
 
 const faqs = [
   {
     question: 'Is this book suitable for beginners?',
-    answer: 'Yes. It explains the workflow in clear stages and is designed for learners who want a structured way to approach WordPress website projects.'
+    answer: 'Yes. The 222-page main book explains the workflow in clear stages for people who want a more structured way to approach WordPress website projects.'
   },
   {
     question: 'What format will I receive?',
@@ -16,19 +46,15 @@ const faqs = [
   },
   {
     question: 'How many pages are included?',
-    answer: 'Both editions include the complete 216-page main ebook, including front matter and Parts 1–8.'
+    answer: 'The Ebook Edition includes the 222-page main book. The Complete Package contains 340 verified PDF pages across the main book and four bonus packs.'
   },
   {
     question: 'What is the difference between the Ebook Edition and Complete Package?',
-    answer: 'The Ebook Edition contains the complete core book. The Complete Package includes that same main book plus the AI Prompt Pack, Checklist Pack, Design Ruler Pack, and Client Handover and Maintenance Pack.'
-  },
-  {
-    question: 'Are the bonus packs included in the Ebook Edition?',
-    answer: 'No. The Ebook Edition is the complete main book on its own; the additional implementation resources are included with the Complete Package.'
+    answer: 'The Ebook Edition contains the complete main book. The Complete Package adds the AI Prompt Pack, Checklist Pack, Design Ruler Pack, and Client Handover & Maintenance Pack.'
   },
   {
     question: 'Can I read the PDF on mobile, tablet, and desktop?',
-    answer: 'Yes. PDF files can be read with a compatible PDF reader on mobile, tablet, and desktop devices.'
+    answer: 'Yes. The PDF files can be read with a compatible PDF reader on mobile, tablet, and desktop devices.'
   },
   {
     question: 'How will I receive the files after purchase?',
@@ -40,14 +66,34 @@ const faqs = [
   }
 ]
 
+function ExternalButton({ href, className, children }) {
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
+      {children}
+      <ArrowRight size={17} aria-hidden="true" />
+    </a>
+  )
+}
+
+function SectionHeading({ eyebrow, title, id, intro }) {
+  return (
+    <div className="book-funnel__heading">
+      <p className="type-eyebrow">{eyebrow}</p>
+      <h2 id={id} className="type-h2">{title}</h2>
+      {intro && <p className="type-body book-funnel__intro">{intro}</p>}
+    </div>
+  )
+}
+
 function BookProductPage({ book }) {
   const canonicalDomain = 'https://www.aningdesign.com'
+  const completeEdition = book.editions.find((edition) => edition.id === 'complete')
 
   useSeo({
     title: book.seoTitle,
     description: book.seoDescription,
     canonical: `${canonicalDomain}${book.path}`,
-    image: `${canonicalDomain}${book.ogImage}`,
+    image: `${canonicalDomain}${book.cover}`,
     keywords: [book.primaryKeyword, ...book.keywords].join(', '),
     type: 'product'
   })
@@ -84,215 +130,151 @@ function BookProductPage({ book }) {
   }, [book, canonicalDomain])
 
   return (
-    <main className="book-detail-page book-detail-page--rhythm">
-      <section className="book-detail-hero" aria-labelledby="book-detail-title">
-        <div className="books-shell book-detail-hero-grid">
-          <div className="book-detail-copy">
-            <p className="books-kicker">{book.eyebrow}</p>
-            <h1 id="book-detail-title">Build WordPress websites with a clearer professional process.</h1>
-            <p className="book-detail-value">
-              The Client-Ready WordPress Website Blueprint gives beginners, designers, freelancers, and creators a structured workflow for planning, designing, reviewing, and delivering professional WordPress websites.
+    <main className="book-detail-page book-funnel book-detail-page--rhythm">
+      <section className="book-funnel__hero" aria-labelledby="book-detail-title">
+        <div className="books-shell book-funnel__hero-grid">
+          <div className="book-funnel__hero-copy">
+            <p className="type-eyebrow">Client-Ready WordPress Blueprint</p>
+            <h1 id="book-detail-title" className="type-h1">Build client-ready WordPress sites with a repeatable system.</h1>
+            <p className="type-body-large">
+              Plan the direction, structure the pages, prepare the content, build consistently, verify the work, and hand it over professionally.
             </p>
-            <div className="book-purchase-meta" aria-label="Product details">
-              <strong>216-page PDF ebook</strong>
-              <span>Parts 1–8</span>
-              <span>Choose your edition</span>
-            </div>
-            <div className="book-hero-actions">
-              <a href="#editions" className="aning-button aning-button--primary">
-                Choose Your Edition
-                <ArrowRight size={17} aria-hidden="true" />
-              </a>
+            <div className="book-funnel__hero-actions">
+              <ExternalButton href={completeEdition.payhipUrl} className="aning-button aning-button--primary aning-button--large">
+                Get the Complete Blueprint
+              </ExternalButton>
+              <a href="#book-preview" className="aning-button aning-button--secondary aning-button--large">Preview the Book <ArrowRight size={17} aria-hidden="true" /></a>
             </div>
           </div>
-          <div className="book-detail-visual">
+          <figure className="book-funnel__hero-visual">
             <img
-              src={book.heroImage}
-              alt="Client-Ready WordPress Website Blueprint book cover in a dark product presentation."
-              width="1600"
-              height="1200"
+              src={`${assetBase}/pages/001-book-cover.webp`}
+              alt="Cover of Client-Ready WordPress Blueprint by Emmanuel Aning."
+              width="1080"
+              height="1620"
               loading="eager"
+              fetchPriority="high"
               decoding="async"
             />
-          </div>
+          </figure>
         </div>
       </section>
 
       <div className="books-shell book-detail-content">
-        <section className="book-section book-summary-strip section-space--compact" aria-label="Blueprint summary">
+        <section className="book-funnel__proof book-section section-space--compact" aria-label="Blueprint facts">
           <dl>
-            <div><dt>216 pages</dt><dd>Complete core ebook</dd></div>
-            <div><dt>Parts 1–8</dt><dd>From direction to delivery</dd></div>
-            <div><dt>PDF download</dt><dd>Read across your devices</dd></div>
-            <div><dt>Beginner-friendly</dt><dd>Built for real client workflows</dd></div>
+            <div><dt>222-page</dt><dd>main book</dd></div>
+            <div><dt>58 practical</dt><dd>chapters</dd></div>
+            <div><dt>8-part</dt><dd>workflow</dd></div>
+            <div><dt>4 bonus</dt><dd>workbooks</dd></div>
           </dl>
         </section>
 
-        <section className="book-section" aria-labelledby="book-audience-title">
-          <div className="book-two-column">
-            <div>
-              <div className="book-section-heading">
-                <p>Who the book is for</p>
-                <h2 id="book-audience-title">For people turning website skills into a working process.</h2>
-              </div>
-              <ul className="book-simple-list">
-                {book.audience.map((item) => <li key={item}>{item}</li>)}
-              </ul>
-            </div>
-            <div>
-              <div className="book-section-heading">
-                <p>What readers will learn</p>
-                <h2>Move from direction to a more considered handover.</h2>
-              </div>
-              <ul className="book-simple-list">
-                {book.outcomes.map((item) => <li key={item}>{item}</li>)}
-              </ul>
-            </div>
+        <section className="book-section book-funnel__outcome" aria-labelledby="book-outcome-title">
+          <div className="book-funnel__outcome-copy">
+            <SectionHeading eyebrow="The outcome" title="Stop building client websites one page at a time without a system." id="book-outcome-title" />
+          </div>
+          <div className="book-funnel__outcome-detail">
+            <p className="type-body-large">Knowing Elementor or WordPress is not the same as knowing how to run a complete website project.</p>
+            <p className="type-body">The blueprint connects direction, structure, content, setup, design system, build, polish, and handover so each decision has a place.</p>
           </div>
         </section>
 
-        <section className="book-section" id="book-preview" aria-labelledby="book-preview-title">
-          <div className="book-section-heading">
-            <p>Product preview</p>
-            <h2 id="book-preview-title">A practical editorial system for the work between start and launch.</h2>
+        <section className="book-section" aria-labelledby="book-workflow-title">
+          <SectionHeading eyebrow="The blueprint" title="One workflow from direction to delivery." id="book-workflow-title" intro="A practical sequence for moving from the first brief to a professional handover." />
+          <div className="book-funnel__workflow-layout">
+            <ol className="book-funnel__steps">
+              {stages.map(([number, name, detail]) => (
+                <li key={number}>
+                  <span aria-hidden="true">{number}</span>
+                  <div><h3 className="type-h3">{name}</h3><p className="type-small">{detail}</p></div>
+                </li>
+              ))}
+            </ol>
+            <figure className="book-funnel__media-card">
+              <img src={`${assetBase}/composites/workflow-system-preview.webp`} alt="Selected Client-Ready WordPress Blueprint pages illustrating the project workflow." width="1800" height="1050" loading="lazy" decoding="async" />
+            </figure>
           </div>
-          <figure className="book-preview-figure">
-            <img src={book.previewImage} alt="Opening preview pages from the Client-Ready WordPress Blueprint Complete Package." width="2400" height="1200" loading="lazy" decoding="async" />
-            <figcaption>Opening pages from the Complete Package preview, showing the included resources, full book map, and eight-stage workflow.</figcaption>
+        </section>
+
+        <section className="book-section section-space--spacious" id="book-preview" aria-labelledby="book-preview-title">
+          <SectionHeading eyebrow="Inside the book" title="See the system inside the book." id="book-preview-title" intro="Practical prompts, blueprint rules, templates, checklists, page-build patterns, and handover workflows are laid out for use during a project." />
+          <div className="book-funnel__preview-grid">
+            <figure className="book-funnel__media-card"><img src={`${assetBase}/composites/interior-three-page-preview.webp`} alt="Three interior pages from Client-Ready WordPress Blueprint." width="1800" height="1050" loading="lazy" decoding="async" /></figure>
+            <figure className="book-funnel__media-card"><img src={`${assetBase}/composites/practical-pages-preview.webp`} alt="Practical worksheet and page-build examples from Client-Ready WordPress Blueprint." width="1800" height="1050" loading="lazy" decoding="async" /></figure>
+          </div>
+        </section>
+
+        <section className="book-section book-funnel__bundle" aria-labelledby="book-bundle-title">
+          <div className="book-funnel__bundle-copy">
+            <SectionHeading eyebrow="Complete bundle" title="The complete package goes beyond the main book." id="book-bundle-title" intro="340 verified PDF pages total, built to support the work around the build as well as the pages themselves." />
+            <dl className="book-funnel__bundle-list">
+              {bundleItems.map(([title, pages]) => <div key={title}><dt>{title}</dt><dd>{pages}</dd></div>)}
+            </dl>
+          </div>
+          <figure className="book-funnel__media-card">
+            <img src={`${assetBase}/composites/complete-bonus-pack-covers.webp`} alt="Client-Ready WordPress Blueprint complete package with the main book and four bonus workbooks." width="1800" height="1050" loading="lazy" decoding="async" />
           </figure>
         </section>
 
-        <section className="book-section book-editions-section section-space--spacious" id="editions" aria-labelledby="book-editions-title">
-          <div className="book-section-heading">
-            <p>Two editions, one blueprint</p>
-            <h2 id="book-editions-title">Choose the edition that fits your workflow</h2>
-            <p className="book-section-intro">Get the complete 216-page blueprint on its own, or choose the Complete Package for additional prompts, checklists, design references, and client handover resources.</p>
-          </div>
+        <section className="book-section book-funnel__purchase section-space--spacious" id="editions" aria-labelledby="book-editions-title">
+          <SectionHeading eyebrow="Choose an edition" title="Get the blueprint that fits your workflow." id="book-editions-title" />
           <div className="book-edition-grid">
             {book.editions.map((edition) => (
               <article className={`book-edition-card${edition.id === 'complete' ? ' book-edition-card--featured' : ''}`} key={edition.id}>
                 <div className="book-edition-card-heading">
                   <div>
                     {edition.label && <p className="book-edition-label">{edition.label}</p>}
-                    <h3>{edition.title}</h3>
+                    <h3 className="type-h3">{edition.title}</h3>
                   </div>
                   <strong>{edition.price}</strong>
                 </div>
-                <p>{edition.description}</p>
+                <p className="type-body">{edition.description}</p>
                 <ul>
                   {edition.includes.map((item) => <li key={item}><CheckCircle2 size={18} aria-hidden="true" />{item}</li>)}
                 </ul>
                 {edition.note && <p className="book-edition-note">{edition.note}</p>}
-                <a href={edition.payhipUrl} target="_blank" rel="noopener noreferrer" className="aning-button aning-button--primary">
-                  {edition.ctaLabel}
-                  <ArrowRight size={17} aria-hidden="true" />
-                </a>
+                <ExternalButton href={edition.payhipUrl} className="aning-button aning-button--primary">{edition.ctaLabel}</ExternalButton>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="book-section book-free-preview" aria-labelledby="book-free-preview-title">
-          <figure className="book-free-preview-visual">
-            <img
-              src={book.freePreviewImage}
-              alt="Preview pages from the Client-Ready WordPress Blueprint complete package"
-              width="2400"
-              height="1200"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
-          <div className="book-free-preview-copy">
-            <p>Free sample</p>
-            <h2 id="book-free-preview-title">Preview the complete package before you buy</h2>
-            <p>
-              Explore selected pages from the Client-Ready WordPress Blueprint and all four practical bonus resources. See the writing quality, design system, workflows, prompts, checklists, and client-ready templates included in the complete package.
-            </p>
-            <a
-              href="https://payhip.com/b/BKgxC"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="aning-button aning-button--secondary"
-            >
-              Download the Free Preview
-              <ArrowRight size={17} aria-hidden="true" />
-            </a>
-            <p className="book-free-preview-note">Free preview edition. No payment required. The complete products remain available above.</p>
+        <section className="book-section book-funnel__free-preview" aria-labelledby="book-free-preview-title">
+          <figure className="book-funnel__media-card"><img src={`${assetBase}/composites/practical-pages-preview.webp`} alt="Preview of practical Client-Ready WordPress Blueprint pages." width="1800" height="1050" loading="lazy" decoding="async" /></figure>
+          <div>
+            <SectionHeading eyebrow="Free preview" title="Preview the book before you buy." id="book-free-preview-title" />
+            <p className="type-body">Inspect the layout, teaching approach, and selected pages before choosing an edition.</p>
+            <ExternalButton href="https://payhip.com/b/BKgxC" className="aning-button aning-button--secondary">Download the Free Preview</ExternalButton>
           </div>
         </section>
 
-        <section className="book-section" aria-labelledby="book-included-title">
-          <div className="book-section-heading">
-            <p>Inside the blueprint</p>
-            <h2 id="book-included-title">Useful structure before you open the page builder.</h2>
-          </div>
-          <div className="book-included-layout">
-            <div className="book-included-grid">
-              {book.included.map((item) => (
-                <article key={item.title}>
-                  <FileCheck2 size={20} aria-hidden="true" />
-                  <h3>{item.title}</h3>
-                  <p>{item.detail}</p>
-                </article>
-              ))}
-            </div>
-            <figure className="book-wide-visual">
-              <img src={book.bundleImage} alt="Preview of the AI prompt, checklist, design ruler, and client handover resource packs included with the Complete Package." width="1600" height="1200" loading="lazy" decoding="async" />
-            </figure>
-          </div>
+        <section className="book-section" aria-labelledby="book-audience-title">
+          <SectionHeading eyebrow="Who it is for" title="For builders ready to work with more structure." id="book-audience-title" />
+          <ul className="book-funnel__audience-list">
+            {audiences.map((audience) => <li className="type-body" key={audience}>{audience}</li>)}
+          </ul>
         </section>
 
-        <section className="book-section book-author-section" aria-labelledby="book-author-title">
-          <div className="book-section-heading">
-            <p>Author</p>
-            <h2 id="book-author-title">Written by Emmanuel Aning.</h2>
-          </div>
-          <p>Emmanuel Aning created this guide for people who want a clearer, more repeatable way to approach WordPress website work—from early direction through review and client handover.</p>
+        <section className="book-section book-funnel__author" aria-labelledby="book-author-title">
+          <SectionHeading eyebrow="Author" title="Emmanuel Aning" id="book-author-title" />
+          <p className="type-body">Emmanuel Aning created this guide for people who want a clearer, repeatable way to plan, build, review, and hand over WordPress websites.</p>
         </section>
 
-        <section className="book-section" aria-labelledby="book-faq-title">
-          <div className="book-section-heading">
-            <p>FAQ</p>
-            <h2 id="book-faq-title">Questions before purchasing.</h2>
-          </div>
+        <section className="book-section section-space--spacious" aria-labelledby="book-faq-title">
+          <SectionHeading eyebrow="FAQ" title="Questions before purchasing." id="book-faq-title" />
           <div className="book-faq-list">
-            {faqs.map((faq) => (
-              <details key={faq.question}>
-                <summary>{faq.question}</summary>
-                <p>{faq.answer}</p>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        <section className="book-section" aria-labelledby="book-related-title">
-          <div className="book-section-heading">
-            <p>Related guides</p>
-            <h2 id="book-related-title">Build the workflow one decision at a time.</h2>
-          </div>
-          <div className="book-related-grid">
-            {bookArticleLinks.slice(0, 3).map((article) => (
-              <Link to={article.href} key={article.href}>{article.title}<ArrowRight size={15} aria-hidden="true" /></Link>
-            ))}
-          </div>
-          <div className="book-service-links">
-            <Link to="/services/wordpress-websites">WordPress Websites</Link>
-            <Link to="/services/website-design">Website Design</Link>
-            <Link to="/contact">Contact AningDesign</Link>
+            {faqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p className="type-body">{faq.answer}</p></details>)}
           </div>
         </section>
 
         <section className="book-final-cta section-space--spacious" aria-labelledby="book-final-cta-title">
-          <p>Client-ready workflow</p>
-          <h2 id="book-final-cta-title">Choose your edition and start building with a clearer process.</h2>
+          <p className="type-eyebrow">Client-ready workflow</p>
+          <h2 id="book-final-cta-title" className="type-h2">Build the workflow one decision at a time.</h2>
+          <p className="type-body-large">Move from planning to handover with one repeatable WordPress website system.</p>
           <div className="book-final-actions">
-            {book.editions.map((edition) => (
-              <a href={edition.payhipUrl} target="_blank" rel="noopener noreferrer" className={edition.id === 'complete' ? 'aning-button aning-button--primary' : 'aning-button aning-button--secondary'} key={edition.id}>
-                {edition.ctaLabel}
-                <ArrowRight size={17} aria-hidden="true" />
-              </a>
-            ))}
+            <ExternalButton href={completeEdition.payhipUrl} className="aning-button aning-button--primary">Get the Complete Blueprint</ExternalButton>
+            <a href="#book-preview" className="aning-button aning-button--secondary">Preview the Book <ArrowRight size={17} aria-hidden="true" /></a>
           </div>
         </section>
       </div>

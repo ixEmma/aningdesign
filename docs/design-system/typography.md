@@ -45,6 +45,7 @@ footer, and reusable cards.
 | `h1` | `clamp(2.5rem, 3.6vw, 4rem)` | 900 | 1.04 | -0.02em | Standard page title; one H1 per page. |
 | `h2` | `clamp(2rem, 2.75vw, 3rem)` | 900 | 1.08 | -0.02em | Major page section. |
 | `h3` | `clamp(1.25rem, 0.95rem + 1.25vw, 2rem)` | 700 | 1.2 | -0.02em | Subsection, card, or capability title. |
+| `h4` | `var(--type-body-large-size)` | 700 | 1.2 | -0.02em | Minor structural heading; use only beneath an H3. |
 | `body-large` | `clamp(1rem, 0.95rem + 0.3vw, 1.25rem)` | 400 | 1.55 | 0 | Hero or page-intro supporting copy. |
 | `body` | `1rem` | 400 | 1.65 | 0 | Standard paragraph and list copy. |
 | `small` | `clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem)` | 500 | 1.5 | Supporting metadata and compact contextual copy. |
@@ -71,9 +72,13 @@ line-height: var(--type-line-h1);
 letter-spacing: var(--type-tracking-heading);
 ```
 
-The available utilities are `.type-display`, `.type-h1`, `.type-h2`, `.type-h3`,
+The available utilities are `.type-display`, `.type-h1`, `.type-h2`, `.type-h3`, `.type-h4`,
 `.type-body-large`, `.type-body`, `.type-small`, and `.type-eyebrow`. They set typography
 only; layout, margins, color, and width remain component responsibilities.
+
+`h4` follows the approved Lensora detail treatment: body-large scale with H3 line-height,
+bold weight, and heading tracking. Use it only for a structural level below an H3, never as
+a card label or an eyebrow substitute.
 
 ```jsx
 <h1 className="type-h1">Website design built around clear decisions</h1>
@@ -125,3 +130,15 @@ values or 800/850; choose the nearest approved role instead.
 
 For each phase, replace declarations by semantic role, remove superseded responsive
 overrides, build, and visually verify the affected routes before moving to the next phase.
+
+## Current template mapping
+
+- Service templates: the hero uses `h1`, primary sections use `h2`, and service-card,
+  process, proof, and capability titles use `h3`. CTA headings remain semantically `h2`
+  where they introduce a section, while using the restrained H3 visual role.
+- Blog archive: the page title and archive section heading use `h1` and `h2` respectively.
+  Blog-card and featured-card titles remain semantic `h3` card titles rather than styling
+  them as a page-section H2.
+- Blog articles: the post title uses `h1`; Markdown H2/H3 headings consume the shared
+  H2/H3 roles without changing their generated IDs or table-of-contents targets. Related,
+  product, and final-CTA headings remain visually subordinate through the H3 role.

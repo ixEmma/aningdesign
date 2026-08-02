@@ -1,0 +1,31 @@
+AningDesign WordPress commercial cost-guide research notes
+Research date: 2026-08-02
+
+Blog 1 — WordPress Website Redesign Cost
+- https://www.sitebolt.co/blog/website-redesign-cost-2026 | Website Redesign Cost in 2026: What You'll Actually Pay | Public scope bands for light refresh, visual redesign, rebuild, and enterprise work; treated as a provider example, not a universal market rate.
+- https://tizzle.org/blog/website-redesign-cost-uk-2026 | How Much Does a Website Redesign Cost in 2026? | Confirms intent is budget/scope comparison and distinguishes a limited refresh from larger work.
+- https://www.lowcode.agency/blog/wordpress-website-redesign-cost | WordPress Website Redesign Cost Guide | WordPress-specific competitor guide; used for scope/intent review, not copied.
+- https://www.connectwithpatrick.com/journal/website-redesign-cost-2026 | Website Redesign Cost in 2026: The Real Number Ranges | Reviewed for current commercial modifiers and replatform/rebuild context.
+- https://cambriadigital.co.uk/blog/website-redesign-cost-uk/ | How Much Does a Website Redesign Cost in the UK? | Reviewed for cost-guide SERP patterns, SEO migration, and hidden-cost coverage.
+- https://developers.google.com/speed/docs/insights/v5/about | About PageSpeed Insights | Supports the distinction between lab and field data and the use of Core Web Vitals.
+- https://wordpress.org/documentation/article/updating-wordpress/ | Updating WordPress | Supports the backup/rollback caution for live website changes.
+
+Blog 2 — WordPress Maintenance Cost
+- https://www.wpbeginner.com/beginners-guide/wordpress-maintenance-costs-how-much-should-you-pay/ | WordPress Maintenance Costs – How Much Should You Pay? | Public website-type bands, freelancer context, and routine maintenance components.
+- https://vortexmedia.io/blog/wordpress-maintenance-cost | How Much Does WordPress Maintenance Cost? (2026 Breakdown) | Reviewed for current plan-tier language and commercial intent.
+- https://doodleweb.io/blog/wordpress-maintenance-services-pricing-2026 | WordPress maintenance services: 2026 scope & pricing | Reviewed for recurring inclusions/exclusions and buyer questions.
+- https://www.limbus.fr/article/cout-maintenance-wordpress.html | Combien coûte la maintenance WordPress ? | Reviewed for automated versus human-reviewed service distinction.
+- https://webdevnc.com/wordpress-maintenance-cost/ | WordPress Maintenance Cost in 2026 | Reviewed for current SERP format and common cost modifiers.
+- https://wpengine.com/resources/wordpress-maintenance-plans/ | What are WordPress Maintenance Plans? | Supports the distinction between core maintenance and possible adjacent services.
+- https://wordpress.org/documentation/article/wordpress-site-maintenance/ | WordPress site maintenance | Supports routine backup/maintenance guidance.
+- https://wordpress.org/documentation/article/plugins-themes-auto-updates/ | Plugin and themes auto-updates | Supports the update, backup, and scheduling guidance.
+
+Blog 3 — WordPress Speed Optimization Service Cost
+- https://webless.co/blog/wordpress-speed-optimization-cost/ | WordPress Speed Optimization Cost: Plugin, Audit, or Developer? | Reviewed for problem-aware search intent and the distinction between configuration, audit, and engineering work.
+- https://www.wordpressspeedoptimizationexpert.com/guides/wordpress-speed-optimization-service-cost/ | WordPress Speed Optimization Service Cost: What Drives the Price | Public pricing context and cost drivers; ranges treated as provider observations, not a market average.
+- https://wp-rocket.me/blog/wordpress-speed-optimization-services/ | Top 5 WordPress Speed Optimization Services (+ How to Choose) | Public specialist offer examples and expected scope components.
+- https://www.hostingitrust.com/wordpress-speed-optimization-service/ | WordPress Speed Optimization Service | Reviewed for public package scope, WooCommerce differentiation, and report expectations.
+- https://wpspeedcare.com/ | Wp Speed Care | WordPress Speed Optimization Service | Reviewed for low-to-mid fixed-price service positioning and included tasks.
+- https://rockythemes.com/wordpress-speed-optimization/ | WordPress Speed Optimization Service | Reviewed for additional current pricing language and scope comparison.
+- https://developers.google.com/speed/docs/insights/v5/about | About PageSpeed Insights | Supports the distinction between lab and real-user field data, 75th-percentile reporting, and Core Web Vitals.
+- https://wordpress.org/documentation/article/manage-plugins/ | Manage Plugins | Supports the backup and deliberate-change caution.

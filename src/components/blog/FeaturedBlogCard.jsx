@@ -32,9 +32,9 @@ function FeaturedBlogCard({ post }) {
           <time dateTime={post.date}>{formatPostDate(post.date)}</time>
         </div>
 
-        <h2>
+        <h3>
           <Link to={`/blog/${post.slug}`}>{post.title}</Link>
-        </h2>
+        </h3>
         <p className="featured-blog-card__description">{post.description}</p>
 
         <Link to={`/blog/${post.slug}`} className="featured-blog-card__cta">

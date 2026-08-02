@@ -1,0 +1,262 @@
+{
+  "main_book": [
+    {
+      "physical_page": 1,
+      "slug": "book-cover",
+      "png": "001-book-cover.png",
+      "webp": "001-book-cover.webp",
+      "pixels": [
+        1080,
+        1620
+      ]
+    },
+    {
+      "physical_page": 6,
+      "slug": "detailed-table-of-contents",
+      "png": "006-detailed-table-of-contents.png",
+      "webp": "006-detailed-table-of-contents.webp",
+      "pixels": [
+        1080,
+        1620
+      ]
+    },
+    {
+      "physical_page": 16,
+      "slug": "eight-step-workflow",
+      "png": "016-eight-step-workflow.png",
+      "webp": "016-eight-step-workflow.webp",
+      "pixels": [
+        1080,
+        1620
+      ]
+    },
+    {
+      "physical_page": 21,
+      "slug": "quick-project-brief-template",
+      "png": "021-quick-project-brief-template.png",
+      "webp": "021-quick-project-brief-template.webp",
+      "pixels": [
+        1080,
+        1620
+      ]
+    },
+    {
+      "physical_page": 31,
+      "slug": "website-direction-ai-prompt",
+      "png": "031-website-direction-ai-prompt.png",
+      "webp": "031-website-direction-ai-prompt.webp",
+      "pixels": [
+        1080,
+        1620
+      ]
+    },
+    {
+      "physical_page": 63,
+      "slug": "part-03-content-blueprint-opener",
+      "png": "063-part-03-content-blueprint-opener.png",
+      "webp": "063-part-03-content-blueprint-opener.webp",
+      "pixels": [
+        1080,
+        1620
+      ]
+    },
+    {
+      "physical_page": 89,
+      "slug": "homepage-content-draft-prompt",
+      "png": "089-homepage-content-draft-prompt.png",
+      "webp": "089-homepage-content-draft-prompt.webp",
+      "pixels": [
+        1080,
+        1620
+      ]
+    },
+    {
+      "physical_page": 119,
+      "slug": "part-05-design-system-opener",
+      "png": "119-part-05-design-system-opener.png",
+      "webp": "119-part-05-design-system-opener.webp",
+      "pixels": [
+        1080,
+        1620
+      ]
+    },
+    {
+      "physical_page": 154,
+      "slug": "homepage-hero-pattern",
+      "png": "154-homepage-hero-pattern.png",
+      "webp": "154-homepage-hero-pattern.webp",
+      "pixels": [
+        1080,
+        1620
+      ]
+    },
+    {
+      "physical_page": 157,
+      "slug": "section-container-pattern",
+      "png": "157-section-container-pattern.png",
+      "webp": "157-section-container-pattern.webp",
+      "pixels": [
+        1080,
+        1620
+      ]
+    },
+    {
+      "physical_page": 175,
+      "slug": "part-07-client-ready-polish-opener",
+      "png": "175-part-07-client-ready-polish-opener.png",
+      "webp": "175-part-07-client-ready-polish-opener.webp",
+      "pixels": [
+        1080,
+        1620
+      ]
+    },
+    {
+      "physical_page": 199,
+      "slug": "part-08-handover-opener",
+      "png": "199-part-08-handover-opener.png",
+      "webp": "199-part-08-handover-opener.webp",
+      "pixels": [
+        1080,
+        1620
+      ]
+    },
+    {
+      "physical_page": 218,
+      "slug": "website-handover-email-prompt",
+      "png": "218-website-handover-email-prompt.png",
+      "webp": "218-website-handover-email-prompt.webp",
+      "pixels": [
+        1080,
+        1620
+      ]
+    }
+  ],
+  "bonus_pages": [
+    {
+      "source": "Bonus_01_AI_Prompt_Pack.pdf",
+      "physical_page": 1,
+      "slug": "bonus-ai-prompt-pack-cover",
+      "png": "bonus-ai-prompt-pack-cover.png",
+      "webp": "bonus-ai-prompt-pack-cover.webp",
+      "pixels": [
+        1080,
+        1620
+      ]
+    },
+    {
+      "source": "Bonus_01_AI_Prompt_Pack.pdf",
+      "physical_page": 8,
+      "slug": "bonus-ai-prompt-example",
+      "png": "bonus-ai-prompt-example.png",
+      "webp": "bonus-ai-prompt-example.webp",
+      "pixels": [
+        1080,
+        1620
+      ]
+    },
+    {
+      "source": "Bonus_02_Checklist_Pack.pdf",
+      "physical_page": 1,
+      "slug": "bonus-checklist-pack-cover",
+      "png": "bonus-checklist-pack-cover.png",
+      "webp": "bonus-checklist-pack-cover.webp",
+      "pixels": [
+        1080,
+        1620
+      ]
+    },
+    {
+      "source": "Bonus_02_Checklist_Pack.pdf",
+      "physical_page": 6,
+      "slug": "bonus-checklist-example",
+      "png": "bonus-checklist-example.png",
+      "webp": "bonus-checklist-example.webp",
+      "pixels": [
+        1080,
+        1620
+      ]
+    },
+    {
+      "source": "Bonus_03_Design_Ruler_Pack.pdf",
+      "physical_page": 1,
+      "slug": "bonus-design-ruler-pack-cover",
+      "png": "bonus-design-ruler-pack-cover.png",
+      "webp": "bonus-design-ruler-pack-cover.webp",
+      "pixels": [
+        1080,
+        1620
+      ]
+    },
+    {
+      "source": "Bonus_03_Design_Ruler_Pack.pdf",
+      "physical_page": 8,
+      "slug": "bonus-type-scale-example",
+      "png": "bonus-type-scale-example.png",
+      "webp": "bonus-type-scale-example.webp",
+      "pixels": [
+        1080,
+        1620
+      ]
+    },
+    {
+      "source": "Bonus_04_Client_Handover_Maintenance_Pack.pdf",
+      "physical_page": 1,
+      "slug": "bonus-handover-pack-cover",
+      "png": "bonus-handover-pack-cover.png",
+      "webp": "bonus-handover-pack-cover.webp",
+      "pixels": [
+        1080,
+        1620
+      ]
+    },
+    {
+      "source": "Bonus_04_Client_Handover_Maintenance_Pack.pdf",
+      "physical_page": 26,
+      "slug": "bonus-client-ownership-example",
+      "png": "bonus-client-ownership-example.png",
+      "webp": "bonus-client-ownership-example.webp",
+      "pixels": [
+        1080,
+        1620
+      ]
+    }
+  ],
+  "composites": [
+    {
+      "slug": "interior-three-page-preview",
+      "png": "interior-three-page-preview.png",
+      "webp": "interior-three-page-preview.webp",
+      "pixels": [
+        1800,
+        1050
+      ]
+    },
+    {
+      "slug": "workflow-system-preview",
+      "png": "workflow-system-preview.png",
+      "webp": "workflow-system-preview.webp",
+      "pixels": [
+        1800,
+        1050
+      ]
+    },
+    {
+      "slug": "practical-pages-preview",
+      "png": "practical-pages-preview.png",
+      "webp": "practical-pages-preview.webp",
+      "pixels": [
+        1800,
+        1050
+      ]
+    },
+    {
+      "slug": "complete-bonus-pack-covers",
+      "png": "complete-bonus-pack-covers.png",
+      "webp": "complete-bonus-pack-covers.webp",
+      "pixels": [
+        1800,
+        1050
+      ]
+    }
+  ]
+}

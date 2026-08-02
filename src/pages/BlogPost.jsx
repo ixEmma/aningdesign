@@ -126,7 +126,7 @@ const createMarkdownComponents = (post) => {
       const text = getChildrenText(children)
 
       return (
-        <h2 id={getUniqueHeadingId(text, h2Counts)} {...props}>
+        <h2 id={getUniqueHeadingId(text, h2Counts)} className="type-h2" {...props}>
           {children}
         </h2>
       )
@@ -135,7 +135,7 @@ const createMarkdownComponents = (post) => {
       const text = getChildrenText(children)
 
       return (
-        <h3 id={`detail-${getUniqueHeadingId(text, h3Counts)}`} {...props}>
+        <h3 id={`detail-${getUniqueHeadingId(text, h3Counts)}`} className="type-h3" {...props}>
           {children}
         </h3>
       )
@@ -315,7 +315,7 @@ function BlogPostContextCta({ serviceLink }) {
   return (
     <aside className="blog-post-context-cta" aria-label="Related service">
       <p className="blog-post-context-kicker">Project planning note</p>
-      <h2>Want this structure handled for your own website?</h2>
+      <h2 className="type-h3">Want this structure handled for your own website?</h2>
       <p>{serviceLink.description || 'Use the related service page to plan the next step with AningDesign.'}</p>
       <Link to={serviceLink.href}>View {serviceLink.label}</Link>
     </aside>
@@ -328,7 +328,7 @@ function BlogPostProductCta({ post }) {
   return (
     <aside className="blog-post-context-cta blog-post-product-cta" aria-label="Related book">
       <p className="blog-post-context-kicker">Repeatable WordPress workflow</p>
-      <h2>Need the full planning, launch, and handover system?</h2>
+      <h2 className="type-h3">Need the full planning, launch, and handover system?</h2>
       <p>{post.productCtaText}</p>
       <Link to={post.productPage}>{post.productCtaLabel || 'View the Blueprint'}</Link>
     </aside>
@@ -342,7 +342,7 @@ function BlogPostRelatedContent({ relatedPosts }) {
     <section className="blog-post-related-content" aria-labelledby="blog-post-related-title">
       <div className="blog-post-related-heading">
         <p>Read next</p>
-        <h2 id="blog-post-related-title">Related guides</h2>
+        <h2 id="blog-post-related-title" className="type-h3">Related guides</h2>
       </div>
       <div className="blog-post-related-grid">
         {relatedPosts.map((relatedPost) => (
@@ -351,7 +351,7 @@ function BlogPostRelatedContent({ relatedPosts }) {
               <span>{relatedPost.category}</span>
               <time dateTime={relatedPost.date}>{formatPostDate(relatedPost.date)}</time>
             </div>
-            <h3>{relatedPost.title}</h3>
+            <h3 className="type-h3">{relatedPost.title}</h3>
             <p>{relatedPost.description}</p>
             <Link to={`/blog/${relatedPost.slug}`}>Read guide</Link>
           </article>
@@ -367,7 +367,7 @@ function BlogPostFinalCta({ post, serviceLink, youtubeWatchUrl, ctaDescription }
   return (
     <section className="blog-post-cta" aria-label="Next step">
       <p className="blog-post-cta-kicker">Next step</p>
-      <h2>{hasProductCta ? 'Use a clearer WordPress project workflow.' : 'Need help building your website?'}</h2>
+      <h2 className="type-h3">{hasProductCta ? 'Use a clearer WordPress project workflow.' : 'Need help building your website?'}</h2>
       <p>{ctaDescription}</p>
       <div className="blog-post-cta-actions">
         {hasProductCta ? (

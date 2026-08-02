@@ -61,7 +61,7 @@ function Blog() {
       <section className="blog-archive-hero">
         <div className="blog-archive-hero-inner">
           <span className="blog-archive-kicker">Insights</span>
-          <h1>Ideas, systems, and practical web insights</h1>
+          <h1 className="type-h1">Ideas, systems, and practical web insights</h1>
           <p>
             Clear tutorials and field notes on website design, WordPress, development, SEO, and the
             workflows behind better digital products.
@@ -93,7 +93,7 @@ function Blog() {
               <section className="blog-archive-grid-section" aria-labelledby="latest-tutorials-heading">
                 <header className="blog-archive-grid-heading">
                   <p>Archive</p>
-                  <h2 id="latest-tutorials-heading">Latest tutorials</h2>
+                  <h2 id="latest-tutorials-heading" className="type-h2">Latest tutorials</h2>
                 </header>
                 <BlogGrid posts={visiblePosts} />
               </section>
@@ -127,7 +127,7 @@ function Blog() {
           ) : (
             <div className="blog-archive-empty">
               <div role="status">
-                <h2>No tutorials found</h2>
+                <h2 className="type-h2">No tutorials found</h2>
                 <p>Try another search or category to continue browsing.</p>
               </div>
               <button type="button" onClick={resetArchiveFilters}>Reset search and filters</button>

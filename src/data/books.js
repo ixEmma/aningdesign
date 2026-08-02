@@ -2,10 +2,10 @@ export const books = [
   {
     slug: 'client-ready-wordpress-website-blueprint',
     path: '/books/client-ready-wordpress-website-blueprint',
-    title: 'Client-Ready WordPress Website Blueprint',
-    eyebrow: 'AningDesign digital guide',
+    title: 'Client-Ready WordPress Blueprint',
+    eyebrow: 'Client-Ready WordPress Blueprint',
     shortDescription:
-      'A practical 216-page guide for planning, designing, reviewing, and delivering client-ready WordPress websites.',
+      'A practical 222-page guide for planning, designing, reviewing, and delivering client-ready WordPress websites.',
     valueStatement:
       'A clearer professional process for planning, building, reviewing, and delivering WordPress websites.',
     price: 17,
@@ -18,10 +18,10 @@ export const books = [
         id: 'ebook',
         title: 'Ebook Edition',
         price: '$17',
-        description: 'The complete 216-page core book for readers who want the full WordPress website blueprint without the additional resource packs.',
+        description: 'The complete 222-page main book for readers who want the full WordPress website blueprint without the additional resource packs.',
         includes: [
-          'Complete 216-page ebook',
-          'Front matter and Parts 1–8',
+          'Complete 222-page main book',
+          '58 practical chapters across 8 parts',
           'PDF download',
           'Core planning, design, build, review, and delivery workflow'
         ],
@@ -34,24 +34,20 @@ export const books = [
         title: 'Complete Package',
         price: '$27',
         label: 'Best Value',
-        description: 'The full blueprint plus practical resources for applying the workflow to real website projects.',
+        description: 'The 340-page complete package with the full blueprint and practical resources for applying the workflow to real website projects.',
         includes: [
-          'Main book',
-          'AI Prompt Pack',
-          'Checklist Pack',
-          'Design Ruler Pack',
-          'Client Handover and Maintenance Pack'
+          '222-page main book',
+          '32-page AI Prompt Pack',
+          '30-page Checklist Pack',
+          '27-page Design Ruler Pack',
+          '29-page Client Handover & Maintenance Pack'
         ],
         ctaLabel: 'Get the Complete Package',
         payhipUrl: 'https://payhip.com/b/5p0EN'
       }
     ],
-    cover: '/images/books/client-ready-wordpress-blueprint-cover.webp',
+    cover: '/images/books/client-ready-wordpress-blueprint/pages/001-book-cover.webp',
     listingImage: '/images/books/client-ready-wordpress-blueprint-listing.webp',
-    heroImage: '/images/books/client-ready-wordpress-blueprint-hero.webp',
-    bundleImage: '/images/books/client-ready-wordpress-blueprint-resource-bundle.webp',
-    previewImage: '/images/books/client-ready-wordpress-blueprint-interior-preview.webp',
-    freePreviewImage: '/images/books/client-ready-wordpress-complete-package-preview-clean.webp',
     ogImage: '/images/books/client-ready-wordpress-blueprint-og.webp',
     audienceSummary: 'Beginners, designers, freelancers, Elementor users, and creators building client websites.',
     audience: [
@@ -85,9 +81,9 @@ export const books = [
     ],
     license:
       'Licensed to the original buyer for personal learning, client workflow support, and website-building reference. The files may not be copied, shared, resold, redistributed, repackaged, or claimed as another person’s work.',
-    seoTitle: 'Client-Ready WordPress Website Blueprint | AningDesign',
+    seoTitle: 'Client-Ready WordPress Blueprint | AningDesign',
     seoDescription:
-      'A practical 216-page WordPress website blueprint for beginners, designers, and freelancers who want a clearer process for planning, building, reviewing, and delivering client-ready websites.',
+      'A practical 222-page WordPress website blueprint for beginners, designers, and freelancers who want a clearer process for planning, building, reviewing, and delivering client-ready websites.',
     primaryKeyword: 'WordPress website blueprint',
     keywords: [
       'wordpress website blueprint',

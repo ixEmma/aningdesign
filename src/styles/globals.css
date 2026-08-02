@@ -56,6 +56,7 @@ body {
   --type-h1-size: clamp(2.5rem, 3.6vw, 4rem);
   --type-h2-size: clamp(2rem, 2.75vw, 3rem);
   --type-h3-size: clamp(1.25rem, 0.95rem + 1.25vw, 2rem);
+  --type-h4-size: var(--type-body-large-size);
   --type-body-large-size: clamp(1rem, 0.95rem + 0.3vw, 1.25rem);
   --type-body-size: 1rem;
   --type-small-size: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
@@ -69,6 +70,7 @@ body {
   --type-line-h1: 1.04;
   --type-line-h2: 1.08;
   --type-line-h3: 1.2;
+  --type-line-h4: var(--type-line-h3);
   --type-line-body-large: 1.55;
   --type-line-body: 1.65;
   --type-line-small: 1.5;
@@ -257,6 +259,14 @@ h2 {
   font-size: var(--type-h3-size);
   font-weight: var(--type-weight-bold);
   line-height: var(--type-line-h3);
+  letter-spacing: var(--type-tracking-heading);
+}
+
+:where(.type-h4) {
+  font-family: var(--font-family-base);
+  font-size: var(--type-h4-size);
+  font-weight: var(--type-weight-bold);
+  line-height: var(--type-line-h4);
   letter-spacing: var(--type-tracking-heading);
 }
 

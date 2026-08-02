@@ -59,8 +59,8 @@ function ServiceSection({ id, kicker, title, intro, cta, className = '', spacing
       aria-labelledby={id}
     >
       <div className="service-section-heading">
-        <p className="service-section-kicker">{kicker}</p>
-        <h2 id={id}>{title}</h2>
+        <p className="service-section-kicker type-eyebrow">{kicker}</p>
+        <h2 id={id} className="type-h2">{title}</h2>
         {intro && <p className="service-section-intro">{intro}</p>}
         {cta && (
           <div className="service-section-cta">
@@ -86,7 +86,7 @@ function ServiceCtaBlock({ cta, id, className = '', spacing }) {
 
   return (
     <section className={classes.join(' ')} aria-labelledby={id}>
-      <h2 id={id}>{cta.heading}</h2>
+      <h2 id={id} className="type-h3">{cta.heading}</h2>
       <p className="service-cta-text">{cta.text}</p>
       <div className="service-cta-actions">
         <SmartServiceLink href={cta.primaryHref} className={primaryClass}>
@@ -147,7 +147,7 @@ function ServiceMatrixCard({ service, variant = 'standard', meta }) {
     <article className={wide ? 'service-matrix-card service-matrix-card--wide' : 'service-matrix-card'}>
       <div className="service-matrix-card-body">
         {meta?.label && <span className="service-matrix-tag">{meta.label}</span>}
-        <h3>{service.title}</h3>
+        <h3 className="type-h3">{service.title}</h3>
         <p>{service.cardDescription || service.intro}</p>
         {wide && meta?.note && <p className="service-matrix-note">{meta.note}</p>}
       </div>
@@ -202,8 +202,8 @@ function ServiceDirectory({ service, spacing }) {
   return (
     <section className={className} aria-labelledby="service-directory-title">
       <div className="service-section-heading service-directory-aside">
-        <p className="service-section-kicker">Service pages</p>
-        <h2 id="service-directory-title">Choose the service that matches your next move.</h2>
+        <p className="service-section-kicker type-eyebrow">Service pages</p>
+        <h2 id="service-directory-title" className="type-h2">Choose the service that matches your next move.</h2>
         {service.directoryIntro && <p className="service-directory-copy">{service.directoryIntro}</p>}
         {service.directoryHighlights && (
           <ul className="service-directory-highlights" aria-label="Service selection notes">
@@ -220,7 +220,7 @@ function ServiceDirectory({ service, spacing }) {
           <div className="service-directory-grid">
             {servicePages.map((item) => (
               <article className="service-directory-card" key={item.slug}>
-                <h3>{item.title}</h3>
+                <h3 className="type-h3">{item.title}</h3>
                 <p>{item.cardDescription || item.intro}</p>
                 <SmartServiceLink href={item.path} className="service-text-link">
                   View service
@@ -269,7 +269,7 @@ function ServiceUseCases({ service, spacing }) {
               : 'service-use-case-card'}
             key={item.title}
           >
-            <h3>{item.title}</h3>
+            <h3 className="type-h3">{item.title}</h3>
             <p>{item.description}</p>
           </article>
         ))}
@@ -295,7 +295,7 @@ function ServiceResources({ resources, spacing, showcase }) {
               : 'service-resource-card'}
             key={resource.href}
           >
-            <h3>{resource.title}</h3>
+            <h3 className="type-h3">{resource.title}</h3>
             <p>{resource.description}</p>
             <SmartServiceLink href={resource.href} className="service-text-link">
               {resource.label || 'Read resource'}
@@ -363,7 +363,7 @@ function ServiceShowcaseGrid({ items }) {
             decoding="async"
           />
           <figcaption>
-            <h3>{item.heading}</h3>
+            <h3 className="type-h3">{item.heading}</h3>
             {item.caption && <p>{item.caption}</p>}
           </figcaption>
         </figure>
@@ -433,7 +433,7 @@ function ServiceCapabilitySystem({ featured, groups }) {
       {featured && (
         <article className="service-capability-featured">
           <span className="service-capability-tag">Core</span>
-          <h3>{featured}</h3>
+          <h3 className="type-h3">{featured}</h3>
         </article>
       )}
       <div className="service-capability-groups">
@@ -659,7 +659,7 @@ function ServicePageTemplate({ service }) {
       <section className="service-page-hero" aria-labelledby="service-page-title">
         <div className="service-page-shell">
           <p className="service-page-kicker">{service.kicker}</p>
-          <h1 id="service-page-title">{service.h1}</h1>
+          <h1 id="service-page-title" className="type-h1">{service.h1}</h1>
           {service.heroArtwork ? (
             <div className="service-hero-split service-hero-split--artwork">
               <div className="service-hero-lead">
@@ -781,7 +781,7 @@ function ServicePageTemplate({ service }) {
                       <span className="service-feature-index" aria-hidden="true">
                         {String(index + 1).padStart(2, '0')}
                       </span>
-                      <h3>{isObject ? item.title : item}</h3>
+                      <h3 className="type-h3">{isObject ? item.title : item}</h3>
                       {isObject && item.description && <p>{item.description}</p>}
                     </article>
                   )
@@ -827,7 +827,7 @@ function ServicePageTemplate({ service }) {
             <div className="service-audience-grid">
               {service.audience.map((item) => (
                 <article key={item}>
-                  <h3>{item}</h3>
+                  <h3 className="type-h3">{item}</h3>
                 </article>
               ))}
             </div>
@@ -858,7 +858,7 @@ function ServicePageTemplate({ service }) {
               <article key={step.title} className="service-process-step">
                 <span>{String(index + 1).padStart(2, '0')}</span>
                 <div>
-                  <h3>{step.title}</h3>
+                  <h3 className="type-h3">{step.title}</h3>
                   <p>{step.description}</p>
                 </div>
               </article>
@@ -908,7 +908,7 @@ function ServicePageTemplate({ service }) {
                   )}
                   <div className="service-showcase-body">
                     {example.label && <span className="service-showcase-label">{example.label}</span>}
-                    <h3>{example.title}</h3>
+                    <h3 className="type-h3">{example.title}</h3>
                     <p>{example.description}</p>
                     {example.meta && <p className="service-showcase-meta">{example.meta}</p>}
                     <SmartServiceLink href={example.href} className="service-text-link">
@@ -926,7 +926,7 @@ function ServicePageTemplate({ service }) {
               {service.examples.map((example) => (
                 <article key={example.title} className="service-example-card">
                   <LinkIcon size={18} strokeWidth={2.2} aria-hidden="true" />
-                  <h3>{example.title}</h3>
+                  <h3 className="type-h3">{example.title}</h3>
                   <p>{example.description}</p>
                   <SmartServiceLink href={example.href} className="service-text-link">
                     View example
@@ -981,8 +981,8 @@ function ServicePageTemplate({ service }) {
           ].filter(Boolean).join(' ')}
           aria-labelledby="service-final-cta-title"
         >
-          <p>{finalCta.label}</p>
-          <h2 id="service-final-cta-title">{finalCta.heading}</h2>
+          <p className="type-eyebrow">{finalCta.label}</p>
+          <h2 id="service-final-cta-title" className="type-h2">{finalCta.heading}</h2>
           {finalCta.text && <p className="service-final-cta-text">{finalCta.text}</p>}
           <div className="service-final-actions">
             <SmartServiceLink href={finalCta.primaryHref} className="aning-button aning-button--primary">
