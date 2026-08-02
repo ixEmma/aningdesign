@@ -145,6 +145,15 @@ const createMarkdownComponents = (post) => {
         <img loading="lazy" decoding="async" {...props} />
       )
     },
+    table({ node, children, ...props }) {
+      return (
+        <div className="article-table-wrapper" tabIndex="0" role="region" aria-label="Scrollable article table">
+          <table className="article-table" {...props}>
+            {children}
+          </table>
+        </div>
+      )
+    },
     pre({ node, children }) {
       if (post.isFreeResource && post.resourceType === 'prompt') {
         const promptText = getChildrenText(children)

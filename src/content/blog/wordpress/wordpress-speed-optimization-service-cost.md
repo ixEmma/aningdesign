@@ -72,6 +72,8 @@ Database cleanup is not a magic button either. It can be useful when stale trans
 
 Elementor and WooCommerce do not make a website unoptimizable. They do increase the number of variables: generated markup, widgets, global settings, add-ons, dynamic templates, cart fragments, product queries, account sessions, and third-party payments.
 
+For a focused diagnosis of an Elementor site, read [why an Elementor website can be slow](/blog/why-is-my-elementor-website-slow). It separates page-builder overhead from assets, WordPress configuration, hosting, and third-party causes before a rebuild is considered.
+
 The scope grows when fixes must be tested across real business journeys rather than a single public landing page. A low-cost service that only optimizes the homepage may leave checkout or a logged-in account path untouched.
 
 ![Editorial illustration comparing page-builder modules, ecommerce journeys, and mobile responsive performance checks.](/images/blog/wordpress-speed-complexity-map.webp)
@@ -163,6 +165,8 @@ Yes. The work should examine the actual templates, widgets, add-ons, assets, and
 ### Does a CDN fix a slow WordPress website?
 
 A CDN can improve delivery of cacheable assets and public pages for distributed visitors. It does not by itself fix database, server, plugin, or dynamic-request bottlenecks.
+
+If the performance issue is part of a wider crawlability, indexing, canonical, or internal-link problem, a [technical SEO audit cost guide](/blog/technical-seo-audit-cost) explains the difference between a crawler export and a prioritised manual review.
 
 ### Will optimization guarantee a perfect score?
 

@@ -14,6 +14,7 @@ import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import AnimatedBackground from './components/AnimatedBackground'
 import Testimonials from './components/Testimonials'
+import FreeWebsiteAuditPopup from './components/FreeWebsiteAuditPopup'
 import { useSeo } from './utils/seo'
 import { getDomain } from './utils/domain'
 
@@ -220,6 +221,7 @@ function App() {
       {!isAuditPage && <Footer />}
       {!isAuditPage && <ScrollToTop />}
       {!isAuditPage && <Feedback />}
+      <FreeWebsiteAuditPopup pathname={location.pathname} />
     </>
   )
 }

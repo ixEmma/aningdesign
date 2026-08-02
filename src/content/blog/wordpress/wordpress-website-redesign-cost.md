@@ -123,6 +123,8 @@ The useful comparison is not simply hourly rate. It is ownership and risk.
 
 A smaller team can be an excellent fit when the work is focused and responsibilities are explicit. A larger team can be worth the extra cost when the project needs coordinated roles. Do not choose based on the word “agency” or “freelancer” alone.
 
+If you are deciding how to compare those hiring models before the redesign is scoped, see [what it costs to hire a WordPress developer](/blog/cost-to-hire-a-wordpress-developer). It separates marketplace rates from the actual delivery responsibilities that make a project quote useful.
+
 ## What should be included in a professional redesign quote?
 
 Use this checklist when comparing proposals:
