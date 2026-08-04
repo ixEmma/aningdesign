@@ -14,6 +14,7 @@ import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import AnimatedBackground from './components/AnimatedBackground'
 import Testimonials from './components/Testimonials'
+import FAQ from './components/FAQ'
 import FreeWebsiteAuditPopup from './components/FreeWebsiteAuditPopup'
 import { useSeo } from './utils/seo'
 import { getDomain } from './utils/domain'
@@ -162,6 +163,7 @@ function LandingPage() {
       <DeferredHomepageSection minHeight={520}>
         <LatestBlogTutorials />
       </DeferredHomepageSection>
+      <FAQ />
       <Contact />
     </main>
   )

@@ -14,6 +14,19 @@
     rgba(5, 12, 10, 0.82);
 }
 
+.contact-section--home .home-contact__heading {
+  justify-content: center;
+  text-align: center;
+}
+
+.contact-section--home .home-contact__heading .homepage-section-heading__intro {
+  margin-inline: auto;
+}
+
+.contact-section--home .contact-form-card > .contact-card-kicker {
+  text-align: center;
+}
+
 .contact-section--page {
   padding: 30px 32px 112px;
   overflow: visible;

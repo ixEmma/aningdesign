@@ -137,6 +137,7 @@ function Contact({ showIntroCta = true, pageMode = false }) {
     >
       {showIntroCta && (
         <HomepageSectionHeading
+          className="home-contact__heading"
           description="Share what you are building, what is currently not working and the result you need. I’ll review the details and recommend the most practical next step."
           eyebrow="Start a project"
           title="Have a website or digital product that needs a clearer direction?"
