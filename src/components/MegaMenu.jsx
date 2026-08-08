@@ -20,6 +20,7 @@ import {
   serviceMegaMenuGroups,
   socialLinks
 } from '../data/navigationConfig'
+import { books } from '../data/books'
 import { getExternalLinkProps } from '../utils/links'
 import { SiteLink } from './SiteLink'
 import { XLogoIcon, YoutubeLogoIcon } from './SocialIcons'
@@ -55,6 +56,8 @@ const serviceIconMap = {
   'UI/UX Design': LayoutDashboard
 }
 
+const mobileFeaturedBook = books.find((book) => book.slug === 'wordpress-speed-with-ai-agent')
+
 const resourceIconMap = {
   Blog: FileText,
   Pricing: BriefcaseBusiness,
@@ -87,6 +90,29 @@ function MegaMenu({isOpen,startups,blogTopics,onClose,onSearch}) {
           </SmartLink>
         ))}
       </div>
+
+      {mobileFeaturedBook && (
+        <div className="mega-menu-featured-book">
+          <p className="mega-menu-kicker">Featured Book</p>
+          <SmartLink
+            item={{title: mobileFeaturedBook.title,href: mobileFeaturedBook.path}}
+            className="mega-menu-startup-item mega-menu-book-card"
+            onNavigate={onClose}
+          >
+            <span className="mega-menu-book-cover">
+              <img src={mobileFeaturedBook.cover} alt="" width="200" height="300" loading="lazy" decoding="async" />
+            </span>
+            <span>
+              <strong>{mobileFeaturedBook.title}</strong>
+              <small>A practical evidence-first workflow for improving WordPress performance with AI.</small>
+              <span className="mega-menu-small-link mega-menu-book-link">
+                View book
+                <ArrowUpRight size={14} strokeWidth={2.2} aria-hidden="true" />
+              </span>
+            </span>
+          </SmartLink>
+        </div>
+      )}
 
       <div className="mega-menu-grid">
         <section className="mega-menu-section mega-menu-featured">

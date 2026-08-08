@@ -184,7 +184,7 @@ The table below lays out the practical trade-offs. None of these are absolutes; 
 
 If you go the DIY route, the [WordPress speed optimization checklist](/blog/wordpress-speed-optimization-checklist) is what turns "verification" and "documentation" from someone else's job into something you can manage yourself.
 
-![WordPress speed optimization service versus DIY comparison covering cost, time, skill, speed of results, strategy, maintenance, and best fit.](/images/blog/blogs%20batches1/batch-03_wordpress-speed-performance-cluster/article-05_wordpress-speed-optimization-service-vs-diy-which-one-should-you-choose/batch-03_article-05_support_service-vs-diy-comparison.webp)
+![DIY vs professional WordPress speed optimization comparison covering cost, involvement, time, technical depth, backup and rollback, ongoing maintenance, and best fit.](/images/blog/blogs%20batches1/batch-03_wordpress-speed-performance-cluster/article-05_wordpress-speed-optimization-service-vs-diy-which-one-should-you-choose/batch-03_article-05_support_diy-vs-professional-wordpress-speed-comparison.webp)
 
 Outcomes in practice depend heavily on who is doing the work and how carefully. A confident owner following a disciplined process can get strong results DIY, and a rushed or unverified service engagement can underdeliver despite the higher price.
 

@@ -215,7 +215,7 @@ The current Core Web Vitals are a useful way to think about the issue:
 - INP: how quickly the page responds to input
 - CLS: how much the layout shifts while loading
 
-These metrics are more useful when tied to the same page and similar test conditions. They help explain user experience, but they do not replace actual testing.
+These metrics are more useful when tied to the same page and similar test conditions. They help explain user experience, but they do not replace actual testing. If Core Web Vitals are the specific problem rather than general slowness, [how to fix WordPress Core Web Vitals](/blog/fix-wordpress-core-web-vitals) walks through diagnosing and improving LCP, INP, and CLS one metric at a time.
 
 ![Five-step infographic for diagnosing a slow WordPress site: test, analyze, prioritize, fix one thing, and re-test.](/images/blog/blogs%20batches1/batch-02_wordpress-speed-performance-cluster/article-03_why-is-my-wordpress-site-slow-9-bottlenecks-to-check-first/batch-02_article-03_support_how-to-diagnose-a-slow-wordpress-site.webp)
 

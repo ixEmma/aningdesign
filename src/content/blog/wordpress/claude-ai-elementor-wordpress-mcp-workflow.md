@@ -121,7 +121,7 @@ Timestamp: 00:06:32
 
 MCP helps connect Claude to external tools and systems. In this workflow, the architecture matters because Claude is not only answering questions. It is being connected to WordPress in a more direct and structured way.
 
-Understanding the architecture helps you avoid treating the workflow like magic. You need to know what Claude can access, what it can change, and what still requires careful approval and testing.
+Understanding the architecture helps you avoid treating the workflow like magic. You need to know what Claude can access, what it can change, and what still requires careful approval and testing. For a deeper look at how this connection actually works, [how AI agents work with WordPress through MCP](/blog/wordpress-mcp-ai-agent) covers the concept in more depth.
 
 ### Step 7: Connect Claude AI to WordPress with Novamira
 

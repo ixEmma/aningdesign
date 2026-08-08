@@ -87,10 +87,12 @@ export const fallbackBlogTopics = [
 export const mobileActionLinks = [
   {title: 'Home',href: '/#home'},
   {title: 'Services',href: '/services'},
+  {title: 'Books',href: '/books'},
+  {title: 'Blog',href: '/blog'},
   {title: 'Projects',href: '/#projects'},
   {title: 'Pricing',href: '/pricing'},
-  {title: 'Blog',href: '/blog'},
-  {title: 'Contact',href: '/contact'}
+  {title: 'Contact',href: '/contact'},
+  {title: 'Free Resources',href: '/free-resources'}
 ]
 
 export const socialLinks = [
