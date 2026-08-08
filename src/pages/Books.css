@@ -774,6 +774,14 @@
     object-position: center 36%;
   }
 
+  /* .book-card-visual--speed uses a flex + object-fit: contain layout, not
+     the cover-image layout the 4/3 ratio above was written for. Inheriting
+     that ratio here forces width = height x 4/3, which blows the card past
+     its grid track on narrow screens. Reset it back to auto for this card. */
+  .book-card-visual--speed {
+    aspect-ratio: auto;
+  }
+
   .books-resource-grid,
   .book-related-grid {
     grid-template-columns: 1fr;
@@ -1466,6 +1474,19 @@
 @media (max-width: 600px) {
   .speed-preview-cards-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* The hero mockup artwork (wordpress-speed-with-ai-agent-transparent.png) has
+   more transparent padding baked into its right side than its left, so a
+   perfectly centered image box still reads as visually off-center on narrow
+   screens. Nudge the frame padding to compensate for the artwork itself,
+   scoped to this book only via .book-funnel--speed so the shared
+   .book-funnel__hero-visual card used by other book pages is untouched. */
+@media (max-width: 980px) {
+  .book-funnel--speed .book-funnel__hero-visual {
+    padding-left: 18px;
+    padding-right: 2px;
   }
 }
 

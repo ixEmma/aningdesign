@@ -5,6 +5,7 @@ import { featuredHomepageTestimonials } from '../data/homepageTestimonials'
 import { selectedWork } from '../data/selectedWork'
 import { getExternalLinkProps } from '../utils/links'
 import { useSeo } from '../utils/seo'
+import { getUrl } from '../utils/domain'
 import './FreeWebsiteAuditPage.css'
 
 const FORM_SUBMIT_ENDPOINT = 'https://formsubmit.co/aningemma1@gmail.com'
@@ -115,7 +116,7 @@ function AuditForm() {
 }
 
 function FreeWebsiteAuditPage() {
-    useSeo({ title: 'Free Website Audit | AningDesign', description: 'Request a focused website audit or discuss building a new professional website with AningDesign.', canonical: 'https://aningdesign.com/free-website-audit', type: 'website' })
+    useSeo({ title: 'Free Website Audit | AningDesign', description: 'Request a focused website audit or discuss building a new professional website with AningDesign.', canonical: getUrl('/free-website-audit'), type: 'website' })
     const selectNewWebsite = () => { scrollToAuditForm(); window.setTimeout(() => document.querySelector('input[name="websiteStatusChoice"][value="new"]')?.click(), 250) }
 
     return (

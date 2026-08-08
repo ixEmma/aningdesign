@@ -256,13 +256,27 @@
   }
 
   .footer-layout {
-    grid-template-columns: 1fr;
-    gap: 30px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 20px;
+    row-gap: 36px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
   }
 
   .footer-brand,
   .footer-link-group {
     justify-items: start;
+  }
+
+  .footer-link-group {
+    min-width: 0;
+    gap: 14px;
+  }
+
+  .footer-link-group h2 {
+    margin-bottom: 2px;
   }
 
   .footer-brand p {

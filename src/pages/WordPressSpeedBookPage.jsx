@@ -179,7 +179,7 @@ export default function WordPressSpeedBookPage({ book }) {
   const teaserPdfUrl = '/pdf/wordpress-speed-with-ai-agent-teaser-preview.pdf'
 
   return (
-    <main className="book-detail-page book-detail-page--rhythm book-funnel">
+    <main className="book-detail-page book-detail-page--rhythm book-funnel book-funnel--speed">
       {/* HERO SECTION */}
       <section className="book-funnel__hero" aria-labelledby="speed-hero-title">
         <div className="books-shell book-funnel__hero-grid">
@@ -212,7 +212,7 @@ export default function WordPressSpeedBookPage({ book }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="aning-button aning-button--secondary aning-button--large"
-                aria-label="Preview the 15-page teaser PDF (opens in new tab)"
+                aria-label="Preview 15 sample pages from the guide (opens in new tab)"
               >
                 Preview the Guide
                 <Download size={17} aria-hidden="true" />
@@ -394,7 +394,7 @@ export default function WordPressSpeedBookPage({ book }) {
                 <li><CheckCircle2 size={18} aria-hidden="true" /><span>Checklists, workflow templates, & appendix tools</span></li>
                 <li><CheckCircle2 size={18} aria-hidden="true" /><span>Immediate PDF download via Payhip</span></li>
               </ul>
-              <p className="book-edition-note">15-page teaser preview available before purchase.</p>
+              <p className="book-edition-note">15-page free preview available before purchase.</p>
               <a href={payhipUrl} target="_blank" rel="noopener noreferrer" className="aning-button aning-button--primary">
                 Get the Guide
                 <ExternalLink size={17} aria-hidden="true" />
@@ -404,7 +404,7 @@ export default function WordPressSpeedBookPage({ book }) {
             <article className="book-edition-card">
               <div className="book-edition-card-heading">
                 <div>
-                  <h3 className="type-h3">Free Teaser Preview</h3>
+                  <h3 className="type-h3">Free Book Preview</h3>
                 </div>
                 <strong>Free</strong>
               </div>
@@ -415,7 +415,7 @@ export default function WordPressSpeedBookPage({ book }) {
                 <li><CheckCircle2 size={18} aria-hidden="true" /><span>Direct PDF download</span></li>
               </ul>
               <a href={teaserPdfUrl} target="_blank" rel="noopener noreferrer" className="aning-button aning-button--secondary">
-                Download Teaser PDF
+                Download Free Preview
                 <Download size={17} aria-hidden="true" />
               </a>
             </article>
@@ -462,7 +462,7 @@ export default function WordPressSpeedBookPage({ book }) {
               <ExternalLink size={17} aria-hidden="true" />
             </a>
             <a href={teaserPdfUrl} target="_blank" rel="noopener noreferrer" className="aning-button aning-button--secondary">
-              Preview Teaser PDF
+              Preview the Guide
             </a>
           </div>
         </section>

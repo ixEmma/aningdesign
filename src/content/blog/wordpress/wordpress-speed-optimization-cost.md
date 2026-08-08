@@ -144,9 +144,11 @@ Some sites need performance review as part of a recurring support process. This 
 | Agency | Broader technical review, QA, planning, and implementation | More complex or business-critical sites | Project-based or retainer |
 | Ongoing care | Monitoring, periodic testing, and issue review | Active websites with frequent changes | Monthly or recurring support |
 
-This table is useful because it shows that the real cost is tied to the work model and the risk profile, not to a single generic price tag.
+This table is useful because it shows that the real cost is tied to the work model and the risk profile, not to a single generic price tag. WordPress speed optimization pricing is usually structured differently depending on whether the work is DIY, freelancer-led, agency-led, or ongoing support.
 
-![Infographic comparing typical WordPress speed optimization cost ranges for DIY, freelancer, small agency, and premium agency approaches.](/images/blog/blogs%20batches1/batch-02_wordpress-speed-performance-cluster/article-04_how-much-does-wordpress-speed-optimization-cost-in-2026/batch-02_article-04_support_typical-wordpress-speed-optimization-cost-ranges.webp)
+![WordPress speed optimization pricing models comparing DIY, freelancer, agency, and ongoing performance support](/images/blog/blogs%20batches1/batch-02_wordpress-speed-performance-cluster/article-04_how-much-does-wordpress-speed-optimization-cost-in-2026/batch-02_article-04_support_wordpress-speed-optimization-pricing-models.webp)
+
+If you have not settled on a model yet, [WordPress speed optimization service vs DIY](/blog/wordpress-speed-optimization-service-vs-diy) walks through whether to optimize WordPress yourself or hire a professional, using the same four models above.
 
 ## What Should a Proper WordPress Speed Optimization Service Include?
 
