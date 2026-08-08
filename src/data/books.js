@@ -10,6 +10,7 @@ export const books = [
       'A clearer professional process for planning, building, reviewing, and delivering WordPress websites.',
     price: 17,
     priceLabel: 'From $17 USD',
+    ctaLabel: 'Choose an Edition',
     format: 'Digital PDF editions',
     ebookPayhipUrl: 'https://payhip.com/b/Pl7JD',
     payhipUrl: 'https://payhip.com/b/5p0EN',
@@ -93,6 +94,86 @@ export const books = [
       'wordpress website workflow',
       'website design checklist for clients',
       'client website checklist'
+    ]
+  },
+  {
+    slug: 'wordpress-speed-with-ai-agent',
+    path: '/books/wordpress-speed-with-ai-agent',
+    title: 'WordPress Speed with AI Agent',
+    eyebrow: 'WordPress Performance + AI',
+    shortDescription:
+      'A practical AI-agent workflow for diagnosing slow WordPress websites, applying one safe reversible fix at a time, verifying the result, and keeping or reverting changes based on evidence.',
+    valueStatement:
+      'Diagnose slow WordPress pages, apply safe reversible fixes, and verify performance with an AI agent.',
+    price: 24,
+    regularPrice: 39,
+    priceLabel: 'From $24 USD',
+    ctaLabel: 'View Book',
+    format: 'Digital PDF guide',
+    payhipUrl: 'https://payhip.com/b/UMfoY',
+    teaserPdfUrl: '/pdf/wordpress-speed-with-ai-agent-teaser-preview.pdf',
+    editions: [
+      {
+        id: 'launch',
+        title: 'Launch Edition',
+        price: '$24',
+        regularPrice: '$39',
+        label: 'Launch Edition',
+        description: 'The complete 71-page digital guide with reusable prompts, checklists, workflow references, and teaser preview.',
+        includes: [
+          '71-page fixed-layout digital guide (PDF)',
+          'Reusable AI-agent prompts included in the guide',
+          'Checklists, workflow references, & appendix resources',
+          '15-page teaser preview available before purchase'
+        ],
+        note: 'Fixed-layout PDF delivered immediately after purchase via Payhip.',
+        ctaLabel: 'Get the Guide',
+        payhipUrl: 'https://payhip.com/b/UMfoY'
+      }
+    ],
+    cover: '/images/books/wordpress-speed-with-ai-agent/cover.png',
+    listingImage: '/images/books/wordpress-speed-with-ai-agent-transparent.png',
+    ogImage: '/images/books/wordpress-speed-with-ai-agent/hero-book-mockup.png',
+    audienceSummary: 'WordPress freelancers, Elementor designers, small agencies, junior developers, and maintenance providers.',
+    audience: [
+      'WordPress freelancers',
+      'Elementor designers',
+      'Small web agencies',
+      'Junior developers',
+      'WordPress maintenance providers',
+      'Technically confident website owners'
+    ],
+    problems: [
+      'WordPress site feels slow but the exact cause is unclear',
+      'Applying random optimization plugins creates site risk',
+      'Changing several settings at once makes results impossible to measure',
+      'Performance audit tools can overwhelm non-specialists with raw metrics',
+      'Trial-and-error optimization wastes hours without guaranteed speed gains'
+    ],
+    outcomes: [
+      'Audit WordPress page speed and identify true bottlenecks',
+      'Configure a safe, private AI-agent connection with NovaMira',
+      'Apply one safe, reversible performance fix at a time',
+      'Verify results using empirical evidence before keeping changes',
+      'Revert safely if a fix does not deliver measurable speed improvements',
+      'Generate clear performance reports for clients or stakeholders'
+    ],
+    license:
+      'Licensed to the original buyer for personal learning, client workflow support, and website-building reference. The files may not be copied, shared, resold, redistributed, repackaged, or claimed as another person\'s work.',
+    seoTitle: 'WordPress Speed Optimization Guide with AI Agent | AningDesign',
+    seoDescription:
+      'A practical WordPress speed optimization guide using AI agents, safe reversible fixes, Lighthouse testing, Core Web Vitals, and evidence-based verification.',
+    primaryKeyword: 'wordpress speed optimization guide',
+    keywords: [
+      'wordpress speed optimization guide',
+      'wordpress performance optimization',
+      'slow wordpress website',
+      'wordpress speed audit',
+      'core web vitals',
+      'lighthouse',
+      'wordpress ai agent',
+      'ai agent for wordpress',
+      'wordpress performance testing'
     ]
   }
 ]

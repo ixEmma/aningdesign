@@ -65,38 +65,45 @@ function BooksPage() {
       <section className="books-catalog books-shell" aria-labelledby="books-catalog-title">
         <div className="books-section-heading">
           <p>Available now</p>
-          <h2 id="books-catalog-title">Start with the WordPress blueprint.</h2>
+          <h2 id="books-catalog-title">Practical guides for WordPress professionals.</h2>
         </div>
 
         <div className="books-grid">
-          {books.map((book) => (
-            <article className="book-card" key={book.slug}>
-              <Link to={book.path} className="book-card-visual" aria-label={`View ${book.title}`}>
-                <img
-                  src={book.listingImage}
-                  alt={`${book.title} cover with an interior planning page.`}
-                  width="900"
-                  height="1125"
-                  loading="eager"
-                  decoding="async"
-                />
-              </Link>
-              <div className="book-card-content">
-                <p className="book-card-eyebrow">{book.eyebrow}</p>
-                <h3>{book.title}</h3>
-                <p>{book.shortDescription}</p>
-                <dl className="book-card-meta">
-                  <div><dt>Format</dt><dd>{book.format}</dd></div>
-                  <div><dt>Price</dt><dd>{book.priceLabel}</dd></div>
-                  <div><dt>For</dt><dd>{book.audienceSummary}</dd></div>
-                </dl>
-                <Link to={book.path} className="aning-button aning-button--primary">
-                  Choose an Edition
-                  <ArrowRight size={17} aria-hidden="true" />
+          {books.map((book) => {
+            const isSpeed = book.slug === 'wordpress-speed-with-ai-agent'
+            return (
+              <article className={`book-card${isSpeed ? ' book-card--speed' : ''}`} key={book.slug}>
+                <Link
+                  to={book.path}
+                  className={`book-card-visual${isSpeed ? ' book-card-visual--speed' : ''}`}
+                  aria-label={`View ${book.title}`}
+                >
+                  <img
+                    src={book.listingImage}
+                    alt={`${book.title} cover.`}
+                    width="900"
+                    height="1125"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </Link>
-              </div>
-            </article>
-          ))}
+                <div className="book-card-content">
+                  <p className={`book-card-eyebrow${isSpeed ? ' book-card-eyebrow--speed' : ''}`}>{book.eyebrow}</p>
+                  <h3>{book.title}</h3>
+                  <p>{book.shortDescription}</p>
+                  <dl className="book-card-meta">
+                    <div><dt>Format</dt><dd>{book.format}</dd></div>
+                    <div><dt>Price</dt><dd>{book.priceLabel}</dd></div>
+                    <div><dt>For</dt><dd>{book.audienceSummary}</dd></div>
+                  </dl>
+                  <Link to={book.path} className="aning-button aning-button--primary">
+                    {book.ctaLabel || 'View Book'}
+                    <ArrowRight size={17} aria-hidden="true" />
+                  </Link>
+                </div>
+              </article>
+            )
+          })}
         </div>
       </section>
 

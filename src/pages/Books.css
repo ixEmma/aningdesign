@@ -508,8 +508,8 @@
   line-height: 1.55;
 }
 
-.book-edition-card .aning-button--primary {
-  margin-top: auto;
+.book-edition-card .aning-button {
+  margin-top: clamp(18px, 2vw, 28px);
   align-self: flex-start;
 }
 
@@ -839,6 +839,46 @@
     transition: none;
   }
 }
+
+/* ── WordPress Speed with AI Agent card ── */
+
+.book-card--speed {
+  border-color: rgba(0, 201, 255, 0.2);
+  background: linear-gradient(145deg, rgba(6, 14, 22, 0.96), rgba(8, 11, 12, 0.94));
+}
+
+.book-card-visual--speed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(28px, 4.5vw, 56px);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(0, 201, 255, 0.09), transparent 68%),
+    linear-gradient(180deg, rgba(8, 14, 18, 0.95), rgba(5, 8, 10, 0.98));
+}
+
+.book-card-visual--speed img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.35s ease, filter 0.35s ease;
+  filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.55));
+}
+
+.book-card-visual--speed:hover img {
+  transform: scale(1.025);
+  filter: drop-shadow(0 22px 48px rgba(0, 201, 255, 0.16));
+}
+
+.book-card-eyebrow--speed {
+  color: #00c9ff;
+}
+
+
+
 
 /* Client-Ready WordPress Blueprint funnel. The page opts into the shared
    rhythm and typography tokens without changing the catalogue presentation. */
@@ -1240,3 +1280,193 @@
     padding: 24px;
   }
 }
+
+/* ── WordPress Speed with AI Agent Supporting Styles (extending .book-funnel) ── */
+
+.speed-hero-pricing {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.speed-price-was {
+  color: rgba(235, 244, 241, 0.45);
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: line-through;
+  text-decoration-color: rgba(235, 244, 241, 0.35);
+}
+
+.speed-price-now {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.speed-hero-meta-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  color: rgba(238, 246, 243, 0.62);
+}
+
+.speed-hero-meta-note svg {
+  color: #9af7a3;
+}
+
+.speed-preview-cards-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.speed-preview-thumb-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0;
+  border-color: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.speed-preview-thumb-btn:hover,
+.speed-preview-thumb-btn:focus-visible {
+  border-color: rgba(154, 247, 163, 0.45);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.speed-preview-thumb-btn img {
+  display: block;
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.speed-preview-thumb-caption {
+  padding: 10px 12px;
+  color: rgba(238, 246, 243, 0.85);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.speed-novamira-info-card {
+  padding: 28px;
+  border: 1px solid rgba(154, 247, 163, 0.18);
+  border-radius: 12px;
+  background: rgba(10, 14, 14, 0.78);
+}
+
+.speed-novamira-info-card h3 {
+  margin: 0 0 10px;
+  color: #ffffff;
+}
+
+.speed-novamira-info-card p {
+  margin: 0 0 20px;
+  color: rgba(238, 246, 243, 0.74);
+}
+
+.speed-evidence-media {
+  margin-top: var(--section-intro-gap);
+}
+
+.speed-evidence-note {
+  margin-top: 14px;
+  color: rgba(238, 246, 243, 0.6);
+}
+
+.speed-card-price-stack {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.speed-card-price-stack .speed-price-was {
+  font-size: 15px;
+}
+
+/* Lightbox Modal */
+.speed-lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(4, 7, 9, 0.88);
+  backdrop-filter: blur(8px);
+}
+
+.speed-lightbox-content {
+  position: relative;
+  max-width: 1000px;
+  max-height: 90vh;
+  padding: 20px;
+  border: 1px solid rgba(154, 247, 163, 0.28);
+  border-radius: 14px;
+  background: #0a0e0e;
+  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.speed-lightbox-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.speed-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.speed-lightbox-content img {
+  display: block;
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.speed-lightbox-title {
+  margin: 14px 0 0;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .speed-preview-cards-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .speed-preview-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+

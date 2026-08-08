@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { Navigate, useParams } from 'react-router-dom'
 import { books } from '../data/books'
 import { useSeo } from '../utils/seo'
+import WordPressSpeedBookPage from './WordPressSpeedBookPage'
 import './Books.css'
 
 const assetBase = '/images/books/client-ready-wordpress-blueprint'
@@ -287,6 +288,10 @@ function BookDetailPage() {
   const book = books.find((item) => item.slug === slug)
 
   if (!book) return <Navigate to="/books" replace />
+
+  if (slug === 'wordpress-speed-with-ai-agent') {
+    return <WordPressSpeedBookPage book={book} />
+  }
 
   return <BookProductPage book={book} />
 }

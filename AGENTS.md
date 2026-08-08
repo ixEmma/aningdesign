@@ -272,3 +272,5 @@ Before completing work, verify:
 Do not leave placeholders, broken routes, dead CTAs, orphan pages, duplicate components, accidental style overrides, unfinished responsive states, debug code, console logs, commented experiments, unnecessary dependencies, or formatting artifacts such as literal `` `r`n `` text.
 
 Use targeted checks such as `rg`, `Get-Content`, focused diffs, and relevant build commands. Never claim validation that was not performed.
+
+For any work involving `/books`, book catalog cards, dedicated book pages, book pricing, preview galleries, FAQs, or book CTAs, read `docs/BOOK_PRODUCT_SYSTEM.md` before editing.
