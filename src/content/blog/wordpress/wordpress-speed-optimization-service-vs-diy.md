@@ -9,7 +9,6 @@ slug: "wordpress-speed-optimization-service-vs-diy"
 primaryKeyword: "wordpress speed optimization service vs DIY"
 keywordCluster:
   - "DIY WordPress speed optimization"
-  - "WordPress speed optimization service"
   - "WordPress performance optimization service"
   - "hire WordPress speed expert"
   - "WordPress performance specialist"

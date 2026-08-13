@@ -111,6 +111,15 @@ const createMarkdownComponents = (post) => {
   let promptBlockIndex = 0
 
   return {
+    h1({ node, children }) {
+      const text = getChildrenText(children)
+
+      if (cleanHeadingText(text) === cleanHeadingText(post.title)) {
+        return null
+      }
+
+      return <h2 className="type-h2">{children}</h2>
+    },
     a({ node, href = '', children, ...props }) {
       if (href.startsWith('/') && !isExternalLink(href)) {
         return <Link to={href} {...props}>{children}</Link>

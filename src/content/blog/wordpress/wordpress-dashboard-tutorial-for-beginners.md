@@ -231,7 +231,7 @@ Use this short checklist as you become comfortable in the WordPress admin area:
 
 ## Useful resources
 
-- **Visit AningDesign:** [aningdesign.com](https://aningdesign.com/)
+- **Visit AningDesign:** [www.aningdesign.com](https://www.aningdesign.com/)
 - **Next beginner lesson:** [Install WordPress locally with XAMPP](/blog/how-to-install-wordpress-locally-using-xampp) — or [watch the XAMPP setup video](https://youtu.be/jcW0TtM5Zf4).
 - **Support Aning Design Lab:** [Show your support](https://selar.com/showlove/aningdesignlab)
 - **Telegram channel:** [Join AningDzn](https://t.me/AningDzn)

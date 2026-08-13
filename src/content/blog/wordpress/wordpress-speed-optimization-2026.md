@@ -25,10 +25,9 @@ tags:
   - "Website Performance"
   - "Performance Optimization"
 relatedPosts:
-  - "wordpress-speed-optimization-service-cost"
-  - "why-is-my-elementor-website-slow"
-  - "wordpress-website-checklist"
-  - "wordpress-website-launch-checklist"
+  - "wordpress-speed-optimization-checklist"
+  - "wordpress-speed-optimization-service-vs-diy"
+  - "ai-wordpress-speed-optimization"
 featured: false
 ---
 
@@ -121,6 +120,8 @@ Examples of weak optimization work:
 
 The best workflow is to isolate one change and then compare the before/after behavior against the same page and user journey. If the result is not clearly better, document that outcome and decide whether to revert the change or test the next likely cause.
 
+An AI agent can help inspect evidence or suggest a controlled test, but it should follow the same safeguards. See [what an AI agent can safely do in WordPress speed optimization](/blog/ai-wordpress-speed-optimization) before using one on a live site.
+
 ![Evidence-based optimization cycle for WordPress speed showing baseline measurement, isolated change, retesting, comparison, and keep-or-revert decisions.](/images/blog/blogs%20batches1/batch-01_wordpress-speed-performance-cluster/article-01_wordpress-speed-optimization-in-2026-safe-step-by-step-workflow/batch-01_article-01_support_optimize-measure-improve-repeat-cycle.webp)
 
 ## Step 5: verify the real effect, not the headline number
@@ -207,7 +208,7 @@ A specialist is worth involving when:
 
 For those cases, the question is not “what plugin should I install?” It is “what is actually slowing this site down, and what is the least risky path to improve it?”
 
-If you need a service-level recommendation, see the [WordPress speed optimization service cost guide](/blog/wordpress-speed-optimization-service-cost) for the scope, pricing logic, and what a proper audit should include. If the site is an Elementor build, the more specific article [why is my Elementor website slow](/blog/why-is-my-elementor-website-slow) is a useful comparison before deciding whether the issue is template-heavy or deeper in the stack.
+If you need a service-level recommendation, see the [WordPress speed optimization service cost guide](/blog/wordpress-speed-optimization-service-cost) for the scope, pricing logic, and what a proper audit should include. If you are deciding between a structured DIY process and specialist help, compare [WordPress speed optimization service vs DIY](/blog/wordpress-speed-optimization-service-vs-diy). If the site is an Elementor build, the more specific article [why is my Elementor website slow](/blog/why-is-my-elementor-website-slow) is a useful comparison before deciding whether the issue is template-heavy or deeper in the stack.
 
 ## The safe conclusion
 

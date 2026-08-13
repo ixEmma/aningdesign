@@ -161,7 +161,7 @@ The biggest takeaway is that AI becomes much more useful when it has a focused j
 
 ## Related Tutorials
 
-- Claude WordPress MCP workflow
+- [WordPress MCP: how AI agents can work with WordPress](/blog/wordpress-mcp-ai-agent)
 - Elementor AI workflow
 - Frontend design systems
 - AI-assisted coding for web designers

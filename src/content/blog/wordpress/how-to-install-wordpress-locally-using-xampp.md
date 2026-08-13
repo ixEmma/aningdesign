@@ -260,7 +260,7 @@ Before visitors can use the website, it must be migrated or rebuilt on hosting. 
 
 ## Useful resources
 
-- **Visit AningDesign:** [aningdesign.com](https://aningdesign.com/)
+- **Visit AningDesign:** [www.aningdesign.com](https://www.aningdesign.com/)
 - **Continue the beginner series:** [WordPress Dashboard Tutorial for Beginners](/blog/wordpress-dashboard-tutorial-for-beginners) — or [watch the video](https://youtu.be/jcEqcDRm0jo).
 - **Support Aning Design Lab:** [Show your support](https://selar.com/showlove/aningdesignlab)
 - **Telegram channel:** [Join AningDzn](https://t.me/AningDzn)

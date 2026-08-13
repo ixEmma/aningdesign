@@ -219,6 +219,7 @@ The final goal is not just a faster build. It is a cleaner process where AI help
 ## Related Tutorials
 
 - [How My Claude AI Designs with Elementor to Build WordPress Websites](/blog/claude-ai-elementor-wordpress-mcp-workflow)
+- [How AI Agents Can Work With WordPress Using MCP](/blog/wordpress-mcp-ai-agent)
 - [Claude Skills Explained: My Real Claude Code Workflow for WordPress, Elementor and Frontend Design](/blog/claude-skills-real-web-design-workflow)
 - [WordPress Tutorial for Beginners: Fix a Bad Website with Elementor Step by Step](/blog/fix-bad-website-design-wordpress-elementor)
 - [How to Design Like a Professional with WordPress and Elementor](/blog/design-professional-medical-website-wordpress-elementor)

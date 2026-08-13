@@ -19,8 +19,8 @@ Do not start by chasing backlinks or AI tricks. First, make sure Google can craw
 Your Vercel website should have these files working:
 
 ```txt
-https://aningdesign.com/sitemap.xml
-https://aningdesign.com/robots.txt
+https://www.aningdesign.com/sitemap.xml
+https://www.aningdesign.com/robots.txt
 ```
 
 Your `robots.txt` file should allow search engines to crawl the site and should point to your sitemap.
@@ -29,7 +29,7 @@ Your `robots.txt` file should allow search engines to crawl the site and should 
 User-agent: *
 Allow: /
 
-Sitemap: https://aningdesign.com/sitemap.xml
+Sitemap: https://www.aningdesign.com/sitemap.xml
 ```
 
 This helps Google and other search engines discover your pages.
