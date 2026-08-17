@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { ArrowRight, CheckCircle2, Download, ExternalLink, ShieldCheck, X } from 'lucide-react'
 import { useSeo } from '../utils/seo'
 import { getDomain } from '../utils/domain'
+import BookTestimonials from '../components/books/BookTestimonials'
 import './Books.css'
 
 const previewPages = [
@@ -450,6 +451,8 @@ export default function WordPressSpeedBookPage({ book }) {
             ))}
           </div>
         </section>
+
+        <BookTestimonials />
 
         {/* FINAL CTA SECTION */}
         <section className="book-final-cta section-space--spacious" aria-labelledby="speed-final-cta-title">

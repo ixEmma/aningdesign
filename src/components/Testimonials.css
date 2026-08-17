@@ -11,14 +11,72 @@
   margin-inline: auto;
 }
 
-.client-results-grid {
+.client-results-carousel {
+  --client-results-gap: clamp(1.25rem, 2.5vw, 2rem);
+  display: flex;
+  gap: var(--client-results-gap);
+  align-items: flex-start;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scroll-behavior: smooth;
+  scroll-padding-inline: 1px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  touch-action: pan-y;
+}
+
+.client-results-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.client-results-carousel > .client-result {
+  flex: 0 0 calc((100% - (var(--client-results-gap) * 2)) * 0.3);
+  scroll-snap-align: start;
+}
+
+.client-results-carousel:focus-visible {
+  outline: 3px solid var(--aning-button-focus);
+  outline-offset: 4px;
+}
+
+.client-results-controls {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.client-results-control {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
-  gap: clamp(1.25rem, 2.5vw, 2rem);
-  align-items: stretch;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(154, 247, 163, 0.2);
+  border-radius: 50%;
+  place-items: center;
+  color: #dcebe2;
+  background: rgba(10, 18, 15, 0.56);
+  cursor: pointer;
+  transition: border-color 180ms ease, color 180ms ease, background-color 180ms ease;
+}
+
+.client-results-control:hover:not(:disabled) {
+  border-color: rgba(144, 248, 255, 0.58);
+  color: #9af7a3;
+  background: rgba(10, 30, 22, 0.76);
+}
+
+.client-results-control:focus-visible {
+  outline: 3px solid var(--aning-button-focus);
+  outline-offset: 3px;
+}
+
+.client-results-control:disabled {
+  cursor: not-allowed;
+  opacity: 0.36;
 }
 
 .client-result {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -31,12 +89,25 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.025);
 }
 
-.client-result--featured {
-  justify-content: space-between;
-  padding: clamp(2rem, 4vw, 3.5rem);
+.client-results-carousel > .client-result--featured {
+  flex-basis: calc((100% - (var(--client-results-gap) * 2)) * 0.4);
+  padding: clamp(1.75rem, 3vw, 2.75rem);
   border-color: rgba(89, 190, 119, 0.2);
   border-radius: 22px;
   background: rgba(10, 18, 15, 0.82);
+}
+
+.client-result--verified {
+  border-color: rgba(89, 190, 119, 0.3);
+}
+
+.client-result__logo {
+  display: block;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .client-result__context {
@@ -83,13 +154,26 @@
 }
 
 .client-result--featured blockquote {
-  max-width: 760px;
+  max-width: 34rem;
+  color: #eef6f1;
+  font-weight: var(--type-weight-semibold);
 }
 
 .client-result__identity {
   margin-top: clamp(1.75rem, 3vw, 2.75rem);
   padding-top: 18px;
   border-top: 1px solid rgba(127, 242, 154, 0.14);
+}
+
+.client-result__identity--with-logo {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.client-result__identity-copy {
+  min-width: 0;
 }
 
 .client-result__name,
@@ -115,14 +199,28 @@
   color: #9af7a3;
 }
 
-.client-results-supporting {
-  display: grid;
-  gap: clamp(1.25rem, 2.5vw, 2rem);
+.client-result__instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-top: 12px;
+  color: #9af7a3;
+  text-decoration: none;
+}
+
+.client-result__instagram:hover {
+  color: #ffffff;
+}
+
+.client-result__instagram svg {
+  flex: 0 0 auto;
 }
 
 @media (max-width: 900px) {
-  .client-results-grid {
-    grid-template-columns: minmax(0, 1fr);
+  .client-results-carousel > .client-result,
+  .client-results-carousel > .client-result--featured {
+    flex-basis: calc((100% - var(--client-results-gap)) / 2);
   }
 }
 
@@ -135,5 +233,33 @@
   .client-result--featured {
     padding: 24px 20px;
     border-radius: 18px;
+  }
+
+  .client-results-carousel {
+    gap: 16px;
+  }
+
+  .client-results-carousel > .client-result,
+  .client-results-carousel > .client-result--featured {
+    flex-basis: calc(100% - 48px);
+  }
+
+  .client-results-controls {
+    gap: 6px;
+  }
+
+  .client-results-control {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .client-results-carousel {
+    scroll-behavior: auto;
+  }
+
+  .client-results-control {
+    transition: none;
   }
 }

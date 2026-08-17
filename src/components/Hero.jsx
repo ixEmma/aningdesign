@@ -25,11 +25,7 @@ function Hero() {
 
             <div className="hero-actions">
               <SiteLink href="/contact" className="aning-button aning-button--primary">
-                Start a Project
-                <ArrowRight size={19} strokeWidth={2.2} aria-hidden="true" />
-              </SiteLink>
-              <SiteLink href="/#projects" className="aning-button aning-button--secondary">
-                View Selected Work
+                Get in touch
                 <ArrowRight size={19} strokeWidth={2.2} aria-hidden="true" />
               </SiteLink>
             </div>

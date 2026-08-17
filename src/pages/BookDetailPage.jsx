@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { Navigate, useParams } from 'react-router-dom'
 import { books } from '../data/books'
 import { useSeo } from '../utils/seo'
+import BookTestimonials from '../components/books/BookTestimonials'
 import WordPressSpeedBookPage from './WordPressSpeedBookPage'
 import './Books.css'
 
@@ -268,6 +269,8 @@ function BookProductPage({ book }) {
             {faqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p className="type-body">{faq.answer}</p></details>)}
           </div>
         </section>
+
+        <BookTestimonials />
 
         <section className="book-final-cta section-space--spacious" aria-labelledby="book-final-cta-title">
           <p className="type-eyebrow">Client-ready workflow</p>

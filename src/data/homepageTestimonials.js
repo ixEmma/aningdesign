@@ -1,3 +1,5 @@
+import { strivastHomepageTestimonial } from './strivastTestimonial'
+
 export const homepageTestimonials = [
   {
     id: 1,
@@ -58,6 +60,12 @@ export const homepageTestimonials = [
     rating: 5,
     source: null,
     featured: true
+  },
+  {
+    ...strivastHomepageTestimonial,
+    source: null,
+    featured: true,
+    verified: true
   }
 ]
 
