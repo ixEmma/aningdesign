@@ -12,5 +12,10 @@ export const isExternalLink = (href) => {
 
 export const getExternalLinkProps = (href) =>
   isExternalLink(href)
-    ? { target: '_blank', rel: 'noopener noreferrer' }
+    ? {
+        target: '_blank',
+        rel: /[?&](REFERRALCODE|ref|affiliate)=/i.test(href)
+          ? 'noopener noreferrer sponsored'
+          : 'noopener noreferrer'
+      }
     : {}
