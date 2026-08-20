@@ -1360,7 +1360,7 @@ export const servicePages = [
     ],
     examplesTitle: 'Related portfolio or examples',
     examplesStyle: 'showcase',
-    examplesCta: { label: 'View more startup projects', href: '/startups', variant: 'solid' },
+    examplesCta: { label: 'View web apps', href: '/web-apps', variant: 'solid' },
     examples: [
       {
         title: 'Lensora Events',
@@ -1376,7 +1376,7 @@ export const servicePages = [
       {
         title: 'Startup projects page',
         description: 'Startup MVP development, SaaS MVPs, web apps, dashboards, and product prototypes.',
-        href: '/startups'
+        href: '/web-apps'
       }
     ],
     relatedServices: ['website-design', 'ui-ux-design', 'branding'],
@@ -1407,8 +1407,8 @@ export const servicePages = [
       text: 'Send the product idea, audience, core features, and launch goal. I will help define the MVP scope.',
       primaryLabel: 'Plan the MVP',
       primaryHref: '/contact',
-      secondaryLabel: 'View startup projects',
-      secondaryHref: '/startups'
+      secondaryLabel: 'View web apps',
+      secondaryHref: '/web-apps'
     }
   },
   {
@@ -1796,7 +1796,7 @@ export const servicesIndexPage = {
     {
       title: 'Free resources',
       description: 'Free web apps and practical digital tools from AningDesign.',
-      href: '/startups'
+      href: '/web-apps'
     }
   ],
   relatedServices: servicePages.map((service) => service.slug),

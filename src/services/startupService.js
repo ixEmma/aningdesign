@@ -1,11 +1,11 @@
-import {startupProjects} from '../data/startupProjects'
+import { webApps } from '../data/webApps'
 
 const getStartupHref = (startup) => {
   if (startup.href) return startup.href
   if (startup.url) return startup.url
-  if (startup.slug) return `/startups#${startup.slug}`
+  if (startup.slug) return `/web-apps#${startup.slug}`
 
-  return '/startups'
+  return '/web-apps'
 }
 
 const getStartupDescription = (startup) => {
@@ -49,7 +49,7 @@ const normalizeStartup = (startup) => ({
 
 export const getFeaturedStartups = async (limit = 5) => {
   // TODO: Replace this local source with a Firestore read when this project adds Firebase client setup.
-  return startupProjects
+  return webApps
     .filter(isVisibleStartup)
     .map(normalizeStartup)
     .sort((a, b) => {

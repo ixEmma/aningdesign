@@ -394,13 +394,8 @@ external purchase URL
 
 Price presentation
 
-Example:
-
-Regular price:$39
-
-Launch price:$24
-
-The regular price may use a restrained strikethrough.
+Show one visible price for a standard offer. Add a regular price and restrained
+strikethrough only for a verified active discount.
 
 Do not use:
 
@@ -941,17 +936,13 @@ Current purchase URL:
 
 https://payhip.com/b/UMfoY
 
-Current launch price:
+Current price:
 
-$24 USD
-
-Regular price:
-
-$39 USD
+$19 USD
 
 Current edition:
 
-Launch Edition
+Digital Guide
 
 Use the same AningDesign system as the Blueprint page while allowing product-specific content such as:
 

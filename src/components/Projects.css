@@ -40,8 +40,8 @@
 }
 
 .selected-work-supporting {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: stretch;
+  grid-template-columns: minmax(0, 1.58fr) minmax(320px, 0.98fr);
+  align-items: start;
 }
 
 .selected-work-completion {
@@ -74,7 +74,7 @@
   flex: 0 0 auto;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
   .selected-work-supporting {
     grid-template-columns: minmax(0, 1fr);
   }

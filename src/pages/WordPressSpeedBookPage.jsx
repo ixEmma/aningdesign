@@ -120,7 +120,10 @@ function SectionHeading({ eyebrow, title, id, intro }) {
 export default function WordPressSpeedBookPage({ book }) {
   const domain = getDomain()
   const [activePreview, setActivePreview] = useState(null)
-  const payhipUrl = 'https://payhip.com/b/UMfoY'
+  const speedEdition = book.editions[0]
+  const payhipUrl = book.payhipUrl
+  const teaserPdfUrl = book.teaserPdfUrl
+  const priceLabel = `${speedEdition.price} USD`
 
   useSeo({
     title: 'WordPress Speed Optimization Guide with AI Agent | AningDesign',
@@ -145,10 +148,10 @@ export default function WordPressSpeedBookPage({ book }) {
     script.textContent = JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'Book',
-      name: 'WordPress Speed with AI Agent',
-      description: 'A practical WordPress speed optimization guide using AI agents, safe reversible fixes, Lighthouse testing, Core Web Vitals, and evidence-based verification.',
-      image: `${domain}/images/books/wordpress-speed-with-ai-agent/cover.png`,
-      url: `${domain}/books/wordpress-speed-with-ai-agent`,
+      name: book.title,
+      description: book.seoDescription,
+      image: `${domain}${book.cover}`,
+      url: `${domain}${book.path}`,
       inLanguage: 'en',
       bookFormat: 'https://schema.org/PDFFormat',
       numberOfPages: 71,
@@ -159,14 +162,14 @@ export default function WordPressSpeedBookPage({ book }) {
       offers: {
         '@type': 'Offer',
         url: payhipUrl,
-        price: '24',
+        price: String(book.price),
         priceCurrency: 'USD',
         availability: 'https://schema.org/InStock'
       }
     })
 
     return () => script.remove()
-  }, [domain, payhipUrl])
+  }, [book, domain, payhipUrl])
 
   // Close modal on Escape key
   useEffect(() => {
@@ -176,8 +179,6 @@ export default function WordPressSpeedBookPage({ book }) {
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [])
-
-  const teaserPdfUrl = '/pdf/wordpress-speed-with-ai-agent-teaser-preview.pdf'
 
   return (
     <main className="book-detail-page book-detail-page--rhythm book-funnel book-funnel--speed">
@@ -192,9 +193,7 @@ export default function WordPressSpeedBookPage({ book }) {
             </p>
 
             <div className="speed-hero-pricing">
-              <span className="speed-price-was" aria-label="Regular price $39">$39</span>
-              <strong className="speed-price-now">$24 USD</strong>
-              <span className="book-edition-label">Launch Edition</span>
+              <strong className="speed-price-now">{priceLabel}</strong>
             </div>
 
             <div className="book-funnel__hero-actions">
@@ -245,7 +244,7 @@ export default function WordPressSpeedBookPage({ book }) {
           <dl>
             <div><dt>Format</dt><dd>Digital PDF guide</dd></div>
             <div><dt>Pages</dt><dd>71 fixed-layout pages</dd></div>
-            <div><dt>Price</dt><dd>$24 USD Launch Edition</dd></div>
+            <div><dt>Price</dt><dd>{priceLabel}</dd></div>
             <div><dt>Delivery</dt><dd>Immediate Payhip download</dd></div>
           </dl>
         </section>
@@ -375,17 +374,15 @@ export default function WordPressSpeedBookPage({ book }) {
 
         {/* WHAT YOU GET & OFFER SECTION */}
         <section className="book-section book-funnel__purchase section-space--spacious" id="editions" aria-labelledby="speed-offer-title">
-          <SectionHeading eyebrow="Launch Edition" title="Get the guide & start optimizing." id="speed-offer-title" />
+          <SectionHeading eyebrow="Digital guide" title="Get the guide & start optimizing." id="speed-offer-title" />
           <div className="book-edition-grid">
             <article className="book-edition-card book-edition-card--featured">
               <div className="book-edition-card-heading">
                 <div>
-                  <p className="book-edition-label">Launch Edition</p>
-                  <h3 className="type-h3">WordPress Speed with AI Agent</h3>
+                  <h3 className="type-h3">{book.title}</h3>
                 </div>
                 <div className="speed-card-price-stack">
-                  <span className="speed-price-was">$39</span>
-                  <strong>$24 USD</strong>
+                  <strong>{priceLabel}</strong>
                 </div>
               </div>
               <p className="type-body">The complete 71-page fixed-layout digital guide for diagnosing slow WordPress sites, applying safe reversible fixes, and verifying speed with an AI agent.</p>
@@ -458,10 +455,10 @@ export default function WordPressSpeedBookPage({ book }) {
         <section className="book-final-cta section-space--spacious" aria-labelledby="speed-final-cta-title">
           <p className="type-eyebrow">WordPress Performance + AI</p>
           <h2 id="speed-final-cta-title" className="type-h2">Optimize WordPress speed with evidence, not trial & error.</h2>
-          <p className="type-body-large">Get instant access to the 71-page digital guide for $24 USD.</p>
+          <p className="type-body-large">Get instant access to the 71-page digital guide for {priceLabel}.</p>
           <div className="book-final-actions">
             <a href={payhipUrl} target="_blank" rel="noopener noreferrer" className="aning-button aning-button--primary">
-              Get the Guide ($24 USD)
+              Get the Guide ({priceLabel})
               <ExternalLink size={17} aria-hidden="true" />
             </a>
             <a href={teaserPdfUrl} target="_blank" rel="noopener noreferrer" className="aning-button aning-button--secondary">

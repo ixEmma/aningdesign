@@ -8,8 +8,8 @@ export const books = [
       'A practical 222-page guide for planning, designing, reviewing, and delivering client-ready WordPress websites.',
     valueStatement:
       'A clearer professional process for planning, building, reviewing, and delivering WordPress websites.',
-    price: 17,
-    priceLabel: 'From $17 USD',
+    price: 15,
+    priceLabel: 'From $15 USD',
     ctaLabel: 'Choose an Edition',
     format: 'Digital PDF editions',
     ebookPayhipUrl: 'https://payhip.com/b/Pl7JD',
@@ -18,7 +18,7 @@ export const books = [
       {
         id: 'ebook',
         title: 'Ebook Edition',
-        price: '$17',
+        price: '$15',
         description: 'The complete 222-page main book for readers who want the full WordPress website blueprint without the additional resource packs.',
         includes: [
           'Complete 222-page main book',
@@ -105,20 +105,17 @@ export const books = [
       'A practical AI-agent workflow for diagnosing slow WordPress websites, applying one safe reversible fix at a time, verifying the result, and keeping or reverting changes based on evidence.',
     valueStatement:
       'Diagnose slow WordPress pages, apply safe reversible fixes, and verify performance with an AI agent.',
-    price: 24,
-    regularPrice: 39,
-    priceLabel: 'From $24 USD',
+    price: 19,
+    priceLabel: '$19 USD',
     ctaLabel: 'View Book',
     format: 'Digital PDF guide',
     payhipUrl: 'https://payhip.com/b/UMfoY',
     teaserPdfUrl: '/pdf/wordpress-speed-with-ai-agent-teaser-preview.pdf',
     editions: [
       {
-        id: 'launch',
-        title: 'Launch Edition',
-        price: '$24',
-        regularPrice: '$39',
-        label: 'Launch Edition',
+        id: 'guide',
+        title: 'Digital Guide',
+        price: '$19',
         description: 'The complete 71-page digital guide with reusable prompts, checklists, workflow references, and teaser preview.',
         includes: [
           '71-page fixed-layout digital guide (PDF)',

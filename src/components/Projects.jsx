@@ -26,8 +26,12 @@ function Projects() {
           <LensoraShowcase project={featuredProject} />
 
           <div className="selected-work-supporting">
-            {supportingProjects.map((project) => (
-              <SupportingCaseStudy key={project.id} project={project} />
+            {supportingProjects.map((project, index) => (
+              <SupportingCaseStudy
+                key={project.id}
+                project={project}
+                variant={index === 0 ? 'lead' : 'supporting'}
+              />
             ))}
           </div>
         </div>

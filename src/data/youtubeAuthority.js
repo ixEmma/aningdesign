@@ -10,7 +10,7 @@ export const youtubeAuthorityVideos = [
       'Aning Design Lab video thumbnail comparing WordPress.com and WordPress.org',
     videoUrl: 'https://youtu.be/4YFOaUq6xVE',
     guideUrl: '/blog/wordpress-com-vs-wordpress-org-explained-for-beginners',
-    featured: true
+    publishedAt: '2026-07-29'
   },
   {
     id: 'jcW0TtM5Zf4',
@@ -22,7 +22,7 @@ export const youtubeAuthorityVideos = [
     thumbnailAlt: 'Aning Design Lab XAMPP and WordPress localhost tutorial thumbnail',
     videoUrl: 'https://youtu.be/jcW0TtM5Zf4',
     guideUrl: '/blog/how-to-install-wordpress-locally-using-xampp',
-    featured: false
+    publishedAt: '2026-07-29'
   },
   {
     id: 'jNIYeF6gIQs',
@@ -34,7 +34,7 @@ export const youtubeAuthorityVideos = [
     thumbnailAlt: 'Aning Design Lab web hosting, localhost, and Hostinger WordPress setup tutorial thumbnail',
     videoUrl: 'https://youtu.be/jNIYeF6gIQs',
     guideUrl: '/blog/web-hosting-for-beginners',
-    featured: false
+    publishedAt: '2026-08-19'
   },
   {
     id: 'Zhh8Qq9EL0k',
@@ -47,7 +47,7 @@ export const youtubeAuthorityVideos = [
       'Aning Design Lab tutorial thumbnail about building a website with AI and publishing it without GitHub',
     videoUrl: 'https://youtu.be/Zhh8Qq9EL0k',
     guideUrl: '/blog/build-deploy-website-with-ai-firebase',
-    featured: false
+    publishedAt: '2026-08-19'
   },
   {
     id: 'jcEqcDRm0jo',
@@ -59,6 +59,6 @@ export const youtubeAuthorityVideos = [
     thumbnailAlt: 'Aning Design Lab WordPress dashboard tutorial thumbnail',
     videoUrl: 'https://youtu.be/jcEqcDRm0jo',
     guideUrl: '/blog/wordpress-dashboard-tutorial-for-beginners',
-    featured: false
+    publishedAt: '2026-07-29'
   }
 ]

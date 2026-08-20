@@ -2,7 +2,7 @@ import { ArrowRight } from 'lucide-react'
 import { SiteLink } from './SiteLink'
 import './SupportingCaseStudy.css'
 
-function SupportingCaseStudy({ project }) {
+function SupportingCaseStudy({ project, variant = 'supporting' }) {
   const facts = [
     ['Challenge', project.challenge],
     ['Role', project.role],
@@ -11,7 +11,7 @@ function SupportingCaseStudy({ project }) {
 
   return (
     <article
-      className={`supporting-case-study supporting-case-study--${project.id}`}
+      className={`supporting-case-study supporting-case-study--${variant} supporting-case-study--${project.id}`}
       aria-labelledby={`${project.id}-title`}
     >
       <figure className="supporting-case-study__media">

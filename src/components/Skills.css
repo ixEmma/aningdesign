@@ -15,10 +15,10 @@
 .tools-section__shell {
   width: min(100%, 1280px);
   margin-inline: auto;
-  padding: clamp(2rem, 3.5vw, 3rem);
-  border: 1px solid rgba(89, 190, 119, 0.12);
+  padding: clamp(24px, 3.5vw, 48px);
+  border: 1px solid rgba(154, 247, 163, 0.08);
   border-radius: 20px;
-  background: rgba(8, 15, 12, 0.58);
+  background: rgba(8, 15, 12, 0.52);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.018);
 }
 
@@ -48,16 +48,30 @@
 
 .tools-groups {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(1.5rem, 3vw, 3rem);
-  margin-top: 32px;
-  padding-top: 28px;
-  border-top: 1px solid rgba(238, 246, 241, 0.09);
+  grid-template-areas: 'design products' 'websites workflow';
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  margin-top: var(--section-intro-gap);
+  border-top: 1px solid rgba(238, 246, 241, 0.07);
 }
 
 .tools-group {
   min-width: 0;
+  padding: clamp(20px, 2.6vw, 32px);
 }
+
+.tools-group--design { grid-area: design; }
+.tools-group--products { grid-area: products; padding-inline: clamp(24px, 3vw, 40px); border-left: 1px solid rgba(238, 246, 241, 0.07); background: rgba(13, 24, 20, 0.4); }
+.tools-group--websites { grid-area: websites; border-top: 1px solid rgba(238, 246, 241, 0.07); }
+.tools-group--workflow { grid-area: workflow; border-top: 1px solid rgba(238, 246, 241, 0.07); border-left: 1px solid rgba(238, 246, 241, 0.07); }
+
+.tools-group__heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #9af7a3;
+}
+
+.tools-group__heading svg { flex: 0 0 auto; }
 
 .tools-group__title {
   margin: 0;
@@ -66,33 +80,43 @@
 }
 
 .tools-group__list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 0;
   margin: 12px 0 0;
-  padding: 0;
-  color: rgba(224, 235, 229, 0.74);
-  list-style: none;
+  color: rgba(238, 246, 241, 0.9);
 }
 
-.tools-group__list li:not(:last-child)::after {
-  content: '\00b7';
-  margin-inline: 8px;
-  color: rgba(154, 247, 163, 0.46);
+.tools-group__purpose {
+  max-width: 440px;
+  margin: 10px 0 0;
+  color: rgba(224, 235, 229, 0.68);
 }
 
 @media (max-width: 1024px) {
   .tools-groups {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    row-gap: 28px;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 680px) {
   .tools-section__heading-row {
     grid-template-columns: minmax(0, 1fr);
     gap: 12px;
   }
+
+  .tools-groups {
+    grid-template-areas: 'products' 'design' 'websites' 'workflow';
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tools-group,
+  .tools-group--products,
+  .tools-group--websites,
+  .tools-group--workflow {
+    padding-inline: 0;
+    border-left: 0;
+  }
+
+  .tools-group--products { padding-top: clamp(20px, 4vw, 28px); background: transparent; }
+  .tools-group--design, .tools-group--websites, .tools-group--workflow { border-top: 1px solid rgba(238, 246, 241, 0.07); }
 }
 
 @media (max-width: 480px) {
@@ -106,14 +130,6 @@
   }
 
   .tools-groups {
-    gap: 24px 20px;
     margin-top: 24px;
-    padding-top: 22px;
-  }
-}
-
-@media (max-width: 340px) {
-  .tools-groups {
-    grid-template-columns: minmax(0, 1fr);
   }
 }

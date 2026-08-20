@@ -15,7 +15,7 @@ export const projectLinks = [
     target: '_blank',
     rel: 'noopener noreferrer'
   },
-  {label: 'Startups',href: '/startups'},
+  {label: 'Web Apps',href: '/web-apps'},
   {label: 'Free Resources',href: '/free-resources'},
   {
     label: 'Books',
@@ -66,7 +66,7 @@ export const quickLinks = [
   {title: 'About',href: '/#about'},
   {title: 'Projects',href: '/#projects'},
   {title: 'Contact',href: '/contact'},
-  {title: 'Startups',href: '/startups'},
+  {title: 'Web Apps',href: '/web-apps'},
   {title: 'Free Resources',href: '/free-resources'},
   {title: 'Services',href: '/services'},
   {title: 'Pricing',href: '/pricing'},

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { ArrowRight, ChevronLeft, ChevronRight, Play } from 'lucide-react'
 import { youtubeAuthorityVideos } from '../data/youtubeAuthority'
 import { getExternalLinkProps } from '../utils/links'
@@ -24,29 +24,8 @@ function isCarouselInteractiveTarget(target) {
   return target instanceof Element && Boolean(target.closest('a, button, input, select, textarea, [data-carousel-interactive]'))
 }
 
-function YoutubeSlide({ active, index, onActivate, slideRef, video }) {
+function YoutubeSlide({ active, index, isLead, onActivate, slideRef, video, videoCount }) {
   const watchUrl = getYouTubeWatchUrl(video)
-  const content = (
-    <>
-      <img src={video.thumbnail} alt={video.thumbnailAlt} width="1280" height="720" loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />
-      <span className="youtube-slide__overlay">
-        <span className="youtube-slide__series type-eyebrow">{video.series}</span>
-        <span className="youtube-slide__title type-h3">{video.title}</span>
-        <span className="youtube-slide__description type-body">{video.description}</span>
-        {active && watchUrl && (
-          <a
-            className="youtube-slide__watch aning-button aning-button--secondary"
-            href={watchUrl}
-            data-carousel-interactive
-            aria-label={`Watch ${video.title} on YouTube`}
-          >
-            <Play size={17} fill="currentColor" aria-hidden="true" />
-            <span>Watch the Video</span>
-          </a>
-        )}
-      </span>
-    </>
-  )
 
   const handleSurfaceClick = (event) => {
     if (isCarouselInteractiveTarget(event.target)) return
@@ -63,16 +42,33 @@ function YoutubeSlide({ active, index, onActivate, slideRef, video }) {
   }
 
   return (
-    <article className="youtube-slide" aria-current={active ? 'true' : undefined} aria-label={`Video ${index + 1} of ${youtubeAuthorityVideos.length}: ${video.title}`} ref={slideRef}>
+    <article className={`youtube-slide${isLead ? ' youtube-slide--lead' : ' youtube-slide--supporting'}`} aria-current={active ? 'true' : undefined} aria-label={`Video ${index + 1} of ${videoCount}: ${video.title}`} ref={slideRef}>
       <div
-        className="youtube-slide__surface"
+        className="youtube-slide__media"
         role={active ? undefined : 'button'}
         tabIndex={active ? undefined : 0}
         aria-label={active ? undefined : `Show video ${index + 1}: ${video.title}`}
         onClick={handleSurfaceClick}
         onKeyDown={handleSurfaceKeyDown}
       >
-        {content}
+        <img src={video.thumbnail} alt={video.thumbnailAlt} width="1280" height="720" loading={isLead ? 'eager' : 'lazy'} decoding="async" />
+      </div>
+      <div className="youtube-slide__content">
+        <span className="youtube-slide__series type-eyebrow">{video.series}</span>
+        <h3 className="youtube-slide__title type-h3">{video.title}</h3>
+        {isLead && <p className="youtube-slide__description type-body">{video.description}</p>}
+        {watchUrl && (
+          <a
+            className={`youtube-slide__watch${isLead ? ' aning-button aning-button--secondary' : ' youtube-slide__watch--quiet'}`}
+            href={watchUrl}
+            data-carousel-interactive
+            aria-label={`Watch ${video.title} on YouTube`}
+            {...getExternalLinkProps(watchUrl)}
+          >
+            <Play size={isLead ? 17 : 15} fill="currentColor" aria-hidden="true" />
+            <span>{isLead ? 'Watch the Video' : 'Watch'}</span>
+          </a>
+        )}
       </div>
     </article>
   )
@@ -86,6 +82,10 @@ function YoutubeShowcase() {
   const didDrag = useRef(false)
   const scrollFrame = useRef(null)
   const [activeIndex, setActiveIndex] = useState(0)
+  const videos = useMemo(
+    () => [...youtubeAuthorityVideos].sort((first, second) => new Date(second.publishedAt) - new Date(first.publishedAt)),
+    []
+  )
 
   const updateActiveSlide = () => {
     const viewport = viewportRef.current
@@ -176,7 +176,7 @@ function YoutubeShowcase() {
   useEffect(() => {
     const schema = {
       '@context': 'https://schema.org',
-      '@graph': youtubeAuthorityVideos.map((video) => ({
+      '@graph': videos.map((video) => ({
         '@type': 'VideoObject',
         name: video.title,
         description: video.description,
@@ -196,7 +196,7 @@ function YoutubeShowcase() {
       if (scrollFrame.current) cancelAnimationFrame(scrollFrame.current)
       script.remove()
     }
-  }, [])
+  }, [videos])
 
   return (
     <section className="youtube-showcase" id="content-process" aria-labelledby="youtube-showcase-title">
@@ -232,31 +232,31 @@ function YoutubeShowcase() {
                 event.preventDefault()
                 goToSlide(activeIndex - 1)
               }
-              if (event.key === 'ArrowRight' && activeIndex < youtubeAuthorityVideos.length - 1) {
+              if (event.key === 'ArrowRight' && activeIndex < videos.length - 1) {
                 event.preventDefault()
                 goToSlide(activeIndex + 1)
               }
             }}
           >
             <div className="youtube-carousel__track">
-              {youtubeAuthorityVideos.map((video, index) => (
-                <YoutubeSlide active={index === activeIndex} index={index} key={video.id} onActivate={handleSlideActivate} slideRef={(element) => { slideRefs.current[index] = element }} video={video} />
+              {videos.map((video, index) => (
+                <YoutubeSlide active={index === activeIndex} index={index} isLead={index === 0} key={video.id} onActivate={handleSlideActivate} slideRef={(element) => { slideRefs.current[index] = element }} video={video} videoCount={videos.length} />
               ))}
             </div>
           </div>
 
           <div className="youtube-carousel__controls" aria-label="Video carousel controls">
             <button className="youtube-carousel__control" type="button" onClick={() => goToSlide(activeIndex - 1)} disabled={activeIndex === 0} aria-label="Previous video"><ChevronLeft size={20} aria-hidden="true" /></button>
-            <button className="youtube-carousel__control" type="button" onClick={() => goToSlide(activeIndex + 1)} disabled={activeIndex === youtubeAuthorityVideos.length - 1} aria-label="Next video"><ChevronRight size={20} aria-hidden="true" /></button>
+            <button className="youtube-carousel__control" type="button" onClick={() => goToSlide(activeIndex + 1)} disabled={activeIndex === videos.length - 1} aria-label="Next video"><ChevronRight size={20} aria-hidden="true" /></button>
           </div>
         </div>
 
         <div className="youtube-pagination" aria-label="Choose a video">
-          {youtubeAuthorityVideos.map((video, index) => (
+          {videos.map((video, index) => (
             <button className="youtube-pagination__dot" type="button" onClick={() => goToSlide(index)} aria-current={index === activeIndex ? 'true' : undefined} aria-label={`Go to video ${index + 1}: ${video.title}`} key={video.id} />
           ))}
         </div>
-        <p className="sr-only" role="status" aria-live="polite">Video {activeIndex + 1} of {youtubeAuthorityVideos.length}</p>
+        <p className="sr-only" role="status" aria-live="polite">Video {activeIndex + 1} of {videos.length}</p>
       </div>
     </section>
   )

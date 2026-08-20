@@ -28,7 +28,7 @@ const footerProjectLinks = [
     target: '_blank',
     rel: 'noopener noreferrer'
   },
-  { label: 'Startup Projects', href: '/startups' }
+  { label: 'Web Apps', href: '/web-apps' }
 ]
 
 const footerResourceLinks = [

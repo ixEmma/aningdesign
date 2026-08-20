@@ -117,8 +117,8 @@ function MegaMenu({isOpen,startups,blogTopics,onClose,onSearch}) {
       <div className="mega-menu-grid">
         <section className="mega-menu-section mega-menu-featured">
           <div className="mega-menu-heading-row">
-            <p className="mega-menu-kicker">Featured Startups</p>
-            <SmartLink item={{title: 'View all startups',href: '/startups'}} className="mega-menu-small-link" onNavigate={onClose}>
+            <p className="mega-menu-kicker">Featured Web Apps</p>
+            <SmartLink item={{title: 'View all web apps',href: '/web-apps'}} className="mega-menu-small-link" onNavigate={onClose}>
               View all
               <ArrowUpRight size={14} strokeWidth={2.2} aria-hidden="true" />
             </SmartLink>

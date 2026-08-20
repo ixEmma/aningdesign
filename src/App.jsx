@@ -8,6 +8,8 @@ import Process from './components/Process'
 import HomepageServices from './components/Blueprint'
 import About from './components/About'
 import Projects from './components/Projects'
+import FeaturedWebApps from './components/FeaturedWebApps'
+import FeaturedBooks from './components/FeaturedBooks'
 import Feedback from './components/Feedback'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -24,7 +26,7 @@ const LatestBlogTutorials = lazy(() => import('./components/blog/LatestBlogTutor
 const Blog = lazy(() => import('./pages/Blog'))
 const BlogPost = lazy(() => import('./pages/BlogPost'))
 const ThankYou = lazy(() => import('./pages/ThankYou'))
-const StartupPage = lazy(() => import('./pages/StartupPage'))
+const WebAppsPage = lazy(() => import('./pages/WebAppsPage'))
 const FreeResources = lazy(() => import('./pages/FreeResources'))
 const PromptLibrary = lazy(() => import('./pages/PromptLibrary'))
 const ServicesPage = lazy(() => import('./pages/ServicesPage'))
@@ -151,9 +153,11 @@ function LandingPage() {
   return (
     <main id="main-content">
       <Hero />
+      <FeaturedWebApps />
       <Projects />
       <HomepageServices />
       <Skills />
+      <FeaturedBooks />
       <Process />
       <About />
       <Testimonials />
@@ -209,7 +213,7 @@ function App() {
             <Route path="/books/:slug" element={<BookDetailPage />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
-            <Route path="/startups" element={<StartupPage />} />
+            <Route path="/web-apps" element={<WebAppsPage />} />
             <Route path="/free-resources" element={<FreeResources />} />
             <Route path="/free-resources/prompts" element={<PromptLibrary />} />
             <Route path="/contact" element={<ContactPage />} />

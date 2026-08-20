@@ -15,8 +15,8 @@
 
 .homepage-services__shell {
   display: grid;
-  grid-template-columns: minmax(340px, 0.8fr) minmax(0, 1.2fr);
-  gap: clamp(4rem, 7vw, 7rem);
+  grid-template-columns: minmax(300px, 0.62fr) minmax(0, 1.05fr);
+  gap: clamp(3rem, 6vw, 6rem);
   width: min(100%, 1280px);
   margin-inline: auto;
 }
@@ -62,35 +62,26 @@
 
 .homepage-services__list {
   min-width: 0;
-  overflow: hidden;
-  border: 1px solid rgba(89, 190, 119, 0.14);
-  border-radius: 22px;
-  background: rgba(9, 16, 13, 0.68);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.018);
 }
 
 .homepage-service {
   display: grid;
-  grid-template-columns: 54px minmax(0, 1fr);
-  gap: 1.25rem;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 16px;
   min-width: 0;
-  padding: clamp(2rem, 2vw, 2.25rem);
-}
-
-.homepage-service + .homepage-service {
-  border-top: 1px solid rgba(238, 246, 241, 0.09);
+  border: 1px solid rgba(154, 247, 163, 0.12);
+  border-radius: 18px;
+  background: rgba(9, 17, 14, 0.62);
 }
 
 .homepage-service__number {
-  padding-top: 0.25rem;
+  padding-top: 4px;
   color: #9af7a3;
   font-weight: var(--type-weight-bold);
   letter-spacing: var(--type-tracking-small);
 }
 
-.homepage-service__content,
-.homepage-service__primary,
-.homepage-service__supporting {
+.homepage-service__content {
   min-width: 0;
 }
 
@@ -99,22 +90,9 @@
   color: #f5faf7;
 }
 
-.homepage-service__body {
-  display: grid;
-  grid-template-columns: minmax(0, 0.78fr) minmax(250px, 1.22fr);
-  gap: clamp(1.5rem, 2.2vw, 2.25rem);
-  margin-top: 20px;
-}
-
-.homepage-service__audience,
 .homepage-service__description,
 .homepage-service__outcome p:last-child {
   margin: 0;
-}
-
-.homepage-service__audience {
-  color: rgba(235, 243, 239, 0.92);
-  font-weight: var(--type-weight-medium);
 }
 
 .homepage-service__description {
@@ -130,8 +108,8 @@
 .homepage-service__scope {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.55rem 0.85rem;
-  margin: 14px 0 0;
+  gap: 8px 18px;
+  margin: 18px 0 0;
   padding: 0;
   color: rgba(224, 235, 229, 0.74);
   list-style: none;
@@ -140,7 +118,7 @@
 .homepage-service__scope li {
   position: relative;
   min-width: 0;
-  padding-left: 15px;
+  padding-left: 12px;
 }
 
 .homepage-service__scope li::before {
@@ -148,21 +126,19 @@
   position: absolute;
   top: 0.72em;
   left: 0;
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
   background: #00dca5;
   transform: translateY(-50%);
 }
 
 .homepage-service__outcome {
-  margin-top: 18px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(238, 246, 241, 0.08);
+  margin-top: 20px;
 }
 
 .homepage-service__outcome .homepage-service__label {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .homepage-service__outcome p:last-child {
@@ -171,7 +147,7 @@
 
 .homepage-service__action {
   justify-content: flex-start;
-  margin-top: 14px;
+  margin-top: 16px;
   padding-inline: 0;
 }
 
@@ -181,6 +157,34 @@
 
 .homepage-service__action:hover svg {
   transform: translateX(3px);
+}
+
+.homepage-service--lead {
+  grid-template-columns: 46px minmax(0, 1fr);
+  padding: clamp(26px, 3vw, 38px);
+  border-color: rgba(144, 248, 255, 0.2);
+  border-radius: 22px;
+  background: rgba(12, 25, 20, 0.82);
+}
+
+.homepage-service--lead .homepage-service__scope {
+  max-width: 620px;
+}
+
+.homepage-services__supporting-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--section-content-gap);
+  margin-top: var(--section-content-gap);
+}
+
+.homepage-service--supporting {
+  align-content: start;
+  padding: clamp(20px, 2.2vw, 28px);
+}
+
+.homepage-service--supporting .homepage-service__outcome {
+  margin-top: 18px;
 }
 
 @media (max-width: 1100px) {
@@ -200,9 +204,8 @@
 }
 
 @media (max-width: 820px) {
-  .homepage-service__body {
+  .homepage-services__supporting-grid {
     grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
   }
 }
 
@@ -221,24 +224,17 @@
     width: 100%;
   }
 
-  .homepage-services__list {
-    border-radius: 18px;
-  }
-
   .homepage-service {
     grid-template-columns: 32px minmax(0, 1fr);
     gap: 10px;
-    padding: 24px 18px;
+    padding: 22px 18px;
   }
 
   .homepage-service__number {
-    padding-top: 0.2rem;
+    padding-top: 3px;
   }
 
-  .homepage-service__body {
-    gap: 22px;
-    margin-top: 16px;
-  }
+  .homepage-service--lead { grid-template-columns: 32px minmax(0, 1fr); padding: 24px 18px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

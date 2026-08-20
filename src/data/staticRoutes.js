@@ -11,7 +11,7 @@ export const prerenderCandidateRoutes = [
   '/blog/website-design-checklist-for-clients',
   '/blog/plan-wordpress-website-redesign',
   '/blog/wordpress-website-launch-checklist',
-  '/startups',
+  '/web-apps',
   '/free-resources',
   '/free-resources/prompts',
   '/contact'

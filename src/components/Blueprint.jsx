@@ -6,10 +6,8 @@ const homepageServices = [
   {
     number: '01',
     title: 'Strategic Business Websites',
-    audience:
-      'For service businesses, professionals and growing organizations that need stronger credibility and clearer customer journeys.',
     description:
-      'I plan, design and develop responsive WordPress websites that clarify the offer, organize content and guide visitors toward meaningful action.',
+      'Responsive WordPress websites with clear offers, service-page structure, and direct enquiry paths.',
     scope: [
       'Strategy and sitemap',
       'Conversion structure',
@@ -25,10 +23,8 @@ const homepageServices = [
   {
     number: '02',
     title: 'Website Redesign and Performance',
-    audience:
-      'For businesses with websites that feel outdated, load slowly, communicate poorly or are difficult to maintain.',
     description:
-      'I audit the current experience, restructure important pages and improve design, usability, responsiveness and technical delivery.',
+      'Audit and improve website structure, usability, responsiveness, and technical delivery.',
     scope: [
       'Website and UX audit',
       'Page restructuring',
@@ -44,10 +40,8 @@ const homepageServices = [
   {
     number: '03',
     title: 'Digital Products and MVPs',
-    audience:
-      'For founders and organizations developing portals, dashboards, platforms and early-stage web products.',
     description:
-      'I turn product requirements into structured user flows, interface systems and working web experiences using practical modern technology.',
+      'Focused product design and React development for useful first releases.',
     scope: [
       'Product framing and flows',
       'Interface and dashboard design',
@@ -62,51 +56,47 @@ const homepageServices = [
   }
 ]
 
-function ServiceRow({ service }) {
+function ServiceModule({ service, variant }) {
+  const isLead = variant === 'lead'
+  const capabilities = service.scope.slice(0, isLead ? 4 : 3)
+
   return (
-    <article className="homepage-service">
+    <article className={`homepage-service homepage-service--${variant}`}>
       <span className="homepage-service__number type-small" aria-hidden="true">
         {service.number}
       </span>
 
       <div className="homepage-service__content">
         <h3 className="homepage-service__title type-h3">{service.title}</h3>
+        <p className="homepage-service__description type-body">{service.description}</p>
 
-        <div className="homepage-service__body">
-          <div className="homepage-service__primary">
-            <p className="homepage-service__audience type-body">{service.audience}</p>
-            <p className="homepage-service__description type-body">{service.description}</p>
-          </div>
+        <ul className="homepage-service__scope type-body" aria-label={`${service.title} key capabilities`}>
+          {capabilities.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
 
-          <div className="homepage-service__supporting">
-            <p className="homepage-service__label type-eyebrow">Selected scope</p>
-            <ul className="homepage-service__scope type-body">
-              {service.scope.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-
-            <div className="homepage-service__outcome">
-              <p className="homepage-service__label type-eyebrow">Outcome</p>
-              <p className="type-body">{service.outcome}</p>
-            </div>
-
-            <SiteLink
-              href={service.href}
-              className="aning-button aning-button--text homepage-service__action"
-              aria-label={`${service.actionLabel}: ${service.title}`}
-            >
-              {service.actionLabel}
-              <ArrowRight size={18} strokeWidth={2.2} aria-hidden="true" />
-            </SiteLink>
-          </div>
+        <div className="homepage-service__outcome">
+          <p className="homepage-service__label type-eyebrow">Outcome</p>
+          <p className="type-body">{service.outcome}</p>
         </div>
+
+        <SiteLink
+          href={service.href}
+          className="aning-button aning-button--text homepage-service__action"
+          aria-label={`${service.actionLabel}: ${service.title}`}
+        >
+          {service.actionLabel}
+          <ArrowRight size={18} strokeWidth={2.2} aria-hidden="true" />
+        </SiteLink>
       </div>
     </article>
   )
 }
 
 function HomepageServices() {
+  const [leadService, ...supportingServices] = homepageServices
+
   return (
     <section className="homepage-services" id="services" aria-labelledby="homepage-services-title">
       <div className="homepage-services__shell">
@@ -129,9 +119,12 @@ function HomepageServices() {
         </div>
 
         <div className="homepage-services__list">
-          {homepageServices.map((service) => (
-            <ServiceRow service={service} key={service.number} />
-          ))}
+          <ServiceModule service={leadService} variant="lead" />
+          <div className="homepage-services__supporting-grid">
+            {supportingServices.map((service) => (
+              <ServiceModule service={service} variant="supporting" key={service.number} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

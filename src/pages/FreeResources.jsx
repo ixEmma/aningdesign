@@ -3,7 +3,7 @@ import { ArrowUpRight, BookOpen, ClipboardCheck, Wrench } from 'lucide-react'
 import BlogNewsletter from '../components/blog/BlogNewsletter'
 import Breadcrumbs from '../components/resources/Breadcrumbs'
 import ResourceCard from '../components/resources/ResourceCard'
-import { startupProjects } from '../data/startupProjects'
+import { webApps } from '../data/webApps'
 import { getFreeResourcePosts } from '../utils/blogUtils'
 import { getDomain } from '../utils/domain'
 import { getExternalLinkProps } from '../utils/links'
@@ -63,7 +63,7 @@ function FreeResources() {
         <section className="resource-archive-section" id="free-tools" aria-labelledby="free-tools-title">
           <header><p>Use online</p><h2 id="free-tools-title">Free Tools</h2></header>
           <div className="free-tool-pill-list">
-            {startupProjects.map((tool) => (
+            {webApps.map((tool) => (
               <a
                 href={tool.url}
                 {...getExternalLinkProps(tool.url)}
